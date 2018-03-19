@@ -1,0 +1,16 @@
+version: '2'
+services: 
+   skype:
+      build: ./
+      ports:
+         - 22:22
+      environment:          
+          - DISPLAY
+      privileged: true
+      command: /usr/share/skypeforlinux/skypeforlinux
+      network_mode: host
+      volumes:
+         - /tmp/.X11-unix:/tmp/.X11-unix:ro
+         - /dev/snd:/dev/snd 
+         - $HOME/.Xauthority:/root/.Xauthority:rw
+
