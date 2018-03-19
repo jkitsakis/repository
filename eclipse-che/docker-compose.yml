@@ -1,0 +1,15 @@
+---
+version: '2'
+services: 
+    che:
+       image: eclipse/che:latest
+       environment:
+         -CHE_PORT: 8082       
+       ports:
+         - 1010:8082
+         - 1000:8000
+       volumes:
+          - /home/ubuntu/iac/eclipse/data:/data
+          - /var/run/docker.sock:/var/run/docker.sock
+       command: start
+ 
