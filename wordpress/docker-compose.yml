@@ -1,0 +1,58 @@
+version: '2'
+services:
+       
+  wordpress_db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+#     MYSQL_DATABASE: wpdb
+#   MYSQL_USERNAME: root
+#   MYSQL_PASSWORD: pass
+    volumes:
+      - ./db-data:/var/lib/mysql
+    networks:
+      - wp-db-net
+      
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    working_dir: /var/www/html
+    ports:
+       - 8181:80
+    environment:
+       MYSQL_USERNAME: root
+       MYSQL_ROOT_PASSWORD: password
+       PMA_HOST: wordpress_db
+       PMA_ABSOLUTE_URI: http://kitsakis.com/phpmyadmin
+    depends_on: 
+      - wordpress_db      
+    networks:
+      - wp-db-net
+      - wp-net
+    
+    
+      
+  wordpress:
+    build: ./config
+    working_dir: /var/www/html
+    depends_on: 
+      - wordpress_db
+    ports:
+      - 8282:80
+    environment:
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wpdb
+      WORDPRESS_TABLE_PREFIX: wp_
+      WORDPRESS_DB_HOST: wordpress_db
+    volumes:
+        - ./wp-content:/var/www/html/wp-content
+    networks:
+      - wp-db-net
+      - wp-net
+ 
+#volumes:
+#    wordpress-db-data:
+#    wp-content:
+    
+networks:
+  wp-db-net:
+  wp-net:
