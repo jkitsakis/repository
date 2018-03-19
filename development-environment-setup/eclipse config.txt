@@ -1,0 +1,32 @@
+﻿1. General - Editors - Text Editors : disable spelling
+2. General - External Web Browser
+3. General - Workspace : No build Automatically 
+4. General - Workspace : Local History , Days to keep = 2
+5. Install Updates : No automatic updates
+6. Java - Installed JRE's - Edit : 
+   - VM args = -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${DOMAIN_HOME}/logs/mps
+   
+7. eclipse.ini
+-----------------------
+--launcher.defaultAction
+openFile
+
+--launcher.XXMaxPermSize
+128m
+--launcher.appendVmargs
+-vm
+C:/Program Files/Java/jdk1.8.0_45/jre/bin/server/jvm.dll
+-Duser.name=Kitsakis Yannis
+-vmargs
+-Dosgi.requiredJavaVersion=1.8
+-Xms128m
+-Xmx512m
+-XX:+UseParallelGC
+-XX:+AggressiveOpts
+-XX:+UseParallelOldGC
+
+
+-showsplash
+org.eclipse.platform
+
+----------------------------------

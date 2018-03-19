@@ -1,0 +1,10 @@
+version: '3'
+services: 
+   webmin:
+      image: tragus/webmin
+      ports:
+         - 9100:80
+      restart: always
+      volumes:
+         - /var/run/webmin:/var/run/container-control
+

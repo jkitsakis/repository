@@ -1,0 +1,96 @@
+-----
+version: '2'
+services:
+   selenium_hub:
+        image: selenium/hub
+        privileged: true
+        ports:
+            - 4444:4444
+        networks:
+            - selenium_grid_internal
+
+   nodechrome:
+        image: selenium/node-chrome-debug
+        privileged: true
+        depends_on:
+            - selenium_hub
+        ports:
+            - 5900
+        environment:
+            - no_proxy=localhost
+            - HUB_PORT_4444_TCP_ADDR=selenium_hub
+            - HUB_PORT_4444_TCP_PORT=4444
+        networks:
+            - selenium_grid_internal
+
+   nodefirefox:
+        image: selenium/node-firefox-debug
+        privileged: true
+        depends_on:
+            - selenium_hub
+        ports:
+            - 5900
+        environment:
+            - no_proxy=localhost
+            - HUB_PORT_4444_TCP_ADDR=selenium_hub
+            - HUB_PORT_4444_TCP_PORT=4444
+        networks:
+            - selenium_grid_internal
+            
+   nodefirefox2:
+        image: selenium/node-firefox-debug
+        privileged: true
+        depends_on:
+            - selenium_hub
+        ports:
+            - 5901
+        environment:
+            - no_proxy=localhost
+            - HUB_PORT_4444_TCP_ADDR=selenium_hub
+            - HUB_PORT_4444_TCP_PORT=4444
+        networks:
+            - selenium_grid_internal
+            
+   nodefirefox3:
+        image: selenium/node-firefox-debug
+        privileged: true
+        depends_on:
+            - selenium_hub
+        ports:
+            - 5902
+        environment:
+            - no_proxy=localhost
+            - HUB_PORT_4444_TCP_ADDR=selenium_hub
+            - HUB_PORT_4444_TCP_PORT=4444
+        networks:
+            - selenium_grid_internal
+
+
+    
+   slave:
+        image: tehranian/dind-jenkins-slave
+        environment:
+          - privilged=true
+        depends_on:
+          - jenkins
+        networks:
+          - selenium_grid_internal
+    
+   jenkins:
+        build:
+          context: ./jenkins
+        environment:
+          JAVA_OPTS: -Dhudson.model.DirectoryBrowserSupport.CSP="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';" -Djenkins.model.DirectoryBrowserSupport.CSP="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';"
+        volumes:
+         - jenkins_workspace:/var/jenkins_home/workspace
+        ports:
+        - 9878:8080
+        - 50000:50000
+        - 4444:4444 
+
+volumes: 
+  jenkins_workspace: 
+  
+networks:
+    selenium_grid_internal:
+ 

@@ -1,0 +1,48 @@
+---
+version: '2'
+services:
+   #
+   # Wildfly
+   #
+    wildfly:
+       build: wildfly
+       ports:
+         - "8080:8080"
+         - "8787:8787"
+         - "9990:9990"
+       volumes:
+         - "app_deployments:/opt/jboss/wildfly/standalone/deployments"
+         - "benin_logs:/opt/jboss/wildfly/standalone/log"
+       depends_on:
+         - db
+       networks:
+         - protected 
+   #
+   # Posgres RDBMS
+   #
+    db:
+       build: postgresql
+       environment: 
+         POSTGRES_USER: benin
+         POSTGRES_PASSWORD: benin
+         POSTGRES_DB: benin
+       ports:
+         - "5432:5432"
+       volumes:
+         - "postgres_data:/var/lib/postgresql/data"
+       networks:
+         - protected
+
+#
+# Volumes
+#
+volumes:
+   # Storage for the database in docker volumes
+   postgres_data:   
+   benin_logs:
+   app_deployments:
+#
+# Networks
+#
+networks:
+   protected:

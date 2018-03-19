@@ -1,0 +1,24 @@
+---
+version: '2' 
+services:
+   proxy:
+      build: ./
+#      restart: always
+      #volumes:
+      #   - "nginx-volume:/etc/nginx/"
+      #   - "nginx-logs:/var/log/nginx"
+      #   - "nginx-cert:/etc/ssl/certs/nginx/"
+      #networks:
+      #   - vm-network
+      ports:
+         - 80:80
+         - 443:443
+#volumes: 
+#   nginx-volume:
+#   nginx-logs:
+#   nginx-cert:
+#networks:
+#   vm-network:
+#      external: 
+#         name: tomcat_ectn-net
+   
