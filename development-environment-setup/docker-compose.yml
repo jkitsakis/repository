@@ -1,0 +1,25 @@
+---
+version: '2'
+services:    
+   eclipse:
+      build: ./
+      ports:
+         - 22:22
+      environment:
+         - DISPLAY
+      privileged: true
+      network_mode: host
+#      command: /usr/local/eclipse
+      volumes:
+         - $HOME/.Xauthority:/root/.Xauthority:rw
+         - /tmp/.X11-unix:/tmp/.X11-unix:ro
+         - /home/ubuntu/:/home/developer/
+         - eclipse-home:/usr/local/eclipse
+         - java-home:/usr/lib/jvm/java-8-oracle
+         - maven-home:/opt/maven
+              
+
+volumes: 
+  eclipse-home:
+  java-home:
+  maven-home:
