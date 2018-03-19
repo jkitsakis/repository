@@ -3,7 +3,6 @@ services:
 
  mariadb:
   image: mariadb:latest
-  hostname: mysqldb
   environment:
      - MYSQL_ROOT_PASSWORD=password
      - MYSQL_DATABASE=traccardb
@@ -46,5 +45,5 @@ services:
    volumes:
      - ./db-config/data/traccardb:/opt/traccar/data/database
      - ./traccar-config/mariadb-java-client-2.2.1.jar:/opt/traccar/lib/mariadb-java-client-2.2.1.jar:rw
-     - ./traccar-config/traccar.xml:/opt/traccar/conf/traccar.xml
+     - ./traccar-config/traccar.xml:/opt/traccar/traccar.xml
     

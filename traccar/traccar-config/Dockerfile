@@ -9,6 +9,6 @@ RUN set -ex && \
 
 EXPOSE 8082
 
-ENTRYPOINT ["java", "-Djava.net.preferIPv4Stack=true", "-Xms512m", "-jar", "tracker-server.jar"]
+ENTRYPOINT ["java", "-Djava.net.preferIPv4Stack=true", "-Xms512m", "-jar", "tracker-server.jar", "traccar.xml"]
 
-CMD ["conf/traccar.xml"]
+#CMD ["conf/traccar.xml"]
