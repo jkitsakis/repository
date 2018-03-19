@@ -1,0 +1,3 @@
+angular.module('config', [])
+
+.constant('ENV_VARS', {name:'development_vm',site:'SG',date_time_format:'yyyy-MM-ddTHH:mm',date_format:'yyyy-MM-dd',ref_data_date_format:'yyyy-MM-dd',transitUrl:'http://192.168.56.105:8080/transit-api/v1/',tradersUrl:'http://10.240.165.32:8081/traders-api/v1/',refnumURL:'http://10.240.165.32:8081/refnum-api/v1/',codeListsURL:'http://10.240.165.32:8081/codelists-api/v1/',umsURL:'http://10.240.165.32:8081/users-api/v1',KEYCLOAK_JSON_LOCATION:'/static/cfg/transit/'});

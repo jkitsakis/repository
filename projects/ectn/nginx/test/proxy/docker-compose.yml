@@ -1,0 +1,26 @@
+---
+version: '2' 
+services:
+   proxy:
+      build: ./
+      volumes:
+         - "nginx-volume:/etc/nginx/"
+         - "nginx-logs:/var/log/nginx"
+         - "nginx-cert:/etc/ssl/certs/nginx/"
+      networks:
+         - site1
+         - site2
+      ports:
+         - 80:80
+         - 443:443
+volumes: 
+   nginx-volume:
+   nginx-logs:
+   nginx-cert:
+networks:
+   site1:
+      external: 
+         name: site1_site1.test-net
+   site2:
+      external: 
+         name: site2_site2.test-net

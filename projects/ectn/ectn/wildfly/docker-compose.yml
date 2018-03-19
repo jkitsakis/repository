@@ -1,0 +1,24 @@
+---
+version: '2'
+services:
+    wildfly:
+       build: wildfly-config
+       ports:
+         - "7070:8080"
+         - "8787:8787"
+         - "9990:9990"
+       volumes:
+         - "wildfly_deployments:/opt/jboss/wildfly/standalone/deployments"
+         - "wildfly_logs:/opt/jboss/wildfly/standalone/log"
+       #external_links:
+       #  - postgresql96_db_1
+       #networks:
+       #  - postgresql96_postgres-net
+
+volumes:
+   wildfly_logs:
+   wildfly_deployments:
+
+#networks:
+#   postgresql96_postgres-net:
+#       external: true   

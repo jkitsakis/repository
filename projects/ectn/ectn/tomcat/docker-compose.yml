@@ -1,0 +1,33 @@
+---
+version: '2'
+services:    
+    tomcat:
+       build: tomcat-config
+       ports:
+         - "8180:8080"
+         - "8005:8005"
+         - "8778:8778"
+         - "8000:8000"
+       volumes:
+         - "tomcat_deployments:/opt/tomcat/webapps"
+         - "tomcat_logs:/opt/tomcat/logs"
+         - "tomcat_conf:/opt/tomcat/conf"
+         - "tomcat_bin:/opt/tomcat/bin"
+         - "tomcat_lib:/opt/tomcat/lib"
+       volumes_from:
+         - container:activemq_activemq_1:rw
+       external_links:
+         - activemq_activemq_1
+       networks:
+         - activemq_activemq-net
+
+volumes:
+   tomcat_conf:
+   tomcat_logs:
+   tomcat_deployments:
+   tomcat_bin:
+   tomcat_lib:
+
+networks:   
+   activemq_activemq-net:
+       external: true

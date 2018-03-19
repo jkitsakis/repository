@@ -1,0 +1,8 @@
+{
+  "realm": "acts",
+  "resource": "transit-ui",
+  "auth-server-url" : "http://10.240.165.32:8080/auth",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmA9qQZr9vhCk8+ChMUq2HqL4t0SGLbXy+X0TQhbRK/BoKxmHKDZRrleqi2nONxw1/54RAiROOmlnjxkdwYEkMNTNkgZuGaFxOKY/fPC+YeSMJNEoOr9IBMPu7xac19yz5gpAV3ofnsVOXXvAQA0m14neEq/WoYpIJcj0gIVyoY2nLql70dMFFeK7s/QZmWm2YFSnv7vjuzePiKB+R4g2aliBzgt2SEFskJTyjVqh+9kFctrElgC32CvCo7wZHbzpJeh6rb7t369tkSrEPN53dg+VBDP10SMr1H8SN9Hp+hSdKGTLRDa3AuMhDusOOYhfvXB5V/YcUqhCmkT/jUicAwIDAQAB",
+  "ssl-required": "external",  
+  "public-client": true
+}

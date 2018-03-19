@@ -1,0 +1,22 @@
+---
+version: '2'
+services:   
+    db:
+       build: postgresql-config
+       environment: 
+          POSTGRES_USER: benin
+          POSTGRES_PASSWORD: benin
+          POSTGRES_DB: benin
+       ports:
+         - "5432:5432"
+       volumes:
+         #- "data:/var/lib/postgresql/data"
+         - "init-db:/docker-entrypoint-initdb.d"
+       networks:
+         - postgres-net
+volumes:
+   #data: 
+   init-db:
+
+networks:
+   postgres-net:

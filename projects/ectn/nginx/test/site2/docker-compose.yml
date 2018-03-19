@@ -1,0 +1,13 @@
+---
+version: '2'
+services:
+   app:
+      image: nginx:1.9
+      volumes:
+         - .:/usr/share/nginx/html/
+      expose:
+         - "80"
+      networks:
+         - site2.test-net
+networks:
+   site2.test-net:
