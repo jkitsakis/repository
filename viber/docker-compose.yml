@@ -1,0 +1,14 @@
+version: '2'
+services: 
+   viber:
+      build: ./
+      environment:
+          - DISPLAY
+      privileged: true
+      command: /opt/viber/Viber
+      network_mode: host
+      volumes:
+         - /dev/snd:/dev/snd
+         - /dev/video0:/dev/video0
+         - /tmp/.X11-unix:/tmp/.X11-unix:ro
+         - $HOME/.Xauthority:/root/.Xauthority:rw
