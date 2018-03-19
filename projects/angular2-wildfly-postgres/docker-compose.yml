@@ -1,0 +1,58 @@
+version: '2'
+services: 
+     initapp:
+        container_name: initapp
+        build:
+            context: initConfig        
+        environment:
+            APP_IP: ${APP_IP}
+            APP_PORT: ${APP_PORT}
+            SITE: ${SITE}
+            TIME_FORMAT: ${TIME_FORMAT}
+            DATE_FORMAT: ${DATE_FORMAT}
+            A_URL_IP: ${A_URL_IP}
+            A_URL_PORT: ${A_URL_PORT}
+            KEYCLOAK_LOC: ${KEYCLOAK_LOC}
+        volumes:
+            - "uiconfig:/tmp/app/uiconfig"
+            
+
+        
+#    myui:
+#      container_name: myProject
+#      build: 
+#         context : ./myProject       
+#      ports:
+#        - 4200:4200
+#        - 49152:49152
+#      volumes:
+#        -  .:/home/myProject
+#        - /home/myProject/node_modules
+#             
+
+#    wildfly:
+#        container_name: myWildfly
+#        build: 
+#         context : ./myWildfly
+#        labels:
+#          - "SERVICE_NAME=myWildfly"
+#        build: 
+#          context: ./myWildfly
+#        environment:      
+#          JAVA_OPTS: "-Xms512M -Xmx2048M -XX:MetaspaceSize=512M -XX:MaxMetaspaceSize=768m -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Ddrools.dialect.mvel.strict=false -Dmvel.debugger=true"
+#        ports:
+#          - "8080:8080"
+#          - "8787:8787"
+#          - "9990:9990"
+#
+#    postgres :
+#        container_name: myPostgres
+#        build: 
+#            context : ./myPostgres
+#        ports:
+#             - "5432:5432"
+#        volumes:
+#        -  .:/home/app/initdb.d
+
+volumes:
+   uiconfig:

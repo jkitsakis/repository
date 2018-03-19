@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>kitsakis.projects</groupId>
+	<artifactId>maven-docker</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>maven-docker</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.spotify/docker-client -->
+		<dependency>
+			<groupId>com.spotify</groupId>
+			<artifactId>docker-client</artifactId>
+			<version>7.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.fabric8</groupId>
+			<artifactId>docker-maven-plugin</artifactId>
+			<version>0.19.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<configuration>
+					<dockerHost>${env.DOCKER_HOST}</dockerHost>
+					<images>
+						<image>
+							<alias>jenikins</alias>
+							<name>jenkins</name>
+							<build>
+								<from>jenkins:latest</from>
+								<env>
+									<JAVA_OPTS>
+										-Dhudson.model.DirectoryBrowserSupport.CSP="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline';"
+									</JAVA_OPTS>
+
+								</env>
+								<runCmds>
+									<runCmd>COPY config/executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy</runCmd>
+									<runCmd>COPY plugins.txt /tmp/plugins.txt</runCmd>
+									<runCmd>RUN /usr/local/bin/plugins.sh /tmp/plugins.txt</runCmd>
+								</runCmds>
+								
+								<ports>									
+									<port>9080:8080</port>
+									<port>50000:50000</port>
+								</ports>
+
+							</build>
+							
+
+
+						</image>
+					</images>
+					<executions>
+						<execution>
+							<id>sources</id>
+							<goals>
+								<goal>source</goal>
+							</goals>
+						</execution>
+					</executions>
+
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+
+
+
+
+	</build>
+</project>
