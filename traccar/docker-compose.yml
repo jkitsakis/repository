@@ -1,0 +1,50 @@
+version: '2'
+services: 
+
+ mariadb:
+  image: mariadb:latest
+  hostname: mysqldb
+  environment:
+     - MYSQL_ROOT_PASSWORD=password
+     - MYSQL_DATABASE=traccardb
+     - MYSQL_USER=traccar
+     - MYSQL_PASSWORD=traccar
+  volumes:
+     - ./db-config/my.cnf:/etc/mysql/my.cnf #change port to 3316
+     - ./db-config/data:/var/lib/mysql:rw
+     - ./db-config/mysql.sql:/docker-entrypoint-initdb.d/mysql.sql:ro
+  
+ 
+  
+ phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    working_dir: /var/www/html
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      PMA_HOST: mariadb
+      PMA_PORT: 3316
+#     PMA_ABSOLUTE_URI: http://kitsakis.com/phpmyadmin
+    depends_on: 
+       - mariadb 
+    links: 
+       - mariadb 
+    ports:
+       - 8181:80
+
+ traccar:
+   build: ./traccar-config
+   working_dir: /opt/traccar   
+   environment:
+      - TRACCAR_VERSION=3.15
+   depends_on: 
+      - mariadb  
+   links: 
+      - mariadb 
+   ports:
+     - 5000-5150:5000-5150
+     - 5252:8082
+   volumes:
+     - ./db-config/data/traccardb:/opt/traccar/data/database
+     - ./traccar-config/mariadb-java-client-2.2.1.jar:/opt/traccar/lib/mariadb-java-client-2.2.1.jar:rw
+     - ./traccar-config/traccar.xml:/opt/traccar/conf/traccar.xml
+    
