@@ -1,7 +1,8 @@
 # Yannis Kitsaki's repository
 
+docker
 docker-image 
-image-processing 
+dockerfiles
 xsl 
 database 
 java-8 
@@ -12,9 +13,6 @@ skype
 trafik
 nginx 
 linux 
-ubuntu 
-docker 
-dockerfiles 
+ubuntu   
 wordpress 
 playlist transormations
-
