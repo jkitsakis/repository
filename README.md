@@ -1,2 +1,20 @@
 # Yannis Kitsaki's repository
-docker, proxy, java, skype, viber, nginx, trafaek, wildfly, glassfish, java,  playlist transfrmations (xml, xspf, m3u) vlc
+
+docker-image 
+image-processing 
+xsl 
+database 
+java-8 
+glassfish 
+wildfly 
+viber 
+skype 
+trafik
+nginx 
+linux 
+ubuntu 
+docker 
+dockerfiles 
+wordpress 
+playlist transormations
+
