@@ -1,0 +1,14 @@
+version: '2'
+services:
+    volume:
+        image: alpine:latest
+        stdin_open: true #corresponds to -i in docker run
+        tty: true   #corresponds to -t in docker run
+        command: /bin/sh
+        volumes:
+            - ./volume/wordpress:/var/www/html/wordpress:rw
+        networks:
+            - shared-net
+networks:
+   shared-net:
+ 
