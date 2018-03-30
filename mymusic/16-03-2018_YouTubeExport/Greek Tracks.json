@@ -1,0 +1,421 @@
+[ {
+  "contentDetails" : {
+    "videoId" : "cDffbqk7SWo",
+    "videoPublishedAt" : "2010-01-05T22:04:46.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/veDoL6vAbN58nm7ZJ9xniGB20ys\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy41NkI0NEY2RDEwNTU3Q0M2",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "Μουσική και Ενορχήστρωση: Σταύρος Ξαρχάκος\n\nΣτο μπουζούκι ο Γιώργος Ζαμπέτας\n\n\"Τα κόκκινα φανάρια\"  των Αλέκου Γαλανού και Βασίλη Γεωργιάδη \n(Παραγωγή: Δαμασκηνός - Μιχαηλίδης) με Τζένη Καρέζη, Γιώργο Φούντα, Δημήτρη Παπαμιχαήλ, Μάνο Κατράκη, Μαίρη Χρονοπούλου, Κατερίνα Χέλμη, Δέσπω Διαμαντίδου, Νότη Περγιάλη, Αλεξάνδρα Λαδικού, Φαίδων Γεωργίτσης, Ελένη Ανουσάκη κ.ά.\n\n\"Λόλα\" των Ηλία Λυμπερόπουλου και Ντίνου Δημόπουλου (Παραγωγή:Φίνος Φιλμς)\nμε Τζένη Καρέζη, Νίκο Κούρκουλο, Διονύση Παπαγιανόπουλο, Παντελή Ζερβό, Σπύρο Καλογήρου κ.ά.\n\nΔύο κλασικές ταινίες του παλιού Ελληνικού κινηματογράφου, με πρωταγωνίστρια την αξέχαστη Τζένη Καρέζη και τις μαγικές μελωδίες του Σταύρου Ξαρχάκου στα πρώτα του βήματα (1963-1964).\n\nΘ. Β. http://theovaf.blogspot.com",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 0,
+    "publishedAt" : "2012-12-09T13:02:02.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "cDffbqk7SWo"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/cDffbqk7SWo/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/cDffbqk7SWo/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/cDffbqk7SWo/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "Σταύρος Ξαρχάκος - Τα κόκκινα φανάρια & Λόλα"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "v-Uo8cQjTMc",
+    "videoPublishedAt" : "2009-01-27T10:57:38.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/Zqr33GP8IgsOBmb78rxbfoatGlE\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy4yODlGNEE0NkRGMEEzMEQy",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "Αφιερωμένο στους ξενιτεμένους- Φεγγάρι μάγια μου΄κανες  (Της ξενιτιάς) Γρηγόρης Μπιθικώτσης",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 1,
+    "publishedAt" : "2012-12-09T13:07:59.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "v-Uo8cQjTMc"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/v-Uo8cQjTMc/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/v-Uo8cQjTMc/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/v-Uo8cQjTMc/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "Γρηγόρης Μπιθικώτσης - Φεγγάρι μάγια μου΄κανες"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "NXKLOVqL8o4",
+    "videoPublishedAt" : "2008-07-19T23:34:37.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/8GlQ4CmowkHfbgMwM7w87AFHvBY\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy4wMTcyMDhGQUE4NTIzM0Y5",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "Ο τρελλός\r\n\r\nΣτίχοι: Λευτέρης Παπαδόπουλος\r\nΜουσική: Γιάννης Σπανός\r\n\r\nΜε κυνηγούν, με κυνηγούν κάθε βραδυά\r\nτης γειτονιά, της γειτονιάς σου τα παιδιά\r\nμε κοροϊδεύουν τα παιδιά\r\nσαν παίρνω την ανηφοριά\r\nνα σου χαρίσω μια ζεστή καρδιά\r\nκι όταν στην πόρτα σου μιλώ\r\nτα σκαλοπάτια σου φιλώ\r\nεσύ φωνάζεις \"διώξ'τε τον τρελό\"\r\n\r\nΘα την αντέξω του τρελού τη ρετσινιά\r\nμα πώς ν'αντέξω την δική σου απονιά\r\nπες μου δυο λόγια να σωθώ\r\nπροτού στ'αλήθεια τρελαθώ\r\nδος μου το χέρι για να κρατηθώ\r\nΚι όταν στην πόρτα σου μιλώ\r\nτα σκαλοπάτια σου φιλώ\r\nμη μου φωνάζεις \"διώξ'τε τον τρελό\"!",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 2,
+    "publishedAt" : "2012-12-09T13:12:30.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "NXKLOVqL8o4"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/NXKLOVqL8o4/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/NXKLOVqL8o4/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/NXKLOVqL8o4/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "Σταμάτης Κόκοτας ~ Ο τρελλός"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "Hyr3vV7Cl28",
+    "videoPublishedAt" : "2012-04-12T20:13:50.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/9w4SP1eF7iMEGUF2Cql1ecjI5Ps\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy4wOTA3OTZBNzVEMTUzOTMy",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 3,
+    "publishedAt" : "2012-12-09T13:15:59.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "Hyr3vV7Cl28"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/Hyr3vV7Cl28/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/Hyr3vV7Cl28/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/Hyr3vV7Cl28/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "ΜΕ ΤΙ ΚΑΡΔΙΑ   ΚΟΚΟΤΑΣ ΣΤΑΜΑΤΗΣ"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "lUo6A46vglY",
+    "videoPublishedAt" : "2009-08-30T14:38:49.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/8bryc5bEfCMe3hPmBYTnvzFIrjo\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy4xMkVGQjNCMUM1N0RFNEUx",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "ΜΗ ΜΟΥ ΧΤΥΠΑΣ ΤΑ ΜΕΣΑΝΥΧΤΑ ΤΗ ΠΟΡΤΑ\r\nΜΟΥΣΙΚΗ : ΔΗΜΟΣ ΜΟΥΤΣΗΣ\r\nΣΤΙΧΟΙ : ΝΙΚΟΣ ΓΚΑΤΣΟΣ\r\nΕΡΜΗΝΕΙΑ : ΣΤΑΜΑΤΗΣ ΚΟΚΟΤΑΣ",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 4,
+    "publishedAt" : "2012-12-09T13:18:44.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "lUo6A46vglY"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/lUo6A46vglY/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/lUo6A46vglY/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/lUo6A46vglY/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "ΜΗ ΜΟΥ ΧΤΥΠΑΣ ΤΑ ΜΕΣΑΝΥΧΤΑ ΤΗ ΠΟΡΤΑ ...-Σ.ΚΟΚΟΤΑΣ"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "J9b01xG9D6M",
+    "videoPublishedAt" : "2008-05-03T18:59:03.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/mnEiJvn4npbBySQLZdBqDd9sPIo\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy41MzJCQjBCNDIyRkJDN0VD",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "den exei dromo na diavo zambetas tzanetis",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 5,
+    "publishedAt" : "2012-12-09T20:08:32.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "J9b01xG9D6M"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/J9b01xG9D6M/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/J9b01xG9D6M/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/J9b01xG9D6M/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "Δεν έχει δρομο να διαβώ - Πάνος Τζανετής ( Ζαμπέτας )"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "sjWYKkrCe40",
+    "videoPublishedAt" : "2011-03-30T11:01:56.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/DgoBQafXIKGqZyBpqEXPdUDKkkk\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy5DQUNERDQ2NkIzRUQxNTY1",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "Μουσική       : Σταύρος Ξαρχάκος\nΣτίχοι            : Αλέκος Γαλανός\nΑ' Εκτέλεση  : Πόλυ Πάνου\n\n\"Του λιμανιού το καλντερίμι όσοι δε ζήσαν\nνα που δεν ξέρουν τι 'ναι πόνος και καημός,\nπώς κλαίει ο άνθρωπος που τα όνειρά του τώρα σβήσαν,\nπόσο πικρός του κόσμου ο κατατρεγμός.\n\nΠνιχτές ανάσες και βρισιές,\nβαμμένα χείλια παγωμένα στις γωνιές.\nΚι είναι θάνατος αργός\nτου πεζοδρόμιου ο νόμος ο σκληρός.\n\nΠληρωμένες αγκαλιές,\nιστορίες τραγικές\nγράφονται μέσ' στις κρύες φτωχογειτονιές.\nΤο τραγούδι σπαραγμός,\nη ζωή κατατρεγμός,\nτο καλντερίμι ένας ατέλειωτος καημός.\n\nΤου λιμανιού το καλντερίμι όσοι δε ζήσαν,\nνα που δεν ξέρουν τι 'ναι πόνος και καημός.\nΠώς κλαίει ο άνθρωπος που τα όνειρά του τώρα σβήσαν,\nπόσο πικρός του κόσμου ο κατατρεγμός.\n\nΣβήσαν τα φώτα στα στενά,\nτου λιμανιού τα καλντερίμια σκοτεινά\nκαι σταμάτησε η ζωή\nτο ψέμα το φτασιδωμένο της να ζει.\n\nΠίκρα, δάκρυ, στεναγμός \nξεχαστήκαν κι ο καημός \nέγινε όνειρο γαλάζιος ουρανός \nκαι τα πρόσωπα χλωμά,\n κουρασμένα τα κορμιά \nμέσα στον ύπνο ψάχνουν να 'βρουν λησμονιά.\"",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 6,
+    "publishedAt" : "2012-12-18T21:01:58.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "sjWYKkrCe40"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/sjWYKkrCe40/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/sjWYKkrCe40/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/sjWYKkrCe40/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "\"Κόκκινα φανάρια (Το καλντερίμι)\" - Πόλυ Πάνου (1963)"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "Aa3gZRRlOEU",
+    "videoPublishedAt" : "2010-01-15T01:15:05.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/Z9ZRaPem3xU_CR0zJK0ol8qq5Jk\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy45NDk1REZENzhEMzU5MDQz",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "ΣΤΑΥΡΟΣ ΞΑΧΑΡΚΟΣ-Λ.ΠΑΠΑΔΟΠΟΥΛΟΣ",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 7,
+    "publishedAt" : "2013-02-23T16:30:40.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "Aa3gZRRlOEU"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/Aa3gZRRlOEU/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/Aa3gZRRlOEU/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/Aa3gZRRlOEU/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "ΣΤΑΜΑΤΗΣ ΚΟΚΟΤΑΣ -ΕΞΩ ΦΥΣΑΕΙ ΚΑΙ ΒΡΕΧΕΙ.wmv"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "b7KDhaOW24c",
+    "videoPublishedAt" : "2010-01-19T12:18:37.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/5cD86YlR3kvQCCoL2X-gFwN9fSs\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy5GNjNDRDREMDQxOThCMDQ2",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "Μανωλης Μητσιας-Σαν αποκληρος γυριζω\r\nΜουσικοι και στιχοι Βασιλη Τσιτσανη",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 8,
+    "publishedAt" : "2013-10-18T22:21:25.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "b7KDhaOW24c"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/b7KDhaOW24c/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/b7KDhaOW24c/hqdefault.jpg",
+        "width" : 480
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/b7KDhaOW24c/mqdefault.jpg",
+        "width" : 320
+      }
+    },
+    "title" : "ΜΑΝΩΛΗΣ ΜΗΤΣΙΑΣ-Σαν αποκληρος γυριζω"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+}, {
+  "contentDetails" : {
+    "videoId" : "uq3hSjlzCTQ",
+    "videoPublishedAt" : "2011-03-14T16:43:33.000Z"
+  },
+  "etag" : "\"RmznBCICv9YtgWaaa_nWDIH1_GM/0rZXIwPRqT0-9I1pM55W12OG4G8\"",
+  "id" : "UExOMi0yVXFUcGxTY3JVdlc5VlFwUENuMVBoVFBOSXA4Qy40NzZCMERDMjVEN0RFRThB",
+  "kind" : "youtube#playlistItem",
+  "snippet" : {
+    "channelId" : "UC9Rgwn4DMeZXUONYiDC2IUw",
+    "channelTitle" : "Yannis Kitsakis",
+    "description" : "Κάποιες φορές θυμάμαι τόσα να σου πω\nκάποιες βραδιές που είχα μείνει από τσιγάρο\nτότε που ζούσα έναν έρωτα τρελό\nπου μ' έχει κάνει τον κατήφορο να πάρω\n\nΚάποιες φορές θα 'θελα τόσα να σου πω\nκάποιες βραδιές που σε ένα λάθος μου πονάω\nκαι που φοβάμαι την αλήθεια της ζωής\nπου με ματώνει όταν δίπλα της περνάω\n\nΕσύ κάποιες φορές κάποιες βραδιές μα τι τα θες\nείναι στιγμές που όλη η γη δε σε χωράει\nκάποιες φορές κάποιες βραδιές μα τι τα θες\nείναι στιγμές που βασανίζεσαι εσύ\n\nΚάποιες φορές κλείνομαι μέσα στον καημό\nκάποιες βραδιές τότε μονάχος που τα πίνω\nτον εαυτό μου ψάχνω μήπως και τον βρω\nχάνομαι μέσα του και λίγο λίγο σβήνω",
+    "playlistId" : "PLN2-2UqTplScrUvW9VQpPCn1PhTPNIp8C",
+    "position" : 9,
+    "publishedAt" : "2017-10-27T18:10:53.000Z",
+    "resourceId" : {
+      "kind" : "youtube#video",
+      "videoId" : "uq3hSjlzCTQ"
+    },
+    "thumbnails" : {
+      "default" : {
+        "height" : 90,
+        "url" : "https://i.ytimg.com/vi/uq3hSjlzCTQ/default.jpg",
+        "width" : 120
+      },
+      "high" : {
+        "height" : 360,
+        "url" : "https://i.ytimg.com/vi/uq3hSjlzCTQ/hqdefault.jpg",
+        "width" : 480
+      },
+      "maxres" : {
+        "height" : 720,
+        "url" : "https://i.ytimg.com/vi/uq3hSjlzCTQ/maxresdefault.jpg",
+        "width" : 1280
+      },
+      "medium" : {
+        "height" : 180,
+        "url" : "https://i.ytimg.com/vi/uq3hSjlzCTQ/mqdefault.jpg",
+        "width" : 320
+      },
+      "standard" : {
+        "height" : 480,
+        "url" : "https://i.ytimg.com/vi/uq3hSjlzCTQ/sddefault.jpg",
+        "width" : 640
+      }
+    },
+    "title" : "Κάποιες φορές ♫ Κορκολης-Μητροπανος"
+  },
+  "status" : {
+    "privacyStatus" : "public"
+  }
+} ]
