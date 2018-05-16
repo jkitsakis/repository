@@ -111,6 +111,9 @@ public class Search {
             // Call the API and print results.
             SearchListResponse searchResponse = search.execute();
             List<SearchResult> searchResultList = searchResponse.getItems();
+            
+            SearchResult sr = searchResultList.get(0);
+            sr.values();
             if (searchResultList != null) {
                 prettyPrint(searchResultList.iterator(), queryTerm);
             }
