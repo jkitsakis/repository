@@ -15,4 +15,6 @@ nginx
 linux 
 ubuntu   
 wordpress 
-playlist transormations
+playlist transformations
+scritps
+tools
