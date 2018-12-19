@@ -1,8 +1,7 @@
 # Yannis Kitsaki's repository
-
-docker
+docker 
 docker-image 
-dockerfiles
+dockerfiles 
 xsl 
 database 
 java-8 
@@ -15,6 +14,5 @@ nginx
 linux 
 ubuntu   
 wordpress 
+scripts and tools
 playlist transformations
-scritps
-tools
