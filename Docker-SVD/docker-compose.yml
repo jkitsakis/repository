@@ -1,0 +1,18 @@
+version: '3'
+services:
+  svd:
+    image: svd-image  # Use the custom image with singular-value-decomposition-pycon2018:master
+    container_name: svd-container
+    privileged: true
+    build:
+      context: .
+      dockerfile: svd.Dockerfile
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    ports:
+      - "8887:8888"
+      - "2222:22"
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      
+    
