@@ -11,10 +11,13 @@ RUN apt-get update && apt-get install -y tzdata sudo openssh-server nano
 
 
 # Install required packages
-RUN apt-get update && apt-get install -y sagemath jupyter-notebook pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra
+RUN apt-get update && apt-get install -y sagemath jupyter-notebook pandoc 
 
 # Install pdflatex and other necessary latex tools
-RUN apt-get update && apt-get install -y texlive-latex-base && apt-get clean
+RUN apt-get update && apt-get install -y texlive-latex-base texlive-xetex texlive-fonts-recommended texlive-fonts-extra && apt-get clean
+
+# Install abiword to convert pdf-> tex 
+RUN apt-get update && apt-get install -y abiword && apt-get clean
 
 # Set up a non-root user for running Jupyter Notebook and add user to sudo
 RUN echo "dockeruser:dockeruser" | chpasswd && adduser dockeruser sudo

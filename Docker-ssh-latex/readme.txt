@@ -1,3 +1,5 @@
+docker-compose up -d --build
+
 1. connect to docker
 
 docker exec -it sage-container /bin/bash
@@ -8,4 +10,7 @@ sudo service ssh start
 
 3. Run the pdflatex 
 cd ../texfiles
-pdflatex your_document.tex
+pdflatex filename.tex
+
+4. Run abiword
+abiword --to=tex filename.pdf
