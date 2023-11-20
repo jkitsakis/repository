@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "text": "Welcome to the new announcement section. It will keep you up-to-date with important news. You can dismiss this announcement by clicking on the button at the end of this line.",
+      "link": "",
+      "hash": "",
+      "dismissible": true,
+      "timestamp": 1676235999,
+      "enabled": true
+    }
+  ]
+}
