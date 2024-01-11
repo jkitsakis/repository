@@ -44,6 +44,8 @@ automatically shrink the image when files are removed
 wsl --manage docker-desktop-data --set-sparse true
 -----------------------------------------------
 
+
+
 1. connect to docker
 
 docker exec -it sage-container /bin/bash
@@ -54,7 +56,7 @@ sudo service ssh start
 
 3. Run the pdflatex 
 cd ../texfiles
-pdflatex filename.tex
+
 
 4. Run abiword
 abiword --to=tex filename.pdf
@@ -74,4 +76,21 @@ To create latex :
    &= -> =
    \begin{align*} -> DELETE
    \end{align*} -> DELETE
-   
+   ---------
+   $
+					
+  \begin{bmatrix}
+  
+  -> $ \begin{bmatrix}
+  
+  -------
+   \end{bmatrix}
+					
+  $
+  
+  -> \end{bmatrix}  $
+  ----------------
+  \right\textbar{} -> DELETE
+  \sum\emph{\{i=1\}^\{3\}} - >  \sum_{i=1}^{3}
+
+4. In case of error type "end"
