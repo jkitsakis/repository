@@ -1,0 +1,58 @@
+1. download pdftk for ubuntu
+http://manpages.ubuntu.com/manpages/bionic/man1/pdftk.1.html
+https://askubuntu.com/questions/1028522/how-can-i-install-pdftk-in-ubuntu-18-04-bionic
+
+
+wget http://archive.ubuntu.com/ubuntu/pool/universe/p/pdftk/pdftk_2.02-4build1_amd64.deb
+wget http://mirrors.kernel.org/ubuntu/pool/universe/p/pdftk/pdftk-dbg_2.02-4build1_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-6/libgcj17_6.4.0-8ubuntu1_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/libgcj-common_6.4-3ubuntu1_all.deb
+sudo dpkg -i pdftk_2.02-4build1_amd64.deb pdftk-dbg_2.02-4build1_amd64.deb libgcj17_6.4.0-8ubuntu1_amd64.deb libgcj-common_6.4-3ubuntu1_all.deb
+--------------------------------------
+2. Give Print only Permissions 
+pdftk <filename>.pdf output <filename>-readOnly.pdf owner_pw <pdfpass> allow printing
+--------------------------------------
+3. aes encrypt
+wget https://www.aescrypt.com/download/v3/linux/AESCrypt-GUI-3.11-Linux-x86_64-Install.gz
+gunzip AESCrypt-GUI-3.11-Linux-x86_64-Install.gz
+chmod +x AESCrypt-GUI-3.11-Linux-x86_64-Install
+./AESCrypt-GUI-3.11-Linux-x86_64-Install
+---------------------------------------
+4. Encrypt pdf with password pandoras brth in format ddMMyy : 180610
+5. Upload to GDrive
+6. Share file with pkaradimitriou@gmail.com
+7. Send her the link
+
+
+Afti
+readme.txt :
+1. install to aescrypt 
+https://www.aescrypt.com/download/v3/windows/AESCrypt_v310_x64.zip
+
+2 decrypt (right click on file) with password pandoras brth in format ddMMyy e.g 160573
+test it : http://www.sdfonlinetester.info/#
+
+email : 
+Σου στέλνω με Gdrive την αιτηση που ζητησες. 
+
+Ομως ...
+Γιατί με βάζεις στη μέση ζητωντας το χαρτί με την υπογραφή μου ΕΣΠΕΥΣΜΕΝΑ ενω θα μπορούσες να το έχεις φροντίσει ? 
+Γιατι η Πανδωρα, μου λέει οτι ΕΓΏ πρέπει να της βγάλω διαβατήριο γιατι αλλιώς δεν θα ερθει Ελλάδα ?  
+Δηλαδή αν δεν έρθει Ελλάδα θα φταίω εγω? Προφανώς ετσι της είπες για να το λέει. Δεν ειναι έτσι όμως.
+
+Η επιμέλεια σου έχει δωθεί και θα μπορούσες να το έχεις διευθετίσει το θέμα και λιγότερο εσπευσμενα. 
+
+Δεν γίνεται εγω να εξυπηρετώ αλλα εσυ να φέρεσαι ακόμα μια φορά κουτοπονηρα, βάζοντας λόγια στο παιδί, 
+οτι αν δεν φροντίσω για το διαβατήριο, δεν θα ερθει Ελλάδα ? Κουτοπονηριές και εκβιασμοι δηλαδή, ως συνηθως.
+
+Μεχρι λοιπον να μου χτυπησουν πυράκια με την απαραδεκτα κατινιστικη συμπεριφορά σου, για μια ακομη φορά σε εξυπηρετώ , 
+για χάρη του παιδιού και όχι οτι σου εχω κάποια υποχρέωση όπως σου αρέσει να πιστευεις. 
+
+
+
+Το link θα ειναι active για 2 ώρες για να κατεβασεις το pdf.aes file.
+Θα πρέπει να μπεις στο pkaradimitriou@gmail.com και θα σου εχει ερθει σχετική ειδοποίση. 
+Στο file readme.txt θα δεις τι πρεπει να κανεις. 
+Το pdf εχει permissions μονο για view & print. Σε κάποιο εχρωμο printer. 
+Φρόντισε να βγει το διαβατήριο στη ώρα του λοιπόν.
+

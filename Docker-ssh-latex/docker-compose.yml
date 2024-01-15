@@ -1,0 +1,29 @@
+version: '3'
+services:
+  sagemath:
+    image: sage-image  # Use the custom image with SageMath and Pandoc
+    container_name: sage-container
+    privileged: true
+    build:
+     context: .
+     dockerfile: sage.Dockerfile
+    ports:
+      - "8888:8888"
+      - "2222:22"
+    volumes:
+      - ./sagemath_notebooks:/home/dockeruser/notebooks
+      - ./latex_files:/home/dockeruser/texfiles  # Map a volume for LaTeX files
+    command: 
+      - /bin/sh
+      - -c
+      - |
+        sage -n jupyter --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+       # /usr/sbin/service ssh start
+       # /usr/sbin/sshd -D
+        
+     
+      # ["sage", "-n", "jupyter", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+   
+      
+      
+    

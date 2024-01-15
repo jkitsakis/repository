@@ -1,0 +1,1085 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{array}     % table support for pandoc >= 2.11.3
+    \usepackage{calc}      % table minipage width calculation for pandoc >= 2.11.1
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Linear Algebra}
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`$ }
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`$ }{\char`$ }}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{k}{display} latex
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{what-is-gaussian-elimination}{%
+\subsubsection{What is Gaussian Elimination
+?}\label{what-is-gaussian-elimination}}
+
+    \textbf{Gaussian Elimination:}
+
+Gaussian Elimination is a method used to solve systems of linear
+equations by transforming the augmented matrix of the system to its
+row-echelon form (or reduced row-echelon form). The process involves a
+sequence of elementary row operations to simplify the matrix.
+
+Here's an example in Markdown with LaTeX math mode:
+
+Consider the system of linear equations:
+
+\begin{align*}
+2x + 3y - z &= 1 \\
+4x - y + z &= 5 \\
+-2x + 2y + 3z &= -4
+\end{align*}
+
+We can represent this system in augmented matrix form as:
+
+\(\begin{bmatrix} 2 & 3 & -1 & | & 1 \\ 4 & -1 & 1 & | & 5 \\ -2 & 2 & 3 & | & -4 \end{bmatrix}\)
+
+Now, let's perform Gaussian Elimination to transform this matrix into
+row-echelon form:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Row 2 - 2 * Row 1:}
+\end{enumerate}
+
+\(\begin{bmatrix} 2 & 3 & -1 & | & 1 \\ 0 & -7 & 3 & | & 3 \\ -2 & 2 & 3 & | & -4 \end{bmatrix}\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Row 3 + Row 1:}
+\end{enumerate}
+
+\(\begin{bmatrix} 2 & 3 & -1 & | & 1 \\ 0 & -7 & 3 & | & 3 \\ 0 & 5 & 2 & | & -3 \end{bmatrix}\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Row 3 + (5/7) * Row 2:}
+\end{enumerate}
+
+\(\begin{bmatrix} 2 & 3 & -1 & | & 1 \\ 0 & -7 & 3 & | & 3 \\ 0 & 0 & \frac{11}{7} & | & -\frac{24}{7} \end{bmatrix}\)
+
+Now, the system can be easily solved back-substituting:
+
+
+$\frac{11}{7}z$ = -$\frac{24}{7}$ $\implies z = -2$ \\
+-7y + 3z = 3 $\implies y = 1$ \\
+2x + 3y - z = 1 $\implies x = 2$
+
+
+Therefore, the solution to the system is (x = 2), (y = 1), and (z = -2).
+
+    
+
+    \hypertarget{what-is-matrix-inversion}{%
+\subsubsection{What is Matrix Inversion
+?}\label{what-is-matrix-inversion}}
+
+    \textbf{Matrix Inversion:}
+
+Matrix inversion is the process of finding the inverse of a square
+matrix. The inverse of a matrix \(A\), denoted as \(A^{-1}\), is a
+matrix such that when \(A\) is multiplied by its inverse, the result is
+the identity matrix \(I\).
+
+Here's an example in Markdown with LaTeX math mode:
+
+Consider a 2x2 matrix:
+
+A = \(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\)
+
+The inverse of (A), if it exists, is given by:
+
+$A^-1 = \frac{1}{ad - bc}$
+$\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$
+
+Let's say we have the following matrix:
+
+B = $\begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix}$
+
+We want to find the inverse $B^-1$. First, we check if the
+determinant (ad - bc) is non-zero.
+
+$\text{det}(B) = (2 \cdot 4) - (3 \cdot 1) = 5 \neq 0$
+
+So, the inverse exists.
+
+Now, we can find \(B^{-1}\):
+
+\(B^{-1}\) = \(\frac{1}{5}\)
+\(\begin{bmatrix} 4 & -3 \\ -1 & 2 \end{bmatrix}\)
+
+This means that:
+
+$ B \cdot B^-1 = \begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix}
+\cdot \frac{1}{5} \begin{bmatrix} 4 & -3 \\ -1 & 2 \end{bmatrix} =
+\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = I $
+
+So, the product of the matrix and its inverse is the identity matrix,
+confirming that \(B^{-1}\)) is indeed the inverse of (B).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{explain-adjugate-matrix-of-2x2-and-3x3-matrices}{%
+\subsubsection{Explain Adjugate matrix of 2x2 and 3x3
+matrices}\label{explain-adjugate-matrix-of-2x2-and-3x3-matrices}}
+
+    \textbf{Adjugate Matrix of 2x2 and 3x3 Matrices:}
+
+The adjugate matrix, also known as the adjoint matrix, of a square
+matrix $  A $ is denoted as $  \text{adj}(A) $ or $  A^*$ . It is used in
+the formula for finding the inverse of a matrix.
+
+For a 2x2 matrix:
+
+A = $\begin{bmatrix} a & b \\ c & d \end{bmatrix}$
+
+The adjugate matrix is:
+
+$  \text{adj}(A) =\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$ 
+
+For a 3x3 matrix:
+
+B =$\begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix}$
+
+The adjugate matrix is formed by the cofactors of the elements of the
+original matrix, transposed:
+
+$ \text{adj}(B) =\begin{bmatrix} C_{11} & C_{21} & C_{31} \\ C_{12} & C_{22} & C_{32} \\ C_{13} & C_{23} & C_{33} \end{bmatrix}^T $
+
+Where $  C\_\{ij\} $  is the cofactor of the element at the $  i-th $ 
+row and $  j-th$  column , given by:
+
+$ C_ij = (-1)^i+j \cdot \text{det}(M_ij) $
+
+Here, $  M\_\{ij\} $  is the matrix obtained by removing the $  i-th $ 
+row and $  j-th $  column from $  B $ .
+
+Now, let's express these concepts in Markdown with LaTeX math mode:
+
+\textbf{For a 2x2 matrix:}
+
+Let $  A =\begin{bmatrix} a & b \\ c & d \end{bmatrix}$ , then the adjugate matrix is:
+
+$  \text{adj}(A) =\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$
+
+$ \textbf{For a 3x3 matrix:} $
+
+Let B =
+$\begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix}$,
+then the adjugate matrix is:
+
+$ \text{adj}(B) = \begin{bmatrix} C_{11} & C_{21} & C_{31} \\ C_{12} & C_{22} & C_{32} \\ C_{13} & C_{23} & C_{33} \end{bmatrix}^T $
+
+where $  C_ij = (-1)^i+j \cdot \text{det}(M_ij)$ , and
+$  M_ij$  is the matrix obtained by removing the $  i-th $ row and$  j-th $  column from $  B $ .
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{what-is-row-echelon-form}{%
+\subsubsection{What is row echelon form
+?}\label{what-is-row-echelon-form}}
+
+    \textbf{Row Echelon Form:}
+
+Row Echelon Form (REF) is a special form that a matrix can be
+transformed into using a sequence of elementary row operations. A matrix
+is in row echelon form if it satisfies the following conditions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  All zero rows, if any, are at the bottom.
+\item
+  The leading entry (the leftmost nonzero entry) of each nonzero row
+  occurs to the right of the leading entry of the previous row.
+\item
+  The leading entry in each nonzero row is 1.
+\item
+  The leading 1 in each nonzero row is the only nonzero entry in its
+  column.
+\end{enumerate}
+
+Here's an example in Markdown with LaTeX math mode:
+
+Consider the matrix:
+
+A =
+\(\begin{bmatrix} 2 & 3 & -1 & 5 \\ 0 & 1 & 2 & 4 \\ 0 & 0 & 1 & 2 \end{bmatrix}\)
+
+Now, let's perform elementary row operations to bring it to row echelon
+form:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Row 1 divided by 2:}
+\end{enumerate}
+
+\(\begin{bmatrix} 1 & \frac{3}{2} & -\frac{1}{2} & \frac{5}{2} \\ 0 & 1 & 2 & 4 \\ 0 & 0 & 1 & 2 \end{bmatrix}\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Row 1 - (3/2) * Row 2:}
+\end{enumerate}
+
+\(\begin{bmatrix} 1 & 0 & -4 & -3 \\ 0 & 1 & 2 & 4 \\ 0 & 0 & 1 & 2 \end{bmatrix}\)
+
+This is the row echelon form of the original matrix (A). It satisfies
+the conditions mentioned earlier. The leading entries are 1, and below
+and above each leading 1, all entries are zeros.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{augmented-matrix.}{%
+\subsubsection{Augmented Matrix.}\label{augmented-matrix.}}
+
+    \textbf{Augmented Matrix:}
+
+An augmented matrix is a way to represent a system of linear equations
+in matrix form. It combines the coefficient matrix and the column vector
+of constants into a single matrix. For a system of (m) equations with
+(n) variables, the augmented matrix is of the form ({[}A \textbar{}
+B{]}), where (A) is the coefficient matrix and (B) is the column vector
+of constants.
+
+Here's an example in Markdown with LaTeX math mode:
+
+Consider the following system of linear equations:
+
+2x + 3y - z \&= 5 \textbackslash{} 4x - y + 2z \&= 8 \textbackslash{}
+-2x + 2y + 3z \&= 1
+
+The augmented matrix for this system is:
+
+$  {[}A \textbar{} B{]} = \left[ \begin{array}{ccc|c}
+2 & 3 & -1 & 5 \\
+4 & -1 & 2 & 8 \\
+-2 & 2 & 3 & 1
+\end{array} \right]$ 
+
+This augmented matrix contains the coefficients of the variables and the
+constants from the system of equations. The vertical bar separates the
+coefficient matrix ((A)) on the left from the column vector of constants
+((B)) on the right.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{solve-a-linear-system-with-augmented-matrix}{%
+\subsubsection{Solve a Linear system with Augmented
+Matrix}\label{solve-a-linear-system-with-augmented-matrix}}
+
+    Certainly! Let's solve a linear system using the augmented matrix and
+Gaussian elimination. Consider the following system:
+
+
+2x + 3y - z = 5 \\
+4x - y + 2z = 8 \\
+-2x + 2y + 3z = 1
+
+
+We can represent this system as an augmented matrix:
+
+$ [A | B] = \left[ \begin{array}{ccc|c} 2 & 3 & -1 & 5 \\ 4 & -1 & 2 & 8 \\ -2 & 2 & 3 & 1 \end{array} \right]$ 
+
+Now, let's perform Gaussian elimination to get the matrix into
+row-echelon form:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Row 2 - 2 * Row 1:}
+\end{enumerate}
+
+$  \left[ \begin{array}{ccc|c}
+2 & 3 & -1 & 5 \\
+0 & -7 & 3 & -2 \\
+-2 & 2 & 3 & 1
+\end{array} \right]$ 
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Row 3 + Row 1:}
+\end{enumerate}
+
+$  \left[ \begin{array}{ccc|c}
+2 & 3 & -1 & 5 \\
+0 & -7 & 3 & -2 \\
+0 & 5 & 2 & 6
+\end{array} \right]$ 
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Row 3 + (5/7) * Row 2:}
+\end{enumerate}
+
+$  \left[ \begin{array}{ccc|c}
+2 & 3 & -1 & 5 \\
+0 & -7 & 3 & -2 \\
+0 & 0 & \frac{11}{7} & \frac{28}{7}
+\end{array} \right]$ 
+
+Now, we can solve back-substituting:
+
+z = 2
+
+-7y + 3z = -2 $ \implies$  y = 1
+
+2x + 3y - z = 5 $ \implies$  x = 2
+
+So, the solution to the system is (x = 2), (y = 1), and (z = 2).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{linear-independence}{%
+\subsubsection{Linear Independence}\label{linear-independence}}
+
+    \textbf{Linear Independence in Vectors:}
+
+In linear algebra, a set of vectors is said to be linearly independent
+if no vector in the set can be represented as a linear combination of
+the others. In other words, no vector in the set is redundant; each
+vector contributes uniquely to the span of the set.
+
+For a set of vectors $  \mathbf{v}\_1, \mathbf{v}\_2, \ldots,\mathbf{v}\_n$  , 
+these vectors are linearly independent if the equation
+
+$ c_1 \mathbf{v}_1 + c_2 \mathbf{v}_2 + \ldots + c_n \mathbf{v}_n= \mathbf{0}$ 
+
+has only the trivial solution $  c\_1 = c\_2 = \ldots = c\_n = 0$  .
+
+\textbf{Example in $  \mathbb{R}^3$  :} Suppose we have the vectors:
+
+$  \mathbf{v}_1 =\begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}, \quad \mathbf{v}\_2 =\begin{bmatrix} 0 \\ -1 \\ 2 \end{bmatrix}, \quad \mathbf{v}_3 =\begin{bmatrix} 3 \\ 0 \\ 1 \end{bmatrix}$ 
+
+We want to determine if these vectors are linearly independent.
+
+To check for linear independence, we can set up the following equation:
+
+$  c\_1 \mathbf{v}\_1 + c\_2 \mathbf{v}\_2 + c\_3 \mathbf{v}\_3 =
+\mathbf{0} $ 
+
+This gives the system of equations:
+
+$
+c_1 + 0 + 3c_3 = 0 \\
+2c_1 - c_2 + 0 = 0 \\
+-c_1 + 2c_2 + c_3 = 0
+$
+
+We can represent this system in augmented matrix form and use Gaussian
+elimination to solve for the coefficients $  c\_1, c\_2, c\_3$  :
+
+$  {[}A \textbar{} B{]} = \left[ \begin{array}{ccc|c}
+1 & 0 & 3 & 0 \\
+2 & -1 & 0 & 0 \\
+-1 & 2 & 1 & 0
+\end{array} \right]$ 
+
+Now, let's perform Gaussian elimination:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Row 2 - 2 * Row 1:} $  \left[ \begin{array}{ccc|c}
+  1 & 0 & 3 & 0 \\
+  0 & -1 & -6 & 0 \\
+  -1 & 2 & 1 & 0
+  \end{array} \right]$ 
+\item
+  \textbf{Row 3 + Row 1:} $  \left[ \begin{array}{ccc|c}
+  1 & 0 & 3 & 0 \\
+  0 & -1 & -6 & 0 \\
+  0 & 2 & 4 & 0
+  \end{array} \right]$ 
+\item
+  \textbf{Row 3 + 2 * Row 2:} $  \left[ \begin{array}{ccc|c}
+  1 & 0 & 3 & 0 \\
+  0 & -1 & -6 & 0 \\
+  0 & 0 & -8 & 0
+  \end{array} \right]$ 
+\end{enumerate}
+
+Now, the system is in row-echelon form. The third equation $  0x + 0y -
+8z = 0$  implies $  z = 0$  . Substituting this back, the second
+equation becomes $  -y + 6z = 0$  , which implies $  y = 0$  . Finally,
+the first equation $  x + 3z = 0$  implies $  x = 0$  .
+
+Since the only solution is the trivial solution $  c\_1 = c\_2 = c\_3 =
+0$  , the vectors are linearly independent.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    Basis and Rank in Vectors. Example in $  R^3 $ ,
+
+    \textbf{Basis and Rank in $  \mathbb{R}^3)$:}
+
+A basis for a vector space is a set of vectors that spans the space and
+is linearly independent. The rank of a set of vectors is the maximum
+number of linearly independent vectors in the set.
+
+Let's consider the vectors:
+
+$  \mathbf{v}_1 =\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \quad \mathbf{v}_2 =\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}, \quad \mathbf{v}_3 =\begin{bmatrix} 2 \\ 2 \\ 3 \end{bmatrix}$ 
+
+We want to determine if these vectors form a basis for $ \mathbb{R}^3$  and find their rank.
+
+\textbf{Solution:}
+
+To check if these vectors form a basis, we need to verify two
+conditions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Spanning the space:} We need to check if any vector in $ 
+  \mathbb{R}^3$  can be expressed as a linear combination of $ 
+  \mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3$  .
+\item
+  \textbf{Linear Independence:} We need to check if the vectors are
+  linearly independent.
+\end{enumerate}
+
+First, let's set up the augmented matrix and perform Gaussian
+elimination:
+
+$  A \textbar{} B =\left[ \begin{array}{ccc|c} 1 & -1 & 2 & 0 \\ 2 & 0 & 2 & 0 \\ 1 & 1 & 3 & 0 \end{array} \right] $ 
+
+Performing row operations:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Row 2 - 2 * Row 1:} $ 
+  \left[ \begin{array}{ccc|c} 1 & -1 & 2 & 0 \\ 0 & 2 & -2 & 0 \\ 1 & 1 & 3 & 0 \end{array} \right] $ 
+\item
+  \textbf{Row 3 - Row 1:} $ 
+  \left[ \begin{array}{ccc|c} 1 & -1 & 2 & 0 \\ 0 & 2 & -2 & 0 \\ 0 & 2 & 1 & 0 \end{array} \right] $ 
+\item
+  \textbf{Row 3 - Row 2:} $ 
+  \left[ \begin{array}{ccc|c} 1 & -1 & 2 & 0 \\ 0 & 2 & -2 & 0 \\ 0 & 0 & 3 & 0 \end{array} \right] $ 
+\end{enumerate}
+
+Now, the system is in row-echelon form. We can see that there are no
+free variables, and the system has a unique solution, indicating that
+the vectors are linearly independent.
+
+Next, let's check if they span $  \mathbb{R}^3$  . The matrix is of
+full rank ($  3$  ), so the vectors span $  \mathbb{R}^3$  .
+
+Therefore, the vectors $  \mathbf{v}\_1, \mathbf{v}\_2, \mathbf{v}\_3$ 
+form a basis for $  \mathbb{R}^3$  , and their rank is $  3$  .
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{what-is-reduced-row-echelon-form}{%
+\subsubsection{What is Reduced Row Echelon
+Form}\label{what-is-reduced-row-echelon-form}}
+
+    \textbf{Reduced Row Echelon Form (RREF):}
+
+Reduced Row Echelon Form (RREF) is a further refinement of the row
+echelon form. A matrix is in reduced row echelon form if it satisfies
+the following additional conditions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  It is in row echelon form.
+\item
+  The leading entry in each nonzero row is 1.
+\item
+  The leading 1 in each nonzero row is the only nonzero entry in its
+  column.
+\end{enumerate}
+
+The reduced row echelon form is unique for a given matrix. It is often
+denoted as ( \text{RREF}(A) ) or ( \text{rref}(A) ).
+
+Here's an example in Markdown with LaTeX math mode:
+
+\textbf{Example:}
+
+Consider the matrix:
+
+$  A =\begin{bmatrix} 2 & 1 & -1 & 4 \\ 4 & 2 & 1 & 7 \\ -2 & 1 & 2 & -1 \end{bmatrix}$ 
+
+Let's find the reduced row echelon form using Gaussian elimination:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Row 2 - 2 * Row 1:} $ \begin{bmatrix} 2 & 1 & -1 & 4 \\ 0 & 0 & 3 & -1 \\ -2 & 1 & 2 & -1 \end{bmatrix} $ 
+\item
+  \textbf{Row 3 + Row 1:} $ \begin{bmatrix} 2 & 1 & -1 & 4 \\ 0 & 0 & 3 & -1 \\ 0 & 2 & 1 & 3 \end{bmatrix} $ 
+\item
+  \textbf{Row 3 - 2 * Row 2:} $ \begin{bmatrix} 2 & 1 & -1 & 4 \\ 0 & 0 & 3 & -1 \\ 0 & 2 & 1 & 3 \end{bmatrix} $ 
+\item
+  \textbf{Row 3/2:} $ \begin{bmatrix} 2 & 1 & -1 & 4 \\ 0 & 0 & 3 & -1 \\ 0 & 1 & 0.5 & 1.5 \end{bmatrix}  $ 
+\item
+  \textbf{Row 1 - Row 2:} $ \begin{bmatrix} 2 & 1 & -1 & 4 \\ 0 & 0 & 3 & -1 \\ 0 & 1 & 0.5 & 1.5 \end{bmatrix}  $ 
+\item
+  \textbf{Row 1/2:} $ \begin{bmatrix} 1 & 0.5 & -0.5 & 2 \\ 0 & 0 & 3 & -1 \\ 0 & 1 & 0.5 & 1.5 \end{bmatrix} $ 
+\item
+  \textbf{Row 2/3:} $ \begin{bmatrix} 1 & 0.5 & -0.5 & 2 \\ 0 & 0 & 1 & -1/3 \\ 0 & 1 & 0.5 & 1.5 \end{bmatrix} $ 
+\item
+  \textbf{Row 1 - 0.5 * Row 2:} $ \begin{bmatrix} 1 & 0.5 & 0 & 2.5 \\ 0 & 0 & 1 & -1/3 \\ 0 & 1 & 0.5 & 1.5 \end{bmatrix} $ 
+\item
+  \textbf{Row 2 + 0.5 * Row 3:} $ \begin{bmatrix} 1 & 0.5 & 0 & 2.5 \\ 0 & 1 & 0.25 & 0.75 \\ 0 & 1 & 0.5 & 1.5 \end{bmatrix} $ 
+\item
+  \textbf{Row 3 - Row 2:} $ \begin{bmatrix} 1 & 0.5 & 0 & 2.5 \\ 0 & 1 & 0.25 & 0.75 \\ 0 & 0 & 0.25 & 0.75 \end{bmatrix}  $ 
+\item
+  \textbf{Row 3/0.25:} $ \begin{bmatrix} 1 & 0.5 & 0 & 2.5 \\ 0 & 1 & 0.25 & 0.75 \\ 0 & 0 & 1 & 3 \end{bmatrix} $ 
+\item
+  \textbf{Row 1 - 0.5 * Row 2:} $ \begin{bmatrix} 1 & 0 & -0.125 & 2 \end{bmatrix} $ 
+\end{enumerate}
+
+Now, the matrix is in reduced row echelon form. The system of equations
+corresponding to this matrix is:
+
+$  x - 0.125z = 2 $ 
+
+$  y + 0.25z = 0.75 $ 
+
+$  z = 3 $ 
+
+This system is consistent and has a unique solution. Therefore, the
+reduced row echelon form provides a simplified representation of the
+original system of equations.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{image-and-kernel-of-a-transfoemration}{%
+\subsubsection{Image and Kernel of a
+Transfoemration}\label{image-and-kernel-of-a-transfoemration}}
+
+    \textbf{Image and Kernel of a Transformation:}
+
+In linear algebra, the image (or range) and kernel (or null space) are
+two important subspaces associated with a linear transformation.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Image (Range):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The image of a linear transformation $  T: V \rightarrow W$  is the
+    set of all possible outputs or vectors in the codomain $  W$  that
+    can be obtained by applying the transformation to vectors in the
+    domain $  V$  .
+  \item
+    Mathematically, it is denoted as $  \text{Im}(T) $  or $ 
+    \text{Range}(T) $  , and it is defined as: $  \text{Im}(T) = \{
+    T(\mathbf{v}) \mid \mathbf{v} \in V \} $ 
+  \end{itemize}
+\item
+  \textbf{Kernel (Null Space):}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The kernel of a linear transformation $  T: V \rightarrow W$  is the
+    set of all vectors in the domain $  V$  that map to the zero vector
+    in the codomain $  W$  .
+  \item
+    Mathematically, it is denoted as $  \text{ker}(T) $  or $ 
+    \text{Null}(T) $  , and it is defined as: $  \text{ker}(T) = \{
+    \mathbf{v} \in V \mid T(\mathbf{v}) = \mathbf{0} \} $ 
+  \end{itemize}
+\end{enumerate}
+
+\textbf{Example:}
+
+Let's consider a linear transformation $  T: \mathbb{R}^3
+\rightarrow \mathbb{R}^2$  defined by the matrix:
+
+$  A =\begin{bmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{bmatrix}$ 
+
+The transformation is given by $  T(\mathbf{v}) = A\mathbf{v}$  .
+
+\textbf{Image:} To find the image, we need to determine all possible
+outputs by applying $  T$  to vectors in $  \mathbb{R}^3$  . The
+image is the span of the column vectors of $  A$  :
+
+$  \text{Im}(T) = \text{span}\left(
+\begin{bmatrix} 1 \\ 0 \end{bmatrix}
+,
+\begin{bmatrix} 2 \\ 1 \end{bmatrix}
+\right) $ 
+
+\textbf{Kernel:} To find the kernel, we need to find vectors in $ 
+\mathbb{R}^3$  that map to the zero vector in $  \mathbb{R}^2$  .
+This involves solving the homogeneous system of equations $  A\mathbf{v}
+= \mathbf{0}$  :
+
+$  A\mathbf{v} =\begin{bmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix}=\begin{bmatrix} 0 \\ 0 \end{bmatrix}$ 
+
+Solving this system will give us the vectors in the kernel.
+
+Let's solve it:
+
+$ 
+\begin{bmatrix} 1 & 2 & -1 \\ 0 & 1 & 3 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix}=\begin{bmatrix} 0 \\ 0 \end{bmatrix}$ 
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  $  x + 2y - z = 0$ 
+\item
+  $  y + 3z = 0$ 
+\end{enumerate}
+
+The solutions are $  x = -2t$  , $  y = -3t$  , $  z = t$  , where $ 
+t$  is any real number. Therefore, the kernel is:
+
+$  \text{ker}(T) = \text{span}\left(\begin{bmatrix} -2 \\ -3 \\ 1 \end{bmatrix}\right) $ 
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}

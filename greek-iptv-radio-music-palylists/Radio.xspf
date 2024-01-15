@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<title>Radio Playlist</title>
+	<trackList>
+		<track>
+			<location>https://s3.yesstreaming.net:17062/stream</location>
+			<title>Off Radio</title>
+			<creator>Off Radio</creator>
+			<album>Off Radio</album>
+			<annotation>Off Radio</annotation>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>0</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+            <image>http://cdn.e-radio.gr/logos/gr/big/offradio.png</image>
+		</track>				
+		<track>
+            <location>https://metromedia.live24.gr/republicthess</location>
+			<title>Republic</title>
+			<creator>Republic</creator>
+			<album>Republic</album>			
+			<annotation>Republic</annotation>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>1</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+            <image>https://cdn.e-radio.gr/logos/gr/big/republicradio.png</image>
+		</track>
+		<track>
+			<location>https://stream.radiojar.com/srzwv225e3quv</location>
+			<title>En Lefko 87.7</title>
+			<creator>En Lefko</creator>
+			<album>En Lefko</album>		
+			<annotation>En Lefko</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>2</vlc:id> 
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://mmo.aiircdn.com/342/5e62318b7f017.png</image>
+		</track>
+		<track>
+			<location>https://n04.radiojar.com/pepper.m4a</location>
+			<title>Pepper 96.6</title>
+			<creator>Pepper</creator>
+			<album>Pepper</album>		
+			<annotation>Pepper</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>3</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option> 
+			</extension>
+            <image>https://pbs.twimg.com/profile_images/451363142262480896/dp8YMVek_400x400.png</image>
+		</track>
+		<track>
+			<location>http://galaxy.live24.gr/galaxy9292</location>
+			<title>Galaxy 92.0</title>
+			<creator>Galaxy</creator>
+			<album>Galaxy</album>		
+			<annotation>Galaxy</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>4</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://cdn-radiotime-logos.tunein.com/s15800d.png</image>
+		</track>		
+		<track>
+			<location>http://best.live24.gr/best1222?MSWMExt=.asf</location>
+			<title>Best Radio 92.6</title>
+			<creator>Best Radio</creator>
+			<album>Best Radio</album>		
+			<annotation>Best Radio</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>5</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://cdn.e-radio.gr/logos/gr/big/bestradio.png</image>
+		</track>
+		<track>
+			<location>https://imagine897.radioca.st/stream</location>
+			<title>Imagine 89.7</title>
+			<creator>Imagine 89.7</creator>
+			<album>Imagine 89.7</album>		
+			<annotation>Imagine 89.7</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>6</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://www.imagine897.gr/images/folder/logo1.png</image>
+		</track>
+		<track>
+			<location>http://radiostreaming.ert.gr/ert-kosmos</location>
+			<title>ERT Cosmos</title>
+			<creator>ERT Cosmos</creator>
+			<album>ERT Cosmos</album>		
+			<annotation>ERT Cosmos</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>7</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://cdn.e-radio.gr/logos/gr/500/ert-kosmos.png</image>
+		</track> 
+		<track>
+			<location>https://radiostreaming.ert.gr/ert-zeppelin</location>
+			<title>Zeppelin</title>
+			<creator>Zeppelin</creator>
+			<album>Zeppelin</album>		
+			<annotation>Zeppelin</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>8</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://resources.live24.gr/resources/images/stations/1e92d193-695c-4866-ac67-fe9057c584bc.png</image>
+		</track> 
+		<track>
+			<location>https://radiostreaming.ert.gr/ert-webjazz</location>
+			<title>Kosmos Jazz</title>
+			<creator>Kosmos Jazz</creator>
+			<album>Kosmos Jazz</album>		
+			<annotation>Kosmos Jazz</annotation>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>9</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+			<image>https://cdn.onlineradiobox.com/img/l/8/119428.v2.png</image>
+		</track>
+		<track>
+			<location>http://realfm.live24.gr/realfm</location>
+			<title>Real FM 97,8</title>
+			<creator>Real FM</creator>
+			<album>Real FM</album>		
+			<annotation>Real FM</annotation>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>10</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>http://cdn.e-radio.gr/logos/gr/big/realfm.png</image>
+		</track>
+		<track>
+			<location>http://netradio.live24.gr/athinaradio</location>
+			<title>Parapolitika FM 90,1</title>
+			<creator>Parapolitika FM</creator>
+			<album>Parapolitika FM</album>		
+			<annotation>Parapolitika FM</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>11</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://www.parapolitikaradio.gr/public/img/logo-new.png</image>
+		</track>
+		<track>
+			<location>https://skai.live24.gr/skai1003</location>
+			<title>SKAI 100.3</title>
+			<creator> SKAI 100.3 </creator>
+			<album> SKAI 100.3 </album>		
+			<annotation> SKAI 100.3 </annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>12</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://cdn.e-radio.gr/logos/gr/big/skai1003.png</image>
+		</track>
+		<track>
+			<location>https://radiostreaming.ert.gr/ert-deftero</location>
+			<title>ERT Deftero</title>
+			<creator>ERT Deftero</creator>
+			<album>ERT Deftero</album>		
+			<annotation>ERT Deftero</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>13</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>http://resources.live24.gr/resources/images/stations/ce59fde0-c321-454b-beb6-27cfd9d30361.png</image>
+		</track>
+	</trackList>
+	<extension application="http://www.videolan.org/vlc/playlist/0">
+            <vlc:item tid="0"/>
+            <vlc:item tid="1"/>
+			<vlc:item tid="2"/>
+			<vlc:item tid="3"/>
+			<vlc:item tid="4"/>
+			<vlc:item tid="5"/>
+			<vlc:item tid="6"/>
+            <vlc:item tid="7"/>
+            <vlc:item tid="8"/>
+            <vlc:item tid="9"/>
+            <vlc:item tid="10"/>
+            <vlc:item tid="11"/>
+            <vlc:item tid="12"/>
+            <vlc:item tid="13"/>
+	</extension>
+</playlist>

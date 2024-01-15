@@ -1,0 +1,39 @@
+version: '3'
+services:
+  radarr:
+    image: linuxserver/radarr
+    container_name: radarr
+    restart: unless-stopped
+    ports: 
+      - "7878:7878"
+    networks:
+      - mynetwork
+    environment:
+      - PUID=1000  # Replace with your user ID
+      - PGID=1000  # Replace with your group ID
+      - TZ=America/New_York  # Replace with your timezone
+    volumes:
+      - ./radarr-config:/config
+      - ./radarr-movies:/movies
+      - ./radarr-downloads:/downloads
+
+  bazarr:
+    image: linuxserver/bazarr
+    container_name: bazarr
+    restart: unless-stopped
+    ports: 
+      - "6767:6767"
+    networks:
+      - mynetwork
+    environment:
+      - PUID=1000  # Replace with your user ID
+      - PGID=1000  # Replace with your group ID
+      - TZ=America/New_York  # Replace with your timezone
+    volumes:
+      - ./bazarr-config:/config
+      - ./bazarr-movies:/movies
+      - ./bazarr-subtitles:/subs
+
+networks:
+  mynetwork:
+    driver: bridge
