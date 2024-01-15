@@ -1,0 +1,42 @@
+#EXTM3U
+#EXTINF:-1 radio="true" tvg-logo="https://www.offradio.gr/wp-content/uploads/2021/02/off_logo.png",Off Radio
+https://s3.yesstreaming.net:17062/stream
+
+#EXTINF:-1 radio="true" tvg-logo="https://onradio.gr/wp-content/uploads/2021/08/republicradio.png",Republic
+https://metromedia.live24.gr/republicthess
+
+#EXTINF:-1 radio="true" tvg-logo="https://mmo.aiircdn.com/342/5e62318b7f017.png",En Lefko
+https://stream.radiojar.com/srzwv225e3quv
+
+#EXTINF:-1 radio="true" tvg-logo="https://pbs.twimg.com/profile_images/451363142262480896/dp8YMVek_400x400.png",Pepper
+https://n04.radiojar.com/pepper.m4a
+
+#EXTINF:-1 radio="true" tvg-logo="https://cdn-radiotime-logos.tunein.com/s15800d.png",Galaxy
+http://galaxy.live24.gr/galaxy9292
+
+#EXTINF:-1 radio="true" tvg-logo="https://live24.gr/resrc/styles/custom-popups/best/best-player-header.png",Best
+http://best.live24.gr/best1222?MSWMExt=.asf
+
+#EXTINF:-1 radio="true" tvg-logo="https://www.imagine897.gr/images/folder/logo1.png",Imagine
+https://imagine897.radioca.st/stream
+
+#EXTINF:-1 radio="true" tvg-logo="https://upload.wikimedia.org/wikipedia/el/c/ca/Kosmos.png",ERT Cosmos
+http://radiostreaming.ert.gr/ert-kosmos
+
+#EXTINF:-1 radio="true" tvg-logo="https://resources.live24.gr/resources/images/stations/1e92d193-695c-4866-ac67-fe9057c584bc.png",Zeppelin
+https://radiostreaming.ert.gr/ert-zeppelin
+
+#EXTINF:-1 radio="true" tvg-logo="https://cdn.onlineradiobox.com/img/l/8/119428.v2.png",Kosmos Jazz
+https://radiostreaming.ert.gr/ert-webjazz
+
+#EXTINF:-1 radio="true" tvg-logo="http://cdn.e-radio.gr/logos/gr/big/realfm.png",Real Radio
+http://realfm.live24.gr/realfm
+
+#EXTINF:-1 radio="true" tvg-logo="https://www.parapolitikaradio.gr/public/img/logo-new.png",Parapolitika
+http://netradio.live24.gr/athinaradio
+
+#EXTINF:-1 radio="true" tvg-logo="https://www.skairadio.gr/themes/s1003/assets/images/logo-1904.png",SKAI
+https://skai.live24.gr/skai1003
+
+#EXTINF:-1 radio="true" tvg-logo="https://upload.wikimedia.org/wikipedia/el/thumb/e/e3/Deytero_programma_2021.png/200px-Deytero_programma_2021.png?20220117040009",Deftero
+https://radiostreaming.ert.gr/ert-deftero
