@@ -14,7 +14,7 @@ https://n04.radiojar.com/pepper.m4a
 #EXTINF:-1 radio="true" tvg-logo="https://cdn-radiotime-logos.tunein.com/s15800d.png",Galaxy
 http://galaxy.live24.gr/galaxy9292
 
-#EXTINF:-1 radio="true" tvg-logo="https://live24.gr/resrc/styles/custom-popups/best/best-player-header.png",Best
+#EXTINF:-1 radio="true" tvg-logo="https://cdn-radiotime-logos.tunein.com/s3001d.png",Best
 http://best.live24.gr/best1222?MSWMExt=.asf
 
 #EXTINF:-1 radio="true" tvg-logo="https://www.imagine897.gr/images/folder/logo1.png",Imagine

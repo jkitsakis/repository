@@ -9,16 +9,16 @@ https://cbd537474fbad4634b64787657ff6456.msvdn.net/ert2/ert_ev2_main/mainabr/pla
 #EXTINF:-1 group-title="TV" TVG-ID="ERT3" tvg-name="ERT 3" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert3-logo-800x300-f.png?m=resize&w=240&h=136",ERT3
 https://cbd537474fbad4634b64787657ff6456.msvdn.net/ert1/ert_ev3_main/mainabr/playlist_dvr.m3u8
 
-#EXTINF:-1 group-title="TV" TVG-ID="MEGA" tvg-name="MEGA" tvg-logo="https://upload.wikimedia.org/wikipedia/el/thumb/4/45/Mega-logo.svg/250px-Mega-logo.svg.png",MEGA
+#EXTINF:-1 group-title="TV" TVG-ID="MEGA" tvg-name="MEGA" tvg-logo="https://iconape.com/wp-content/png_logo_vector/mega-tv-logo.png",MEGA
 https://c98db5952cb54b358365984178fb898a.msvdn.net/live/S86713049/gonOwuUacAxM/playlist.m3u8
 
-#EXTINF:-1 group-title="TV" TVG-ID="ANT1" tvg-name="ANT1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Logoja_e_kanalit_grek_ANT1.svg/250px-Logoja_e_kanalit_grek_ANT1.svg.png",ANT1
+#EXTINF:-1 group-title="TV" TVG-ID="ANT1" tvg-name="ANT1" tvg-logo="https://upload.wikimedia.org/wikipedia/el/a/ac/Ant1.png",ANT1
 https://d1nfykbwa3n98t.cloudfront.net/out/v1/6e5667da5a6843899a337dea72adb61b/antenna.m3u8
 
 #EXTINF:-1 group-title="TV" TVG-ID="ALPHA" tvg-name="ALPHA" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Alpha-TV-Logo.png/250px-Alpha-TV-Logo.png",ALPHA
 https://alphatvlive.siliconweb.com/1/Y2Rsd1lUcUVoajcv/UVdCN25h/hls/live/playlist.m3u8
 
-#EXTINF:-1 group-title="TV" TVG-ID="STAR" tvg-name="STAR" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Star_Channel_Greece_logo.svg/250px-Star_Channel_Greece_logo.svg.png",STAR
+#EXTINF:-1 group-title="TV" TVG-ID="STAR" tvg-name="STAR" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/STAR_Channel.png/250px-STAR_Channel.png",STAR
 https://starlive3.siliconweb.com/media/star1/star1mediumhd.m3u8
 # http://2hubs.ddns.net:25461/Faucon1tvMT/g8pHKUYxwDhx/73429
 # https://livestar.siliconweb.com/media/star1/star1mediumhd.m3u8
@@ -26,7 +26,7 @@ https://starlive3.siliconweb.com/media/star1/star1mediumhd.m3u8
 #EXTINF:-1 group-title="TV" TVG-ID="SKAI" tvg-name="SKAI" tvg-logo="https://upload.wikimedia.org/wikipedia/el/thumb/e/eb/SkaiTV-Logo.png/250px-SkaiTV-Logo.png",SKAI
 http://skai-live.siliconweb.com/media/cambria4/index.m3u8
 
-#EXTINF:-1 group-title="TV" TVG-ID="OPEN" tvg-name="OPEN" tvg-logo="https://upload.wikimedia.org/wikipedia/el/thumb/e/e5/Open_TV_logo.png/250px-Open_TV_logo.png",OPEN
+#EXTINF:-1 group-title="TV" TVG-ID="OPEN" tvg-name="OPEN" tvg-logo="https://s.tvopen.gr/images/OPEN_BEYOND_Avra.png",OPEN
 https://liveopencloud.siliconweb.com/1/ZlRza2R6L2tFRnFJ/eWVLSlQx/hls/live/playlist.m3u8
 # http://2hubs.ddns.net:25461/Faucon1tvMT/g8pHKUYxwDhx/73419
 
