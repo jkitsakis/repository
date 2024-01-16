@@ -2,17 +2,6 @@
 docker   
 docker-image   
 dockerfiles    
-xsl   
-database   
-java-8   
-glassfish   
-wildfly   
-viber   
-skype   
-trafik   
-nginx   
-linux   
-ubuntu   
-wordpress    
+xsl
 scripts and tools   
 playlist transformations   
