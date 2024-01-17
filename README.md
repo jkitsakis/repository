@@ -14,6 +14,7 @@
   - XSPF
   - M3U
 - SageMath Dockerized with PDF Tools
+- Jupyter Notebooks Docker
 - Greek IPTV Playlists
 - Greek Internet Radio
 
