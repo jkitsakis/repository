@@ -13,7 +13,7 @@
 - Music Playlists Tools - XSL Tranformations
   - XSPF
   - M3U
-- SageMath Dockerized
+- SageMath Dockerized with PDF Tools
 - Greek IPTV Playlists
 - Greek Internet Radio
 
