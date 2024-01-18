@@ -1,0 +1,14 @@
+{% if EDUCATIONS %}
+<div class="education-container container-block">
+<h2 class="container-block-title">Education</h2>
+{% for education in EDUCATIONS %}
+     <div class="meta">
+		<div class="upper-row">
+			<h3 class="job-title">{{ education['degree'] }}</h3>
+			<div class="time">{{ education['time'] }}</div>
+		</div><!--//upper-row-->
+		<div class="company">{{ education['meta'] }}</div>
+	</div><!--//meta-->
+{% endfor %}
+</div><!--//education-container-->
+{% endif %}
