@@ -5,6 +5,9 @@ from __future__ import unicode_literals
 AUTHOR = 'Yannis'
 SITENAME = 'Yannis Kitsakis - Sitename'
 SITEURL = ''
+THEME_STATIC_DIR='theme/css/'
+CSS_FILE='main-2.css'
+
 TIMEZONE = 'Europe/Athens'
 
 DEFAULT_LANG = 'en'
@@ -47,6 +50,7 @@ DISPLAY_CATEGORIES_ON_MENU = True
 NAME = 'Kitsakis Yannis'
 TAGLINE = 'Full Stack Developer'
 PIC = 'me.png'
+
 
 #sidebar links
 EMAIL = 'j_kitsakisk@yahoo.com'
