@@ -6,6 +6,7 @@ import sys
 import datetime
 
 from invoke import task
+from livereload import Server
 from invoke.util import cd
 from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
@@ -79,7 +80,6 @@ def preview(c):
 @task
 def livereload(c):
     """Automatically reload browser tab upon file modification."""
-    from livereload import Server
     build(c)
     server = Server()
     # Watch the base settings file

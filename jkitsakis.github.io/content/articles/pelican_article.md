@@ -1,16 +1,9 @@
-Title: Clint Chester Reyes
+Title: My first Article 
 Date: 2019-10-20 11:20
-Author: TSM
-Tags: coastal, engineer
-Category: When I was a young boy
-## Ako'y isang Pinoy, may Pusong cheesecake
-I love eggs
+Category: Category1
 
-Lalalala
-## Happy Father's Day!
-to all the dad's
 
--tsm
+
 ##**Education**
 
 Bachelor of Science in Civil Engineering
