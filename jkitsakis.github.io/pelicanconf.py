@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Yannis'
-SITENAME = 'Yannis Kitsakis - Sitename'
+SITENAME = 'Yannis Kitsakis - Website'
 SITEURL = ''
 THEME_STATIC_DIR='theme/css/'
 CSS_FILE='main-2.css'
@@ -50,6 +50,7 @@ DISPLAY_CATEGORIES_ON_MENU = True
 NAME = 'Kitsakis Yannis'
 TAGLINE = 'Full Stack Developer'
 PIC = 'me.png'
+FAVICON = 'favicon.ico'
 
 
 #sidebar links
