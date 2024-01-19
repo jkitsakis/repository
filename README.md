@@ -1,4 +1,4 @@
-# My repository
+# My Portfolio
 - Docker, docker-images, Dockerfiles, docker-compose
 - Dockerizing apps
   - Viber
@@ -17,4 +17,3 @@
 - Jupyter Notebooks Docker
 - Greek IPTV Playlists
 - Greek Internet Radio
-
