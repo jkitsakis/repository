@@ -1,7 +1,7 @@
 #AUTHOR = 'jk'
 SITENAME = 'EUIPO dev'
 
-LOCAL_BUILD=True
+LOCAL_BUILD = False
 SITEURL = '' if LOCAL_BUILD else '/pelican/euipo'
 
 PATH = "content"
