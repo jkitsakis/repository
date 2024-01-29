@@ -15,7 +15,10 @@ SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
 
-SITEURL = ""
+LOCAL_BUILD=False
+
+SITEURL = '' if LOCAL_BUILD else '/pelican/sandy'
+
 PATH = "content"
 TIMEZONE = 'Europe/Athens'
 DEFAULT_DATE_FORMAT = '%d %B %Y'
@@ -40,28 +43,13 @@ NAME = 'Κωνσταντινιδου Κυριακη'
 PROFESSION_DESCRIPTION ='Γενικη Οικογενειακή Ιατρός'
 PROFESSION_TITLE= 'Διευθυντρια Ε.Σ.Υ'
 
-
-# Blogroll
-# LINKS = (
-    # ("Pelican", "https://getpelican.com/"),
-    # ("Python.org", "https://www.python.org/"),
-    # ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-    # ("You can modify those links in your config file", "#"),
-# )
-
-# Social widget
-# SOCIAL = (
-    # ("You can add links in your config file", "#"),
-    # ("Another social link", "#"),
-# )
-
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
 MENUITEMS = (
-  ('Βιογραφικό','/pages/CV.html'),
-  ('Υπηρεσίες','/pages/Services.html'),
-  ('Επικοινωνια','/pages/Contact.html'),
+  ('Βιογραφικό',SITEURL+'/pages/CV.html'),
+  ('Υπηρεσίες',SITEURL+'/pages/Services.html'),
+  ('Επικοινωνια',SITEURL+'/pages/Contact.html'),
 )
