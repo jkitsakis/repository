@@ -6,6 +6,7 @@ Summary: EPA APIs : EOP Persons API
 order:5
 
 ## _EUTM Search API_ 
+
 ### URL PATH: ... /eop/persons/applicants?name=S%26P
 
 ### <a href="https://git.euipo.europa.eu/projects/EPA/repos/persons-api/browse" target="_blank">BitBucket</a>

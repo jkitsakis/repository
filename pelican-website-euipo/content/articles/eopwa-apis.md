@@ -7,7 +7,7 @@ order: 8
 Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search API, Drafts Search API, Feedback Search API, Interpartes Search API
 
 
-### Appeals Search API
+## Appeals Search API
  
 ### URL PATH: ... /eop/appeals-search
 
@@ -23,8 +23,9 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 
 > ... ?query=appealNumber=='R00*'&roleKind=CLAIMANT&page=0&size=25&sort=appealDate:desc
 
+-------------------
 
-### Communications Search API
+## Communications Search API
 
 ### URL PATH: ... /eop/communications/
 
@@ -39,7 +40,9 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 - **AWS-Prod:** http://production-communications-api.prod.aws.oami.eu 
 
 
-### Designs Search API
+-------------------
+
+## Designs Search API
 
 ### URL PATH: ... /eop/design-search
 
@@ -55,8 +58,9 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 
 > ... ?query=designNumber!=9*&size=10&page=0&sort=applicationDate:desc
 
+-------------------
 
-### Drafts Search API
+## Drafts Search API
 
 ### URL PATH: ... /eop/drafts/**eutms**?size=10&page=10&sort=creationDate:DESC
 
@@ -76,7 +80,9 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 - **AWS-Test:** http://test-drafts-api.nonprod.aws.oami.eu
 - **AWS-Prod:** http://production-drafts-api.prod.aws.oami.eu   
 
-### Feedback Search API
+-------------------
+
+## Feedback Search API
 
 ### URL PATH: ... /eop/feedback/surveys/:indentifier
 
@@ -90,12 +96,14 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 - **AWS-Test:** http://test-feedback-api.nonprod.aws.oami.eu 
 - **AWS-Prod:** http://production-feedback-api.prod.aws.oami.eu   
 
+-------------------
 
-### Interpartes Search API
+## Interpartes Search API
 
 ### URL PATH: ... /eop/interpartes-search/oppositions?query=opponentRepresentatives.identifier==10014&size=100&page=0&sort=oppositionDate:desc
 
 ### URL PATH: ... /eop/interpartes-search/cancellations?page=0&sort=cancellationNumber:desc&size=160
+
 ### URL PATH: ... /eop/interpartes-search/invalidities?query=claimantRepresentatives.name=="HO+*"&size=100&page=0&sort=invalidityDate:desc
 
 ### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/interpartes-search-api/browse" target="_blank">BitBucket</a>
@@ -108,8 +116,9 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 - **AWS-Test:** http://test-interpartes-search-api.nonprod.aws.oami.eu 
 - **AWS-Prod:** http://production-interpartes-search-api.prod.aws.oami.eu
 
+-------------------
 
-### Notes Search API
+## Notes Search API
 
 ### URL PATH: ... /eop/notes/
 
@@ -123,8 +132,9 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 - **AWS-Test:** http://test-notes-api.nonprod.aws.oami.eu 
 - **AWS-Prod:** http://production-notes-api.prod.aws.oami.eu 
 
+---------------------
 
-### Pre-Assesement Search API
+## Pre-Assesement Search API
 ### URL PATH: ... /eop/pre-assessment/
 
 ### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/pre-assessment-api/browse" target="_blank">BitBucket</a>
@@ -137,7 +147,9 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 - **AWS-Test:** http://test-pre-assessment-api.nonprod.aws.oami.eu 
 - **AWS-Prod:** http://production-pre-assessment-api.prod.aws.oami.eu 
 
-### Settings Search API
+-------------------------
+
+## Settings Search API
 
 ### URL PATH: ... /eop/settings/
 
@@ -151,7 +163,9 @@ Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search 
 - **AWS-Test:** http://test-settings-api.nonprod.aws.oami.eu 
 - **AWS-Prod:** http://production-settings-api.prod.aws.oami.eu 
 
-### User Profile API
+-----------------------------
+
+## User Profile API
 
 ### URL PATH: ...  /eop/user-profile/
 

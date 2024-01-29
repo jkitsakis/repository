@@ -5,7 +5,8 @@ Slug: ipt-api
 Summary: Proceeding Search API
 order:2
 
-## Proceeding Search API
+## _Proceeding Search API_
+
 ### URL PATH: ... /proceeding-search-api/search?query=type==RCD
 
 ### <a href="https://git.euipo.europa.eu/projects/IPT/repos/proceeding-search-api/browse" target="_blank">BitBucket</a>

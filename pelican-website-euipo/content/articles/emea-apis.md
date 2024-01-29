@@ -6,6 +6,7 @@ Summary: EMEA APIs : Me API
 order:4
 
 ## _Me API_ 
+
 ### URL PATH: ... /eop/me/
 
 ### <a href="https://git.euipo.europa.eu/projects/EMEA/repos/me-api/browse" target="_blank">BitBucket</a>
@@ -24,6 +25,6 @@ order:4
 
 > /oppositions?size=10&page=0
 
->/cancellations?sort=cancellationDate:desc&roleKind=DEFENDANT
+> /cancellations?sort=cancellationDate:desc&roleKind=DEFENDANT
 
->/designs?size=200&page=0&query=designNumber!=0
+> /designs?size=200&page=0&query=designNumber!=0

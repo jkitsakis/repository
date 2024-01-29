@@ -6,14 +6,13 @@ Summary: EOPW APIs : Website BE, Admin Tool, Story Block
 order:6
 
 ## _Website BE_ 
+
 ### URL PATH: ... /portal/app/api/
 
 ### <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-website-backend/browse" target="_blank">BitBucket</a>
 
 - **Integration:** https://integration.euipo.europa.eu
 - **PreProd:** https://pp.euipo.europa.eu
-
-[//]: # (- **Test:** http://test-eutm-api.test.oami.eu)
 - **Prod:** https://www.euipo.europa.eu
 
 
@@ -68,8 +67,11 @@ order:6
 
 > /surveys/:identifier/answer
 
+---- 
+
 
 ## _Admin Tool_
+
 ### URL PATH: ... /eop/admintool/app/api/
 
 ### <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-admintool-backend/browse" target="_blank">BitBucket</a>
@@ -85,7 +87,10 @@ order:6
 - **AWS-Test:** https://test-eop-website-backend.nonprod.aws.oami.eu
 - **AWS-Prod:** https://production-eop-website-backend.nonprod.aws.oami.eu
 
+-----
+
 ## _Story Blok_
+
 ### URL PATH: ... /eop/storyblok/
 
 ### <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-storyblok-api/browse" target="_blank">BitBucket</a>

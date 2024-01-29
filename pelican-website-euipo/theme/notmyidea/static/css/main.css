@@ -148,7 +148,7 @@ aside, nav, article, figure {
 }
 
 /***** Layout *****/
-.body {clear: both; margin: 0 auto; max-width: 800px;}
+.body {clear: both; margin: 0 auto; max-width: 75%;}
 img { max-width: 100%; }
 img.right, figure.right, div.figure.align-right {
     float: right;
@@ -207,14 +207,14 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 		margin: 0 auto 2em auto;
 		padding: 0;
 		text-align: center;
-		max-width: 800px;
+		max-width: 100%;
 
 		border-radius: 5px;
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
 	}
 
-	#banner nav ul {list-style: none; margin: 0 auto; max-width: 800px;}
+	#banner nav ul {list-style: none; margin: 0 auto; max-width: 100%;}
 	#banner nav li {float: left; display: inline; margin: 0;}
 
 	#banner nav a:link, #banner nav a:visited {
@@ -249,7 +249,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px;
-	max-width: 760px;
+	max-width: 75%;
 
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -278,7 +278,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
-	max-width: 760px;
+	max-width: 75%;
 
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -333,7 +333,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	overflow: hidden;
 	padding: 20px;
 	text-align: left;
-	max-width: 760px;
+	max-width: 75%;
 
 	border-radius: 10px;
 	-moz-border-radius: 10px;

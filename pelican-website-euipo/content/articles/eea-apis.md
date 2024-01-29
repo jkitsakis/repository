@@ -6,7 +6,8 @@ Summary: EEA APIs : EUTM Search API, Eutm Filing Api
 order:3
 
 ## _EUTM Search API_ 
-### URL PATH: ... /eop/eutm-search
+
+### URL PATH: ... /eop/eutm-search/trademarks?
 
 ### <a href="https://git.euipo.europa.eu/projects/EEA/repos/eutm-search-api/browse" target="_blank">BitBucket</a>
 
@@ -20,29 +21,34 @@ order:3
 - **AWS-Test:** http://test-eutm-search-api.nonprod.aws.oami.eu
 - **AWS-Prod:** http://production-eutm-search-api.prod.aws.oami.eu
 
-> trademarks?query=representatives.identifier==10014
+_Syntax_
+
+> query=representatives.identifier==10014
  
-> trademarks?query=status==REGISTERED,markFeature==FIGURATIVE&page=0&fields=trademarks(applicationNumber)&sort=registrationDate:desc
+> query=status==REGISTERED,markFeature==FIGURATIVE&page=0&fields=trademarks(applicationNumber)&sort=registrationDate:desc
 
-> trademarks?query=status==REGISTERED,markFeature==FIGURATIVE&page=0&fields=trademarks(applicationNumber,status)&sort=status:asc,applicationNumber:asc
+> query=status==REGISTERED,markFeature==FIGURATIVE&page=0&fields=trademarks(applicationNumber,status)&sort=status:asc,applicationNumber:asc
 
-> trademarks?query=representatives.identifier==10014 and (applicantReference==IF/mb or applicationNumber==IF/mb)&page=0&sort=applicationDate:desc
+> query=representatives.identifier==10014 and (applicantReference==IF/mb or applicationNumber==IF/mb)&page=0&sort=applicationDate:desc
 
-> trademarks?query=applicantReference==IF/mb or applicationNumber==IF/mb&page=0&sort=applicationDate:desc
+> query=applicantReference==IF/mb or applicationNumber==IF/mb&page=0&sort=applicationDate:desc
 
-> trademarks?page=0&size=25&query=markBasis==EU_TRADEMARK and applicationNumber=='*012345*'&sort=applicationDate:desc
+> page=0&size=25&query=markBasis==EU_TRADEMARK and applicationNumber=='*012345*'&sort=applicationDate:desc
 
-> trademarks?query=markBasis==EU_TRADEMARK and status=in=(ACCEPTED)&page=0&sort=applicationDate:desc&size=1000
+> query=markBasis==EU_TRADEMARK and status=in=(ACCEPTED)&page=0&sort=applicationDate:desc&size=1000
 
-> trademarks?query=markBasis==INTERNATIONAL_TRADEMARK and status=in=(ACCEPTED,REGISTERED)&page=0&sort=applicationDate:desc&size=1000
+> query=markBasis==INTERNATIONAL_TRADEMARK and status=in=(ACCEPTED,REGISTERED)&page=0&sort=applicationDate:desc&size=1000
 
-> trademarks?query=representatives.identifier==10014 and markFeature==FIGURATIVE&page=0&sort=applicationDate:desc&size=10
+> query=representatives.identifier==10014 and markFeature==FIGURATIVE&page=0&sort=applicationDate:desc&size=10
 
-> trademarks?query=(markBasis==INTERNATIONAL_TRADEMARK and niceClasses=in=(1,2,3)) and representatives.identifier==10014&page=0&size=25&sort=applicationDate:desc
+> query=(markBasis==INTERNATIONAL_TRADEMARK and niceClasses=in=(1,2,3)) and representatives.identifier==10014&page=0&size=25&sort=applicationDate:desc
 
 > trademarks/:applicationNumber
 
-> trademarks/:applicationNumber/image
+> trademarks/:applicationNumber/image 
+
+
+-------
 
 
 ## _Eutm Filing Api_
