@@ -51,12 +51,12 @@ hr { border: 2px solid #EEEEEE; }
 a {outline: 0;}
 a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
-	color: #50c743;
+	color: #0747a6;
 	padding: 0 1px;
 	text-decoration: underline;
 }
 a:hover, a:active {
-	background-color: #50c743;
+	background-color: #0747a6;
 	color: #fff;
 	text-decoration: none;
 	text-shadow: 1px 1px 1px #333;
@@ -173,7 +173,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 *****************/
 #banner {
 	margin: 0 auto;
-	padding: 0.8em 0 0 0;
+	padding: 1.5em 0 0 0;
 }
 
 	/* Banner */
@@ -192,7 +192,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	}
 	#banner h1 a:hover, #banner h1 a:active {
 		background: none;
-		color: #50c743;
+		color: #0747a6;
 		text-shadow: none;
 	}
 
@@ -226,7 +226,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	}
 	#banner nav a:hover, #banner nav a:active,
 	#banner nav .active a:link, #banner nav .active a:visited {
-		background: #50c743;
+		background: #0747a6;
 		color: #fff;
 		text-shadow: none !important;
 	}
@@ -245,7 +245,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	Featured
 *****************/
 #featured {
-	background: #fff;
+	background: #cdcfd1;
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px;
@@ -264,7 +264,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 }
 #featured figure img {display: block; float: right;}
 
-#featured h2 {color: #50c743; font-size: 1.714em; margin-bottom: 0.333em;}
+#featured h2 {color: #0747a6; font-size: 1.714em; margin-bottom: 0.333em;}
 #featured h3 {font-size: 1.429em; margin-bottom: .5em;}
 
 #featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
@@ -274,7 +274,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	Body
 *****************/
 #content {
-	background: #fff;
+	background: #cdcfd1;
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
@@ -293,7 +293,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 #extras ul {list-style: none; margin: 0;}
 #extras li {border-bottom: 1px solid #fff;}
 #extras h2 {
-	color: #50c743;
+	color: #0747a6;
 	font-size: 1.429em;
 	margin-bottom: .25em;
 	padding: 0 3px;
@@ -361,7 +361,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 	display: block;
 	clear: both;
 	border-top: 1px solid #eee;
-	padding: 1.5em 0;
+	padding: 1em 0;
 }
 li:first-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #content > .hentry {padding: 1em 0;}
