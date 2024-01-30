@@ -61,6 +61,10 @@ cd ../texfiles
 4. Run abiword
 abiword --to=tex filename.pdf
 
+5.  Convert tex to pdf 
+pdflatex Quiz3-question7.tex
+
+
 matrix code :  $C=\begin{bmatrix} -2 & 1 & -1 \\ 1 & -2 & 1 \\ -1 & 1 & -2 \end{bmatrix}$
 
 To create latex :
