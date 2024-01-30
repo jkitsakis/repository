@@ -15,35 +15,52 @@
 {% block content %}
 <!--<h1 class="title">Hi, I'm {{ AUTHOR }}</h1>-->
 
-<div id="homepage-slider" class="st-slider">
-
-    <input type="radio" class="cs_anchor radio" name="slider" id="slide1"/>
-    <input type="radio" class="cs_anchor radio" name="slider" id="slide2"/>
-    <input type="radio" class="cs_anchor radio" name="slider" id="slide3"/>
-    <input type="radio" class="cs_anchor radio" name="slider" id="play1" checked=""/>
-
-
-    <div class="images">
-       <div class="images-inner">
-        <div class="image-slide">
-            <img src="../images/scroll/img-2.jpg" alt="Forest">
-        </div>
-        <div class="image-slide">
-            <img src="../images/scroll/img-3.jpg" alt="Northern Lights">
-        </div>
-        <div class="image-slide">
-            <img src="../images/scroll/img-4.jpg" alt="Mountains">
-        </div>
-      </div>
+<div class="blog-card">
+    <input type="radio" name="select" id="tap-1" checked>
+    <input type="radio" name="select" id="tap-2">
+    <input type="radio" name="select" id="tap-3">
+    <input type="checkbox" id="imgTap">
+    <div class="sliders">
+        <label for="tap-1" class="tap tap-1"></label>
+        <label for="tap-2" class="tap tap-2"></label>
+        <label for="tap-3" class="tap tap-3"></label>
     </div>
-
-    <div class="labels">pages/services/general-practice.html
-        <label for="slide1" class="label"><h1>Συνταγογραφηση</h1></label>
-        <label for="slide2" class="label"><h1>Παραπεμπτικα- Εξετασεις</h1></label>
-        <label for="slide3" class="label"><h1>Αισθητικες Επεμβάσεις</h1></label>
-      </div>
-
-
+    <div class="inner-part">
+        <label for="imgTap" class="img">
+            <img class="img-1" src="../images/scroll/img-1.jpg">
+        </label>
+        <div class="content content-1">
+            <!--<span>26 December 2020</span>-->
+            <div class="title">{{SERVICE_EOPPY}} </div>
+            <!--<div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo animi atque aliquid pariatur voluptatem numquam, quisquam. Neque est voluptates doloribus!</div>
+            -->
+            <a href="{{SITEURL}}/pages/services/general-practice.html"><button>Read more</button></a>
+        </div>
+    </div>
+    <div class="inner-part">
+        <label for="imgTap" class="img">
+            <img class="img-2" src="../images/scroll/img-2.jpg">
+        </label>
+        <div class="content content-2">
+<!--            <span>28 December 2020</span>-->
+            <div class="title"><a href="{{SITEURL}}/pages/services/general-practice.html">{{SERVICE_EXAMS}}</a> </div>
+            <!--<div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eos ut consectetur numquam ullam fuga animi laudantium nobis rem molestias.</div>
+            <button>Read more</button>-->
+        </div>
+    </div>
+    <div class="inner-part">
+        <label for="imgTap" class="img">
+            <img class="img-3" src="../images/scroll/img-3.jpg">
+        </label>
+        <div class="content content-3">
+<!--            <span>29 December 2020</span>-->
+            <div class="title"><a href="{{SITEURL}}/pages/services/botox.html">{{SERVICE_BOTOX}}</a> </div>
+            <!--<div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod excepturi nemo commodi sint eum ipsam odit atque aliquam officia impedit.</div>
+            <button>Read more</button>-->
+        </div>
+    </div>
 </div>
-
 {% endblock content %}

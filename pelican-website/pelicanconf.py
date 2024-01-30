@@ -9,8 +9,7 @@ from __future__ import unicode_literals
 # Added by me
 import time
 
-AUTHOR = 'Κωνσταντινιδου Κυριακη'
-SITENAME = 'Κωνσταντινιδου Κυριακη'
+
 SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
@@ -38,12 +37,21 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+DEFAULT_PAGINATION = False
 
+AUTHOR = 'Κωνσταντινιδου Κυριακη'
+SITENAME = 'Κωνσταντινιδου Κυριακη'
 NAME = 'Κωνσταντινιδου Κυριακη'
 PROFESSION_DESCRIPTION ='Γενικη Οικογενειακή Ιατρός'
 PROFESSION_TITLE= 'Διευθυντρια Ε.Σ.Υ'
 
-DEFAULT_PAGINATION = False
+SERVICE_EOPPY='Συνταγογραφιση ΕΟΠΠΥ'
+SERVICE_EXAMS='Εξετασεις - Παραπεμπτικά'
+SERVICE_BOTOX= 'Αισθητικές Επεμβάσεις'
+
+
+
+
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
