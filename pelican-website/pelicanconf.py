@@ -15,7 +15,7 @@ SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
 
-LOCAL_BUILD=False
+LOCAL_BUILD=True
 
 SITEURL = '' if LOCAL_BUILD else '/pelican/sandy'
 
