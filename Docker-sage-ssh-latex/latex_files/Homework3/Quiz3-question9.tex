@@ -373,15 +373,14 @@
     $\textbf{Question 9 :}$
 
 Given the eigenvalues $ \lambda1 = 9, \lambda2 = 0, \lambda3 = −9 $ and the associated
-eigenvectors $𝑒_1 = \frac{1}{3} (−2, 2, 1)$,
-$𝑒_2 = \frac{1}{3} (2, 1, 2)$, $𝑒_3 = \frac{1}{3} (−1, −2, 2)$ of a
+eigenvectors $𝑒_{1} = \frac{1}{3} (−2, 2, 1)$,
+$𝑒_{2} = \frac{1}{3} (2, 1, 2)$, $𝑒_{3} = \frac{1}{3} (−1, −2, 2)$ of a
 real symmetric matrix 𝐴. Compute 𝐴 using by-hand calculation.
 
 $\textbf{Answer :}$
 
     To construct the matrix $ A $ using the given eigenvalues and
-eigenvectors, recall that for a diagonalizable matrix $ A $, we have
-the eigendecomposition:
+eigenvectors, recall that for a diagonalizable matrix $ A $, we have:
 
 $ A = Q D Q^{-1} $
 
@@ -389,9 +388,9 @@ where: - $ Q $ is the matrix whose columns are the eigenvectors of $
 A $. - $ D $ is the diagonal matrix whose diagonal elements are the
 eigenvalues of $ A $.
 
-Given the eigenvalues $ D\_1 = 9 $, $ D\_2 = 0 $, $ D\_3 = -9 $
-and the associated eigenvectors: $ e\_1 = \frac{1}{3} (-2, 2, 1),
-\quad e\_2 = \frac{1}{3} (2, 1, 2), \quad e\_3 = \frac{1}{3} (-1, -2, 2)
+Given the eigenvalues $ D_{1} = 9 $, $ D_{2} = 0 $, $ D_{3} = -9 $
+and the associated eigenvectors: $ e_{1} = \frac{1}{3} (-2, 2, 1),
+\quad e_{2} = \frac{1}{3} (2, 1, 2), \quad e_{3} = \frac{1}{3} (-1, -2, 2)
 $
 
 We construct the matrix $ Q $ by arranging the eigenvectors as its
@@ -411,13 +410,13 @@ Q^{-1} = Q^T $.
 
 $ Q^{-1} = Q^T $
 
-Let's calculate $ Q^T $:
+So $ Q^T $:
 
 $ Q^T =
 \begin{pmatrix} -2/3 & 2/3 & 1/3 \\ 2/3 & 1/3 & 2/3 \\ -1/3 & -2/3 & 2/3 \end{pmatrix}
 $
 
-Now, we have:
+we have:
 
 $ A = Q D Q^{-1} = Q D Q^T $
 
