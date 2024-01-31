@@ -3,11 +3,6 @@ Slug: Contact
 Author: username
 Summary: This is a sample blog contact page.
 
- <div id="rightbox">
-    <img style="float: right;" width="200"  src="../images/me.png"/>
-</div>
-
-<div markdown="1">
 
 #### ΕΠΙΚΟΙΝΩΝΙΑ
 
@@ -20,5 +15,3 @@ email</a>
 <a href="tel:+306907161439">
 <img style="width: 20px; height: auto; autofloat: left;" src="../images/tel.png"/> 6907161439
 </a>
-
-</div>

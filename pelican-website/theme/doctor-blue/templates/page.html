@@ -5,34 +5,64 @@
     {% if  page.slug  in ('Homepage', 'CV') %}
         <h1 class="title">{{NAME}}</h1>
         <h2 class="subtitle">{{PROFESSION_DESCRIPTION}} - {{PROFESSION_TITLE}}</h2>
-    {% endif %}
-    {{ page.content }}
-</article>
-{% if  page.slug  in ('Services') %}
-    {% if articles %}
-        <ol class="posts">
-            {% block heading %}<h2 class="latest">{{ SERVICES }}</h2>{% endblock %}
-            {% for article in (articles_page.object_list if articles_page else articles) %}
-                <li class="post_list"><p class="post_entry">
-                    <h2 class="post_title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                                              title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-                    </h2>
-                    {% if DISPLAY_SUMMARY and article.summary|length > 0 %}
-                        <p>{{ article.summary }}</p>
-                    {% endif %}
-                   <!-- <a href="{{ SITEURL }}/{{ article.author.url }}">@{{ article.author }}</a>
-                    <span> in </span>
-                    <span class="post_category"><a href="{{ SITEURL }}/{{ article.category.url }}" rel="bookmark"
-                                                   title="Permalink to {{ article.category|striptags }}">[ {{ article.category }} ]</a></span>
-                    <span class="post_date">{{ article.locale_date }}</span>-->
-                </li>
-            {% endfor %}
-        </ol>
+         {{ page.content }}
     {% endif %}
 
-    {% if articles_page and articles_paginator.num_pages > 1 %}
-        {% include 'pagination.html' %}
+    {% if  page.slug  in ('Services') %}
+
+        <div class="blog-card">
+        <input type="radio" name="select" id="tap-1" checked>
+        <input type="checkbox" id="imgTap">
+
+            <div class="inner-part">
+               <!-- <label for="imgTap" class="img">
+                    <img class="img-1" src="../images/me.png">
+                </label>-->
+                <div class="content content-1">
+                    <div class="text">
+                       {% if articles %}
+                            <ol class="posts">
+                                {% block heading %}<h2 class="latest">{{ SERVICES }}</h2>{% endblock %}
+                                {% for article in (articles_page.object_list if articles_page else articles) %}
+                                    <li class="post_list"><p class="post_entry">
+                                        <h2 class="post_title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                                                                  title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+                                        </h2>
+                                        {% if DISPLAY_SUMMARY and article.summary|length > 0 %}
+                                            <p>{{ article.summary }}</p>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if articles_page and articles_paginator.num_pages > 1 %}
+            {% include 'pagination.html' %}
+        {% endif %}
     {% endif %}
-{% endif %}
+
+    {% if  page.slug  in ('Contact') %}
+        <div class="blog-card">
+        <input type="radio" name="select" id="tap-1" checked>
+        <input type="checkbox" id="imgTap">
+
+            <div class="inner-part">
+                <label for="imgTap" class="img">
+                    <img class="img-1" src="../images/me.png">
+                </label>
+                <div class="content content-1">
+                    <div class="text">
+                        {{ page.content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+</article>
 
 {% endblock %}
