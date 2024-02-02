@@ -1,5 +1,6 @@
 html { 
-  font-family: 'Open Sans', 'helvetica', sans-serif;
+  /* font-family: 'Open Sans', 'helvetica', sans-serif; */
+  font-family: 'Fira Sans', sans-serif;
   background: url('../images/background.png');
   background-attachment: fixed;
   font-size: 14px;
@@ -132,7 +133,8 @@ a:hover { text-decoration: underline; }
 aside {
   font-size: 14px;
   font-weight: 900;
-  width: 220px; height: 100%;
+  /* width: 220px; height: 100%; */
+  width: 300px; height: 100%;
   position: fixed;
   top: 0; left: 0;
   padding: 30px;  
@@ -241,7 +243,7 @@ aside > h2 {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color:white;
+  /* background-color:white; */
   text-align: center;
 }
 

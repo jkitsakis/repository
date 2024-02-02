@@ -30,6 +30,7 @@ DISPLAY_PAGES_ON_MENU = False
 # Whether to display categories on the menu of the template.
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_SUMMARY = True
+DISPLAY_FOOTER = False
 ARTICLE_ORDER_BY = 'order'
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
