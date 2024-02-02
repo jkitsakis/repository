@@ -3,9 +3,17 @@
 {% block content %}
 <article>
     {% if  page.slug  in ('Homepage', 'CV') %}
-        <h1 class="title">{{NAME}}</h1>
-        <h2 class="subtitle">{{PROFESSION_DESCRIPTION}} - {{PROFESSION_TITLE}}</h2>
-         {{ page.content }}
+        <div  style="padding:10px; background-color: #2980b9; COLOR:WHITE ">
+            <img style="float:right;width:70px;padding:6px;border-radius: 10px;" src="{{SITEURL}}/images/me.png" />
+            <span style="float:right;padding:6px;">
+                {{ADDRESS}} <br> {{MOBILE}} <br> {{EMAIL}}
+            </span>
+            <h1>{{NAME}}</h1>
+            <h1>{{PROFESSION_DESCRIPTION}}</h1>
+            <h1>{{PROFESSION_TITLE}}</h1>
+        </div>
+        <br><br>
+        {{ page.content }}
     {% endif %}
 
     {% if  page.slug  in ('Services') %}
@@ -15,9 +23,6 @@
         <input type="checkbox" id="imgTap">
 
             <div class="inner-part">
-               <!-- <label for="imgTap" class="img">
-                    <img class="img-1" src="../images/me.png">
-                </label>-->
                 <div class="content content-1">
                     <div class="text">
                        {% if articles %}
@@ -56,7 +61,17 @@
                 </label>
                 <div class="content content-1">
                     <div class="text">
-                        {{ page.content }}
+                        <span style="float:left; width:100%">
+                            <a href="https://maps.app.goo.gl/RstcEQ91LDKZVg2d8" target="_blank">
+                                <img style="width:20px;height:auto;padding-right:5px" src="{{SITEURL}}/images/locate.png"/>{{ADDRESS}}
+                            </a>
+                        </span>
+                        <span style="float:left; width:100%">
+                            <a href="mailto:konsan72@yahoo.gr"><img style="width:20px;height:auto;padding-right:5px" src="{{SITEURL}}/images/email.png"/>{{EMAIL}}</a>
+                        </span>
+                        <span style="float:left; width:100%">
+                            <a href="tel:+306907161439"><img style="width:20px;height:auto;padding-right:5px" src="{{SITEURL}}/images/tel.png"/>{{MOBILE}}</a>
+                        </span>
                     </div>
                 </div>
             </div>
