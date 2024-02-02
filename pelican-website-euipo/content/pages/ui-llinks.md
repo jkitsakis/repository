@@ -2,13 +2,21 @@ Title: UI Links
 Slug: ui-links
 Tags: pelican, publishing
 
-**eForm** 
 
-<a href="https://integration.euipo.europa.eu/eutm-efiling" target="_blank">integration</a>,
 
-<a href="https://pp.euipo.europa.eu/eutm-efiling/" target="_blank"/>preprod</a>,
+<details>
+	<summary> eForm </summary>
 
-<a href="https://test.euipo.europa.eu/eutm-efiling/" target="_blank"/>test</a>,
+		<a href="https://integration.euipo.europa.eu/eutm-efiling" target="_blank">integration</a>,
+
+		<a href="https://pp.euipo.europa.eu/eutm-efiling/" target="_blank"/>preprod</a>,
+
+		<a href="https://test.euipo.europa.eu/eutm-efiling/" target="_blank"/>test</a>
+ 
+</details>
+  
+  
+
 
 
 **User Area** 
