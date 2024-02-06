@@ -1,6 +1,5 @@
 Title: Επικοινωνια
 Slug: Contact
-Author: username
 Summary: This is a sample blog contact page.
 
 

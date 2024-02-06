@@ -1,12 +1,20 @@
+<!--{% print(page.slug) %}-->
+
+
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{% endblock %}
 {% block content %}
+
+
 <article>
-    {% if  page.slug  in ('Homepage', 'CV') %}
+
+    {% if  page.slug  in ('CV') %}
         <div  style="padding:10px; background-color: #2980b9; COLOR:WHITE ">
             <img style="float:right;width:70px;padding:6px;border-radius: 10px;" src="{{SITEURL}}/images/me.png" />
             <span style="float:right;padding:6px;">
-                {{ADDRESS}} <br> {{MOBILE}} <br> {{EMAIL}}
+                {{ADDRESS}} <br>
+                {{MOBILE}} <br>
+                {{EMAIL}}
             </span>
             <h1>{{NAME}}</h1>
             <h1>{{PROFESSION_DESCRIPTION}}</h1>
@@ -31,7 +39,7 @@
                                 {% for article in (articles_page.object_list if articles_page else articles) %}
                                     <li class="post_list"><p class="post_entry">
                                         <h2 class="post_title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                                                                  title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+                                                                  title="{{ article.title|striptags }}">{{ article.title }}</a>
                                         </h2>
                                         {% if DISPLAY_SUMMARY and article.summary|length > 0 %}
                                             <p>{{ article.summary }}</p>
@@ -77,6 +85,8 @@
             </div>
         </div>
     {% endif %}
+
+
 
 </article>
 

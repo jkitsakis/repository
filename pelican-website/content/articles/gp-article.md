@@ -2,7 +2,7 @@ Title: Γενικη Ιατρικη - Συνταγογραφηση
 Order: 1
 Date: 2017-04-14 22:30
 Slug: pages/services/general-practice
-Author: jk
+Category: gp
 Summary: This is a sample blog GP page.
 
 <div id="leftbox">

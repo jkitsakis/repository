@@ -1,7 +1,6 @@
-Title: Βιογραφικό 
+﻿Title: Βιογραφικό 
 Slug: CV
 Author: username
-
 
 
 ### ΕΚΠΑΙΔΕΥΣΗ
