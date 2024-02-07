@@ -40,7 +40,7 @@ SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
 
-
+#PLUGINS = ['pdf_generator']
 
 
 # Uncomment following line if you want document-relative URLs when developing

@@ -21,7 +21,7 @@ echo   4. Deactivate Env %DEMO_NAME%
 echo   5. Activate Env %DEMO_NAME%
 
 set /p opt=Type option:
-if "%opt%"=="0" goto exit
+if "%opt%"=="0" goto cmd
 if "%opt%"=="1" goto build
 if "%opt%"=="2" goto run
 if "%opt%"=="3" goto debug
@@ -66,6 +66,13 @@ REM > Debug.txt 2>&1
 pause
 goto start 
 
+:cmd
+cd %PYTHON_SCRIPTS_PATH%
+call activate 
+cd %APP_HOME%
+start cmd /k 
+pause
+goto start 
 
 :exit
 cd %PYTHON_SCRIPTS_PATH%
