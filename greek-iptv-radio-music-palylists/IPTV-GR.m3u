@@ -42,8 +42,3 @@ http://ovh-edge-h.evrideo.com:8080/23e234f2-aec8-4804-b694-4cdd71d2d48d_MONITORI
 #EXTINF:-1 group-title="TV" TVG-ID="MAKTV" tvg-name="MAKTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Makedonia_TV_2023.svg/250px-Makedonia_TV_2023.svg.png",MAKTV
 https://dlm34ll53zqql.cloudfront.net/out/v1/d4177931deff4c7ba994b8126d153d9f/maktv.m3u8
 
-#EXTINF:-1 group-title="TV", COSMOTE CINEMA 1 FHD
-http://2hubs.ddns.net:25461/Faucon1tvMT/g8pHKUYxwDhx/73304
-
-#EXTINF:-1 group-title="TV", COSMOTE CINEMA 2 HD
-http://2hubs.ddns.net:25461/Faucon1tvMT/g8pHKUYxwDhx/73305
