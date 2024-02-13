@@ -49,7 +49,7 @@
 <body>
 <!-- Sidebar -->
 <aside>
-    <center> <a href="{{ SITEURL }}/"><img id="avatar" src="{{ SITEURL }}/images/{{ FAVICON }}"></a> </center>
+    <a href="{{ SITEURL }}/"><img id="avatar" src="{{ SITEURL }}/images/{{ AVATAR }}"></a>
     <h1>{{ NAME }}</h1>
     <h2>{{PROFESSION_DESCRIPTION}}</h2>
 
@@ -57,6 +57,19 @@
         <p>{{ SIDEBAR_DIGEST }}</p>
     {% endif %}
     <br>
+
+    <nav class="nav">
+        <ul class="list-bare">
+            {% for title, link in MENUITEMS %}
+                <li><a class="nav__link" href="{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+
+            {% if DISPLAY_PAGES_ON_MENU and pages %}{% for p in pages %}
+                <li><a class="nav__link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+            {% endfor %}{% endif %}
+
+        </ul>
+    </nav>
 
     {% if TWITTER_USERNAME %}
         <a class="twitter-follow-button"
@@ -82,18 +95,7 @@
         </script>
     {% endif %}
 
-    <nav class="nav">
-        <ul class="list-bare">
-            {% for title, link in MENUITEMS %}
-                <li><a class="nav__link" href="{{ link }}">{{ title }}</a></li>
-            {% endfor %}
 
-            {% if DISPLAY_PAGES_ON_MENU and pages %}{% for p in pages %}
-                <li><a class="nav__link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-            {% endfor %}{% endif %}
-
-        </ul>
-    </nav>
 
     <p class="social">
         {% if SOCIAL %}

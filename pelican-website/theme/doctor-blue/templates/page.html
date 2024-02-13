@@ -9,19 +9,21 @@
 <article>
 
     {% if  page.slug  in ('CV') %}
-        <div  style="padding:10px; background-color: #2980b9; COLOR:WHITE ">
-            <img style="float:right;width:70px;padding:6px;border-radius: 10px;" src="{{SITEURL}}/images/me.png" />
-            <span style="float:right;padding:6px;">
+        <div  class="header-cv">
+            <img class="img-cv" src="{{SITEURL}}/images/me.png" />
+            <span class="span-cv">
                 {{ADDRESS}} <br>
                 {{MOBILE}} <br>
                 {{EMAIL}} <br>
             </span>
-            <h1>{{NAME}}</h1>
-            <h1>{{PROFESSION_DESCRIPTION}}</h1>
-            <h1>{{PROFESSION_TITLE}}</h1>
+            {{NAME}}<br>
+            {{PROFESSION_DESCRIPTION}}<br>
+            {{PROFESSION_TITLE}}
         </div>
         <br><br>
-        {{ page.content }}
+        <div class="scroll">
+            {{ page.content }}
+        </div>
     {% endif %}
 
     {% if  page.slug  in ('Services') %}
