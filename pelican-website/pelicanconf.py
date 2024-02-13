@@ -13,6 +13,7 @@ CURRENT_DATE = time.strftime(DEFAULT_DATE_FORMAT)
 DEFAULT_LANG = 'en-us'
 
 THEME = './theme/doctor-blue'
+AVATAR = 'avatar.ico'
 FAVICON = 'favicon.ico'
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
@@ -47,7 +48,7 @@ BOTOX_SERVICES='Αισθητική Ιατρική'
 # RELATIVE_URLS = True
 
 MENUITEMS = (
-  ('Βιογραφικό',SITEURL+'/pages/CV.html'),
   ('Υπηρεσίες',SITEURL+'/pages/Services.html'),
   ('Επικοινωνια',SITEURL+'/pages/Contact.html'),
+  ('Βιογραφικό',SITEURL+'/pages/CV.html')
 )
