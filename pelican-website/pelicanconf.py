@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 import time
 
-LOCAL_BUILD=True
+LOCAL_BUILD = True
 SITEURL = '' if LOCAL_BUILD else '/pelican/sandy'
 
 PATH = "content"
@@ -34,13 +34,13 @@ PROFESSION_TITLE= 'Διευθυντρια Ε.Σ.Υ'
 MOBILE = '6907161439'
 EMAIL = 'konsan72@yahoo.gr'
 ADDRESS = 'Address'
-SERVICE_EOPPY='Συνταγογραφιση ΕΟΠΠΥ'
+SERVICE_EOPPY='Συνταγογραφηση ΕΟΠΠΥ'
 SERVICE_EXAMS='Εξετασεις - Παραπεμπτικά'
 SERVICE_BOTOX= 'Αισθητικές Επεμβάσεις'
 SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
-
+SCROLL_MSG='Your slide-in text goes here'
 #PLUGINS = ['pdf_generator']
 
 

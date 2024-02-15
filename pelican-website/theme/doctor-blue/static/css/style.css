@@ -334,6 +334,23 @@ aside > h2 {
   padding: 10px 25px;
 }
 
+/*--------divs in article pages------------*/
+
+#leftbox {
+  width: 50%;
+  float: left;
+}
+
+#middlebox {
+  float: left;
+  width: 0%;
+}
+
+#rightbox {
+  width: 50%;
+  float: right;
+}
+
 /*--------CV Header------------*/
 .header-cv{
   padding:10px;
