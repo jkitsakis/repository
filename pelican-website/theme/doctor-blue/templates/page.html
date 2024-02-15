@@ -28,13 +28,13 @@
 
     {% if  page.slug  in ('Services') %}
 
-        <div class="blog-card">
+        <!--<div class="blog-card">
         <input type="radio" name="select" id="tap-1" checked>
-        <input type="checkbox" id="imgTap">
+        <input type="checkbox" id="imgTap">-->
 
-            <div class="inner-part">
+            <!--<div class="inner-part">
                 <div class="content content-1">
-                    <div class="text">
+                    <div class="text">-->
                        {% if articles %}
                             <ol class="posts">
                                 <!-- {% block heading %}<h2 class="latest">{{ SERVICES }}</h2>{% endblock %} -->
@@ -50,10 +50,10 @@
                                 {% endfor %}
                             </ol>
                         {% endif %}
-                    </div>
+                  <!--  </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         {% if articles_page and articles_paginator.num_pages > 1 %}
             {% include 'pagination.html' %}

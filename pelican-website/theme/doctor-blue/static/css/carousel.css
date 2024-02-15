@@ -13,20 +13,20 @@
 }*/
 
 .blog-card {
-    position: absolute;
+    position:relative;
     height: 400px;
-    width: 95%;
-    max-width: 850px;
+    /*width: 850px;*/
+    /*max-width: 850px;*/
     margin: auto;
     border-radius: 25px;
-    background: white;
+    /*background: white;*/
     box-shadow: 0px 10px 50px rgba(41, 128, 185, .3);
 }
 
 .blog-card-content {
     position: absolute;
     width: 100%;
-    max-width: 850px;
+    /*max-width: 850px;*/
     margin: auto;
     border-radius: 25px;
     padding: 10px 25px 0px 25px;
@@ -35,6 +35,8 @@
 }
 
 .inner-part {
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
     display: flex;
     height: 360px;
