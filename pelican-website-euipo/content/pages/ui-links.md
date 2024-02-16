@@ -11,15 +11,14 @@ Tags: pelican, publishing
 {% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
 
 <details>
-	<summary> eForm </summary>
+	<summary> EUTM </summary>
     <ul>
-        <li><a href="https://integration.euipo.europa.eu/eutm-efiling" target="_blank">integration</a></li>
-        <li><a href="https://pp.euipo.europa.eu/eutm-efiling/" target="_blank">preprod</a></li>
-        <li><a href="https://test.euipo.europa.eu/eutm-efiling/" target="_blank">test</a></li>
+        <li><a href="https://dev-www.euipo.europa.eu/en/trade-marks" target="_blank">integration</a></li>
+        <li><a href="https://pp-www.euipo.europa.eu/en/trade-marks" target="_blank">preprod</a></li>
+        <li><a href="https://test-www.euipo.europa.eu/en/trade-marks" target="_blank">test</a></li>
     </ul>
 </details>
-  
- 
+
 <details>
 	<summary> User Area </summary> 
     <ul>
@@ -30,6 +29,16 @@ Tags: pelican, publishing
         <li><a href="https://test-www.euipo.europa.eu/en/user-area" target="_blank">test</a></li>
         <li><a href="https://test-www.euipo.europa.eu/en/new-user-area" target="_blank">test- new-user-area</a></li>
     </ul>    
+</details>
+
+<details>
+	<summary> eForms </summary>
+    <ul>
+        <li><a href="https://dev-www.euipo.europa.eu/en/trade-marks" target="_blank">integration</a></li>
+        <li><a href="https://integration.euipo.europa.eu/eutm-efiling" target="_blank">integration</a></li>
+        <li><a href="https://pp.euipo.europa.eu/eutm-efiling/" target="_blank">preprod</a></li>
+        <li><a href="https://test.euipo.europa.eu/eutm-efiling/" target="_blank">test</a></li>
+    </ul>
 </details>
 
 <details>
@@ -51,7 +60,7 @@ Tags: pelican, publishing
 </details>
 
 <details>
-	<summary> Esearch </summary> 
+	<summary> Esearch (legacy)</summary> 
        <ul>
         <li> 
             <details>
