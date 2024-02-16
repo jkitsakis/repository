@@ -3,7 +3,7 @@ Date: 2018-02-26
 Slug: tutorial1
 Category: Tutorials
 Summary: API URLs for AWS
-order:2
+order:8
 
 **How to Find API URLs for AWS 
 

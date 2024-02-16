@@ -3,7 +3,7 @@ Date: 2018-02-26
 Category: Rest APIs
 Slug: ipt-api
 Summary: Proceeding Search API
-order:2
+order:7
 
 ## _Proceeding Search API_ - <a href="https://git.euipo.europa.eu/projects/IPT/repos/proceeding-search-api/browse" target="_blank">BitBucket</a>
 

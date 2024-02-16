@@ -3,7 +3,7 @@ Date: 2018-02-26
 Category: Rest APIs
 Slug: eee-apis
 Summary: EEE APIs : EOP EUTM eForms - eutm-eform-backend
-order:7
+order:4
 
 {% set EOPW_URI = 'eutm-efiling/app/api/' %}
 {% set PREFIX_DEV='dev'%}
