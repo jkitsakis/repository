@@ -40,7 +40,7 @@ SERVICE_BOTOX= 'Αισθητικές Επεμβάσεις'
 SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
-SCROLL_MSG='Your slide-in text goes here'
+SCROLL_MSG='Ανακοινωσεις - ...'
 #PLUGINS = ['pdf_generator']
 
 
