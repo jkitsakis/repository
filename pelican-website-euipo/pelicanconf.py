@@ -17,7 +17,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 PLUGIN_PATHS = ['C:\Workspace\My-Applications\GitHub\pelican-plugins']
 PLUGINS = [
     "jinja2content",
