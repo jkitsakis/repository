@@ -1,3 +1,8 @@
+from __future__ import unicode_literals
+
+import os
+ENV = os.environ
+
 #AUTHOR = 'jk'
 SITENAME = 'EUIPO dev'
 
@@ -38,5 +43,8 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = 10
 
-# Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+PLUGIN_PATHS = ['C:\Workspace\My-Applications\GitHub\pelican-plugins']
+PLUGINS = [
+    # ...
+    "jinja2content",
+]

@@ -5,19 +5,27 @@ Slug: epa-apis
 Summary: EPA APIs : EOP Persons API
 order:5
 
-## _EUTM Search API_ 
+## _EUTM Search API_ - <a href="https://git.euipo.europa.eu/projects/EPA/repos/persons-api/browse" target="_blank">BitBucket</a>
 
-### URL PATH: ... /eop/persons/applicants?name=S%26P
+{% set EOPW_URI = 'eop/persons/applicants?name=S%26P' %}
+{% set PREFIX_DEV='dev'%}
+{% set PREFIX_TEST='test'%}
+{% set PREFIX_PROD='production'%}
+{% set APPLICATION_NAME='persons-api'%}
+{% set NETWORK_AWS='nonprod.aws.oami.eu'%}
+{% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
 
-### <a href="https://git.euipo.europa.eu/projects/EPA/repos/persons-api/browse" target="_blank">BitBucket</a>
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu
-- **Test:** http://test-eutm-api.test.oami.eu
-- **Prod:** http://api.prod.oami.eu
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration** : http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**: http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**: http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Prod**: http://api.prod.oami.eu</li>
+</ul>
+</details>
 
-
-- **AWS-Dev:** http://dev-persons-api.nonprod.aws.oami.eu
-
-[//]: # (- **AWS-Test:** http://test-eutm-search-api.nonprod.aws.oami.eu)
-- **AWS-Prod:** http://production-persons-api.nonprod.aws.oami.eu

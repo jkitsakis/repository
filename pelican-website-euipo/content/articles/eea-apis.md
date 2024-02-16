@@ -5,24 +5,35 @@ Slug: eea-apis
 Summary: EEA APIs : EUTM Search API, Eutm Filing Api
 order:3
 
-## _EUTM Search API_ 
+{% set EOPW_URI = 'eop/eutm-search/trademarks?' %}
+{% set PREFIX_DEV='dev'%}
+{% set PREFIX_TEST='test'%}
+{% set PREFIX_PROD='production'%}
+{% set APPLICATION_NAME='eutm-search-api'%}
+{% set NETWORK_AWS='nonprod.aws.oami.eu'%}
+{% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
 
-### URL PATH: ... /eop/eutm-search/trademarks?
+## _EUTM Search API_ - <a href="https://git.euipo.europa.eu/projects/EEA/repos/eutm-search-api/browse" target="_blank">BitBucket</a>
 
-### <a href="https://git.euipo.europa.eu/projects/EEA/repos/eutm-search-api/browse" target="_blank">BitBucket</a>
-
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu
-- **Test:** http://test-eutm-api.test.oami.eu
-- **Prod:** http://api.prod.oami.eu
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
 
-- **AWS-Dev:** http://dev-eutm-search-api.nonprod.aws.oami.eu
-- **AWS-Test:** http://test-eutm-search-api.nonprod.aws.oami.eu
-- **AWS-Prod:** http://production-eutm-search-api.prod.aws.oami.eu
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li>**Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li>**PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li>**Test**:  http://test-eutm-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li>**Prod**:  http://api.prod.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
+
+
+---------------------
 
 _Syntax_
-
 > query=representatives.identifier==10014
  
 > query=status==REGISTERED,markFeature==FIGURATIVE&page=0&fields=trademarks(applicationNumber)&sort=registrationDate:desc
@@ -50,16 +61,22 @@ _Syntax_
 
 -------
 
+## _Eutm Filing Api_ - <a href="https://git.euipo.europa.eu/projects/EEA/repos/eutm-filing-api/browse" target="_blank">BitBucket</a>
 
-## _Eutm Filing Api_
-### URL PATH: ... /eop/eutm-filing/
+{% set EOPW_URI = 'eop/eutm-filing/' %}
+{% set APPLICATION_NAME = 'eutm-filing-api' %}
 
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu
-- **Test:** http://test-eutm-api.test.oami.eu
-- **Prod:** http://api.prod.oami.eu
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
 
-- **AWS-Dev:** http://dev-eutm-filing-api.nonprod.aws.oami.eu
-- **AWS-Test:** http://test-eutm-filing-api.nonprod.aws.oami.eu
-- **AWS-Prod:** http://production-eutm-filing-api.prod.aws.oami.eu
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li>**Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li>**PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li>**Test**:  http://test-eutm-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li>**Prod**:  http://api.prod.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>

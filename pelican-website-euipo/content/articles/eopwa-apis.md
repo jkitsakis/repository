@@ -6,175 +6,218 @@ Summary: EOPWA APIs : Appeals Search API, Communications Search API, Designs Sea
 order: 8
 Tag: EOPWA APIs : Appeals Search API, Communications Search API, Designs Search API, Drafts Search API, Feedback Search API, Interpartes Search API
 
+{% set EOPW_URI = 'eop/appeals-search' %}
+{% set PREFIX_DEV='dev'%}
+{% set PREFIX_TEST='test'%}
+{% set PREFIX_PROD='production'%}
+{% set APPLICATION_NAME='appeals-search-api'%}
+{% set NETWORK_AWS='nonprod.aws.oami.eu'%}
+{% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
 
-## Appeals Search API
- 
-### URL PATH: ... /eop/appeals-search
+## _Appeals Search API_ - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/appeals-search-api/browse" target="_blank">BitBucket</a>
 
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/appeals-search-api/browse" target="_blank">BitBucket</a>
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
 
-- **AWS-Dev:** http://dev-appeals-search-api.nonprod.aws.oami.eu 
-- **AWS-Test:** http://test-appeals-search-api.nonprod.aws.oami.eu 
-- **AWS-Prod:** http://production-appeals-search-api.prod.aws.oami.eu 
+_Syntax_ 
 
 > ... ?query=appealNumber=='R00*'&roleKind=CLAIMANT&page=0&size=25&sort=appealDate:desc
 
 -------------------
 
-## Communications Search API
+## Communications Search API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/communications-api/browse" target="_blank">BitBucket</a>
+{% set EOPW_URI = 'eop/communications/' %}
+{% set APPLICATION_NAME = 'communications-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-### URL PATH: ... /eop/communications/
-
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/communications-api/browse" target="_blank">BitBucket</a>
-
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
-
-- **AWS-Dev:** http://dev-communications-api.nonprod.aws.oami.eu 
-- **AWS-Test:** http://test-communications-api.nonprod.aws.oami.eu
-- **AWS-Prod:** http://production-communications-api.prod.aws.oami.eu 
-
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
 
 -------------------
 
-## Designs Search API
+## Designs Search API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/design-search-api/browse" target="_blank">BitBucket</a>
+{% set EOPW_URI = 'eop/design-search/' %}
+{% set APPLICATION_NAME = 'design-search-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-### URL PATH: ... /eop/design-search
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
 
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/design-search-api/browse" target="_blank">BitBucket</a>
-
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
-
-- **AWS-Dev:** http://dev-design-search-api.nonprod.aws.oami.eu 
-- **AWS-Test:** http://test-design-search-api.nonprod.aws.oami.eu
-- **AWS-Prod:** http://production-design-search-api.prod.aws.oami.eu 
-
+_Syntax_ 
 > ... ?query=designNumber!=9*&size=10&page=0&sort=applicationDate:desc
 
 -------------------
 
-## Drafts Search API
+## Drafts Search API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/drafts-api/browse" target="_blank">BitBucket</a>
 
-### URL PATH: ... /eop/drafts/**eutms**?size=10&page=10&sort=creationDate:DESC
+{% set EOPW_URI = 'eop/drafts' %}
+{% set APPLICATION_NAME = 'drafts-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-### URL PATH: ... /eop/drafts/**designs**?size=10&page=10&sort=creationDate:DESC
 
-### URL PATH: ... /eop/drafts/**interpartes**?size=10&page=10&sort=creationDate:DESC
+### eutms: /eutms?size=10&page=10&sort=creationDate:DESC
 
-### URL PATH: ... /eop/drafts/**other**?size=10&page=10&sort=creationDate:DESC
+### designs: /designs?size=10&page=10&sort=creationDate:DESC
 
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/drafts-api/browse" target="_blank">BitBucket</a>
+### interpartes: /interpartes?size=10&page=10&sort=creationDate:DESC
 
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
+### other: /other?size=10&page=10&sort=creationDate:DESC
 
-- **AWS-Dev:** http://dev-drafts-api.nonprod.aws.oami.eu 
-- **AWS-Test:** http://test-drafts-api.nonprod.aws.oami.eu
-- **AWS-Prod:** http://production-drafts-api.prod.aws.oami.eu   
-
--------------------
-
-## Feedback Search API
-
-### URL PATH: ... /eop/feedback/surveys/:indentifier
-
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/feedback-api/browse" target="_blank">BitBucket</a>
-
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
-
-- **AWS-Dev:** http://dev-feedback-api.nonprod.aws.oami.eu 
-- **AWS-Test:** http://test-feedback-api.nonprod.aws.oami.eu 
-- **AWS-Prod:** http://production-feedback-api.prod.aws.oami.eu   
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
 
 -------------------
 
-## Interpartes Search API
+## Feedback Search API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/feedback-api/browse" target="_blank">BitBucket</a>
 
-### URL PATH: ... /eop/interpartes-search/oppositions?query=opponentRepresentatives.identifier==10014&size=100&page=0&sort=oppositionDate:desc
+{% set EOPW_URI = 'eop/feedback/surveys/:indentifier' %}
+{% set APPLICATION_NAME = 'feedback-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-### URL PATH: ... /eop/interpartes-search/cancellations?page=0&sort=cancellationNumber:desc&size=160
-
-### URL PATH: ... /eop/interpartes-search/invalidities?query=claimantRepresentatives.name=="HO+*"&size=100&page=0&sort=invalidityDate:desc
-
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/interpartes-search-api/browse" target="_blank">BitBucket</a>
-
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
-
-- **AWS-Dev:** http://dev-interpartes-search-api.nonprod.aws.oami.eu  
-- **AWS-Test:** http://test-interpartes-search-api.nonprod.aws.oami.eu 
-- **AWS-Prod:** http://production-interpartes-search-api.prod.aws.oami.eu
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
 
 -------------------
 
-## Notes Search API
+## Interpartes Search API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/interpartes-search-api/browse" target="_blank">BitBucket</a>
 
-### URL PATH: ... /eop/notes/
+{% set EOPW_URI = 'eop/interpartes-search' %}
+{% set APPLICATION_NAME = 'interpartes-search-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/notes-api/browse" target="_blank">BitBucket</a>
 
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
+### oppositions: /oppositions?query=opponentRepresentatives.identifier==10014&size=100&page=0&sort=oppositionDate:desc
 
-- **AWS-Dev:** http://dev-notes-api.nonprod.aws.oami.eu   
-- **AWS-Test:** http://test-notes-api.nonprod.aws.oami.eu 
-- **AWS-Prod:** http://production-notes-api.prod.aws.oami.eu 
+### cancellations: /cancellations?page=0&sort=cancellationNumber:desc&size=160
+
+### invalidities: /invalidities?query=claimantRepresentatives.name=="HO+*"&size=100&page=0&sort=invalidityDate:desc
+
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
+
+-------------------
+
+## Notes Search API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/notes-api/browse" target="_blank">BitBucket</a>
+
+{% set EOPW_URI = 'eop/notes/' %}
+{% set APPLICATION_NAME = 'notes-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
+
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
 
 ---------------------
 
-## Pre-Assesement Search API
-### URL PATH: ... /eop/pre-assessment/
+## Pre-Assesement Search API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/pre-assessment-api/browse" target="_blank">BitBucket</a>
 
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/pre-assessment-api/browse" target="_blank">BitBucket</a>
+{% set EOPW_URI = 'eop/pre-assessment/' %}
+{% set APPLICATION_NAME = 'pre-assessment-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
 
-- **AWS-Dev:** http://dev-pre-assessment-api.nonprod.aws.oami.eu  
-- **AWS-Test:** http://test-pre-assessment-api.nonprod.aws.oami.eu 
-- **AWS-Prod:** http://production-pre-assessment-api.prod.aws.oami.eu 
 
 -------------------------
 
-## Settings Search API
+## Settings Search API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/settings-api/browse" target="_blank">BitBucket</a>
 
-### URL PATH: ... /eop/settings/
+{% set EOPW_URI = 'eop/settings/' %}
+{% set APPLICATION_NAME = 'settings-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/settings-api/browse" target="_blank">BitBucket</a>
-
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
-
-- **AWS-Dev:** http://dev-settings-api.nonprod.aws.oami.eu 
-- **AWS-Test:** http://test-settings-api.nonprod.aws.oami.eu 
-- **AWS-Prod:** http://production-settings-api.prod.aws.oami.eu 
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
 
 -----------------------------
 
-## User Profile API
+## User Profile API - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/user-profile-api/browse" target="_blank">BitBucket</a>
 
-### URL PATH: ...  /eop/user-profile/
+{% set EOPW_URI = 'eop/user-profile/' %}
+{% set APPLICATION_NAME = 'user-profile-api' %}
+- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
-### <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/user-profile-api/browse" target="_blank">BitBucket</a>
-
-- **Integration:** http://int-api.dev.oami.eu
-- **PreProd:** http://pp-api.test.oami.eu 
-- **Test:** http://test-api.test.oami.eu 
-
-- **AWS-Dev:** http://dev-user-profile-api.nonprod.aws.oami.eu 
-- **AWS-Test:** http://test-user-profile-api.nonprod.aws.oami.eu 
-- **AWS-Prod:** http://production-user-profile-api.prod.aws.oami.eu 
+<details>
+<summary>Legacy links</summary>
+<ul>
+  <li> **Integration**:  http://int-api.dev.oami.eu/{{EOPW_URI}}</li>
+  <li> **PreProd**:  http://pp-api.test.oami.eu/{{EOPW_URI}}</li>
+  <li> **Test**:  http://test-api.test.oami.eu/{{EOPW_URI}}</li>
+</ul>
+</details>
