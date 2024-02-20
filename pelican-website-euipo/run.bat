@@ -54,7 +54,8 @@ goto start
 cd %APP_HOME%
 start cmd /k call pelican -lr -p %PORT%
 pause
-call "C:\Users\ikitsakis\AppData\Local\Programs\Opera\opera.exe"  --ran-launcher --remote http://localhost:%PORT%
+REM call "C:\Users\ikitsakis\AppData\Local\Programs\Opera\opera.exe"  --ran-launcher --remote http://localhost:%PORT%
+start chrome http://localhost:%PORT%
 pause
 goto start 
 

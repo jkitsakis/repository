@@ -2,42 +2,40 @@ Title: UI Links
 Slug: ui-links
 Tags: pelican, publishing
 
-{% set EOPW_URI = 'portal/app/api' %}
-{% set PREFIX_DEV='dev'%}
-{% set PREFIX_TEST='test'%}
-{% set PREFIX_PROD='production'%}
-{% set APPLICATION_NAME='website-backend'%}
-{% set NETWORK_AWS='nonprod.aws.oami.eu'%}
-{% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
+{% set aws_dev = 'https://dev-www.euipo.europa.eu' %}
+{% set aws_pp = 'https://pp-www.euipo.europa.eu' %}
+{% set aws_test = 'https://test-www.euipo.europa.eu'%}
+{% set aws_dev1 = 'https://dev-eutm.euipo.europa.eu' %}
+{% set aws_pp1 = 'https://pp-eutm.euipo.europa.eu' %}
+{% set aws_test1 = 'https://test-eutm.euipo.europa.eu'%}
 
 <details>
 	<summary> EUTM </summary>
     <ul>
-        <li><a href="https://dev-www.euipo.europa.eu/en/trade-marks" target="_blank">integration</a></li>
-        <li><a href="https://pp-www.euipo.europa.eu/en/trade-marks" target="_blank">preprod</a></li>
-        <li><a href="https://test-www.euipo.europa.eu/en/trade-marks" target="_blank">test</a></li>
+        <li><a href="{{aws_dev}}/en/trade-marks" target="_blank">integration</a></li>
+        <li><a href="{{aws_pp}}/en/trade-marks" target="_blank">preprod</a></li>
+        <li><a href="{{aws_test}}/en/trade-marks" target="_blank">test</a></li>
     </ul>
 </details>
 
 <details>
 	<summary> User Area </summary> 
     <ul>
-        <li><a href="https://dev-www.euipo.europa.eu/en/user-area" target="_blank">integration</a></li>
-        <li><a href="https://dev-www.euipo.europa.eu/en/new-user-area" target="_blank">integration - new-user-area</a></li>
-        <li><a href="https://pp-www.euipo.europa.eu/en/user-area" target="_blank">preprod</a></li>
-        <li><a href="https://pp-www.euipo.europa.eu/en/new-user-area" target="_blank">preprod - new-user-area</a></li>
-        <li><a href="https://test-www.euipo.europa.eu/en/user-area" target="_blank">test</a></li>
-        <li><a href="https://test-www.euipo.europa.eu/en/new-user-area" target="_blank">test- new-user-area</a></li>
+        <li><a href="{{aws_dev}}/en/user-area" target="_blank">integration</a></li>
+        <li><a href="{{aws_dev}}/en/new-user-area" target="_blank">integration - new-user-area</a></li>
+        <li><a href="{{aws_pp}}/en/user-area" target="_blank">preprod</a></li>
+        <li><a href="{{aws_pp}}/en/new-user-area" target="_blank">preprod - new-user-area</a></li>
+        <li><a href="{{aws_test}}/en/user-area" target="_blank">test</a></li>
+        <li><a href="{{aws_test}}/en/new-user-area" target="_blank">test- new-user-area</a></li>
     </ul>    
 </details>
 
 <details>
 	<summary> eForms </summary>
     <ul>
-        <li><a href="https://dev-www.euipo.europa.eu/en/trade-marks" target="_blank">integration</a></li>
-        <li><a href="https://integration.euipo.europa.eu/eutm-efiling" target="_blank">integration</a></li>
-        <li><a href="https://pp.euipo.europa.eu/eutm-efiling/" target="_blank">preprod</a></li>
-        <li><a href="https://test.euipo.europa.eu/eutm-efiling/" target="_blank">test</a></li>
+        <li><a href="{{aws_dev1}}/eutm-efiling/" target="_blank">integration</a></li>
+        <li><a href="{{aws_pp1}}/eutm-efiling/" target="_blank">preprod</a></li>
+        <li><a href="{{aws_test1}}/eutm-efiling/" target="_blank">test</a></li>
     </ul>
 </details>
 
