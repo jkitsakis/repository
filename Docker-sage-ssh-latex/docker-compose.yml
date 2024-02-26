@@ -13,6 +13,7 @@ services:
     volumes:
       - ./sagemath_notebooks:/home/dockeruser/notebooks
       - ./latex_files:/home/dockeruser/texfiles  # Map a volume for LaTeX files
+      - ./pandoc_files:/home/dockeruser/pandoc
     command: 
       - /bin/sh
       - -c
