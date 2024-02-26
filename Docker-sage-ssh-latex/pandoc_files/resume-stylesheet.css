@@ -117,3 +117,7 @@ footer p {
 #gist a:hover {
 	color: #ffffff;
 }
+
+table {
+    width:100%;
+}
