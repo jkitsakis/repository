@@ -1,6 +1,8 @@
 __pycache__/*
+.idea/
 output/
 source/
 run.bat
-.idea/
+*.bat
+
 
