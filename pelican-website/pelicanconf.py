@@ -19,6 +19,7 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_SUMMARY = True
 DISPLAY_FOOTER = False
+DISPLAY_ASIDE_FOOTER = True
 ARTICLE_ORDER_BY = 'order'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -41,11 +42,6 @@ SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
 SCROLL_MSG='Ανακοινωσεις - ...'
-#PLUGINS = ['pdf_generator']
-
-
-# Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
 
 MENUITEMS = (
   ('Υπηρεσίες',SITEURL+'/pages/Services.html'),

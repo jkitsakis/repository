@@ -275,6 +275,12 @@ aside > h2 {
   text-align: center;
 }
 
+.footer-aside {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
 .time-sidual{
 	overflow:hidden;
 }

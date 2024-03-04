@@ -132,7 +132,13 @@
             {% endfor %}
         </ul>
     {% endif %}
-	
+
+    {% if DISPLAY_ASIDE_FOOTER or DISPLAY_ASIDE_FOOTER is not defined %}
+        <p class="footer-aside">
+            Powered by <a href="http://getpelican.com/">Pelican</a>,
+            Created by <a href="https://jkitsakis.github.io/">jkitsakis</a>.
+        </p>
+{% endif %}
 
 </aside>
 
