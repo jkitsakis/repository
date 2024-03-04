@@ -368,20 +368,20 @@
 
 \begin{document}
     
-    \(\textbf{Question 7}\)
+    $\textbf{Question 7}$
 
-Consider the softplus activation function \(𝑓(𝑥) = ln (1 + 𝑒^𝑥)\)
+Consider the softplus activation function $f(x) = ln (1 + e^x)$
 utilised in machine learning. Using sagemath
 
 \begin{enumerate}
 \def\labelenumi{(\roman{enumi})}
 \tightlist
 \item
-  Compute the Taylor approximation of 𝑓(𝑥) around 𝑥 = 0 including terms
-  up to 10-th order in 𝑥 (use series function).
+  Compute the Taylor approximation of f(x) around x = 0 including terms
+  up to 10-th order in x (use series function).
 \end{enumerate}
 
-\(\textbf{Answer}\)
+$\textbf{Answer}$
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{19}{\boxspacing}
@@ -399,7 +399,7 @@ utilised in machine learning. Using sagemath
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-x |--> -17/645120*x\^{}8 + 1/2880*x\^{}6 - 1/192*x\^{}4 + 1/8*x\^{}2 + 1/2*x + Order(x\^{}10) +
+x |--> -17/645120*x^8 + 1/2880*x^6 - 1/192*x^4 + 1/8*x^2 + 1/2*x + Order(x^10) +
 log(2)
     \end{Verbatim}
 
@@ -409,13 +409,11 @@ log(2)
 \tightlist
 \item
   Plot the softplus function as well as the Taylor approximation of
-  question (i) in a combined plot in the region −5 \textless{} 𝑥
-  \textless{} 5, −1 \textless{} 𝑦 \textless{} 4 (use different colors
-  and styles for the two curves) and comment on the region of validity
+  question (i) in a combined plot in the region x in [-5 , 5] , y in [ -1 , 4 ] (use different colors  and styles for the two curves) and comment on the region of validity
   of the approximation.
 \end{enumerate}
 
-\(\textbf{Answer}\)
+$\textbf{Answer}$
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{22}{\boxspacing}
@@ -444,10 +442,10 @@ simplify to float approximation'
 \setcounter{enumi}{2}
 \tightlist
 \item
-  Compute the derivative of 𝑓(𝑥) analytically
+  Compute the derivative of f(x) analytically
 \end{enumerate}
 
-\(\textbf{Answer}\)
+$\textbf{Answer}$
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{29}{\boxspacing}
@@ -461,7 +459,7 @@ simplify to float approximation'
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-x |--> e\^{}x/(e\^{}x + 1)
+x |--> e^x/(e^x + 1)
     \end{Verbatim}
 
     \begin{enumerate}
@@ -469,10 +467,10 @@ x |--> e\^{}x/(e\^{}x + 1)
 \setcounter{enumi}{3}
 \tightlist
 \item
-  Compute the derivative of 𝑓(𝑥) approximately using the result of (i).
+  Compute the derivative of f(x) approximately using the result of (i).
 \end{enumerate}
 
-\(\textbf{Answer}\)
+$\textbf{Answer}$
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{33}{\boxspacing}
@@ -486,7 +484,7 @@ x |--> e\^{}x/(e\^{}x + 1)
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-x |--> -17/80640*x\^{}7 + 1/480*x\^{}5 - 1/48*x\^{}3 + 1/4*x + Order(x\^{}9) + 1/2
+x |--> -17/80640*x^7 + 1/480*x^5 - 1/48*x^3 + 1/4*x + Order(x^9) + 1/2
     \end{Verbatim}
 
     \begin{enumerate}
@@ -494,12 +492,11 @@ x |--> -17/80640*x\^{}7 + 1/480*x\^{}5 - 1/48*x\^{}3 + 1/4*x + Order(x\^{}9) + 1
 \setcounter{enumi}{21}
 \tightlist
 \item
-  Plot the results of (iii) and (iv) in a combined plot in the region −5
-  \textless{} 𝑥 \textless{} 5, −1 \textless{} 𝑦 \textless{} 1 (use
+  Plot the results of (iii) and (iv) in a combined plot in the region -5 < x < 5, -1 < y < 1 (use
   different colors and styles for the two curves).
 \end{enumerate}
 
-\(\textbf{Answer}\)
+$\textbf{Answer}$
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{38}{\boxspacing}

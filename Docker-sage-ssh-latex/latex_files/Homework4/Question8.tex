@@ -63,7 +63,7 @@
     \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
                                 % normalem makes italics be italics, not underlines
-	\usepackage{mathrsfs}
+    \usepackage{mathrsfs}
     
 
     
@@ -149,7 +149,7 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{Question10}
+    \title{Question8-2}
     
     
     
@@ -245,7 +245,7 @@
 \def\PYZgt{\char`\>}
 \def\PYZsh{\char`\#}
 \def\PYZpc{\char`\%}
-\def\PYZdl{\char`$}
+\def\PYZdl{\char`\$}
 \def\PYZhy{\char`\-}
 \def\PYZsq{\char`\'}
 \def\PYZdq{\char`\"}
@@ -280,7 +280,7 @@
             \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
             \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
             \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
-            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`$}{\char`$}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
             \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
             \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
             \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
@@ -366,84 +366,183 @@
     
     
 
-\begin{document}   
+\begin{document}    
 
     
-    $\textbf{Question 10.}$
+    $\textbf{Question 8}$
 
-Consider the function $f(x, y) = ln (1 + x(x + y^2))$.
+Consider the sigmoid function
+
+$f(w_0, w_1, w_2, x_0, x_1) = \frac{1}{1 + e^{-(w_0x_0 + w_1x_1 + w_2)}}$
 
 \begin{enumerate}
-\def\labelenumi{(\roman{enumi})}
+\def\labelenumi{(\alph{enumi})}
 \item
-  Draw its computational graph.
+  Install the automatic differentiation library autograd in sagemath and
+  all additional libraries required for its functionality.
 \item
-  Compute its gradient at (x, y) = (2, 1) using the results of (i) and
-  backpropagation
+  Define f as a python function and utilise autograd to define a
+  function named augradf that automatically computes the numerical value
+  of the gradient of f with respect to w0, w1, w2, x0, x1.
+\item
+  Define a sagemath function angradf that computes analytically the
+  gradient of f with respect to w0, w1, w2, x0, x1.
+\item
+  Compare the results of the functions augradf and angradf for 10 points
+  (w0, w1, w2, x0, x1) choosed randomly in the range (0, 1), and comment
+  on any discrepancies.
+\item
+  Compare the execution time of the two methods of computation of the
+  gradient for a specific point (chosen randomly).
 \end{enumerate}
 
-$\textbf{Answer}$
+$\textbf{Answer:}$
 
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Make sure you have autograd installed}
+\PY{k+kn}{import} \PY{n+nn}{autograd}\PY{n+nn}{.}\PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+\PY{k+kn}{from} \PY{n+nn}{autograd} \PY{k+kn}{import} \PY{n}{grad}\PY{p}{,} \PY{n}{elementwise\PYZus{}grad}
 
+\PY{c+c1}{\PYZsh{} Define the sigmoid function}
+\PY{k}{def} \PY{n+nf}{sigmoid}\PY{p}{(}\PY{n}{w0}\PY{p}{,} \PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{x1}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{l+m+mi}{1} \PY{o}{/} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{n}{w0}\PY{o}{*}\PY{n}{x0} \PY{o}{+} \PY{n}{w1}\PY{o}{*}\PY{n}{x1} \PY{o}{+} \PY{n}{w2}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
-    To compute the gradient of the given function
-$f(x, y) = \ln(1 + x(x + y^2))$ at the point $(2, 1)$, we'll find
-the partial derivatives of $f$ with respect to $x$ and $y$.
+\PY{c+c1}{\PYZsh{} Define the function to compute the gradient of sigmoid function}
+\PY{k}{def} \PY{n+nf}{augradf}\PY{p}{(}\PY{n}{w0}\PY{p}{,} \PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{x1}\PY{p}{)}\PY{p}{:}
+    \PY{c+c1}{\PYZsh{} Define the gradient function using autograd}
+    \PY{n}{grad\PYZus{}sigmoid} \PY{o}{=} \PY{n}{elementwise\PYZus{}grad}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{argnum}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
+    \PY{c+c1}{\PYZsh{} Evaluate the gradient at the given point}
+    \PY{n}{gradient\PYZus{}value} \PY{o}{=} \PY{n}{grad\PYZus{}sigmoid}\PY{p}{(}\PY{n}{w0}\PY{p}{,} \PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{x1}\PY{p}{)}
+    \PY{k}{return} \PY{n}{gradient\PYZus{}value}
 
-Let:
+\PY{c+c1}{\PYZsh{} Example usage:}
+\PY{c+c1}{\PYZsh{} Example usage:}
+\PY{n}{w0\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{1.0}
+\PY{n}{w1\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{2.0}
+\PY{n}{w2\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{3.0}
+\PY{n}{x0\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{0.5}
+\PY{n}{x1\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{0.3}
 
-$ u = 1 + x(x + y^2) $
+\PY{n}{gradient\PYZus{}at\PYZus{}point} \PY{o}{=} \PY{n}{augradf}\PY{p}{(}\PY{n}{w0\PYZus{}val}\PY{p}{,} \PY{n}{w1\PYZus{}val}\PY{p}{,} \PY{n}{w2\PYZus{}val}\PY{p}{,} \PY{n}{x0\PYZus{}val}\PY{p}{,} \PY{n}{x1\PYZus{}val}\PY{p}{)}
 
-The function $f$ can be rewritten as:
+\PY{c+c1}{\PYZsh{} Format and print the results}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Input values:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w0 = }\PY{l+s+si}{\PYZob{}}\PY{n}{w0\PYZus{}val}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, w1 = }\PY{l+s+si}{\PYZob{}}\PY{n}{w1\PYZus{}val}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, w2 = }\PY{l+s+si}{\PYZob{}}\PY{n}{w2\PYZus{}val}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, x0 = }\PY{l+s+si}{\PYZob{}}\PY{n}{x0\PYZus{}val}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{, x1 = }\PY{l+s+si}{\PYZob{}}\PY{n}{x1\PYZus{}val}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 
-$ f(x, y) = \ln(u) $
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Gradient of f at the given point:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θf/θw0 = }\PY{l+s+si}{\PYZob{}}\PY{n}{gradient\PYZus{}at\PYZus{}point}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θf/θw1 = }\PY{l+s+si}{\PYZob{}}\PY{n}{gradient\PYZus{}at\PYZus{}point}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θf/θw2 = }\PY{l+s+si}{\PYZob{}}\PY{n}{gradient\PYZus{}at\PYZus{}point}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θf/θx0 = }\PY{l+s+si}{\PYZob{}}\PY{n}{gradient\PYZus{}at\PYZus{}point}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θf/θx1 = }\PY{l+s+si}{\PYZob{}}\PY{n}{gradient\PYZus{}at\PYZus{}point}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{l+s+si}{:}\PY{l+s+s2}{.6f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
-find the partial derivatives:
+    \begin{Verbatim}[commandchars=\\\{\}]
+Input values:
+w0 = 1.0, w1 = 2.0, w2 = 3.0, x0 = 0.5, x1 = 0.3
 
-$ u = 1 + x(x + y^2) $
+Gradient of f at the given point:
+θf/θw0 = 0.008018
+θf/θw1 = 0.004811
+θf/θw2 = 0.016037
+θf/θx0 = 0.016037
+θf/θx1 = 0.032073
+    \end{Verbatim}
 
-To find $\frac{\partial u}{\partial x}$, we differentiate $u$ with
-respect to $x$, treating $y$ as a constant:
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
 
-$ \frac{\partial u}{\partial x} = \frac{d}{dx}(1) + \frac{d}{dx}{[}x(x
-+ y^2){]} $
+\end{Verbatim}
+\end{tcolorbox}
 
-$ = 0 + 1 \cdot (x + y^2) + x \cdot \frac{d}{dx}(x + y^2) $
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{from} \PY{n+nn}{sage}\PY{n+nn}{.}\PY{n+nn}{all} \PY{k+kn}{import} \PY{o}{*}
 
-$ = x + y^2 + x \cdot (1) $
+\PY{c+c1}{\PYZsh{} Define the symbolic variables}
+\PY{n}{w0}\PY{p}{,} \PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{x1} \PY{o}{=} \PY{n}{var}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{w0 w1 w2 x0 x1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 
-$ = x + x + y^2 $
+\PY{c+c1}{\PYZsh{} Define the sigmoid function}
+\PY{n}{sigmoid} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{/} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{+} \PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{n}{w0}\PY{o}{*}\PY{n}{x0} \PY{o}{+} \PY{n}{w1}\PY{o}{*}\PY{n}{x1} \PY{o}{+} \PY{n}{w2}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
-$ = 2x + y^2 $
+\PY{c+c1}{\PYZsh{} Define the gradient of the sigmoid function}
+\PY{n}{angradf} \PY{o}{=} \PY{p}{[}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{w0}\PY{p}{)}\PY{p}{,}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{w1}\PY{p}{)}\PY{p}{,}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{w2}\PY{p}{)}\PY{p}{,}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{x0}\PY{p}{)}\PY{p}{,}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{x1}\PY{p}{)}
+\PY{p}{]}
 
-To find $\frac{\partial u}{\partial y}$, we differentiate $u$ with
-respect to $y$, treating $x$ as a constant:
+\PY{c+c1}{\PYZsh{} Display the analytical gradient}
+\PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{derivative} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{angradf}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{θf/θ}\PY{l+s+si}{\PYZob{}}\PY{n}{angradf}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{variables}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s2}{ =}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{derivative}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
-$ \frac{\partial u}{\partial y} = \frac{d}{dy}(1) + \frac{d}{dy}{[}x(x
-+ y^2){]} $
+    \begin{Verbatim}[commandchars=\\\{\}]
+θf/θw0 = x0*e\^{}(-w0*x0 - w1*x1 - w2)/(e\^{}(-w0*x0 - w1*x1 - w2) + 1)\^{}2
+θf/θw0 = x1*e\^{}(-w0*x0 - w1*x1 - w2)/(e\^{}(-w0*x0 - w1*x1 - w2) + 1)\^{}2
+θf/θw0 = e\^{}(-w0*x0 - w1*x1 - w2)/(e\^{}(-w0*x0 - w1*x1 - w2) + 1)\^{}2
+θf/θw0 = w0*e\^{}(-w0*x0 - w1*x1 - w2)/(e\^{}(-w0*x0 - w1*x1 - w2) + 1)\^{}2
+θf/θw0 = w1*e\^{}(-w0*x0 - w1*x1 - w2)/(e\^{}(-w0*x0 - w1*x1 - w2) + 1)\^{}2
+    \end{Verbatim}
 
-$ = 0 + x \cdot \frac{d}{dy}(x + y^2) $
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
 
-$ = x \cdot 0 + x \cdot 2y $
+\end{Verbatim}
+\end{tcolorbox}
 
-$ = 2xy $
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Import the symbolic ring from SageMath}
+\PY{k+kn}{from} \PY{n+nn}{sage}\PY{n+nn}{.}\PY{n+nn}{all} \PY{k+kn}{import} \PY{o}{*}
 
-So, the partial derivatives are:
+\PY{c+c1}{\PYZsh{} Define symbolic variables}
+\PY{n}{w0}\PY{p}{,} \PY{n}{w1}\PY{p}{,} \PY{n}{w2}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{x1} \PY{o}{=} \PY{n}{SR}\PY{o}{.}\PY{n}{var}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{w0 w1 w2 x0 x1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 
-$ \frac{\partial u}{\partial x} = 2x + y^2 $
+\PY{c+c1}{\PYZsh{} Define the sigmoid function}
+\PY{n}{sigmoid} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{/} \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{+} \PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{n}{w0}\PY{o}{*}\PY{n}{x0} \PY{o}{+} \PY{n}{w1}\PY{o}{*}\PY{n}{x1} \PY{o}{+} \PY{n}{w2}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
-$ \frac{\partial u}{\partial y} = 2xy $
+\PY{c+c1}{\PYZsh{} Define the gradient of the sigmoid function}
+\PY{n}{angradf} \PY{o}{=} \PY{p}{[}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{w0}\PY{p}{)}\PY{p}{,}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{w1}\PY{p}{)}\PY{p}{,}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{w2}\PY{p}{)}\PY{p}{,}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{x0}\PY{p}{)}\PY{p}{,}
+    \PY{n}{diff}\PY{p}{(}\PY{n}{sigmoid}\PY{p}{,} \PY{n}{x1}\PY{p}{)}
+\PY{p}{]}
 
-substitute the values $x = 2$ and $y = 1$ into these expressions:
+\PY{c+c1}{\PYZsh{} Define a function to evaluate the gradient at a specific point}
+\PY{k}{def} \PY{n+nf}{evaluate\PYZus{}gradient\PYZus{}at\PYZus{}point}\PY{p}{(}\PY{n}{w0\PYZus{}val}\PY{p}{,} \PY{n}{w1\PYZus{}val}\PY{p}{,} \PY{n}{w2\PYZus{}val}\PY{p}{,} \PY{n}{x0\PYZus{}val}\PY{p}{,} \PY{n}{x1\PYZus{}val}\PY{p}{)}\PY{p}{:}
+    \PY{n}{gradient\PYZus{}values} \PY{o}{=} \PY{p}{[}\PY{n}{angradf}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{(}\PY{n}{w0}\PY{o}{=}\PY{n}{w0\PYZus{}val}\PY{p}{,} \PY{n}{w1}\PY{o}{=}\PY{n}{w1\PYZus{}val}\PY{p}{,} \PY{n}{w2}\PY{o}{=}\PY{n}{w2\PYZus{}val}\PY{p}{,} \PY{n}{x0}\PY{o}{=}\PY{n}{x0\PYZus{}val}\PY{p}{,} \PY{n}{x1}\PY{o}{=}\PY{n}{x1\PYZus{}val}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{angradf}\PY{p}{)}\PY{p}{)}\PY{p}{]}
+    \PY{k}{return} \PY{n}{gradient\PYZus{}values}
 
-$ \frac{\partial u}{\partial x} = 2x + y^2 = 2(2) + 1^2 = 4 + 1 =
-5 $
+\PY{c+c1}{\PYZsh{} Example usage:}
+\PY{n}{w0\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{1.0}
+\PY{n}{w1\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{2.0}
+\PY{n}{w2\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{3.0}
+\PY{n}{x0\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{0.5}
+\PY{n}{x1\PYZus{}val} \PY{o}{=} \PY{l+m+mf}{0.3}
 
-$ \frac{\partial u}{\partial y} = 2xy = 2(2)(1) = 4 $
+\PY{n}{gradient\PYZus{}at\PYZus{}point} \PY{o}{=} \PY{n}{evaluate\PYZus{}gradient\PYZus{}at\PYZus{}point}\PY{p}{(}\PY{n}{w0\PYZus{}val}\PY{p}{,} \PY{n}{w1\PYZus{}val}\PY{p}{,} \PY{n}{w2\PYZus{}val}\PY{p}{,} \PY{n}{x0\PYZus{}val}\PY{p}{,} \PY{n}{x1\PYZus{}val}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Analytical Gradient of f at the given point:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{gradient\PYZus{}at\PYZus{}point}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
 
-Therefore, the gradient of $u$ at $(2, 1)$ is:
-
-$ \nabla u(2, 1) = (5, 4) $
+    \begin{Verbatim}[commandchars=\\\{\}]
+Analytical Gradient of f at the given point: [0.008018363942842558,
+0.004811018365705535, 0.016036727885685116, 0.016036727885685116,
+0.03207345577137023]
+    \end{Verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}

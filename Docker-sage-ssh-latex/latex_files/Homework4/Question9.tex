@@ -368,66 +368,66 @@
 
 \begin{document}
     
-    \(\textbf{Question 9.}\)
+    $\textbf{Question 9.}$
 
 Using by-hand calculation, find an approximation of the two variable
-function \(𝑓(𝑥, 𝑦) = 𝑒^𝑥 ln(1+𝑦)\) that comprises up to second-order
-terms in 𝑥, 𝑦 in the Taylor series expansion around the point
-\((𝑥_0, 𝑦_0) = (0, 0)\)
+function $f(x, y) = e^x ln(1+y)$ that comprises up to second-order
+terms in x, y in the Taylor series expansion around the point
+$(x_0, y_0) = (0, 0)$
 
-\(\textbf{Answer}\)
+$\textbf{Answer}$
 
     To find the second-order Taylor series expansion of the function
-\(f(x, y) = e^x \ln(1 + y)\) around the point \((x_0, y_0) = (0, 0)\),
-we can use the general form of the Taylor series for a two-variable
+$f(x, y) = e^x \ln(1 + y)$ around the point $(x_0, y_0) = (0, 0)$,
+we use the general form of the Taylor series for a two-variable
 function:
 
-\(f(x, y) \approx f(x_0, y_0) + f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) + \frac{1}{2}[f_{xx}(x_0, y_0)(x - x_0)^2 + 2f_{xy}(x_0, y_0)(x - x_0)(y - y_0) + f_{yy}(x_0, y_0)(y - y_0)^2]\)
+$f(x, y) \approx f(x_0, y_0) + f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) + \frac{1}{2}[f_{xx}(x_0, y_0)(x - x_0)^2 + 2f_{xy}(x_0, y_0)(x - x_0)(y - y_0) + f_{yy}(x_0, y_0)(y - y_0)^2]$
 
-where \(f_x\), \(f_y\), \(f_{xx}\), \(f_{xy}\), and \(f_{yy}\) are the
-partial derivatives of \(f\) with respect to \(x\) and \(y\) up to the
-second order evaluated at \((x_0, y_0)\).
+where $f_x$, $f_y$, $f_{xx}$, $f_{xy}$, and $f_{yy}$ are the
+partial derivatives of $f$ with respect to $x$ and $y$ up to the
+second order evaluated at $(x_0, y_0)$.
 
-Let's calculate these derivatives:
+calculate derivatives:
 
-\(f(x, y) = e^x \ln(1 + y)\)
+$f(x, y) = e^x \ln(1 + y)$
 
-\(f_x = e^x \ln(1 + y)\)
+$f_x = e^x \ln(1 + y)$
 
-\(f_y = \frac{e^x}{1 + y}\)
+$f_y = \frac{e^x}{1 + y}$
 
-\(f_{xx} = e^x \ln(1 + y)\)
+$f_{xx} = e^x \ln(1 + y)$
 
-\(f_{xy} = \frac{e^x}{1 + y}\)
+$f_{xy} = \frac{e^x}{1 + y}$
 
-\(f_{yy} = -\frac{e^x}{(1 + y)^2}\)
+$f_{yy} = -\frac{e^x}{(1 + y)^2}$
 
-Now, evaluate these derivatives at \((x_0, y_0) = (0, 0)\):
+evaluate these derivatives at $(x_0, y_0) = (0, 0)$:
 
-\(f(0, 0) = 0\)
+$f(0, 0) = 0$
 
-\(f_x(0, 0) = 0\)
+$f_x(0, 0) = 0$
 
-\(f_y(0, 0) = 1\)
+$f_y(0, 0) = 1$
 
-\(f_{xx}(0, 0) = 0\)
+$f_{xx}(0, 0) = 0$
 
-\(f_{xy}(0, 0) = 1\)
+$f_{xy}(0, 0) = 1$
 
-\(f_{yy}(0, 0) = -1\)
+$f_{yy}(0, 0) = -1$
 
-Now substitute these values into the Taylor series expansion:
+substitute these values into the Taylor series expansion:
 
-\(f(x, y) \approx 0 + 0 + (1)(y - 0) + \frac{1}{2}[0(x - 0)^2 + 2(1)(x - 0)(y - 0) - 1(y - 0)^2]\)
+$f(x, y) \approx 0 + 0 + (1)(y - 0) + \frac{1}{2}[0(x - 0)^2 + 2(1)(x - 0)(y - 0) - 1(y - 0)^2]$
 
 Simplify:
 
-\(f(x, y) \approx y + (x)(y) - \frac{1}{2}(y)^2\)
+$f(x, y) \approx y + (x)(y) - \frac{1}{2}(y)^2$
 
 So, the second-order Taylor series approximation for the given function
-around \((0, 0)\) is:
+around $(0, 0)$ is:
 
-\(f(x, y) \approx y + xy - \frac{1}{2}y^2\)
+$f(x, y) \approx y + xy - \frac{1}{2}y^2$
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
