@@ -1,4 +1,4 @@
-Title: Επικοινωνια
+Title: Επικοινωνία
 Slug: Contact
 Summary: This is a sample blog contact page.
 

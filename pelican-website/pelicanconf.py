@@ -28,13 +28,13 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = False
 
-SITENAME = 'Κωνσταντινιδου Κυριακη'
+SITENAME = 'Προσωπικος Ιατρος'
 NAME = 'Κωνσταντινιδου Κυριακη'
 PROFESSION_DESCRIPTION ='Γενικη Οικογενειακή Ιατρός'
 PROFESSION_TITLE= 'Διευθυντρια Ε.Σ.Υ'
-MOBILE = '6907161439'
-EMAIL = 'konsan72@yahoo.gr'
-ADDRESS = 'Address'
+MOBILE = '690XXXXXX'
+EMAIL = 'prosopiki.iatros@gmail.com'
+ADDRESS = 'prosopiki.iatros address'
 SERVICE_EOPPY='Συνταγογραφηση ΕΟΠΠΥ'
 SERVICE_EXAMS='Εξετασεις - Παραπεμπτικά'
 SERVICE_BOTOX= 'Αισθητικές Επεμβάσεις'
