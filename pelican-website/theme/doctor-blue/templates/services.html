@@ -1,19 +1,26 @@
-{% if articles %}
-    <ol class="posts">
-        {% for article in (articles_page.object_list if articles_page else articles) %}
-            <li class="post_list">
-                    <h2 class="post_title">
-                       <img style="width:20px; height:auto; " src="{{SITEURL}}/images/bullet.png"/>
-                       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}"> {{ article.title }} </a>
-                    </h2>
-                {% if DISPLAY_SUMMARY and article.summary|length > 0 %}
-                    <p>{{ article.summary }}</p>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ol>
-{% endif %}
+<div style="position:relative; height:30px;"></div>
 
-{% if articles_page and articles_paginator.num_pages > 1 %}
-    {% include 'pagination.html' %}
-{% endif %}
+<div style="float: left;">
+    <img class="img-left" src="{{SITEURL}}/images/services/doctor.png"/>
+</div>
+<div style="float: left;">
+    {% if articles %}
+        <ol class="posts">
+            {% for article in (articles_page.object_list if articles_page else articles) %}
+                <li class="post_list">
+                        <h2 class="post_title">
+                           <img style="width:20px; height:auto; " src="{{SITEURL}}/images/bullet.png"/>
+                           <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}"> {{ article.title }} </a>
+                        </h2>
+                    {% if DISPLAY_SUMMARY and article.summary|length > 0 %}
+                        <p>{{ article.summary }}</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+
+    {% if articles_page and articles_paginator.num_pages > 1 %}
+        {% include 'pagination.html' %}
+    {% endif %}
+</div>
