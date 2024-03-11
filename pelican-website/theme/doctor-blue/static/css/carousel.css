@@ -107,15 +107,15 @@
 }
 
 .content .title {
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 500;
     color: #0d0925;
     margin-bottom: 20px;
 }
 
 .content .text {
     color: #4e4a67;
-    font-size: 19px;
+    font-size: 20px;
     margin-bottom: 30px;
     line-height: 1.5em;
     text-align: justify;
