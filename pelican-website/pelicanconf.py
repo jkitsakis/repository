@@ -42,7 +42,11 @@ SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
 SCROLL_MSG='Ανακοινωσεις - ...'
-
+OPERATION_HOURS='Ωρες Λειτουργιας'
+OPERATION_DAYS_GROUP_1='Δευ-Παρ'
+OPERATION_HOURS_GROUP_1='08:00 - 14.30'
+OPERATION_DAYS_GROUP_2='Σαβ'
+OPERATION_HOURS_GROUP_2='09:00 - 14.30'
 MENUITEMS = (
   ('Υπηρεσίες',SITEURL+'/pages/Services.html'),
   ('Επικοινωνια',SITEURL+'/pages/Contact.html'),
