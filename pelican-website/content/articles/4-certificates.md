@@ -1,9 +1,9 @@
-Title: Έκδοση Ιατρικών Πιστοποιητικών
+Title: Έκδοση Ιατρικών Πιστοποιητικών & Βεβαιώσεων
 Order: 4
 Date: 2017-04-14 22:30
 Slug: pages/services/certificates
 Category: gp
-Summary: Έκδοση Ιατρικών Πιστοποιητικών
+Summary: Έκδοση Ιατρικών Πιστοποιητικών & Βεβαιώσεων
 
 <div id="leftbox">
     <img class="img-left" src="../../images/services/medical-certificates.png"/>

@@ -284,7 +284,7 @@ aside > h2 {
 }
 
 .time-sidual{
-	overflow:hidden;
+	overflow:auto;
 }
 .time-sidual li{
   display: block;
