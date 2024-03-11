@@ -67,7 +67,8 @@
 #tap-3:checked~.inner-part .img-3,
 #tap-4:checked~.inner-part .img-4,
 #tap-5:checked~.inner-part .img-5,
-#tap-6:checked~.inner-part .img-6 {
+#tap-6:checked~.inner-part .img-6,
+#tap-7:checked~.inner-part .img-7 {
     opacity: 1;
     transition-delay: .2s;
 }
@@ -89,7 +90,8 @@
 #tap-3:checked~.inner-part .content-3,
 #tap-4:checked~.inner-part .content-4,
 #tap-5:checked~.inner-part .content-5,
-#tap-6:checked~.inner-part .content-6{
+#tap-6:checked~.inner-part .content-6,
+#tap-7:checked~.inner-part .content-7 {
     opacity: 1;
     margin-left: -25px;
     z-index: 100;
@@ -187,7 +189,8 @@ input[type="checkbox"] {
 #tap-3:checked~.sliders .tap-3:before,
 #tap-4:checked~.sliders .tap-4:before,
 #tap-5:checked~.sliders .tap-5:before,
-#tap-6:checked~.sliders .tap-6:before{
+#tap-6:checked~.sliders .tap-6:before,
+#tap-7:checked~.sliders .tap-7:before {
     transform: scaleX(1);
     width: 100%;
 }

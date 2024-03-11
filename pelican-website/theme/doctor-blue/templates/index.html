@@ -13,7 +13,6 @@
 {% endblock head %}
 {% block content_title %}{% endblock %}
 {% block content %}
-
     <div class="blog-card">
         <input type="radio" name="select" id="tap-1" checked>
         <input type="radio" name="select" id="tap-2">
@@ -21,6 +20,7 @@
         <input type="radio" name="select" id="tap-4">
         <input type="radio" name="select" id="tap-5">
         <input type="radio" name="select" id="tap-6">
+        <input type="radio" name="select" id="tap-7">
         <input type="checkbox" id="imgTap">
         <div class="sliders">
             <label for="tap-1" class="tap tap-1"></label>
@@ -29,6 +29,7 @@
             <label for="tap-4" class="tap tap-4"></label>
             <label for="tap-5" class="tap tap-5"></label>
             <label for="tap-6" class="tap tap-6"></label>
+            <label for="tap-7" class="tap tap-7"></label>
         </div>
         <div class="inner-part">
             <label class="img">
@@ -47,42 +48,48 @@
             </div>
         </div>
         <div class="inner-part">
-            <label  class="img">
-                <img class="img-3" src="{{SITEURL}}/images/services/assistance.png">
+            <label class="img">
+                <img class="img-3" src="{{SITEURL}}/images//services/chronic-diseases.png">
             </label>
             <div class="content content-3">
+                <div class="title"><a href="{{SITEURL}}/pages/services/chronic-diseases.html">{{SERVICE_CHRONIC_DISEASE}}</a> </div>
+            </div>
+        </div>
+        <div class="inner-part">
+            <label  class="img">
+                <img class="img-4" src="{{SITEURL}}/images/services/assistance.png">
+            </label>
+            <div class="content content-4">
                 <div class="title"><a href="{{SITEURL}}/pages/services/assistance.html">{{SERVICE_ASSISTANCE}}</a> </div>
             </div>
         </div>
         <div class="inner-part">
             <label  class="img">
-                <img class="img-4" src="{{SITEURL}}/images/services/emergency.png">
+                <img class="img-5" src="{{SITEURL}}/images/services/emergency.png">
             </label>
-            <div class="content content-4">
+            <div class="content content-5">
                 <div class="title"><a href="{{SITEURL}}/pages/services/emergency.html">{{SERVICE_EMERGENCY}}</a> </div>
             </div>
         </div>
         <div class="inner-part">
             <label class="img">
-                <img class="img-5" src="{{SITEURL}}/images//services/medical-certificates.png">
+                <img class="img-6" src="{{SITEURL}}/images/services/medical-certificates.png">
             </label>
-            <div class="content content-5">
+            <div class="content content-6">
                 <div class="title"><a href="{{SITEURL}}/pages/services/certificates.html">{{SERVICE_CERTIFICATES}}</a> </div>
             </div>
         </div>
          <div class="inner-part">
             <label  class="img">
-                <img class="img-6" src="{{SITEURL}}/images/services/botox.png">
+                <img class="img-7" src="{{SITEURL}}/images/services/botox.png">
             </label>
-            <div class="content content-6">
+            <div class="content content-7">
                 <div class="title"><a href="{{SITEURL}}/pages/services/botox.html">{{SERVICE_BOTOX}}</a> </div>
             </div>
         </div>
 
     </div>
-
     <div style="position:relative; height:50px;"></div>
-
     <div class="relative wrapper">
         <div class="bottom-div1">
             <h4>{{OPERATION_HOURS}}</h4>
@@ -103,12 +110,5 @@
                 <li>{{EMAIL}}</li>
             </ul>
         </div>
-
-
     </div>
-
-
-
-
-
 {% endblock content %}

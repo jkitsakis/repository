@@ -30,7 +30,7 @@ DEFAULT_PAGINATION = False
 
 SITENAME = 'Προσωπικος Ιατρος'
 NAME = 'Κωνσταντινιδου Κυριακη'
-PROFESSION_DESCRIPTION ='Γενικη Οικογενειακή Ιατρός'
+PROFESSION_DESCRIPTION ='Γενικη Οικογενειακη Ιατρος'
 PROFESSION_TITLE= 'Διευθυντρια Ε.Σ.Υ'
 
 SCROLL_MSG='Η ιστοσελίδα ειναι υπο κατασκευή'
@@ -44,6 +44,7 @@ SERVICE_BOTOX= 'Αισθητικές Επεμβάσεις'
 SERVICE_CERTIFICATES='Έκδοση Ιατρικών Πιστοποιητικών & Βεβαιώσεων'
 SERVICE_EMERGENCY='Επείγoντα Περιστατικά'
 SERVICE_PREVENTIVE_MEDICINE='Προληπτική Ιατρική'
+SERVICE_CHRONIC_DISEASE='Χρόνιες Παθήσεις'
 
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
@@ -56,7 +57,7 @@ EMERGENCY_CASES='Έκτακτες Περιπτώσεις'
 RANDEVOUZ='ΚΛΕΙΣTΕ ΡΑΝΤΕΒΟΥ'
 
 MENUITEMS = (
-  ('Υπηρεσίες',SITEURL+'/pages/Services.html'),
+  ('Υπηρεσιες',SITEURL+'/pages/Services.html'),
   ('Επικοινωνια',SITEURL+'/pages/Contact.html'),
-  ('Βιογραφικό',SITEURL+'/pages/CV.html')
+  ('Βιογραφικο',SITEURL+'/pages/CV.html')
 )

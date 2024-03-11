@@ -139,7 +139,7 @@ a:hover { text-decoration: underline; }
 
 /* Sidebar */
 aside {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 900;
   width: 300px;
   height: 100%;
@@ -162,14 +162,14 @@ aside > ul {
 
 aside > h1 { 
   text-transform: uppercase;
-  font-size: 25px; 
+  font-size: 35px;
   font-weight: 900;
   margin-bottom: 15px;
 }
 
 aside > h2 { 
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 10px 5px;
 }
@@ -236,7 +236,7 @@ aside > h2 {
   text-transform: uppercase;
   display: block; 
   padding: 0.77273rem 0;
-  font-size: 16px;
+  font-size: 20px;
   /* border-bottom: 1px solid #328cc7; */
 }
 
@@ -281,6 +281,7 @@ aside > h2 {
   position: fixed;
   bottom: 0;
   text-align: center;
+  font-size: 14px;
 }
 
 .time-sidual{
@@ -369,7 +370,8 @@ aside > h2 {
 #rightbox {
   width: 50%;
   float: right;
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 /*--------CV Header------------*/
