@@ -14,8 +14,6 @@
 {% block content_title %}{% endblock %}
 {% block content %}
 
-
-
     <div class="blog-card">
         <input type="radio" name="select" id="tap-1" checked>
         <input type="radio" name="select" id="tap-2">
@@ -45,7 +43,6 @@
             </label>
             <div class="content content-2">
                 <div class="title"><a href="{{SITEURL}}/pages/services/general-practice.html">{{SERVICE_EXAMS}}</a> </div>
-
             </div>
         </div>
         <div class="inner-part">
@@ -84,20 +81,20 @@
                 <li>{{OPERATION_DAYS_GROUP_2}}: <span>{{OPERATION_HOURS_GROUP_2}}</span></li>
             </ul>
         </div>
-        <div class="bottom-div2">
-            <h4>Opening Hours</h4>
-            <ul class="time-sidual">
-                <li>Monday - Friday <span>8.00-20.00</span></li>
-                <li>Saturday <span>9.00-18.30</span></li>
-            </ul>
+
+         <div class="bottom-div2">
+            <h4><a href="{{SITEURL}}/pages/contact.html">{{RANDEVOUZ}}</a></h4>
         </div>
+
         <div class="bottom-div3">
-            <h4>Opening Hours</h4>
+            <h4>{{EMERGENCY_CASES}}</h4>
             <ul class="time-sidual">
-                <li>Monday - Friday: <span>8.00-20.00</span></li>
-                <li>Saturday <span>9.00-18.30</span></li>
+                <li>{{MOBILE}}</li>
+                <li>{{EMAIL}}</li>
             </ul>
         </div>
+
+
     </div>
 
 

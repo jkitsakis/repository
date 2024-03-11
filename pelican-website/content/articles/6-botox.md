@@ -1,15 +1,13 @@
 Title: Αισθητική Ιατρική
-Order: 2
+Order: 6
 Date: 2017-04-14 22:30
 Slug: pages/services/botox
 Category: gp
-Summary: This is a sample blog Botox page.
+Summary: Αισθητική Ιατρική
 
 <div id="leftbox">
-<img style="width: 500px; height: auto; autofloat: center;" src="../../images/botox.png"/>
+    <img class="img-left" src="../../images/services/botox.png"/>
 </div>
-
-<div id="rightbox"  markdown="1">
 
 ### test
 The Botox Page for the blog.
@@ -21,4 +19,3 @@ Botox
 Botox
 Botox
 
-</div>

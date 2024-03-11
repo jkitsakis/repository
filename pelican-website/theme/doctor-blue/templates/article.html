@@ -15,12 +15,10 @@
 {% block content %}
     <section id="content">
         <article>
-            <h2 class="post_title post_detail"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                                                  title="{{ article.title|striptags }}">{{ article.title }}</a></h2>
+            <h2 class="post_title post_detail"><a href="{{ SITEURL }}/pages/Services.html" rel="bookmark" title="{{ article.title|striptags }}">{{ article.title }}</a></h2>
             <div class="entry-content blog-post">
                 {{ article.content }}
             </div>
-
             {% if DISQUS_SITENAME %}
                 <div class="comments">
                     <h2>Comments !</h2>

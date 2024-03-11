@@ -17,7 +17,7 @@ AVATAR = 'avatar.ico'
 FAVICON = 'favicon.ico'
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
-DISPLAY_SUMMARY = True
+DISPLAY_SUMMARY = False
 DISPLAY_FOOTER = False
 DISPLAY_ASIDE_FOOTER = True
 ARTICLE_ORDER_BY = 'order'
@@ -32,6 +32,8 @@ SITENAME = 'Προσωπικος Ιατρος'
 NAME = 'Κωνσταντινιδου Κυριακη'
 PROFESSION_DESCRIPTION ='Γενικη Οικογενειακή Ιατρός'
 PROFESSION_TITLE= 'Διευθυντρια Ε.Σ.Υ'
+
+SCROLL_MSG='Η ιστοσελίδα ειναι υπο κατασκευή'
 MOBILE = '690XXXXXX'
 EMAIL = 'prosopiki.iatros@gmail.com'
 ADDRESS = 'prosopiki.iatros address'
@@ -41,12 +43,14 @@ SERVICE_BOTOX= 'Αισθητικές Επεμβάσεις'
 SERVICES='Υπηρεσίες'
 GP_SERVICES='Γενικη Ιατρικη - Συνταγογραφηση'
 BOTOX_SERVICES='Αισθητική Ιατρική'
-SCROLL_MSG='Ανακοινωσεις - ...'
 OPERATION_HOURS='Ωρες Λειτουργιας'
 OPERATION_DAYS_GROUP_1='Δευ-Παρ'
 OPERATION_HOURS_GROUP_1='08:00 - 14.30'
 OPERATION_DAYS_GROUP_2='Σαβ'
 OPERATION_HOURS_GROUP_2='09:00 - 14.30'
+EMERGENCY_CASES='Έκτακτες Περιπτώσεις'
+RANDEVOUZ='ΚΛΕΙΣTΕ ΡΑΝΤΕΒΟΥ'
+
 MENUITEMS = (
   ('Υπηρεσίες',SITEURL+'/pages/Services.html'),
   ('Επικοινωνια',SITEURL+'/pages/Contact.html'),
