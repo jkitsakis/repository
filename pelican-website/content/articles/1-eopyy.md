@@ -1,12 +1,12 @@
 Title: Υπηρεσιες ΕΟΠΥΥ - Συνταγογραφηση
-Order: 2
+Order: 1
 Date: 2017-04-14 22:30
 Slug: pages/services/eopyy
 Category: gp
 Summary: Υπηρεσιες ΕΟΠΥΥ - Συνταγογραφηση
 
 <div id="leftbox">
-    <img class="img-left" src="../../images/services/doctor.png"/>
+    <img class="img-left" src="../../images/services/eopyy.png"/>
 </div>
 
 <div id="rightbox" markdown="1" class="scroll">
