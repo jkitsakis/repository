@@ -1,9 +1,9 @@
-Title: Υπηρεσιες ΕΟΠΥΥ - Συνταγογραφηση
+Title: Υπηρεσίες ΕΟΠΥΥ
 Order: 1
 Date: 2017-04-14 22:30
 Slug: pages/services/eopyy
 Category: gp
-Summary: Υπηρεσιες ΕΟΠΥΥ - Συνταγογραφηση
+Summary: Υπηρεσίες ΕΟΠΥΥ
 
 <div id="leftbox">
     <img class="img-left" src="../../images/services/eopyy.png"/>
