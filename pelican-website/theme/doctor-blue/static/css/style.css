@@ -358,7 +358,7 @@ aside > h2 {
 /*--------divs in article pages------------*/
 
 #leftbox {
-  width: 50%;
+  width: 30%;
   float: left;
 }
 
@@ -368,7 +368,7 @@ aside > h2 {
 }
 
 #rightbox {
-  width: 50%;
+  width: 60%;
   float: right;
   font-weight: 600;
   font-size: 20px;

@@ -9,7 +9,7 @@ Summary: Υπηρεσιες ΕΟΠΥΥ - Συνταγογραφηση
     <img class="img-left" src="../../images/services/doctor.png"/>
 </div>
 
-<div id="rightbox" markdown="1">
+<div id="rightbox" markdown="1" class="scroll">
 
 <h2>Συνταγογράφηση</h2>  
 
