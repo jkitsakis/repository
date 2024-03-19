@@ -83,13 +83,13 @@ _Syntax_
 - **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
 
 
-### eutms: /eutms?size=10&page=10&sort=creationDate:DESC
+### eutms: /drafts/eutms?size=10&page=0&sort=creationDate:DESC
 
-### designs: /designs?size=10&page=10&sort=creationDate:DESC
+### designs: /drafts/designs?size=10&page=0&sort=creationDate:DESC
 
-### interpartes: /interpartes?size=10&page=10&sort=creationDate:DESC
+### interpartes: /drafts/interpartes?page=0&size=10&actions=OPPOSITION&sort=draftdate:desc
 
-### other: /other?size=10&page=10&sort=creationDate:DESC
+### other: /drafts/other?size=10&page=0&sort=creationDate:DESC
 
 <details>
 <summary>Legacy links</summary>
