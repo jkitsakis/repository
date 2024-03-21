@@ -14,6 +14,7 @@ html {
 
 /* Titles */
 h1 { text-transform: uppercase }
+/*h2 { font-size: 25px; }*/
 h1, h2 { 
   font-weight: normal;
   margin-top: 10px;
@@ -370,7 +371,7 @@ aside > h2 {
 #rightbox {
   width: 60%;
   float: right;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
 }
 

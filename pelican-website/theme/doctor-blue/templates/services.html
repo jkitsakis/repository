@@ -8,8 +8,8 @@
         <ol class="posts">
             {% for article in (articles_page.object_list if articles_page else articles) %}
                 <li class="post_list">
-                        <h2 class="post_title">
-                           <img style="width:20px; height:auto; " src="{{SITEURL}}/images/bullet.png"/>
+                        <h2>
+                           <img style="width:25px; height:auto; " src="{{SITEURL}}/images/bullet.png"/>
                            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}"> {{ article.title }} </a>
                         </h2>
                     {% if DISPLAY_SUMMARY and article.summary|length > 0 %}

@@ -10,7 +10,7 @@ PATH = "content"
 TIMEZONE = 'Europe/Athens'
 DEFAULT_DATE_FORMAT = '%d %B %Y'
 CURRENT_DATE = time.strftime(DEFAULT_DATE_FORMAT)
-DEFAULT_LANG = 'en-us'
+DEFAULT_LANG = 'el'
 
 THEME = './theme/doctor-blue'
 AVATAR = 'avatar.ico'
