@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 import os
 
-LOCAL_BUILD = True
+LOCAL_BUILD = False
 SITEURL = '' if LOCAL_BUILD else '/pelican/euipo'
 
 SITENAME = 'EUIPO dev'
