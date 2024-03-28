@@ -7,11 +7,11 @@ order:9
 
 ## _Design Filing API_ - <a href="https://git.euipo.europa.eu/projects/EDA/repos/design-filing-api/browse" target="_blank">BitBucket</a>
 
-{% set EOPW_URI = '/eop/design-filing/' %}
+{% set EOPW_URI = 'eop/design-filing/' %}
 {% set PREFIX_DEV='dev'%}
 {% set PREFIX_TEST='test'%}
 {% set PREFIX_PROD='production'%}
-{% set APPLICATION_NAME='persons-api'%}
+{% set APPLICATION_NAME='design-filing-api'%}
 {% set NETWORK_AWS='nonprod.aws.oami.eu'%}
 {% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
 
