@@ -1,0 +1,1397 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{array}     % table support for pandoc >= 2.11.3
+    \usepackage{calc}      % table minipage width calculation for pandoc >= 2.11.1
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Probability Statistics Training Quiz}
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`$}{\char`$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    $\textbf{Question1}$
+
+For the given sets A=\{1,2,3,4\} and B=\{2,4,6\} find : A $\cup$ B, A $\cap$ B, A - B, B - A
+
+$\textbf{Answer}$
+
+    Let's break down each operation using the given sets A and B:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Union (A $\cup$ B):\\
+  The union of two sets contains all the elements that are present in
+  either set A or set B, or in both sets.\\
+  A $\cup$ B = \{1, 2, 3, 4\} $\cup$ \{2, 4, 6\} = \{1, 2, 3, 4, 6\}
+\item
+  Intersection (A $\cap$ B):\\
+  The intersection of two sets contains all the elements that are common
+  to both set A and set B.\\
+  A $\cap$ B = \{1, 2, 3, 4\} $\cap$ \{2, 4, 6\} = \{2, 4\}
+\item
+  Set Difference (A - B):\\
+  The set difference A - B contains all the elements that are in set A
+  but not in set B.\\
+  A - B = \{1, 2, 3, 4\} - \{2, 4, 6\} = \{1, 3\}
+\item
+  Set Difference (B - A):\\
+  The set difference B - A contains all the elements that are in set B
+  but not in set A.\\
+  B - A = \{2, 4, 6\} - \{1, 2, 3, 4\} = \{6\}
+\end{enumerate}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question2}$
+
+Let A and B two sets which are subsets of a set Ω. Which of the
+following expressions is not correct?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  (A$\cup$B)$\cap$(A$\cup$C)=A$\cup$(B$\cap$C)
+\item
+  (A$\cup$B)=(A$\cap$Bc)$\cup$B
+\item
+  (A$\cup$B)c$\cap$C=(Ac$\cap$Bc)$\cap$C
+\item
+  Ac$\cap$B=A$\cup$B
+\item
+  (A$\cap$B)$\cap$(Bc$\cap$C)=$\emptyset$
+\end{enumerate}
+
+$\textbf{Answer}$
+
+    Let's analyze each option:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  $(A \cup B) \cap (A \cup C)=A \cup (B \cap C)$
+\end{enumerate}
+
+This is an application of the distributive property of set operations
+and is indeed correct.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  $(A \cup B)=(A \cap B^c) \cup B$
+\end{enumerate}
+
+This is the De Morgan's law and is correct.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  $(A \cup B)^c \cap C=(A^c \cap B^c) \cap C$
+\end{enumerate}
+
+This also seems to be an application of De Morgan's law and is correct.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  $A^c \cap B=A \cup B$
+\end{enumerate}
+
+This expression is incorrect. The correct expression should be
+$A^c \cap B=(A^c \cup B^c)^c$. So, this is the incorrect option.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  $(A \cap B) \cap (B^c \cap C)= \emptyset $
+\end{enumerate}
+
+This is correct since the intersection of $B$ and its complement is an
+empty set.
+
+So, the incorrect option is d.~$A^c \cap B=A \cup B$.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question3}$
+
+In how many ways can 5 people be seated in a row of 5 chairs:
+
+$\textbf{Answer}$
+
+    When seating people in a row of chairs, the order matters. So, it's a
+permutation problem.
+
+For the first seat, you have 5 choices. For the second seat, you have 4
+choices remaining, for the third seat, you have 3 choices remaining, and
+so on.
+
+Therefore, the total number of ways to seat 5 people in a row of 5
+chairs is:
+
+$5 \times 4 \times 3 \times 2 \times 1 = 5!$
+
+$5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$
+
+So, there are 120 ways to seat 5 people in a row of 5 chairs.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question4}$
+
+Eleven people meet each other and handshake. How many handshakes will
+occur?
+
+$\textbf{Answer}$
+
+    In a group of $ n $ people, each person can shake hands with every
+other person except themselves.
+
+So, for 11 people, each person shakes hands with 10 other people.
+
+However, this would count each handshake twice (once for each person
+involved), so we must divide by 2 to avoid double-counting.
+
+The total number of handshakes $ H $ can be calculated as:
+
+$ H = \frac{n \times (n - 1)}{2} $
+
+Substituting $ n = 11 $:
+
+$ H = \frac{11 \times (11 - 1)}{2} $ $ H = \frac{11 \times 10}{2} $
+$ H = \frac{110}{2} $ $ H = 55 $
+
+So, there will be 55 handshakes occurring.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question5}$
+
+What is the probability of randomly choosing, without replacement, three
+red balls out of a bag of 10 red and 5 green balls?
+
+$\textbf{Answer}$
+
+    To find the probability of randomly choosing three red balls out of a
+bag of 10 red and 5 green balls, we need to consider the total number of
+ways to choose 3 balls out of the 15 balls in the bag and the number of
+ways to choose 3 red balls out of the 10 red balls.
+
+The total number of ways to choose 3 balls out of 15 is given by the
+combination formula:
+
+$ \text{Total number of ways} = \binom{15}{3} = \frac{15!}{3!(15-3)!}
+$
+
+Similarly, the number of ways to choose 3 red balls out of 10 is:
+
+$ \text{Number of ways to choose 3 red balls} = \binom{10}{3} =
+\frac{10!}{3!(10-3)!} $
+
+So, the probability of choosing three red balls is:
+
+$ P(\text{3 red balls}) =
+\frac{\text{Number of ways to choose 3 red balls}}{\text{Total number of ways}}
+$
+
+$ P(\text{3 red balls}) = \frac{\binom{10}{3}}{\binom{15}{3}} $
+
+$ P(\text{3 red balls}) =
+\frac{\frac{10!}{3!(10-3)!}}{\frac{15!}{3!(15-3)!}} $
+
+$ P(\text{3 red balls}) = \frac{\frac{10!}{3!7!}}{\frac{15!}{3!12!}} $
+
+$ P(\text{3 red balls}) =
+\frac{\frac{10 \times 9 \times 8}{3 \times 2 \times 1}}{\frac{15 \times 14 \times 13}{3 \times 2 \times 1}}
+$
+
+$ P(\text{3 red balls}) =
+\frac{10 \times 9 \times 8}{15 \times 14 \times 13} $
+
+$ P(\text{3 red balls}) = \frac{720}{2730} $
+
+$ P(\text{3 red balls}) \approx 0.263 $
+
+So, the probability of randomly choosing, without replacement, three red
+balls out of the bag is approximately 0.263.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question6}$
+
+You are given an unfair die where an odd outcome is four times as likely
+as an even outcome. All odd outcomes are equally likely to each other,
+and all even outcomes are equally likely to each other. What's the
+probability of rolling a 5 given that you have rolled an odd number?
+
+$\textbf{Answer}$
+
+    Let's denote the probability of rolling an odd number as $
+P(\text{odd}) $ and the probability of rolling an even number as $
+P(\text{even}) $.
+
+Given that an odd outcome is four times as likely as an even outcome, we
+can set up the following relationships:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  $ P(\text{odd}) = 4 \times P(\text{even}) $
+\item
+  $ P(\text{odd}) + P(\text{even}) = 1 $ (since the sum of
+  probabilities of all possible outcomes is 1)
+\end{enumerate}
+
+From equation 1, we can express $ P(\text{even}) $ in terms of $
+P(\text{odd}) $: $ P(\text{even}) = \frac{1}{4} \times P(\text{odd})
+$
+
+Now, let's find the values of $ P(\text{odd}) $ and $ P(\text{even})
+$.
+
+Using equation 2: $ P(\text{odd}) + \frac{1}{4} \times P(\text{odd}) =
+1 $ $ \frac{5}{4} \times P(\text{odd}) = 1 $ $ P(\text{odd}) =
+\frac{4}{5} $
+
+And using equation 1: $ P(\text{even}) = \frac{1}{4} \times \frac{4}{5}
+= \frac{1}{5} $
+
+Now, to find the probability of rolling a 5 given that you have rolled
+an odd number ($ P(\text{5}\textbar{}\text{odd}) $), we use the
+conditional probability formula:
+
+$ P(\text{5}\textbar{}\text{odd}) =
+\frac{P(\text{5 and odd})}{P(\text{odd})} $
+
+Since all odd outcomes are equally likely to each other, the probability
+of rolling a 5 given that you have rolled an odd number is simply the
+probability of rolling a 5, which is $ \frac{1}{5} $.
+
+So, the probability of rolling a 5 given that you have rolled an odd
+number is $ \frac{1}{5} $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question7}$
+
+A fair die is thrown twice. Let the events A= \{sum of the throws equals
+4\}, B=\{at least one of the throws is a 3\}. What is P(A\textbar B) ?
+
+$\textbf{Answer}$
+
+    To find the conditional probability $ P(A\textbar B) $, which
+represents the probability of event A given event B, we'll use the
+formula for conditional probability:
+
+$ P(A\textbar B) = \frac{P(A \cap B)}{P(B)} $
+
+First, let's find the probability of event B, which is the probability
+of getting at least one 3 in two throws of a fair die.
+
+$ P(B) = 1 - P(\text{no 3 in two throws}) $
+
+To find the probability of no 3 in two throws, we can think of each
+throw as independent events. The probability of not getting a 3 on a
+single throw is $ \frac{5}{6} $ (since there are 5 outcomes that are
+not 3 out of 6 possible outcomes). So, the probability of not getting a
+3 in two throws is $ \left(\frac{5}{6}\right)^2 $.
+
+$ P(\text{no 3 in two throws}) = \left(\frac{5}{6}\right)^2 =
+\frac{25}{36} $
+
+Therefore,
+
+$ P(B) = 1 - \frac{25}{36} = \frac{11}{36} $
+
+Next, let's find the probability of event A intersected with B, which is
+the probability of both A and B occurring. Event A is the sum of throws
+equaling 4, and event B is at least one of the throws being a 3. The
+only way both events can happen simultaneously is if one throw is a 3
+and the other is a 1, or vice versa (since 3 + 1 = 4 and 1 + 3 = 4).
+
+$ P(A \cap B) = P(\text{one throw is 3 and the other is 1}) +
+P(\text{one throw is 1 and the other is 3}) $
+
+Each of these scenarios has a probability of $ \frac{1}{6}
+\times \frac{1}{6} = \frac{1}{36} $.
+
+$ P(A \cap B) = 2 \times \frac{1}{36} = \frac{2}{36} = \frac{1}{18} $
+
+Now we can plug these values into the formula for conditional
+probability:
+
+$ P(A\textbar B) = \frac{P(A \cap B)}{P(B)} =
+\frac{\frac{1}{18}}{\frac{11}{36}} = \frac{1}{18} \times \frac{36}{11} =
+\frac{2}{11} $
+
+So, $ P(A\textbar B) = \frac{2}{11} $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question8}$
+
+There is a 30 \% chance of rain today, and a 40 \% chance your umbrella
+order will arrive on time. However, you found out that if it rains,
+there is only a 20 \% chance your umbrella will arrive on time. What is
+the probability it will rain and your umbrella will arrive on time?
+
+$\textbf{Answer}$
+
+    To find the probability that it will rain and your umbrella will arrive
+on time, we can use the conditional probability formula:
+
+$ P(\text{rain and umbrella on time}) = P(\text{rain})
+\times P(\text{umbrella on time}\textbar{}\text{rain}) $
+
+Given:
+
+\begin{itemize}
+\tightlist
+\item
+  Probability of rain: $ P(\text{rain}) = 0.30 $
+\item
+  Probability of umbrella arriving on time: $
+  P(\text{umbrella on time}) = 0.40 $
+\item
+  Probability of umbrella arriving on time given that it rains: $
+  P(\text{umbrella on time}\textbar{}\text{rain}) = 0.20 $
+\end{itemize}
+
+Now, we can plug these values into the formula:
+
+$ P(\text{rain and umbrella on time}) = 0.30 \times 0.20 = 0.06 $
+
+So, the probability that it will rain and your umbrella will arrive on
+time is $ 0.06 $, or 6\%.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question9}$
+
+For the events A and B, we know that the probabilities P(A)=0.3,
+P(B)=0.2 and P(B\textbar A)=0.5. The probability P(A\textbar B) is:
+
+$\textbf{Answer}$
+
+    To find $ P(A\textbar B) $, the probability of event A given event B,
+we can use Bayes' theorem:
+
+$ P(A\textbar B) = \frac{P(B|A) \times P(A)}{P(B)} $
+
+Given:
+
+\begin{itemize}
+\tightlist
+\item
+  Probability of event A: $ P(A) = 0.3 $
+\item
+  Probability of event B: $ P(B) = 0.2 $
+\item
+  Probability of B given A: $ P(B\textbar A) = 0.5 $
+\end{itemize}
+
+Now, we can plug these values into Bayes' theorem:
+
+$ P(A\textbar B) = \frac{0.5 \times 0.3}{0.2} $
+
+$ P(A\textbar B) = \frac{0.15}{0.2} $
+
+$ P(A\textbar B) = 0.75 $
+
+So, the probability $ P(A\textbar B) $ is $ 0.75 $ or 75\%.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question12}$
+
+In an experiment into extrasensory perception, a subject guesses the
+symbol on a card. There are five equally likely and different symbols,
+so the subject has a 15 chance of guessing correct by chance. If the
+subject makes 6 sequential card guesses, what is the probability that
+more than half are correct?
+
+$\textbf{Answer}$
+
+    To solve this problem, we can use the binomial probability formula, as
+the subject's guesses can be considered independent Bernoulli trials.
+
+The probability of getting exactly $ k $ successes (correct guesses)
+in $ n $ trials is given by the binomial probability formula:
+
+$ P(X = k) = \binom{n}{k} \times p^k \times (1 - p)^\{n - k\} $
+
+Where: - $ n $ is the number of trials (in this case, the number of
+guesses) - $ k $ is the number of successes (in this case, the number
+of correct guesses) - $ p $ is the probability of success on each
+trial (the chance of guessing correctly by chance)
+
+Given that the subject has a $ 1/5 $ chance of guessing correctly by
+chance (so $ p = 1/5 $), we can calculate the probability of guessing
+more than half of the guesses correctly. Since there are 6 guesses and
+we want more than half, we need to calculate the probability of getting
+4 or more correct guesses.
+
+$ P(X \textgreater{} 3) = P(X = 4) + P(X = 5) + P(X = 6) $
+
+$ P(X \textgreater{} 3) = \binom{6}{4}
+\times \left(\frac{1}{5}\right)^4
+\times \left(\frac{4}{5}\right)^2 + \binom{6}{5}
+\times \left(\frac{1}{5}\right)^5
+\times \left(\frac{4}{5}\right)^1 + \binom{6}{6}
+\times \left(\frac{1}{5}\right)^6
+\times \left(\frac{4}{5}\right)^0 $
+
+Let's calculate each term:
+
+$ \binom{6}{4} = \frac{6!}{4!(6-4)!} = 15 $
+
+$ \binom{6}{5} = \frac{6!}{5!(6-5)!} = 6 $
+
+$ \binom{6}{6} = \frac{6!}{6!(6-6)!} = 1 $
+
+Now, plug these values into the formula:
+
+$ P(X \textgreater{} 3) = (15 \times \frac{1}{5^4}
+\times \frac{4^2}{5^2}) + (6 \times \frac{1}{5^5} \times \frac{4^1}{5})
++ (1 \times \frac{1}{5^6}) $
+
+$ P(X \textgreater{} 3) = (\frac{15 \times 16}{5^6}) +
+(\frac{6 \times 4}{5^6}) + \frac{1}{5^6} $
+
+$ P(X \textgreater{} 3) = \frac{240 + 24 + 1}{5^6} $
+
+$ P(X \textgreater{} 3) = \frac{265}{15625} $
+
+$ P(X \textgreater{} 3) \approx 0.01696 $
+
+So, the probability that more than half of the guesses are correct is
+approximately $ 0.01696 $, or $ 1.696\% $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question13}$
+
+The marks of ten students in Course A and Course B are as follows:
+
+Course A 7 3 4 10 8 2.5 4 6.5 7 9
+
+Course B 8 3 5 5.5 6 4 7 8.5 9 7
+
+Which of the following statements is true?
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  The mean performance of the students in Course A is lower than that in
+  Course B. CorrectWell done!\\
+\item
+  The mean performance of students in Course A is higher than that in
+  Course B.\\
+\item
+  The standard deviation that is recorded in the grades of Course A is
+  lower than the corresponding value of Course B.\\
+\item
+  The standard deviation that is recorded in the grades of Course B is
+  equal to 3.5.\\
+\item
+  None of these.
+\end{enumerate}
+
+$\textbf{Answer}$
+
+    To find the correct statement, let's calculate the mean and standard
+deviation for both Course A and Course B.
+
+For Course A: Mean (average) = $
+\frac{7 + 3 + 4 + 10 + 8 + 2.5 + 4 + 6.5 + 7 + 9}{10} = \frac{61}{10} =
+6.1 $ Standard Deviation = $ \sqrt{\frac{\sum{(x_i - \mu)^2}}{N}} $
+Where: - $ x\_i $ are the individual marks, - $ \mu $ is the mean, -
+$ N $ is the number of data points.
+
+$ \sum{(x_i - \mu)^2} = (7 - 6.1)^2 + (3 - 6.1)^2 + \dots + (9 -
+6.1)^2 $ $ = 0.81 + 9.61 + 5.29 + 13.69 + 3.61 + 13.69 + 5.29 +
+0.09 + 0.81 + 7.29 $ $ = 60.29 $ $ \text{Standard Deviation} =
+\sqrt{\frac{60.29}{10}} = \sqrt{6.029} \approx 2.454 $
+
+For Course B: Mean = $
+\frac{8 + 3 + 5 + 5.5 + 6 + 4 + 7 + 8.5 + 9 + 7}{10} = \frac{63}{10} =
+6.3 $ $ \sum{(x_i - \mu)^2} = (8 - 6.3)^2 + (3 - 6.3)^2 +
+\dots + (7 - 6.3)^2 $ $ = 3.61 + 10.89 + 2.89 + 0.09 + 0.09 + 4.41
++ 0.49 + 6.25 + 8.41 + 0.49 $ $ = 37.63 $ $
+\text{Standard Deviation} = \sqrt{\frac{37.63}{10}} = \sqrt{3.763}
+\approx 1.941 $
+
+Comparing the mean performances: - Course A: $ \mu\_A = 6.1 $ - Course
+B: $ \mu\_B = 6.3 $
+
+So, statement (a) is correct: The mean performance of the students in
+Course A is lower than that in Course B.
+
+Comparing the standard deviations: - Course A: $ \sigma\_A
+\approx 2.454 $ - Course B: $ \sigma\_B \approx 1.941 $
+
+So, statement (c) is incorrect: The standard deviation in the grades of
+Course A is not lower than that of Course B.
+
+Therefore, the correct answer is (a).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question14}$
+
+A mathematics test is given to a class of 24 students. Two students
+score 0 and all other students score 12. What is the standard deviation
+of the exam score?
+
+$\textbf{Answer}$
+
+    To find the standard deviation of the exam scores, we first need to
+calculate the mean of the scores. Then we'll use the formula for
+standard deviation:
+
+$ \text{Standard Deviation} = \sqrt{\frac{\sum{(x_i - \mu)^2}}{N}} $
+
+Where: - $ x\_i $ are the individual scores, - $ \mu $ is the mean,
+- $ N $ is the number of students.
+
+Given that 2 students score 0 and all other students score 12:
+
+Mean = $ \frac{2(0) + 22(12)}{24} = \frac{264}{24} = 11 $
+
+Now, let's calculate the sum of the squares of the differences between
+each score and the mean:
+
+$ \sum{(x_i - \mu)^2} = (0 - 11)^2 + (0 - 11)^2 + (12 - 11)^2
++ \dots + (12 - 11)^2 $
+
+$ = 2(11^2) + 22(1^2) $
+
+$ = 242 + 22 $
+
+$ = 264 $
+
+Now, plug these values into the formula for standard deviation:
+
+$ \text{Standard Deviation} = \sqrt{\frac{264}{24}} $
+
+$ \text{Standard Deviation} = \sqrt{11} $
+
+Therefore, the standard deviation of the exam scores is $ \sqrt{11} $
+or approximately $ 3.317 $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question15}$
+
+Consider the independent random variables X and Y have variances 0.2 and
+0.5, respectively. Let Z=5X-2Y. The variance of the random variable Z
+equals:
+
+$\textbf{Answer}$
+
+    Given that $ X $ and $ Y $ are independent random variables, the
+variance of the sum or difference of independent random variables is the
+sum of their variances. However, when constants are involved in the
+linear combinations, variances get scaled by the square of the
+constants.
+
+Given: - Variance of $ X $: $ \text{Var}(X) = 0.2 $ - Variance of $
+Y $: $ \text{Var}(Y) = 0.5 $ - $ Z = 5X - 2Y $
+
+We know that for linear combinations of random variables: $
+\text{Var}(aX + bY) = a^2 \text{Var}(X) + b^2 \text{Var}(Y) $
+
+So, for $ Z = 5X - 2Y $: $ \text{Var}(Z) = (5)^2 \text{Var}(X) +
+(-2)^2 \text{Var}(Y) $ $ = 25 \times 0.2 + 4 \times 0.5 $ $ = 5 +
+2 $ $ = 7 $
+
+Therefore, the variance of the random variable $ Z $ is $ 7 $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question16}$
+
+Let X be a continuous random variable with probability density function
+(pdf): $f(x)=\{9/(4x^3) , 1 \leq x \leq 3 \&\& 0$, otherwise.
+
+The probability P(X\textgreater2) equals:
+
+$\textbf{Answer}$
+
+    To find the probability $ P(X \textgreater{} 2) $, we need to
+integrate the probability density function (pdf) from $ x = 2 $ to $
+x = 3 $.
+
+Given the pdf: $ f(x) =\begin{cases} \frac{9}{4x^3} & 1 \leq x \leq 3 \\ 0 & \text{otherwise} \end{cases}$
+
+We can write the integral for $ P(X \textgreater{} 2) $ as follows:
+
+$ P(X \textgreater{} 2) = \int\_\{2\}^\{3\} f(x) , dx $
+
+$ P(X \textgreater{} 2) = \int\_\{2\}^\{3\} \frac{9}{4x^3} , dx $
+
+Now, let's integrate the function:
+
+$ P(X \textgreater{} 2) =
+\left[ -\frac{9}{4(2x^2)} \right]\_\{2\}^\{3\} $
+
+$ P(X \textgreater{} 2) =
+\left[ -\frac{9}{8x^2} \right]\_\{2\}^\{3\} $
+
+$ P(X \textgreater{} 2) = -\frac{9}{8(3^2)} + \frac{9}{8(2^2)} $
+
+$ P(X \textgreater{} 2) = -\frac{9}{72} + \frac{9}{32} $
+
+$ P(X \textgreater{} 2) = -\frac{1}{8} + \frac{9}{32} $
+
+$ P(X \textgreater{} 2) = -\frac{4}{32} + \frac{9}{32} $
+
+$ P(X \textgreater{} 2) = \frac{5}{32} $
+
+So, the probability $ P(X \textgreater{} 2) $ equals $ \frac{5}{32}
+$.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question17}$
+
+Let X be a continuous random variable with probability density function
+(pdf): $f(x)=c,0 \leq x \leq 1 \&\& -cx+2c,1\textless x \leq 2 \&\& 0, otherwise$.
+
+The value of constant c equals:
+
+$\textbf{Answer}$
+
+    To find the value of the constant $ c $, we need to ensure that the
+probability density function (pdf) integrates to 1 over the entire range
+of $ x $, which is from 0 to 2 in this case.
+
+The integral of the pdf over its entire range must equal 1:
+
+$ \int\_\{0\}^\{2\} f(x) , dx = 1 $
+
+Given the piecewise function: $ f(x) =\begin{cases} c & 0 \leq x \leq 1 \\ -cx + 2c & 1 < x \leq 2 \\ 0 & \text{otherwise} \end{cases}$
+
+We need to integrate $ f(x) $ over the intervals $[0,1]$ and
+$[1,2]$, and set the sum of these integrals equal to 1.
+
+$ \int_{0}^{1} c \, dx + \int_{1}^{2} (-cx + 2c) \, dx = 1 $
+
+Now, let's compute each integral:
+
+$ \int_{0}^{1} c \, dx = cx \Bigg|_{0}^{1} = c \cdot 1 - c \cdot 0 = c $
+
+$ \int_{1}^{2} (-cx + 2c) \, dx = \left( -\frac{cx^2}{2} + 2cx \right) \Bigg|_{1}^{2} $
+$ = \left( -\frac{c \cdot 2^2}{2} + 2c \cdot 2 \right) - \left( -\frac{c \cdot 1^2}{2} + 2c \cdot 1 \right) $
+$ = \left( -2c + 4c \right) - \left( -\frac{c}{2} + 2c \right) $
+$ = (2c) - (-\frac{c}{2} + 2c) $
+$ = 2c + \frac{c}{2} - 2c $
+$ = \frac{c}{2} $
+
+Now, we set the sum of these integrals equal to 1:
+
+$ c + \frac{c}{2} = 1 $
+
+$ \frac{3c}{2} = 1 $
+
+$ c = \frac{2}{3} $
+
+So, the value of the constant $ c $ is $ \frac{2}{3} $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question18}$
+
+The random variable X follows a Normal distribution $N(μ,σ^2)$. If for some real number $ δ \textgreater 0 $, $P(X \geq μ+δ)=0.15865 $ then
+$P(μ-δ\textless X\textless μ) approximately equals $
+
+$\textbf{Answer}$
+
+    Given that $ X $ follows a normal distribution $ N(\mu, \sigma^2)
+$, we know that the standard normal distribution (with mean 0 and
+standard deviation 1), denoted as $ Z $, can be obtained by
+standardizing $ X $ as follows:
+
+$ Z = \frac{X - \mu}{\sigma} $
+
+Given: $ P(X \geq \mu + \delta) = 0.15865 $
+
+To find $ P(\mu - \delta \textless{} X \textless{} \mu) $, we first
+standardize the given probabilities using the standard normal
+distribution.
+
+For $ P(X \geq \mu + \delta) $, standardizing gives: $ P\left(Z
+\geq \frac{\mu + \delta - \mu}{\sigma}\right) = P(Z
+\geq \frac{\delta}{\sigma}) $
+
+Using the properties of the standard normal distribution (which is
+symmetric about 0), $ P(Z \geq \frac{\delta}{\sigma}) $ is equivalent
+to $ 1 - P(Z \textless{} \frac{\delta}{\sigma}) $.
+
+Given that $ P(X \geq \mu + \delta) = 0.15865 $, we have: $ 1 - P(Z
+\textless{} \frac{\delta}{\sigma}) = 0.15865 $
+
+This implies that: $ P(Z \textless{} \frac{\delta}{\sigma}) = 1 -
+0.15865 = 0.84135 $
+
+Now, we want to find $ P(\mu - \delta \textless{} X \textless{} \mu)
+$. We can express this as: $ P(X \textless{} \mu) - P(X \textless{}
+\mu - \delta) $
+
+Standardizing both terms gives: $ P(Z \textless{} 0) - P(Z \textless{}
+\frac{\mu - \mu + \delta}{\sigma}) $
+
+$ = P(Z \textless{} 0) - P(Z \textless{} \frac{\delta}{\sigma}) $
+
+$ = 0.5 - P(Z \textless{} \frac{\delta}{\sigma}) $
+
+Given that $ P(Z \textless{} \frac{\delta}{\sigma}) = 0.84135 $, we
+have: $ P(X \textless{} \mu) - P(X \textless{} \mu - \delta)
+\approx 0.5 - 0.84135 $
+
+$ \approx -0.34135 $
+
+But probabilities cannot be negative, so we need to take the absolute
+value:
+
+$ \textbar0.5 - 0.84135\textbar{} \approx 0.34135 $
+
+So, $ P(\mu - \delta \textless{} X \textless{} \mu) $ is approximately
+$ 0.34135 $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question19}$
+
+Let X1,\ldots,X100 be a random sample of 100 independent and identically
+distributed observations drawn from an unknown distribution with
+expected value μ=120 and standard deviation σ=45.
+
+The probability that the sample mean X¯¯¯¯=X1+\ldots+X100/100 lies in
+the interval {[}112,125{]} is approximately equal to:
+
+$\textbf{Answer}$
+
+    To solve this problem, we can use the Central Limit Theorem (CLT), which
+states that the distribution of the sample mean of a large sample drawn
+from any population will be approximately normally distributed,
+regardless of the shape of the population distribution.
+
+Given that we have a sample size of 100, we can use the normal
+distribution to approximate the distribution of the sample mean.
+
+According to the CLT, the mean of the sample means ($ \mu_{\bar{X}} $) is equal to the population mean ($ \mu $), and the standard deviation of the sample means ($ \sigma_{\bar{X}} $) is equal to the population standard deviation divided by the square root of the sample size ($ \sigma / \sqrt{n} $).
+
+Given: - $ \mu = 120 $ - $ \sigma = 45 $ - Sample size ($ n $) =
+100
+
+$ \mu\_\{\bar\{X\}\} = \mu = 120 $
+
+$ \sigma\_\{\bar\{X\}\} = \frac{\sigma}{\sqrt{n}} =
+\frac{45}{\sqrt{100}} = \frac{45}{10} = 4.5 $
+
+Now, we standardize the interval {[}112, 125{]} using the sample mean
+distribution:
+
+$ Z\_1 = \frac{112 - \mu_{\bar{X}}}{\sigma_{\bar{X}}} =
+\frac{112 - 120}{4.5} = \frac{-8}{4.5} = -1.7778 $
+
+$ Z\_2 = \frac{125 - \mu_{\bar{X}}}{\sigma_{\bar{X}}} =
+\frac{125 - 120}{4.5} = \frac{5}{4.5} = 1.1111 $
+
+Now, we find the probabilities corresponding to these z-scores using a
+standard normal distribution table or calculator.
+
+$ P(Z\_1 \textless{} Z \textless{} Z\_2) $
+
+$ P(-1.7778 \textless{} Z \textless{} 1.1111) $
+
+Using a standard normal distribution table or calculator, we find:
+
+$ P(Z \textless{} 1.1111) = 0.8665 $ $ P(Z \textless{} -1.7778) =
+0.0384 $
+
+$ P(-1.7778 \textless{} Z \textless{} 1.1111) = P(Z \textless{} 1.1111)
+- P(Z \textless{} -1.7778) = 0.8665 - 0.0384 = 0.8281 $
+
+So, the probability that the sample mean $ \bar\{X\} $ lies in the
+interval {[}112, 125{]} is approximately 0.8281.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question20}$
+
+Let X and Y be two independent random variables such that E(X)=109/50,
+E(Y)=157/100, Var(X)×Var(Y)\textgreater0, and E(XY)=17113/5000. We
+conclude that
+
+$\textbf{Answer}$
+
+    To find out what we can conclude from the given information, let's break
+down the equations and analyze them step by step.
+
+Given: - $ E(X) = \frac{109}{50} $ - $ E(Y) = \frac{157}{100} $ - $
+\text{Var}(X) \times \text{Var}(Y) \textgreater{} 0 $ - $ E(XY) =
+\frac{17113}{5000} $
+
+We know that the covariance of two independent random variables is 0.
+Therefore, $ E(XY) = E(X)E(Y) $ when X and Y are independent.
+
+From the given information, we have:
+
+$ E(X)E(Y) = \left(\frac{109}{50}\right) \left(\frac{157}{100}\right) =
+\frac{17113}{5000} $
+
+which matches $ E(XY) $.
+
+So, given that the expected value of the product of the random variables
+is equal to the product of their expected values, we can conclude that X
+and Y are uncorrelated, which is a property of independent random
+variables. Therefore, the conclusion is that X and Y are independent.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question21}$
+
+Let X and Y be two random variables with E(X)=0.5, E(Y)=0.6, E(XY)=0.39
+and standard deviations σX\textgreater0 and σY\textgreater0p. Which of
+the following is correct: a. Cov(X,Y)=0. b. Variables X and Y are
+independent. c.~Cov(X,Y)=0.09. d.~When X increases Y tends to decrease.
+e. None of the above.
+
+$\textbf{Answer}$
+
+    To determine the correct statement, let's analyze each option:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  $ \text{Cov}(X,Y) = 0 $:
+\end{enumerate}
+
+The covariance of two random variables is defined as: $ \text{Cov}(X,Y)
+= E(XY) - E(X)E(Y) $
+
+Given $ E(X) = 0.5 $, $ E(Y) = 0.6 $, and $ E(XY) = 0.39 $, we
+have: $ \text{Cov}(X,Y) = 0.39 - (0.5)(0.6) = 0.39 - 0.3 = 0.09 $
+
+So, statement a is incorrect.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Variables X and Y are independent:
+\end{enumerate}
+
+For two random variables to be independent, their covariance must be 0.
+Since we found $ \text{Cov}(X,Y) = 0.09 $, this implies that X and Y
+are not independent. Therefore, statement b is incorrect.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  $ \text{Cov}(X,Y) = 0.09 $:
+\end{enumerate}
+
+As we calculated earlier, $ \text{Cov}(X,Y) = 0.09 $. So, statement c
+is correct.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  When X increases Y tends to decrease:
+\end{enumerate}
+
+The covariance does not directly indicate the direction of the
+relationship between two variables. It only measures the strength and
+direction of the linear relationship between them. Therefore, we cannot
+directly conclude the relationship between X and Y based on the
+covariance alone. Thus, statement d is incorrect.
+
+Therefore, the correct answer is option c: $ \text{Cov}(X,Y) = 0.09 $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}

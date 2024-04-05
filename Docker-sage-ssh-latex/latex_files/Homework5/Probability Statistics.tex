@@ -1,0 +1,1503 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{array}     % table support for pandoc >= 2.11.3
+    \usepackage{calc}      % table minipage width calculation for pandoc >= 2.11.1
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Probability Statistics}
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`$}{\char`$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    \(\textbf{The Monty Hall problem}\)
+
+    Το πρόβλημα του Μόντι Χολ είναι ένα πασίγνωστο πρόβλημα πιθανοτήτων που
+ονομάστηκε έτσι από τον ονοματοδότη του, τον παρουσιαστή του τηλεοπτικού
+παιχνιδιού ``Let's Make a Deal'', Μόντι Χολ.
+
+Το πρόβλημα αφορά έναν διαγωνιζόμενο που επιλέγει μεταξύ τριών πιθανών
+προσφορών. Πίσω από μία από αυτές τις προσφορές κρύβεται ένα αξιοθέατο
+έπαθλο, ενώ πίσω από τις άλλες δύο βρίσκονται απλά αντικείμενα που δεν
+ενδιαφέρουν τον διαγωνιζόμενο.
+
+Αρχικά, ο διαγωνιζόμενος επιλέγει μία από τις τρεις προσφορές.\\
+Στη συνέχεια, ο παρουσιαστής ανοίγει μία από τις δύο προσφορές που δεν
+επέλεξε ο διαγωνιζόμενος, αποκαλύπτοντας ένα αντικείμενο που δεν είναι
+το έπαθλο.\\
+Στη συνέχεια, ο παρουσιαστής δίνει στον διαγωνιζόμενο την ευκαιρία να
+αλλάξει την αρχική του επιλογή και να επιλέξει την άλλη προσφορά που
+παραμένει ανοιχτή, ή να διατηρήσει την αρχική του επιλογή.\\
+Το ερώτημα είναι αν είναι καλύτερο για τον διαγωνιζόμενο να αλλάξει την
+αρχική του επιλογή ή να διατηρήσει αυτήν που είχε αρχικά κάνει.
+
+Η σωστή απάντηση στο πρόβλημα είναι ότι είναι καλύτερο για τον
+διαγωνιζόμενο να αλλάξει την αρχική του επιλογή, καθώς αυξάνει τις
+πιθανότητες του να κερδίσει το έπαθλο.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Sets -Venn Diagrams}\)
+
+    Τα σύνολα είναι μια έννοια στη θεωρία συνόλων που αναφέρεται σε ομάδες
+αντικειμένων ή στοιχείων που έχουν κάποια κοινή χαρακτηριστικά ή
+ιδιότητες. Ένα σύνολο μπορεί να περιλαμβάνει οποιοδήποτε αριθμό
+στοιχείων, συμβολίζεται συνήθως με μεγάλα κεφαλαία γράμματα (όπως Α, Β,
+Γ) και τα στοιχεία του συνόλου μπορεί να παρουσιάζονται με μικρά
+γράμματα.
+
+Οι διαγράμματα Venn είναι γραφικές αναπαραστάσεις των συνόλων και των
+σχέσεών τους μεταξύ τους. Αυτά τα διαγράμματα χρησιμοποιούν κυκλικές ή
+οβάλ περιοχές που επικαλύπτονται για να αναπαραστήσουν την κοινή ή τη
+διαφορετική περιοχή των συνόλων. Κάθε σύνολο αντιπροσωπεύεται από μία
+περιοχή και οι σχέσεις μεταξύ των συνόλων αναπαρίστανται από την
+επικάλυψη των περιοχών αυτών.
+
+Για παράδειγμα, έστω ότι έχουμε τα σύνολα Α και Β. Ένα διάγραμμα Venn με
+δύο σύνολα θα περιλαμβάνει δύο κυκλικές περιοχές, μία για το σύνολο Α
+και μία για το σύνολο Β. Η επικάλυψη των περιοχών αντιπροσωπεύει τα
+στοιχεία που ανήκουν τόσο στο σύνολο Α όσο και στο σύνολο Β.
+
+Τα διαγράμματα Venn είναι χρήσιμα για την εικόνιση των σχέσεων μεταξύ
+των συνόλων και την ανάλυση των συνόλων σε υποσύνολα.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{The Sample Space and the Event Space}\)
+
+    Το δειγματικό χώρο (Sample Space) και το χώρο των συμβάντων (Event
+Space) είναι σημαντικά έννοιες στη θεωρία πιθανοτήτων. Ας τις εξηγήσουμε
+στα ελληνικά:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Δειγματικός Χώρος (Sample Space): Ο δειγματικός χώρος είναι ο σύνολο
+  όλων των πιθανών αποτελεσμάτων ενός πειράματος. Συμβολίζεται συνήθως
+  με το γράμμα Ω (omega) και περιλαμβάνει όλα τα δυνατά αποτελέσματα που
+  μπορούν να προκύψουν από το πείραμα.
+\item
+  Χώρος των Συμβάντων (Event Space): Ο χώρος των συμβάντων είναι το
+  σύνολο όλων των πιθανών συμβάντων ή υποσυνόλων του δειγματικού χώρου.
+  Ένα συμβάν είναι οποιαδήποτε υποσυνένολο του δειγματικού χώρου και
+  αντιπροσωπεύει ένα συγκεκριμένο αποτέλεσμα ή σύνολο αποτελεσμάτων του
+  πειράματος.
+\end{enumerate}
+
+Ο δειγματικός χώρος παρέχει το πλαίσιο για την ανάλυση όλων των πιθανών
+αποτελεσμάτων, ενώ ο χώρος των συμβάντων επιτρέπει την αναπαράσταση και
+τον υπολογισμό πιθανών συμβάντων μέσα σε αυτό το πλαίσιο.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Probability and set operations with examples}\)
+
+    Η πιθανότητα και οι λειτουργίες συνόλων είναι σημαντικές έννοιες στον
+τομέα της πιθανοτικής. Ας δούμε πώς μπορούν να χρησιμοποιηθούν σε
+παραδείγματα στα ελληνικά:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Πιθανότητα (Probability): Η πιθανότητα ενός συμβάντος αναφέρεται στη
+  μέτρηση της συχνότητας με την οποία αυτό το συμβάν συμβαίνει σε ένα
+  πείραμα. Υπολογίζεται ως τον αριθμό των επιθυμητών αποτελεσμάτων προς
+  τον συνολικό αριθμό των πιθανών αποτελεσμάτων.
+\end{enumerate}
+
+Παράδειγμα: Ένα φαράγγι έχει τρία δρομολόγια: ένα εύκολο, ένα μεσαίο και
+ένα δύσκολο. Η πιθανότητα ενός τυχαίου πεζοπορικού να επιλέξει το εύκολο
+δρομολόγιο είναι 1/3.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Λειτουργίες Συνόλων (Set Operations): Οι βασικές λειτουργίες συνόλων
+  περιλαμβάνουν την ένωση, τη διαφορά, το τομήμα και το συμπλήρωμα.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Ένωση: Η ένωση δύο συνόλων περιλαμβάνει όλα τα μοναδικά στοιχεία από
+  κάθε σύνολο.
+\item
+  Διαφορά: Η διαφορά δύο συνόλων περιλαμβάνει τα στοιχεία που υπάρχουν
+  στο πρώτο σύνολο αλλά όχι στο δεύτερο.
+\item
+  Τομή: Η τομή δύο συνόλων περιλαμβάνει τα στοιχεία που υπάρχουν και στα
+  δύο σύνολα.
+\item
+  Συμπλήρωμα: Το συμπλήρωμα ενός συνόλου αναφέρεται στα στοιχεία που δεν
+  ανήκουν σε αυτό το σύνολο, σε σχέση με ένα άλλο σύνολο.
+\end{itemize}
+
+Παραδείγματα: Έστω δύο σύνολα: Α = \{1, 2, 3, 4\} και Β = \{3, 4, 5,
+6\}.
+
+\begin{itemize}
+\tightlist
+\item
+  Ένωση: Α Ένωση Β = \{1, 2, 3, 4, 5, 6\}.
+\item
+  Διαφορά: Α Διαφορά Β = \{1, 2\}.
+\item
+  Τομή: Α Τομή Β = \{3, 4\}.
+\item
+  Συμπλήρωμα: Το συμπλήρωμα του συνόλου Α σε σχέση με το σύνολο Β είναι
+  \{1, 2\}.
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Conditional probability}\)
+
+    Η συνθήκη πιθανότητας είναι μια έννοια στην πιθανοτική που αναφέρεται
+στην πιθανότητα ενός συμβάντος υπό συγκεκριμένες συνθήκες ή
+προϋποθέσεις. Συνήθως συμβολίζεται ως P(A\textbar B), που διαβάζεται ``η
+πιθανότητα του συμβάντος Α δεδομένου του συμβάντος Β''.
+
+Για να υπολογίσουμε τη συνθήκη πιθανότητας, χρησιμοποιούμε τον τύπο:
+
+$ P(A\textbar B) = \frac{P(A \cap B)}{P(B)} $
+
+Παράδειγμα:
+
+Ένα τυχαίο πείραμα αφορά τη ρίψη ενός ζαριού. Έστω ότι: - Συμβάν Α: Το
+ζάρι εμφανίζει έναν περιττό αριθμό (1, 3, 5). - Συμβάν Β: Το ζάρι
+εμφανίζει έναν αριθμό μεγαλύτερο από 2.
+
+Τώρα, ας υπολογίσουμε τη συνθήκη πιθανότητας του συμβάντος Α δεδομένου
+του συμβάντος Β.
+
+Έχουμε: - Πιθανότητα του συμβάντος Α και του συμβάντος Β ( $ P(A
+\cap B) $ ): Η πιθανότητα του ζαριού να είναι περιττός αριθμός και
+ταυτόχρονα να είναι μεγαλύτερο από 2. Αυτό συμβαίνει μόνο όταν το ζάρι
+εμφανίζει τους αριθμούς 3 ή 5, οπότε $ P(A \cap B) = \frac{2}{6} =
+\frac{1}{3} $. - Πιθανότητα του συμβάντος Β ( $ P(B) $ ): Η
+πιθανότητα του ζαριού να είναι μεγαλύτερο από 2, που είναι $ P(B) =
+\frac{4}{6} = \frac{2}{3} $.
+
+Εφαρμόζοντας τον τύπο της συνθήκης πιθανότητας, έχουμε:
+
+$ P(A\textbar B) = \frac{P(A \cap B)}{P(B)} =
+\frac{\frac{1}{3}}{\frac{2}{3}} = \frac{1}{2} $
+
+Άρα, η συνθήκη πιθανότητας του συμβάντος Α δεδομένου του συμβάντος Β
+είναι 1/2.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Multiplication rule}\)
+
+    Ο κανόνας του πολλαπλασιασμού είναι ένας βασικός κανόνας στη θεωρία
+πιθανοτήτων που χρησιμοποιείται για τον υπολογισμό της συνολικής
+πιθανότητας δύο ή περισσότερων συμβάντων που συμβαίνουν μεταξύ τους.
+
+Ο κανόνας του πολλαπλασιασμού μπορεί να εκφραστεί ως εξής:
+
+$ P(A \cap B) = P(A) \cdot P(B\textbar A) $
+
+Όπου: - $ P(A \cap B) $ είναι η πιθανότητα του συμβάντος που
+συμβαίνουν τα συμβάντα A και B ταυτόχρονα. - $ P(A) $ είναι η
+πιθανότητα του συμβάντος A. - $ P(B\textbar A) $ είναι η πιθανότητα
+του συμβάντος B δεδομένου του συμβάντος A.
+
+Παράδειγμα:
+
+Ας θεωρήσουμε ένα τυχαίο πείραμα με ένα κανονικό τράπουλα χαρτιών.
+
+Έστω ότι Α είναι το συμβάν που επιλέγετε ένα άσσο, και Β είναι το συμβάν
+που επιλέγετε ένα χρυσό χρώμα.
+
+Η πιθανότητα να επιλεγεί ένας άσσος είναι $ P(A) = \frac{4}{52} =
+\frac{1}{13} $, καθώς ένα τράπουλο έχει συνολικά 52 κάρτες και 4 από
+αυτές είναι άσσοι.
+
+Η πιθανότητα να επιλεγεί ένας άσσος με χρυσό χρώμα είναι $
+P(B\textbar A) = \frac{2}{4} = \frac{1}{2} $, καθώς υπάρχουν 2 χρυσοί
+άσσοι ανάμεσα στους συνολικούς 4 άσσους.
+
+Έτσι, χρησιμοποιώντας τον κανόνα του πολλαπλασιασμού:
+
+$ P(A \cap B) = P(A) \cdot P(B\textbar A) = \frac{1}{13}
+\cdot \frac{1}{2} = \frac{1}{26} $
+
+Άρα, η πιθανότητα να επιλεχθεί ένας χρυσός άσσος είναι $ \frac{1}{26}
+$.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Independence}\)
+
+    Η ανεξαρτησία είναι ένας σημαντικός έννοια στη θεωρία πιθανοτήτων και
+αφορά τη σχέση μεταξύ δύο συμβάντων. Δύο συμβάντα θεωρούνται ανεξάρτητα
+όταν η εμφάνιση ή μη εμφάνιση του ενός δεν επηρεάζει την πιθανότητα
+εμφάνισης του άλλου.
+
+Για να δείξουμε ότι δύο συμβάντα είναι ανεξάρτητα, πρέπει να ισχύει η
+εξίσωση:
+
+$ P(A \cap B) = P(A) \cdot P(B) $
+
+Εάν η παραπάνω σχέση ισχύει, τότε τα συμβάντα A και B θεωρούνται
+ανεξάρτητα.
+
+Παράδειγμα:
+
+Ας θεωρήσουμε ένα κέρμα. Ας ορίσουμε τα εξής συμβάντα: - Συμβάν A:
+Εμφάνιση κεφαλής. - Συμβάν B: Εμφάνιση γραμμής.
+
+Ένα κέρμα είναι ένα συμβάν με δύο πιθανά αποτελέσματα: κεφαλή ή γραμμή.
+Εάν το κέρμα είναι τίμιο, η πιθανότητα να εμφανίσει κεφαλή είναι $ P(A)
+= \frac{1}{2} $, και η πιθανότητα να εμφανίσει γραμμή είναι επίσης $
+P(B) = \frac{1}{2} $.
+
+Τώρα, ας θεωρήσουμε το συμβάν C: Εμφάνιση κεφαλής και γραμμής
+ταυτόχρονα. Αν το κέρμα είναι τίμιο, τότε η πιθανότητα να εμφανίσει
+ταυτόχρονα κεφαλή και γραμμή είναι $ P(C) = \frac{1}{4} $, καθώς αυτό
+συμβαίνει μόνο σε ένα από τα τέσσερα πιθανά αποτελέσματα.
+
+Τώρα, αν οι συμβάντα A και B είναι ανεξάρτητα, τότε:
+
+$ P(A \cap B) = P(A) \cdot P(B) $ $ P(C) = P(A) \cdot P(B) $ $
+\frac{1}{4} = \frac{1}{2} \cdot \frac{1}{2} $
+
+Επομένως, τα συμβάντα A και B είναι ανεξάρτητα.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{The Bayes’ Theorem}\)
+
+    Η θεώρηση του Bayes είναι ένας σημαντικός κανόνας στη θεωρία πιθανοτήτων
+που χρησιμοποιείται για τον υπολογισμό της πιθανότητας ενός συμβάντος
+υπό την προϋπόθεση ότι ένα άλλο συμβάν έχει συμβεί.
+
+Bayes' Theorem (Θεώρηση του Bayes):
+
+Ο Θεώρηση του Bayes δίνεται από τον ακόλουθο τύπο:
+
+$ P(A\textbar B) = \frac{P(B|A) \cdot P(A)}{P(B)} $
+
+Όπου: - $ P(A\textbar B) $ είναι η πιθανότητα του συμβάντος A
+δεδομένου του συμβάντος B. - $ P(B\textbar A) $ είναι η πιθανότητα του
+συμβάντος B δεδομένου του συμβάντος A. - $ P(A) $ και $ P(B) $ είναι
+οι ανεξάρτητες πιθανότητες των συμβάντων A και B αντίστοιχα.
+
+Παράδειγμα:
+
+Έστω ότι σε μια πόλη, το 2\% του πληθυσμού έχει μία συγκεκριμένη
+ασθένεια. Ένα τεστ για αυτή την ασθένεια είναι 90\% ακριβές όταν κάποιος
+πράγματι έχει την ασθένεια, και 95\% ακριβές όταν κάποιος δεν έχει την
+ασθένεια.
+
+Έστω ότι ένας άνθρωπος πέρασε το τεστ και βρέθηκε θετικός. Ποια είναι η
+πιθανότητα που πραγματικά να έχει την ασθένεια;
+
+Ας ορίσουμε τα εξής: - Συμβάν A: Ένα άτομο έχει την ασθένεια. - Συμβάν
+B: Το τεστ είναι θετικό.
+
+Με βάση τα δεδομένα:
+
+\begin{itemize}
+\tightlist
+\item
+  $ P(A) = 0.02 $ (2\% του πληθυσμού έχει την ασθένεια).
+\item
+  $ P(B\textbar A) = 0.90 $ (το τεστ είναι 90\% ακριβές όταν κάποιος
+  έχει την ασθένεια).
+\item
+  $ P(B\textbar{}\neg A) = 0.05 $ (το τεστ είναι 95\% ακριβές όταν
+  κάποιος δεν έχει την ασθένεια).
+\end{itemize}
+
+Πρώτα υπολογίζουμε την $ P(B) $ με βάση τον νόμο του συνολικού
+πιθανοτικού διασταυρώματος (Law of Total Probability):
+
+$ P(B) = P(B\textbar A) \cdot P(A) + P(B\textbar{}\neg A)
+\cdot P(\neg A) $
+
+$ P(B) = 0.90 \times 0.02 + 0.05 \times (1-0.02) $ $ P(B) = 0.018 +
+0.941 = 0.959 $
+
+Τώρα, χρησιμοποιώντας τον θεώρηση του Bayes:
+
+$ P(A\textbar B) = \frac{P(B|A) \cdot P(A)}{P(B)} $ 
+$ P(A\textbar B)= \frac{0.90 \times 0.02}{0.959} $ 
+$ P(A\textbar B) \approx \frac{0.018}{0.959} \approx 0.0188 $
+
+Επομένως, η πιθανότητα ότι ο άνθρωπος πραγματικά έχει την ασθένεια όταν
+το τεστ είναι θετικό είναι περίπου 0.0188, ή 1.88\%.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{The base rate fallacy}\)
+
+    Η βασική λάθος τιμή (base rate fallacy) αναφέρεται σε ένα συγκεκριμένο
+είδος σφάλματος που μπορεί να συμβεί όταν οι άνθρωποι αξιολογούν την
+πιθανότητα ενός συμβάντος χωρίς να λαμβάνουν υπόψη τη βασική συχνότητα ή
+πιθανότητα του συμβάντος στην αρχή.
+
+Ένα συνηθισμένο παράδειγμα είναι η εκτίμηση της πιθανότητας κάποιου να
+έχει μια ασθένεια με βάση το θετικό αποτέλεσμα ενός δοκιμαστικού τεστ.
+Για παράδειγμα, ας θεωρήσουμε μια ασθένεια που εμφανίζεται σε 1 στους
+1000 ανθρώπους (βασική συχνότητα 0.001 ή 0.1\%). Ένα δοκιμαστικό τεστ
+για αυτή την ασθένεια είναι 99\% ακριβές όταν κάποιος πράγματι την έχει,
+και 95\% ακριβές όταν κάποιος δεν την έχει.
+
+Ένας άνθρωπος κάνει το δοκιμαστικό τεστ και παίρνει θετικό αποτέλεσμα.
+Τώρα, ποια είναι η πιθανότητα πραγματικά να έχει αυτή την ασθένεια;
+
+Για να αντιμετωπιστεί αυτή η κατάσταση με βάση το θεώρημα του Bayes,
+πρέπει να λάβουμε υπόψη την βασική συχνότητα και την ακρίβεια του τεστ.
+
+Ας υπολογίσουμε την πιθανότητα ότι ο άνθρωπος πραγματικά έχει την
+ασθένεια, δεδομένου ότι το τεστ είναι θετικό:
+
+\begin{itemize}
+\tightlist
+\item
+  $ P(A) = 0.001 $ (βασική συχνότητα της ασθένειας).
+\item
+  $ P(B\textbar A) = 0.99 $ (το τεστ είναι 99\% ακριβές όταν κάποιος
+  πράγματι έχει την ασθένεια).
+\end{itemize}
+
+Αφού υπολογίσουμε τη συνολική πιθανότητα του θετικού τεστ
+(χρησιμοποιώντας τον νόμο του συνολικού πιθανοτικού διασταυρώματος),
+μπορούμε να χρησιμοποιήσουμε το θεώρημα του Bayes για να υπολογίσουμε
+την επιθυμητή πιθανότητα:
+
+$ P(B) = P(B\textbar A) \cdot P(A) + P(B\textbar{}\neg A)
+\cdot P(\neg A) $ $ P(B) = 0.99 \times 0.001 + 0.05 \times (1-0.001)
+$ $ P(B) = 0.001 \times 0.99 + 0.999 \times 0.05 = 0.00199 + 0.04995 =
+0.05194 $
+
+$ P(A\textbar B) = \frac{P(B|A) \cdot P(A)}{P(B)} $ $ P(A\textbar B)
+= \frac{0.99 \times 0.001}{0.05194} $ $ P(A\textbar B) \approx
+\frac{0.00099}{0.05194} \approx 0.01905 $
+
+Επομένως, η πιθανότητα ότι ο άνθρωπος
+
+πραγματικά έχει την ασθένεια όταν το τεστ είναι θετικό είναι περίπου
+0.019 ή 1.9\%. Αυτό είναι ένα παράδειγμα της βασικής λάθος τιμής, όπου
+οι άνθρωποι τείνουν να υποεκτιμούν την πιθανότητα του συμβάντος εξαιτίας
+της αγνοούμενης βασικής συχνότητας.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Discrete Random Variables}\)
+
+    Οι διακριτές τυχαίες μεταβλητές αποτελούν ένα σημαντικό μέρος της
+θεωρίας πιθανοτήτων και της στατιστικής. Μια διακριτή τυχαία μεταβλητή
+αντιπροσωπεύει έναν αριθμό ο οποίος προκύπτει από ένα τυχαίο πείραμα και
+μπορεί να πάρει μια συγκεκριμένη τιμή από ένα πεπερασμένο σύνολο δυνατών
+τιμών.
+
+Για παράδειγμα, αν ρίξουμε ένα ζάρι, η διακριτή τυχαία μεταβλητή είναι
+το αποτέλεσμα της ρίψης του ζαριού, το οποίο μπορεί να είναι ένας
+αριθμός από 1 έως 6.
+
+Ορισμένες σημαντικές έννοιες που σχετίζονται με τις διακριτές τυχαίες
+μεταβλητές περιλαμβάνουν:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Συνάρτηση πιθανότητας (Probability Mass Function - PMF)}: Η
+  συνάρτηση πιθανότητας μιας διακριτής τυχαίας μεταβλητής δίνει την
+  πιθανότητα να πάρει κάθε πιθανή τιμή.
+\item
+  \textbf{Αναμενόμενη τιμή (Expected Value)}: Είναι η μέση τιμή μιας
+  διακριτής τυχαίας μεταβλητής και υπολογίζεται ως η συνολική αθροιστική
+  των πιθανοτήτων επί των αντίστοιχων τιμών.
+\item
+  \textbf{Διασπορά (Variance)}: Η διασπορά μιας διακριτής τυχαίας
+  μεταβλητής μετρά την απόκλιση των τιμών από την αναμενόμενη τιμή.
+\end{enumerate}
+
+Ένα παράδειγμα διακριτής τυχαίας μεταβλητής μπορεί να είναι το
+αποτέλεσμα ενός πειράματος με ένα νόμισμα, όπου μπορεί να πάρει τις
+τιμές 0 (κορώνα) ή 1 (γράμμα). Η συνάρτηση πιθανότητας θα έδινε την
+πιθανότητα του κάθε αποτελέσματος, ενώ η αναμενόμενη τιμή θα ήταν η
+πιθανότητα εμφάνισης κάθε αποτελέσματος πολλαπλασιασμένη με την
+αντίστοιχη τιμή, δηλαδή (0 * πιθανότητα της κορώνας) + (1 * πιθανότητα
+της γραμμής).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Expected value}\)
+
+    Η αναμενόμενη τιμή μιας διακριτής τυχαίας μεταβλητής είναι ένας
+αριθμητικός δείκτης που δίνει την μέση τιμή ή τον μέσο όρο των
+αποτελεσμάτων αυτής της μεταβλητής, λαμβάνοντας υπόψη τις πιθανότητες
+των αντίστοιχων αποτελεσμάτων. Η αναμενόμενη τιμή συχνά αναφέρεται ως
+μέση τιμή.
+
+Η αναμενόμενη τιμή $ E{[}X{]} $ μιας διακριτής τυχαίας μεταβλητής $ X
+$ υπολογίζεται ως η συνολική αθροιστική των πιθανοτήτων επί των
+αντίστοιχων τιμών:
+
+$ E{[}X{]} = \sum\_\{i\} x\_i \cdot P(X = x\_i) $
+
+Όπου: - $ x\_i $ είναι μια από τις πιθανές τιμές της μεταβλητής $ X
+$, - $ P(X = x\_i) $ είναι η πιθανότητα να λάβουμε την τιμή $ x\_i
+$.
+
+Για παράδειγμα, αν έχουμε μια διακριτή τυχαία μεταβλητή που
+αντιπροσωπεύει τα αποτελέσματα ενός ρίψου κέρματος, όπου μπορεί να πάρει
+τις τιμές 0 (κορώνα) ή 1 (γράμμα), και η πιθανότητα να λάβουμε κορώνα
+είναι 0.6 και η πιθανότητα να λάβουμε γράμμα είναι 0.4, τότε η
+αναμενόμενη τιμή θα υπολογιζόταν ως εξής:
+
+$ E{[}X{]} = 0 \cdot 0.6 + 1 \cdot 0.4 = 0.4 $
+
+Συνεπώς, η αναμενόμενη τιμή της διακριτής τυχαίας μεταβλητής σε αυτό το
+παράδειγμα είναι 0.4.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Random variables}\)
+
+    Ένα παράδειγμα διακριτής τυχαίας μεταβλητής μπορεί να αναφέρεται στο
+αποτέλεσμα μιας ρίψης ζαριού. Ένα ζάρι έχει έξι πλευρές, και κάθε πλευρά
+έχει έναν αριθμό από 1 έως 6. Ας δούμε δύο παραδείγματα:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Τυχαία μεταβλητή που αντιπροσωπεύει το αποτέλεσμα μιας μονής
+  ρίψης ζαριού:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Η τυχαία μεταβλητή $ X $ μπορεί να λάβει τις τιμές 1, 2, 3, 4, 5 ή
+    6.
+  \item
+    Η πιθανότητα $ P(X = x) $ για κάθε $ x $ είναι $ \frac{1}{6}
+    $, διότι κάθε πλευρά έχει ίση πιθανότητα εμφάνισης.
+  \item
+    Η αναμενόμενη τιμή $ E{[}X{]} $ υπολογίζεται ως εξής: $ E{[}X{]}
+    = 1 \times \frac{1}{6} + 2 \times \frac{1}{6} + 3 \times \frac{1}{6}
+    + 4 \times \frac{1}{6} + 5 \times \frac{1}{6} + 6 \times \frac{1}{6}
+    = \frac{21}{6} = 3.5 $
+  \item
+    Συνεπώς, η αναμενόμενη τιμή του αποτελέσματος μιας μονής ρίψης
+    ζαριού είναι 3.5.
+  \end{itemize}
+\item
+  \textbf{Τυχαία μεταβλητή που αντιπροσωπεύει το άθροισμα δύο ρίψεων
+  ζαριού:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Έστω $ Y $ η τυχαία μεταβλητή που αντιπροσωπεύει το άθροισμα δύο
+    ρίψεων ζαριού.
+  \item
+    Η τυχαία μεταβλητή $ Y $ μπορεί να πάρει τις τιμές από 2 έως 12
+    (καθώς το άθροισμα δύο ρίψεων ζαριού είναι 2 έως 12).
+  \item
+    Οι πιθανότητες για κάθε τιμή του $ Y $ μπορούν να υπολογιστούν από
+    τον τρόπο με τον οποίο είναι δυνατό να επιτευχθεί αυτή η τιμή
+    συνδυάζοντας τις πιθανότητες του κάθε αποτελέσματος του πρώτου και
+    του δεύτερου ρίψη.
+  \item
+    Η αναμενόμενη τιμή $ E{[}Y{]} $ μπορεί να υπολογιστεί
+    χρησιμοποιώντας την ίδια μέθοδο που χρησιμοποιήθηκε για το $ X $,
+    με τη διαφορά ότι θα αντικαταστήσουμε τις τιμές του $ x $ με τις
+    τιμές του $ Y $.
+  \item
+    Για αυτό το παράδειγμα, η αναμενόμενη τιμή του αθροίσματος δύο
+    ρίψεων ζαριού είναι επίσης 7.
+  \end{itemize}
+\end{enumerate}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Variance}\)
+
+    Η διασπορά μιας διακριτής τυχαίας μεταβλητής μετρά το βαθμό που οι τιμές
+της μεταβλητής αποκλίνουν από την αναμενόμενη τιμή της. Για μια διακριτή
+τυχαία μεταβλητή $ X $ με αναμενόμενη τιμή $ E{[}X{]} $, η διασπορά
+$ Var(X) $ υπολογίζεται ως η συνολική αθροιστική διαφορά των
+τετραγώνων της απόκλισης των τιμών της από τη μέση τιμή, καθώς
+πολλαπλασιάζονται με την αντίστοιχη πιθανότητα, δηλαδή:
+
+$ Var(X) = E{[}(X - E{[}X{]})^2{]} = \sum\_\{i\} (x\_i - E{[}X{]})^2 \cdot P(X = x\_i) $
+
+Όπου: - $ x\_i $ είναι μια από τις πιθανές τιμές της μεταβλητής $ X
+$, - $ P(X = x\_i) $ είναι η πιθανότητα να λάβουμε την τιμή $ x\_i
+$.
+
+Για παράδειγμα, αν έχουμε μια διακριτή τυχαία μεταβλητή που
+αντιπροσωπεύει το αποτέλεσμα μιας μονής ρίψης ζαριού, όπως προηγουμένως,
+η διασπορά μπορεί να υπολογιστεί ως εξής:
+
+$ Var(X) = \sum\_\{i\} (x\_i - E{[}X{]})^2 \cdot P(X = x\_i) $
+
+Όπου $ E{[}X{]} = 3.5 $ είναι η αναμενόμενη τιμή της μεταβλητής $ X
+$.
+
+Ας υποθέσουμε ότι η πιθανότητα να πάρουμε κάθε πιθανή τιμή του ζαριού
+είναι ίση (κάθε πλευρά του ζαριού έχει πιθανότητα 1/6). Τότε η διασπορά
+θα είναι:
+
+$ Var(X) = (1 - 3.5)^2 \cdot \frac{1}{6} + (2 - 3.5)^2
+\cdot \frac{1}{6} + \ldots + (6 - 3.5)^2 \cdot \frac{1}{6} $
+
+Και μετά μπορούμε να υπολογίσουμε το αποτέλεσμα.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Ας υποθέσουμε ότι έχουμε ένα σύνολο δεδομένων που αντιπροσωπεύει τα
+ηλικιακά έτη των μαθητών σε ένα σχολείο:
+
+$ \{12, 13, 14, 15, 16\} $
+
+Για να υπολογίσουμε τη διασπορά των ηλικιών αυτών των μαθητών, πρέπει να
+ακολουθήσουμε τα παρακάτω βήματα:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Υπολογισμός της μέσης τιμής:} $ \mu =
+  \frac{12 + 13 + 14 + 15 + 16}{5} = \frac{70}{5} = 14 $
+\item
+  \textbf{Υπολογισμός της απόκλισης από τη μέση τιμή για κάθε τιμή:} $
+  (12 - 14)^2 = 4, ~(13 - 14)^2 = 1, ~(14 - 14)^2 = 0, ~(15 -
+  14)^2 = 1, ~(16 - 14)^2 = 4 $
+\item
+  \textbf{Υπολογισμός του μέσου όρου των τετραγώνων των αποκλίσεων:} $
+  \text{Διασπορά} = \frac{4 + 1 + 0 + 1 + 4}{5} = \frac{10}{5} = 2 $
+\end{enumerate}
+
+Άρα η διασπορά των ηλικιών είναι 2.
+
+Η τυπική απόκλιση είναι η τετραγωνική ρίζα της διασποράς, οπότε: $
+\text{Τυπική Απόκλιση} = \sqrt{2} \approx 1.41 $
+
+Άρα η τυπική απόκλιση των ηλικιών είναι περίπου 1.41 έτη.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Variance and Standard Deviation}\)
+
+    Η διασπορά (Variance) και η τυπική απόκλιση (Standard Deviation) είναι
+μέτρα που χρησιμοποιούνται για να περιγράψουν το βαθμό διασποράς ή
+διακύμανσης μιας σύνολης δεδομένων ή μιας τυχαίας μεταβλητής.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Διασπορά (Variance):} Η διασπορά είναι η μέση του τετραγώνου
+  της απόκλισης των τιμών από την μέση τιμή. Υπολογίζεται ως η
+  αναμενόμενη τιμή του τετραγώνου της απόκλισης:
+\end{enumerate}
+
+$ \text{Var}(X) = E{[}(X - \mu)^2{]} $
+
+Όπου: - $ X $ είναι η τυχαία μεταβλητή, - $ \mu $ είναι η μέση τιμή
+της τυχαίας μεταβλητής, - $ E{[}\cdot{]} $ συμβολίζει την αναμενόμενη
+τιμή.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Τυπική Απόκλιση (Standard Deviation):} Η τυπική απόκλιση είναι
+  η τετραγωνική ρίζα της διασποράς και παρέχει μια πιο ερμηνεύσιμη
+  μέτρηση της διασποράς. Υπολογίζεται ως εξής:
+\end{enumerate}
+
+$ \sigma = \sqrt{\text{Var}(X)} $
+
+Όπου $ \sigma $ συμβολίζει την τυπική απόκλιση.
+
+Η τυπική απόκλιση μας δίνει μια εικόνα για το πόσο διαφορετικές είναι οι
+τιμές από τη μέση τιμή, ενώ η διασπορά μας δίνει το μέγεθος αυτής της
+διαφοράς σε μια μονάδα που έχει την ίδια μονάδα με την αρχική μεταβλητή.
+
+Σε πολλές περιπτώσεις, η τυπική απόκλιση είναι προτιμότερη γιατί είναι
+πιο εύκολη στην ερμηνεία, καθώς έχει την ίδια κλίμακα με την αρχική
+μεταβλητή.
+
+Ας δούμε ένα παράδειγμα για τον υπολογισμό της διασποράς και της τυπικής
+απόκλισης για ένα σύνολο δεδομένων.
+
+Έστω ότι έχουμε το παρακάτω σύνολο δεδομένων:
+
+$ \{4, 7, 8, 10, 12\} $
+
+Πρώτα, υπολογίζουμε τη μέση τιμή του συνόλου:
+
+$ \text{Μέση Τιμή} (\mu) = \frac{4 + 7 + 8 + 10 + 12}{5} = \frac{41}{5}
+= 8.2 $
+
+Τώρα, για να υπολογίσουμε τη διασπορά, πρέπει να βρούμε την απόκλιση
+κάθε τιμής από τη μέση τιμή, να την τετραγωνίσουμε, και μετά να
+υπολογίσουμε τον μέσο όρο αυτών των τετραγώνων.
+
+Έτσι, έχουμε:
+
+$ \text{Διασπορά} =
+\frac{(4-8.2)^2 + (7-8.2)^2 + (8-8.2)^2 + (10-8.2)^2 + (12-8.2)^2}{5} $
+
+$ = \frac{(-4.2)^2 + (-1.2)^2 + (-0.2)^2 + (1.8)^2 + (3.8)^2}{5} $
+
+$ = \frac{17.64 + 1.44 + 0.04 + 3.24 + 14.44}{5} $
+
+$ = \frac{36.8}{5} $
+
+$ = 7.36 $
+
+Άρα η διασπορά είναι \(7.36\).
+
+Τώρα, η τυπική απόκλιση είναι απλώς η τετραγωνική ρίζα της διασποράς:
+
+$ \text{Τυπική Απόκλιση} (\sigma) = \sqrt{7.36} = 2.71 $
+
+Συνεπώς, η τυπική απόκλιση είναι \(2.71\).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Bernoulli distribution}\)
+
+    Η κατανομή Bernoulli είναι μια διακριτή πιθανοτική κατανομή που
+περιγράφει ένα πείραμα με δύο δυνατά αποτελέσματα, όπου το κάθε
+αποτέλεσμα έχει μια σταθερή πιθανότητα επιτυχίας $ p $ και αποτυχίας
+$ 1-p $, εκφρασμένη με τις τιμές 1 και 0 αντίστοιχα.
+
+Συνήθως, συμβολίζουμε το αποτέλεσμα της επιτυχίας με το 1 και το
+αποτέλεσμα της αποτυχίας με το 0. Έτσι, μια τυχαία μεταβλητή $ X $ που
+ακολουθεί μια κατανομή Bernoulli έχει την ακόλουθη πιθανοτική μάζα:
+
+$ P(X = x) =\begin{cases} p, & \text{εάν } x = 1 \\ 1-p, & \text{εάν } x = 0 \end{cases}$
+
+Όπου $ p $ είναι η πιθανότητα επιτυχίας του πειράματος.
+
+Η αναμενόμενη τιμή $ E{[}X{]} $ μιας τυχαίας μεταβλητής Bernoulli
+υπολογίζεται ως η πιθανότητα επιτυχίας $ p $, δηλαδή $ E{[}X{]} = p
+$. Η διασπορά $ \text{Var}(X) $ είναι επίσης εύκολο να υπολογιστεί,
+ως:
+
+$ \text{Var}(X) = E{[}X^2{]} - (E{[}X{]})^2 = p - p^2 = p(1-p)$
+
+Ένα παράδειγμα χρήσης της κατανομής Bernoulli είναι ένα νόμισμα που
+ρίχνεται, όπου το αποτέλεσμα μπορεί να είναι κορώνα (επιτυχία) με
+πιθανότητα $ p $ ή γράμμα (αποτυχία) με πιθανότητα $ 1-p $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Binomial Distribution}\)
+
+    Ένα παράδειγμα χρήσης της διακριτής κατανομής binomial είναι όταν έχουμε
+ένα σετ από ανεξάρτητα πειράματα, κάθε ένα από τα οποία έχει δύο πιθανά
+αποτελέσματα (επιτυχία ή αποτυχία), και θέλουμε να υπολογίσουμε την
+πιθανότητα εμφάνισης μιας συγκεκριμένης αριθμητικής ποσότητας επιτυχιών
+σε ένα συγκεκριμένο αριθμό πειραμάτων.
+
+Για παράδειγμα, ας υποθέσουμε ότι έχουμε ένα ένα νόμισμα που το ρίχνουμε
+10 φορές και θέλουμε να υπολογίσουμε την πιθανότητα να πάρουμε 7 φορές
+κορώνα (επιτυχίες) αν γνωρίζουμε ότι η πιθανότητα να πάρουμε κορώνα σε
+κάθε ρίψη είναι 0.5.
+
+Σε αυτή την περίπτωση, η τυχαία μεταβλητή $ X $, που αντιπροσωπεύει
+τον αριθμό των επιτυχιών (δηλαδή τον αριθμό των φορών που πέφτει κορώνα
+σε αυτό το πείραμα), ακολουθεί μια κατανομή binomial με παραμέτρους $ n
+= 10 $ (τον συνολικό αριθμό των πειραμάτων) και $ p = 0.5 $ (η
+πιθανότητα επιτυχίας σε κάθε πείραμα).
+
+Για να υπολογίσουμε αυτή την πιθανότητα, μπορούμε να χρησιμοποιήσουμε
+την τύπο της κατανομής binomial:
+
+$ P(X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^\{n-k\} $
+
+όπου $ k $ είναι ο αριθμός των επιτυχιών που θέλουμε να πάρουμε (σε
+αυτή την περίπτωση, $ k = 7 $), $ n $ είναι ο συνολικός αριθμός των
+πειραμάτων (σε αυτή την περίπτωση, $ n = 10 $), και $ p $ είναι η
+πιθανότητα επιτυχίας σε κάθε πείραμα (σε αυτή την περίπτωση, $ p = 0.5
+$).
+
+Έτσι, η πιθανότητα να πάρουμε 7 φορές κορώνα από τις 10 φορές που
+ρίχνουμε το νόμισμα είναι:
+
+$ P(X = 7) = \binom{10}{7} \cdot 0.5^7 \cdot (1-0.5)^\{10-7\} $
+
+Μπορούμε να υπολογίσουμε αυτή την τιμή και να βρούμε την απάντηση.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Continuous Random Variables }\)
+
+    Οι συνεχείς τυχαίες μεταβλητές αντιπροσωπεύουν μεγέθη που μπορούν να
+πάρουν οποιαδήποτε τιμή σε ένα διάστημα, συνήθως ένα διάστημα
+πραγματικών αριθμών. Διαφορετικά από τις διακριτές τυχαίες μεταβλητές
+που μπορούν να πάρουν μόνο συγκεκριμένες τιμές, οι συνεχείς τυχαίες
+μεταβλητές μπορούν να πάρουν οποιαδήποτε τιμή εντός ενός διαστήματος των
+πραγματικών αριθμών.
+
+Για παράδειγμα, η χρονική διάρκεια που απαιτείται για να ολοκληρωθεί ένα
+έργο, η ταχύτητα ενός αυτοκινήτου ή η ύψωση ενός βάρους είναι
+παραδείγματα συνεχών τυχαίων μεταβλητών.
+
+Για να περιγραφεί μια συνεχής τυχαία μεταβλητή, χρειάζεται μια συνεχής
+συνάρτηση πυκνότητας πιθανότητας (probability density function - PDF). Η
+PDF δεν δίνει ακριβώς την πιθανότητα να λάβει μια συγκεκριμένη τιμή,
+αλλά τη συνάρτηση πυκνότητας της πιθανότητας σε μια περιοχή των τιμών. Η
+πιθανότητα να πέσει η τιμή μέσα σε μια συγκεκριμένη περιοχή είναι η
+έκθεση της περιοχής αυτής υπό την καμπύλη της PDF.
+
+Για παράδειγμα, μια συνεχής τυχαία μεταβλητή μπορεί να είναι η ύψωση
+ενός βάρους από έναν αθλητή. Η PDF μπορεί να δείχνει πόσο πιθανό είναι
+να είναι η ύψωση ενός συγκεκριμένου βάρους εντός ενός διαστήματος (π.χ.
+80 κιλά έως 90 κιλά). Η πιθανότητα να είναι η ύψωση ακριβώς 85 κιλά δεν
+είναι ίση με την τιμή της PDF στο σημείο 85 κιλών, αλλά είναι η έκθεση
+της περιοχής 85 κιλών
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Ένα παράδειγμα συνεχούς τυχαίας μεταβλητής είναι η ύψωση ενός βάρους από
+έναν αθλητή. Έστω ότι ο αθλητής μπορεί να υψώσει ένα βάρος ανάμεσα σε 0
+και 100 κιλά, και η κατανομή του ύψους που μπορεί να υψώσει αυτός ο
+αθλητής είναι γνωστή.
+
+Έστω ότι η πιθανότητα να υψώσει το βάρος Χ κιλά από τον αθλητή δίνεται
+από την παρακάτω πυκνότητα πιθανότητας (PDF):
+
+$ f(x) = \frac{1}{100} $
+
+Αυτό σημαίνει ότι η πιθανότητα να υψώσει το βάρος Χ κιλά είναι ίση με το
+$ \frac{1}{100} $ για κάθε κιλό στο διάστημα {[}0, 100{]}.
+
+Για παράδειγμα, ας υπολογίσουμε την πιθανότητα να υψώσει το βάρος
+μικρότερο από 50 κιλά. Αυτή η πιθανότητα δίνεται από τη συναρτηση
+συσσώρευσης κατανομής (CDF):
+
+$ F(x) = \int\_\{-\infty\}^\{x\} f(t) , dt $
+
+Στην περίπτωσή μας, επειδή η πυκνότητα πιθανότητας είναι σταθερή,
+μπορούμε να απλοποιήσουμε τον υπολογισμό:
+
+$ F(x) = \int\_\{0\}^\{x\} \frac{1}{100} , dt $
+
+$ F(x) = \left. \frac{t}{100} \right|_{0}^{x} $
+
+$ F(x) = \frac{x}{100} $
+
+Επομένως, η πιθανότητα να υψώσει το βάρος μικρότερο από 50 κιλά είναι:
+
+$ F(50) = \frac{50}{100} = 0.5 $
+
+Άρα η πιθανότητα είναι 0.5 ή 50\%.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Cumulative Distribution Function (CDF) and most important properties}\)
+
+    Η Συναρτηση Συσσωρευτικής Κατανομής (Cumulative Distribution Function -
+CDF) είναι μια συνάρτηση που παρέχει την πιθανότητα να είναι μια τυχαία
+μεταβλητή μικρότερη ή ίση με ένα συγκεκριμένο όριο. Συγκεκριμένα, η CDF
+της τυχαίας μεταβλητής $ X $, που συμβολίζεται με $ F(x) $, ορίζεται
+ως εξής:
+
+$ F(x) = P(X \leq x) $
+
+Με άλλα λόγια, η CDF μετράει τη συγκεντρωτική πιθανότητα ότι η τυχαία
+μεταβλητή θα πάρει μια τιμή μικρότερη ή ίση με ένα δεδομένο όριο $ x
+$.
+
+Οι πιο σημαντικές ιδιότητες της CDF είναι οι εξής:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Μονοτονία:} Η CDF είναι πάντα μη φθίνουσα, δηλαδή όσο
+  αυξάνεται η τιμή της τυχαίας μεταβλητής, τόσο αυξάνεται ή παραμένει
+  σταθερή η τιμή της CDF.
+\item
+  \textbf{Πεπερασμένοι Ορίζοντες:} Η τιμή της CDF βρίσκεται πάντα μεταξύ
+  του 0 και του 1, δηλαδή $ 0 \leq F(x) \leq 1 $ για κάθε $ x $.
+\item
+  \textbf{Σύγκλιση στα Άκρα:} Καθώς η τιμή της τυχαίας μεταβλητής
+  πλησιάζει το άπειρο, η τιμή της CDF σύγκλινει προς το 1.
+\item
+  \textbf{Σύγκλιση στο 0:} Καθώς η τιμή της τυχαίας μεταβλητής πλησιάζει
+  τον αρνητικό άπειρο, η τιμή της CDF σύγκλινει προς το 0.
+\end{enumerate}
+
+Αυτές οι ιδιότητες καθιστούν την CDF ένα ισχυρό εργαλείο για την ανάλυση
+των συνεχών τυχαίων μεταβλητών.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{The uniform distribution}\)
+
+    Η ομοιόμορφη κατανομή είναι μια συνεχής πιθανοτική κατανομή όπου κάθε
+τιμή εντός ενός συγκεκριμένου διαστήματος έχει την ίδια πιθανότητα
+εμφάνισης. Αυτό σημαίνει ότι η πυκνότητα πιθανότητας είναι σταθερή σε
+ολόκληρο το διάστημα και μηδενίζεται έξω από αυτό.
+
+Η ομοιόμορφη κατανομή συνήθως συμβολίζεται ως $ U(a, b) $, όπου $ a
+$ και $ b $ είναι τα άκρα του διαστήματος. Η πυκνότητα πιθανότητας $
+f(x) $ για μια τυχαία μεταβλητή που ακολουθεί μια ομοιόμορφη κατανομή
+στο διάστημα {[}a, b{]} ορίζεται ως:
+
+$ f(x) = \frac{1}{b - a} $
+
+για $ a \leq x \leq b $ και $ 0 $ για $ x \textless{} a $ ή $ x
+\textgreater{} b $.
+
+Με άλλα λόγια, κάθε τιμή μέσα στο διάστημα {[}a, b{]} έχει μια ίση
+πιθανότητα εμφάνισης, ενώ εκτός αυτού το πιθανότερο είναι μηδέν.
+
+Ένα παράδειγμα ομοιόμορφης κατανομής είναι όταν ρίχνουμε ένα ζάρι. Αν
+έχουμε μια δίκαιη έξιπλή ζαριά, κάθε πλευρά του ζαριού έχει την ίδια
+πιθανότητα εμφάνισης (1/6) κατά τη ρίψη του ζαριού. Άρα, αυτή η κατανομή
+είναι ένα παράδειγμα ομοιόμορφης κατανομής.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{The normal distribution}\)
+
+    Η κανονική κατανομή, γνωστή επίσης ως κατανομή Gauss ή καμπάνας, είναι
+μια συνεχής πιθανοτική κατανομή που είναι πολύ σημαντική στη στατιστική
+λόγω των ευρείας εφαρμογών της. Η κανονική κατανομή χαρακτηρίζεται από
+τη μορφή μιας καμπάνας με συμμετρική κατανομή γύρω από τη μέση τιμή της.
+
+Η πυκνότητα πιθανότητας της κανονικής κατανομής δίνεται από την εξίσωση:
+
+$ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}
+e^\{-\frac{(x-\mu)^2}{2\sigma^2}\} $
+
+όπου: - $ \mu $ είναι η μέση τιμή της κατανομής (συμβολίζει το κέντρο
+της καμπάνας), - $ \sigma $ είναι η τυπική απόκλιση της κατανομής (που
+ελέγχει το πλάτος της καμπάνας).
+
+Η κανονική κατανομή είναι συμμετρική γύρω από τη μέση τιμή και έχει τη
+μορφή μιας καμπάνας. Το 68\% των παρατηρήσεων βρίσκονται μέσα σε μία
+τυπική απόκλιση από τη μέση τιμή, το 95\% βρίσκεται μέσα σε δύο τυπικές
+αποκλίσεις, ενώ το 99.7\% βρίσκεται μέσα σε τρεις τυπικές αποκλίσεις.
+
+Η κανονική κατανομή έχει εφαρμογές σε πολλούς τομείς, όπως στη φυσική,
+στην οικονομική, στην επιστήμη των υπολογιστών και στην επεξεργασία
+σημάτων, λόγω της ιδιότητας της να περιγράφει φυσικά φαινόμενα που
+εμφανίζονται συχνά στη φύση.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Standardizing the normal distribution}\)
+
+    Η τυποποίηση της κανονικής κατανομής είναι ένα σημαντικό βήμα που μας
+επιτρέπει να μετατρέψουμε τυχαίες μεταβλητές που ακολουθούν μια κανονική
+κατανομή σε μια τυπική κανονική κατανομή με μέση τιμή $ \mu = 0 $ και
+τυπική απόκλιση $ \sigma = 1 $.
+
+Για να τυποποιήσουμε μια τυχαία μεταβλητή $ X $ που ακολουθεί μια
+κανονική κατανομή με μέση τιμή $ \mu $ και τυπική απόκλιση $
+\sigma $, ακολουθούμε τα παρακάτω βήματα:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Υπολογίζουμε το απόκλισμα από τη μέση τιμή για την τυχαία μεταβλητή $
+  X $, δηλαδή $ Z = \frac{X - \mu}{\sigma} $.
+\item
+  Το απόκλισμα $ Z $ αντιστοιχεί στην τυπική κανονική κατανομή με μέση
+  τιμή $ \mu = 0 $ και τυπική απόκλιση $ \sigma = 1 $.
+\end{enumerate}
+
+Με άλλα λόγια, μετατρέπουμε τις τιμές της αρχικής κανονικής κατανομής σε
+αντίστοιχες τιμές στην τυπική κανονική κατανομή με τη χρήση της τύπου $
+Z = \frac{X - \mu}{\sigma} $.
+
+Αυτή η διαδικασία επιτρέπει να κανονικοποιήσουμε τις κατανομές,
+ευκολαίνοντας τη σύγκριση των αποτελεσμάτων από διαφορετικές κατανομές
+και την εφαρμογή στατιστικών τεχνικών.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Covariance and Correlation}\)
+
+    Η κοιναρχία (covariance) και η συσχέτιση (correlation) είναι δύο μέτρα
+που χρησιμοποιούνται για να μετρήσουν τη σχέση μεταξύ δύο τυχαίων
+μεταβλητών.
+
+Η κοιναρχία (covariance) μετράει τη συσχέτιση των μεταβολών μεταξύ δύο
+μεταβλητών. Αν οι τιμές των μεταβλητών σχετίζονται θετικά, τότε η
+κοιναρχία είναι θετική. Αν οι τιμές των μεταβλητών σχετίζονται αρνητικά,
+τότε η κοιναρχία είναι αρνητική. Αν δεν υπάρχει σχέση μεταξύ των
+μεταβλητών, τότε η κοιναρχία είναι κοντά στο μηδέν. Η κοιναρχία
+υπολογίζεται με τον ακόλουθο τύπο:
+
+$ \text{cov}(X,Y) =
+\frac{\sum_{i=1}^{n}(X_i - \bar{X})(Y_i - \bar{Y})}{n} $
+
+όπου $ X $ και $ Y $ είναι οι μεταβλητές, $ \bar\{X\} $ και $
+\bar\{Y\} $ είναι οι μέσες τιμές των μεταβλητών αντίστοιχα, και $ n $
+είναι το πλήθος των παρατηρήσεων.
+
+Η συσχέτιση (correlation) είναι μια κανονικοποιημένη μορφή της
+κοιναρχίας και μετράει τη δύναμη και τη φορά της γραμμικής σχέσης μεταξύ
+δύο μεταβλητών. Η τιμή της συσχέτισης βρίσκεται στο διάστημα {[}-1,1{]}.
+Όταν η τιμή της συσχέτισης είναι προς το 1, υπάρχει θετική γραμμική
+σχέση, ενώ όταν είναι προς το -1, υπάρχει αρνητική γραμμική σχέση. Όταν
+η τιμή της συσχέτισης είναι κοντά στο 0, δεν υπάρχει γραμμική σχέση. Η
+συσχέτιση υπολογίζεται ως εξής:
+
+$ \text{corr}(X,Y) = \frac{\text{cov}(X,Y)}{\sigma_X \cdot \sigma_Y} $
+
+όπου $ \sigma\_X $ και $ \sigma\_Y $ είναι οι τυπικές αποκλίσεις των
+μεταβλητών $ X $ και $ Y $ αντίστοιχα.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{The Central Limit Theorem}\)
+
+    Το Κεντρικό Όριο Θεώρημα (Central Limit Theorem - CLT) είναι ένα από τα
+πιο σημαντικά θεωρήματα στη στατιστική και έχει ευρείες εφαρμογές σε
+πολλούς τομείς της επιστήμης και της τεχνολογίας. Το θεώρημα αυτό
+δηλώνει ότι όταν προσθέτουμε ή αθροίζουμε μια μεγάλη αριθμητική ποσότητα
+ανεξάρτητων τυχαίων μεταβλητών, η κατανομή του αθροίσματος πλησιάζει σε
+μια κανονική κατανομή, ανεξάρτητα από την αρχική κατανομή των
+μεταβλητών.
+
+Με άλλα λόγια, αν λάβουμε ένα μεγάλο δείγμα τυχαίων μεταβλητών από
+οποιαδήποτε κατανομή με μέση τιμή $ \mu $ και τυπική απόκλιση $
+\sigma $, η κατανομή του μέσου του δείγματος θα πλησιάσει μια κανονική
+κατανομή με μέση τιμή $ \mu $ και τυπική απόκλιση $
+\frac{\sigma}{\sqrt{n}} $, όπου $ n $ είναι το μέγεθος του δείγματος.
+
+Το Κεντρικό Όριο Θεώρημα έχει πολλές εφαρμογές, συμπεριλαμβανομένης της
+εκτίμησης παραμέτρων, του τεστ υποθέσεων και της σχεδίασης πειραμάτων.
+Επίσης, εξηγεί γιατί οι κανονικές κατανομές είναι τόσο συχνά
+χρησιμοποιούμενες σε στατιστικές αναλύσεις, αφού πολλές φυσικές,
+κοινωνικές και οικονομικές μεταβλητές ακολουθούν κατά κάποιο τρόπο
+κανονική κατανομή όταν αθροίζονται μεγάλοι αριθμοί ανεξάρτητων επιμέρους
+παρατηρήσεων.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    \(\textbf{Simulations}\)
+
+    Οι προσομοιώσεις είναι μια διαδικασία που χρησιμοποιείται για να
+μοντελοποιήσει τη συμπεριφορά συστημάτων ή διεργασιών μέσω της
+προσομοίωσης των τυχαίων μεταβλητών. Η διαδικασία αυτή μπορεί να
+εφαρμοστεί σε ποικίλους τομείς, όπως η επιστήμη των υπολογιστών, η
+οικονομία, η μηχανική, η φυσική, η υγεία και άλλοι.
+
+Οι προσομοιώσεις συνήθως απαιτούν τη χρήση υπολογιστικών προγραμμάτων
+και αλγορίθμων για τη δημιουργία τυχαίων συμβάντων, την εκτέλεση των
+προσομοιώσεων και την ανάλυση των αποτελεσμάτων. Στις προσομοιώσεις,
+μπορούν να προσομοιώνονται διάφορες συνθήκες, σενάρια ή πειράματα, και
+να μελετώνται η συμπεριφορά του συστήματος υπό αυτές τις συνθήκες.
+
+Για παράδειγμα, στην επιστήμη των υπολογιστών, μπορεί να προσομοιώνεται
+η απόδοση ενός νέου αλγορίθμου αναζήτησης, ενώ στην οικονομία μπορεί να
+προσομοιώνεται η επίδραση μιας νέας φορολογικής πολιτικής στην αγορά
+εργασίας.
+
+Οι προσομοιώσεις είναι χρήσιμες όταν δεν είναι δυνατή η ανάλυση ενός
+συστήματος με αναλυτικές μεθόδους ή όταν η πραγματική εφαρμογή είναι
+ακριβή ή αδύνατη. Επίσης, μπορούν να χρησιμοποιηθούν για την εκτίμηση
+της αβεβαιότητας ή για την εξαγωγή στατιστικών δεδομένων σε συνθήκες που
+είναι δύσκολο να μελετηθούν αναλυτικά.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
