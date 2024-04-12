@@ -1,0 +1,1046 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+
+    \usepackage{iftex}
+    \ifPDFTeX
+        \usepackage[T1]{fontenc}
+        \IfFileExists{alphabeta.sty}{
+              \usepackage{alphabeta}
+          }{
+              \usepackage[mathletters]{ucs}
+              \usepackage[utf8x]{inputenc}
+          }
+    \else
+        \usepackage{fontspec}
+        \usepackage{unicode-math}
+    \fi
+
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{array}     % table support for pandoc >= 2.11.3
+    \usepackage{calc}      % table minipage width calculation for pandoc >= 2.11.1
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Vector Calculus Training Quiz}
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`$}{\char`$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    $\textbf{Question1}$
+
+The derivative of the hyperbolic function
+$\tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$ , that is used in
+Neural Networks as an activation function, equals to :
+
+$\textbf{Answer}$
+
+    The hyperbolic tangent function is defined as:
+
+$ \tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} $
+
+Now, let's find its derivative with respect to $x$:
+
+$ \frac{d}{dx}(\tanh(x)) $
+
+To simplify the calculation, let's first express $\tanh(x)$ as a
+combination of exponentials:
+
+$ \tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} $
+
+Multiply the numerator and denominator by $e^x$ to eliminate the
+fraction:
+
+$ \tanh(x) = \frac{e^{2x} - 1}{e^{2x} + 1} $
+
+Now, differentiate with respect to $x$:
+
+$ \frac{d}{dx}(\tanh(x)) =
+\frac{d}{dx}\left(\frac{e^{2x} - 1}{e^{2x} + 1}\right) $
+
+Using the quotient rule, the derivative is given by:
+
+$ \frac{d}{dx}(\tanh(x)) =
+\frac{(2e^{2x})(e^{2x} + 1) - (e^{2x} - 1)(2e^{2x})}{(e^{2x} + 1)^2} $
+
+Simplify the expression:
+
+$ \frac{d}{dx}(\tanh(x)) =
+\frac{2e^{4x} + 2e^{2x} - 2e^{4x} + 2e^{2x}}{(e^{2x} + 1)^2} $
+
+Combine like terms:
+
+$ \frac{d}{dx}(\tanh(x)) = \frac{4e^{2x}}{(e^{2x} + 1)^2} $
+
+Now, express $\tanh(x)$ in terms of itself:
+
+$ \tanh(x) = \frac{e^{2x} - 1}{e^{2x} + 1} $
+
+Square it:
+
+$ \tanh^2(x) = \frac{(e^{2x} - 1)^2}{(e^{2x} + 1)^2} $
+
+Subtract from 1:
+
+$ 1 - \tanh^2(x) = \frac{4e^{2x}}{(e^{2x} + 1)^2} $
+
+So, indeed:
+
+$ \frac{d}{dx}(\tanh(x)) = 1 - \tanh^2(x) $
+
+This confirms the given expression.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question2}$
+
+Which of the following functions are solutions of the equation
+$ \frac{d^2y(z)}{dx^2} = -y(x): $   
+(i) sin(x)  \\
+(ii) cos(x)  \\
+(iii) cosh(x)  \\
+(iv) $e^{-x}$
+
+$\textbf{Answer}$
+
+    To determine which of the given functions are solutions to the
+differential equation $\frac{d^2y(x)}{dx^2} = -y(x)$, we'll
+differentiate each function twice and then check if it satisfies the
+equation.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  For $y(x) = \sin(x)$: $\frac{d}{dx}(\sin(x)) = \cos(x)$
+  $\frac{d^2}{dx^2}(\sin(x)) = -\sin(x)$ We can see that the second
+  derivative is indeed $-\sin(x)$, which satisfies the equation.
+\item
+  For $y(x) = \cos(x)$: $\frac{d}{dx}(\cos(x)) = -\sin(x)$
+  $\frac{d^2}{dx^2}(\cos(x)) = -\cos(x)$ The second derivative is
+  $-\cos(x)$, which also satisfies the equation.
+\item
+  For $y(x) = \cosh(x)$: $\frac{d}{dx}(\cosh(x)) = \sinh(x)$
+  $\frac{d^2}{dx^2}(\cosh(x)) = \cosh(x)$ The second derivative is
+  $\cosh(x)$, not $-\cosh(x)$, so it doesn't satisfy the equation.
+\item
+  For $y(x) = e^{-x}$: $\frac{d}{dx}(e^{-x}) = -e^{-x}$
+  $\frac{d^2}{dx^2}(e^{-x}) = e^{-x}$ The second derivative is
+  $e^{-x}$, not $-e^{-x}$, so it doesn't satisfy the equation.
+\end{enumerate}
+
+Thus, the solutions to the given differential equation are (i) sin(x)
+and (ii) cos(x).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question3}$
+
+The partial derivative θf(x,y)/θy of the function
+$f(x,y)=x^2(1-e^{-y})$ equals to:
+
+$\textbf{Answer}$
+
+To find the partial derivative $θf(x, y)/θy$ of the function $f(x, y) = x^2(1 - e^(-y))$, we'll take the derivative of each term with respect to y while treating x as a constant.
+
+Let's break down the function:
+
+$ f(x, y) = x^2(1 - e^\{-y\}) $
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Take the derivative of the first term, $x^2$, with respect to y
+  (since x is treated as a constant): $ \frac{d}{dy} (x^2) = 0 $
+\item
+  Take the derivative of the second term, $(1 - e^(-y))$, with respect
+  to y: $ \frac{d}{dy} (1 - e^\{-y\}) = 0 - \frac{d}{dy} (e^\{-y\}) $ $ = e^\{-y\} $
+\end{enumerate}
+
+Now, combine the results: $ \frac{\partial f}{\partial y} = 0 + x^2
+\cdot e^\{-y\} $
+
+So, the partial derivative $ \frac{\partial f}{\partial y} $ of the
+given function is $ x^2 \cdot e^\{-y\} $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question4}$
+
+Given the function $ f(x,y)=xe^\{x+y\} $, the second order partial
+derivative $\frac{θ^2f}{θxθy}$ equals to
+
+$\textbf{Answer}$
+
+    To find the second-order partial derivative $
+\frac{\partial^2 f}{\partial x \partial y} $ of the function $ f(x, y)
+= xe^\{x+y\} $, we need to take the derivative of $
+\frac{\partial}{\partial x} \left( \frac{\partial f}{\partial y} \right)
+$ or $ \frac{\partial}{\partial y} \left(
+\frac{\partial f}{\partial x} \right) $.
+
+Let's first find $ \frac{\partial f}{\partial x} $ and $
+\frac{\partial f}{\partial y} $:
+
+Given: $ f(x, y) = xe^\{x+y\} $
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Partial derivative of $ f $ with respect to $ x $: $
+  \frac{\partial f}{\partial x} = e^\{x+y\} + xe^\{x+y\} $
+\item
+  Partial derivative of $ f $ with respect to $ y $: $
+  \frac{\partial f}{\partial y} = xe^\{x+y\} $
+\end{enumerate}
+
+Now, let's find the second-order partial derivative $
+\frac{\partial^2 f}{\partial x \partial y} $:
+
+Differentiating $ \frac{\partial f}{\partial y} $ with respect to $ x
+$:
+
+$ \frac{\partial}{\partial x} \left( \frac{\partial f}{\partial y}
+\right) = \frac{\partial}{\partial x} (xe^\{x+y\}) = e^\{x+y\} +
+xe^\{x+y\} $
+
+So, the second-order partial derivative $
+\frac{\partial^2 f}{\partial x \partial y} $ is equal to $
+e^\{x+y\} + xe^\{x+y\} $.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question5}$
+
+The gradient of the function $f(x,y)=xln(y)$, at $(x,y)=(1,1)$
+equals :
+
+$\textbf{Answer}$
+
+    The gradient vector of a function $ f(x, y) $ is given by the vector
+of its partial derivatives evaluated at a specific point. The gradient
+vector $ \nabla f $ is given by:
+
+$ \nabla f = \left( \frac{\partial f}{\partial x},
+\frac{\partial f}{\partial y} \right) $
+
+For the function $ f(x, y) = x \ln(y) $, let's find the partial
+derivatives:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Partial derivative of $ f $ with respect to $ x $: $
+  \frac{\partial f}{\partial x} = \ln(y) $
+\item
+  Partial derivative of $ f $ with respect to $ y $: $
+  \frac{\partial f}{\partial y} = \frac{x}{y} $
+\end{enumerate}
+
+Now, evaluate the gradient vector at the point $ (1, 1) $:
+
+$ \nabla f(1, 1) = \left( \ln(1), \frac{1}{1} \right) $
+
+Since $ \ln(1) = 0 $, the gradient vector at $ (1, 1) $ is $ (0, 1)
+$.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question6}$
+
+Consider the function $f(x,y,z)=(x^2y^2z,xe^{-y})$. Which is the
+linear approximation of f(x,y,z) at the point (-1,1,0)?
+
+$\textbf{Answer}$
+
+    To find the linear approximation of the function $ f(x, y, z) =
+(x\textsuperscript{2y}2z, xe^\{-y\}) $ at the point $(-1, 1, 0)$,
+we'll follow these steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Compute the partial derivatives of $ f(x, y, z) $ with respect to
+  each variable $ x $, $ y $, and $ z $.
+\item
+  Evaluate these partial derivatives at the given point $(-1, 1, 0)$
+  to find the gradient.
+\item
+  Use the gradient to write down the linear approximation formula.
+\end{enumerate}
+
+Let's go through these steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Compute the partial derivatives of $ f(x, y, z) $:
+\end{enumerate}
+
+$\frac{{\partial f}}{{\partial x}} = (2xy^2z, e^{-y})$
+
+$\frac{{\partial f}}{{\partial y}} = (2x^2yz, -xe^{-y})$
+
+$\frac{{\partial f}}{{\partial z}} = (x^2y^2, 0)$
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Evaluate these partial derivatives at $(-1, 1, 0)$:
+\end{enumerate}
+
+$\frac{{\partial f}}{{\partial x}}\Bigg|_{(-1,1,0)} = (2(-1)(1)^2(0), e^{-1}) = (0, e^{-1})$
+
+$ \frac{{\partial f}}{{\partial y}}\Bigg|_{(-1,1,0)} = (2(-1)^2(1)(0), -(-1)e^\{-1\}) = (0, e^\{-1\}) $
+
+$\frac{{\partial f}}{{\partial z}}\Bigg|_{(-1,1,0)} = ((-1)^2(1)^2, 0) = (1, 0)$
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Write down the linear approximation formula:
+\end{enumerate}
+
+The linear approximation of $ f(x, y, z) $ at $(-1, 1, 0)$ is given
+by:
+
+$L(x, y, z) = f(-1, 1, 0) + \frac{{\partial f}}{{\partial x}}\Bigg|_{(-1,1,0)}(x+1) + \frac{{\partial f}}{{\partial y}}\Bigg|_{(-1,1,0)}(y-1) + \frac{{\partial f}}{{\partial z}}\Bigg|_{(-1,1,0)}z$
+
+Substituting the evaluated partial derivatives:
+
+$L(x, y, z) = (1, e^{-1}) + (0, e^{-1})(x+1) + (0, e^{-1})(y-1) + (1, 0)z$
+
+Simplifying:
+
+$L(x, y, z) = (1, e^{-1}) + (0, e^{-1})x + (0, e^{-1})y + (1, 0)z$
+
+This is the linear approximation of $ f(x, y, z) $ at $(-1, 1, 0)$.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question7}$
+
+User Which is the gradient of the function
+$f(x,y) = \frac{x^{3} e^{x}}{\sqrt{y}}$
+
+$\textbf{Answer}$
+
+    The gradient vector $ \nabla f $ of a function $ f(x, y) $ is given
+by the vector of its partial derivatives:
+
+$ \nabla f = \left( \frac{\partial f}{\partial x},
+\frac{\partial f}{\partial y} \right) $
+
+For the given function $ f(x, y) = \frac{x^3 e^x}{\sqrt{y}} $, let's
+find the partial derivatives:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Partial derivative of $ f $ with respect to $ x $: $
+  \frac{\partial f}{\partial x} =
+  \frac{\partial}{\partial x}\left(\frac{x^3 e^x}{\sqrt{y}}\right) $
+\end{enumerate}
+
+To find this derivative, you can use the product rule and chain rule.
+The result is: $ \frac{\partial f}{\partial x} =
+\frac{3x^2 e^x}{\sqrt{y}} + \frac{x^3 e^x}{2\sqrt{y}} $
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Partial derivative of $ f $ with respect to $ y $: $
+  \frac{\partial f}{\partial y} =
+  \frac{\partial}{\partial y}\left(\frac{x^3 e^x}{\sqrt{y}}\right) $
+\end{enumerate}
+
+Using the chain rule, the result is: $ \frac{\partial f}{\partial y} =
+-\frac{x^3 e^x}{2y^{3/2}} $
+
+So, the gradient vector $ \nabla f $ is: $ \nabla f = \left(
+\frac{3x^2 e^x}{\sqrt{y}} + \frac{x^3 e^x}{2\sqrt{y}},
+-\frac{x^3 e^x}{2y^{3/2}} \right) $
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question8}$
+
+Given $z=e^{-y} \sin(x)$ compute the
+$\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}$
+
+$\textbf{Answer}$
+
+    To find $ \frac{\partial^2 z}{\partial x^2} +
+\frac{\partial^2 z}{\partial y^2} $ for the given function $ z =
+e^\{-y\} \sin(x) $, we'll first find the second partial derivatives
+with respect to $ x $ and $ y $.
+
+Given: $ z = e^\{-y\} \sin(x) $
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Find $ \frac{\partial z}{\partial x} $: $
+  \frac{\partial z}{\partial x} = e^\{-y\} \cos(x) $
+\item
+  Find $ \frac{\partial^2 z}{\partial x^2} $: $
+  \frac{\partial^2 z}{\partial x^2} = -e^\{-y\} \sin(x) $
+\item
+  Find $ \frac{\partial z}{\partial y} $: $
+  \frac{\partial z}{\partial y} = -e^\{-y\} \sin(x) $
+\item
+  Find $ \frac{\partial^2 z}{\partial y^2} $: $
+  \frac{\partial^2 z}{\partial y^2} = e^\{-y\} \sin(x) $
+\end{enumerate}
+
+Now, we can compute $ \frac{\partial^2 z}{\partial x^2} +
+\frac{\partial^2 z}{\partial y^2} $:
+
+$ \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2}
+= -e^\{-y\} \sin(x) + e^\{-y\} \sin(x) $
+
+Notice that the $ e^\{-y\} \sin(x) $ terms cancel out, and the
+result is zero:
+
+$ \frac{\partial^2 z}{\partial x^2} + \frac{\partial^2 z}{\partial y^2}
+= 0 $
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question10}$
+
+Consider the function $f(x,y)=x^2y$ with $x(u,v)=u+v$ and
+$y(u,v)=u-v$. what is The gradient of the function f with respect to
+u,v
+
+$\textbf{Answer}$
+
+    To find the gradient of the function $ f(x, y) = x^2y $ with
+respect to $ u $ and $ v $, where $ x(u, v) = u + v $ and $ y(u,
+v) = u - v $, we'll use the chain rule.
+
+The partial derivatives of $ f $ with respect to $ u $ and $ v $
+are given by:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Partial derivative of $ f $ with respect to $ u $: $
+  \frac{\partial f}{\partial u} = \frac{\partial x}{\partial u}
+  \cdot \frac{\partial f}{\partial x} + \frac{\partial y}{\partial u}
+  \cdot \frac{\partial f}{\partial y} $
+\item
+  Partial derivative of $ f $ with respect to $ v $: $
+  \frac{\partial f}{\partial v} = \frac{\partial x}{\partial v}
+  \cdot \frac{\partial f}{\partial x} + \frac{\partial y}{\partial v}
+  \cdot \frac{\partial f}{\partial y} $
+\end{enumerate}
+
+Given: $ f(x, y) = x^2y $ $ x(u, v) = u + v $ $ y(u, v) = u - v
+$
+
+Let's find the partial derivatives:
+
+$ \frac{\partial f}{\partial x} = 2xy $ $
+\frac{\partial f}{\partial y} = x^2 $
+
+$ \frac{\partial x}{\partial u} = 1 $ $ \frac{\partial x}{\partial v}
+= 1 $
+
+$ \frac{\partial y}{\partial u} = 1 $ $ \frac{\partial y}{\partial v}
+= -1 $
+
+Now, substitute these into the expressions for $
+\frac{\partial f}{\partial u} $ and $ \frac{\partial f}{\partial v}
+$:
+
+$ \frac{\partial f}{\partial u} = 1 \cdot (2xy) + 1 \cdot (x^2) =
+2xy + x^2 $
+
+$ \frac{\partial f}{\partial v} = 1 \cdot (2xy) + (-1) \cdot (x^2) =
+2xy - x^2 $
+
+So, the gradient of the function $ f $ with respect to $ u $ and $
+v $ is: $ \nabla f = \left( \frac{\partial f}{\partial u},
+\frac{\partial f}{\partial v} \right) = (2xy + x^2, 2xy - x^2) $
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question12}$
+
+What is the Jacobian of the function
+$f(x,y)=\begin{bmatrix} 4x^2 cos(y) \\ ln(x)y^2 \end{bmatrix}$ ?
+
+$\textbf{Answer}$
+
+To find the Jacobian matrix of the function $ f(x, y) = \begin{bmatrix} 4x^2 \cos(y) \\ \ln(x)y^2 \end{bmatrix}$, 
+we need to compute the partial derivatives of each component of $ f $ with respect to $ x $ and $ y $, and then arrange them into a matrix.
+
+Given: $ f(x, y) = \begin{bmatrix} 4x^2 \cos(y) \\ \ln(x)y^2 \end{bmatrix} $
+
+We need to find: $ \frac{\partial f_1}{\partial x},
+\frac{\partial f_1}{\partial y}, \frac{\partial f_2}{\partial x},
+\frac{\partial f_2}{\partial y} $
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Partial derivative of $ f\_1 $ with respect to $ x $: $
+  \frac{\partial f_1}{\partial x} = 8x \cos(y) $
+\item
+  Partial derivative of $ f\_1 $ with respect to $ y $: $
+  \frac{\partial f_1}{\partial y} = -4x^2 \sin(y) $
+\item
+  Partial derivative of $ f\_2 $ with respect to $ x $: $
+  \frac{\partial f_2}{\partial x} = \frac{1}{x}y^2 $
+\item
+  Partial derivative of $ f\_2 $ with respect to $ y $: $
+  \frac{\partial f_2}{\partial y} = 2\ln(x)y $
+\end{enumerate}
+
+Now, arrange these partial derivatives into a matrix:
+
+$ J =\begin{bmatrix} \frac{\partial f_1}{\partial x} & \frac{\partial f_1}{\partial y} \\ \frac{\partial f_2}{\partial x} & \frac{\partial f_2}{\partial y} \end{bmatrix}=\begin{bmatrix} 8x\cos(y) & -4x^2 \sin(y) \\ \frac{1}{x}y^2 & 2\ln(x)y \end{bmatrix}$
+
+So, the Jacobian matrix of the function $ f(x, y) $ is:
+$ J =\begin{bmatrix} 8x \cos(y) & -4x^2 \sin(y) \\ \frac{1}{x}y^2 & 2\ln(x)y \end{bmatrix}$
+
+Now, you can compare this with the given matrices to find the correct
+one.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question13}$
+
+Consider the function $f(x,y,z)=(x^2y^2z, xe^{-y})$. Its Jacobian at
+the point (-1,1,0) is equal to:
+
+$\textbf{Answer}$
+
+    To find the Jacobian matrix of the function $ f(x, y, z) =
+(x\textsuperscript{2y}2z, xe^\{-y\}) $ at the point $ (-1, 1, 0)
+$, we need to compute the partial derivatives of each component of $ f
+$ with respect to $ x $, $ y $, and $ z $, and then evaluate them
+at the given point.
+
+Given: $ f(x, y, z) = (x\textsuperscript{2y}2z, xe^\{-y\}) $
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Partial derivative of $ f\_1 $ with respect to $ x $: $
+  \frac{\partial f_1}{\partial x} = 2xy^2z $
+\item
+  Partial derivative of $ f\_1 $ with respect to $ y $: $
+  \frac{\partial f_1}{\partial y} = 2x^2yz $
+\item
+  Partial derivative of $ f\_1 $ with respect to $ z $: $
+  \frac{\partial f_1}{\partial z} = x\textsuperscript{2y}2 $
+\item
+  Partial derivative of $ f\_2 $ with respect to $ x $: $
+  \frac{\partial f_2}{\partial x} = e^\{-y\} $
+\item
+  Partial derivative of $ f\_2 $ with respect to $ y $: $
+  \frac{\partial f_2}{\partial y} = -xe^\{-y\} $
+\item
+  Partial derivative of $ f\_2 $ with respect to $ z $ (which is not
+  present in $ f\_2 $) is $0$.
+\end{enumerate}
+
+Now, evaluate these partial derivatives at the point $ (-1, 1, 0) $:
+
+$ \frac{\partial f_1}{\partial x} = 2(-1)(1)^2(0) = 0 $ $
+\frac{\partial f_1}{\partial y} = 2(-1)^2(-1)(0) = 0 $ $
+\frac{\partial f_1}{\partial z} = (-1)\textsuperscript{2(1)}2 = 1 $ $
+\frac{\partial f_2}{\partial x} = e^\{-1\} $ $
+\frac{\partial f_2}{\partial y} = -(-1)e^\{-1\} = e^\{-1\} $
+
+Now, we can arrange these partial derivatives into a matrix, which will
+be the Jacobian matrix of $ f $ at the given point:
+
+$ J =\begin{bmatrix} \frac{\partial f_1}{\partial x} & \frac{\partial f_1}{\partial y} & \frac{\partial f_1}{\partial z} \\ \frac{\partial f_2}{\partial x} & \frac{\partial f_2}{\partial y} & \frac{\partial f_2}{\partial z} \end{bmatrix}=\begin{bmatrix} 0 & 0 & 1 \\ e^{-1} & e^{-1} & 0 \end{bmatrix}$
+
+So, the Jacobian matrix of the function $ f(x, y, z) $ at the point $
+(-1, 1, 0) $ is:
+
+$ J =\begin{bmatrix} 0 & 0 & 1 \\ e^{-1} & e^{-1} & 0 \end{bmatrix}$
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    $\textbf{Question14}$
+
+The Hessian matrix of the function $f(x,y)=sinx siny$ at the point
+$(π/2,π/2)$ is:
+
+$\textbf{Answer}$
+
+    To find the Hessian matrix of the function $ f(x, y) = \sin(x) \sin(y)
+$ at the point $ \left(\frac{\pi}{2}, \frac{\pi}{2}\right) $, we
+first need to find the second-order partial derivatives of $ f $ with
+respect to $ x $ and $ y $, and then evaluate them at the given
+point.
+
+Given: $ f(x, y) = \sin(x) \sin(y) $
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Partial derivative of $ f $ with respect to $ x $: $
+  \frac{\partial f}{\partial x} = \cos(x) \sin(y) $
+\item
+  Partial derivative of $ f $ with respect to $ y $: $
+  \frac{\partial f}{\partial y} = \sin(x) \cos(y) $
+\end{enumerate}
+
+Now, let's find the second-order partial derivatives:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Second partial derivative of $ f $ with respect to $ x $: $
+  \frac{\partial^2 f}{\partial x^2} = -\sin(x) \sin(y) $
+\item
+  Second partial derivative of $ f $ with respect to $ y $: $
+  \frac{\partial^2 f}{\partial y^2} = -\sin(x) \sin(y) $
+\end{enumerate}
+
+Now, we need to evaluate these second partial derivatives at $
+\left(\frac{\pi}{2}, \frac{\pi}{2}\right) $:
+
+$ \frac{\partial^2 f}{\partial x^2} \bigg|_{(\pi/2, \pi/2)} = -\sin\left(\frac{\pi}{2}\right) \sin\left(\frac{\pi}{2}\right) = -1 $
+
+$ \frac{\partial^2 f}{\partial y^2} \bigg|_{(\pi/2, \pi/2)} = -\sin\left(\frac{\pi}{2}\right) \sin\left(\frac{\pi}{2}\right) = -1 $
+
+Since the mixed partial derivatives do not depend on the order of
+differentiation and they're continuous, we don't need to calculate them
+separately.
+
+The Hessian matrix $ H $ is then:
+
+$ H =\begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\end{Verbatim}
+\end{tcolorbox}
+
+    
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
