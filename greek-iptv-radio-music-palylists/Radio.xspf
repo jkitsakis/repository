@@ -133,44 +133,44 @@
 			<image>https://cdn.onlineradiobox.com/img/l/8/119428.v2.png</image>
 		</track>
 		<track>
-			<location>http://realfm.live24.gr/realfm</location>
-			<title>Real FM 97,8</title>
-			<creator>Real FM</creator>
-			<album>Real FM</album>		
-			<annotation>Real FM</annotation>
+			<location>https://stream.rcs.revma.com/8tdwa6ez1duvv?_=87530</location>
+			<title>Melodia</title>
+			<creator>Melodia</creator>
+			<album>Melodia</album>		
+			<annotation>Melodia</annotation>
             <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>10</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
 				<vlc:option>network-caching=1000</vlc:option>
 			</extension>
-            <image>http://cdn.e-radio.gr/logos/gr/big/realfm.png</image>
-		</track>
+			<image>https://mmo.aiircdn.com/342/5e57ce3581e25.png</image>
+		</track>		
 		<track>
-			<location>http://netradio.live24.gr/athinaradio</location>
-			<title>Parapolitika FM 90,1</title>
-			<creator>Parapolitika FM</creator>
-			<album>Parapolitika FM</album>		
-			<annotation>Parapolitika FM</annotation>
-			<extension application="http://www.videolan.org/vlc/playlist/0">
+			<location>https://netradio.live24.gr/menta88ath?1713435906</location>
+			<title>Menta</title>
+			<creator>Menta</creator>
+			<album>Menta</album>		
+			<annotation>Menta</annotation>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>11</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
 				<vlc:option>network-caching=1000</vlc:option>
 			</extension>
-            <image>https://www.parapolitikaradio.gr/public/img/logo-new.png</image>
+			<image>https://menta88.gr/wp-content/uploads/2023/05/logo_m.png</image>
 		</track>
 		<track>
-			<location>https://skai.live24.gr/skai1003</location>
-			<title>SKAI 100.3</title>
-			<creator> SKAI 100.3 </creator>
-			<album> SKAI 100.3 </album>		
-			<annotation> SKAI 100.3 </annotation>
-			<extension application="http://www.videolan.org/vlc/playlist/0">
+			<location>https://stream.rcs.revma.com/gkfwrhqxbfhvv</location>
+			<title>Diesi</title>
+			<creator>Diesi</creator>
+			<album>Diesi</album>		
+			<annotation>Diesi</annotation>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>12</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
 				<vlc:option>network-caching=1000</vlc:option>
 			</extension>
-            <image>https://cdn.e-radio.gr/logos/gr/big/skai1003.png</image>
-		</track>
+			<image>https://cdn.e-radio.gr/logos/gr/big/diesi.png</image>
+		</track>		
 		<track>
 			<location>https://radiostreaming.ert.gr/ert-deftero</location>
 			<title>ERT Deftero</title>
@@ -183,6 +183,45 @@
 				<vlc:option>network-caching=1000</vlc:option>
 			</extension>
             <image>http://resources.live24.gr/resources/images/stations/ce59fde0-c321-454b-beb6-27cfd9d30361.png</image>
+		</track>
+		<track>
+			<location>http://realfm.live24.gr/realfm</location>
+			<title>Real FM 97,8</title>
+			<creator>Real FM</creator>
+			<album>Real FM</album>		
+			<annotation>Real FM</annotation>
+            <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>14</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>http://cdn.e-radio.gr/logos/gr/big/realfm.png</image>
+		</track>
+		<track>
+			<location>http://netradio.live24.gr/athinaradio</location>
+			<title>Parapolitika FM 90,1</title>
+			<creator>Parapolitika FM</creator>
+			<album>Parapolitika FM</album>		
+			<annotation>Parapolitika FM</annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>15</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://www.parapolitikaradio.gr/public/img/logo-new.png</image>
+		</track>
+		<track>
+			<location>https://skai.live24.gr/skai1003</location>
+			<title>SKAI 100.3</title>
+			<creator> SKAI 100.3 </creator>
+			<album> SKAI 100.3 </album>		
+			<annotation> SKAI 100.3 </annotation>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>16</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension>
+            <image>https://cdn.e-radio.gr/logos/gr/big/skai1003.png</image>
 		</track>
 	</trackList>
 	<extension application="http://www.videolan.org/vlc/playlist/0">
@@ -200,5 +239,8 @@
             <vlc:item tid="11"/>
             <vlc:item tid="12"/>
             <vlc:item tid="13"/>
+			<vlc:item tid="14"/>
+			<vlc:item tid="15"/>
+			<vlc:item tid="16"/>
 	</extension>
 </playlist>

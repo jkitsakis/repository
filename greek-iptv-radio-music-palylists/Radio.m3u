@@ -29,6 +29,18 @@ https://radiostreaming.ert.gr/ert-zeppelin
 #EXTINF:-1 radio="true" tvg-logo="https://cdn.onlineradiobox.com/img/l/8/119428.v2.png",Kosmos Jazz
 https://radiostreaming.ert.gr/ert-webjazz
 
+#EXTINF:-1 radio="true" tvg-logo="https://mmo.aiircdn.com/342/5e57ce3581e25.png",Melodia
+https://stream.rcs.revma.com/8tdwa6ez1duvv?_=87530
+
+#EXTINF:-1 radio="true" tvg-logo="https://menta88.gr/wp-content/uploads/2023/05/logo_m.png",Menta
+https://netradio.live24.gr/menta88ath?1713435906
+
+#EXTINF:-1 radio="true" tvg-logo="https://cdn.e-radio.gr/logos/gr/big/diesi.png",Diesi
+https://stream.rcs.revma.com/gkfwrhqxbfhvv
+
+#EXTINF:-1 radio="true" tvg-logo="https://upload.wikimedia.org/wikipedia/el/thumb/e/e3/Deytero_programma_2021.png/200px-Deytero_programma_2021.png?20220117040009",Deftero
+https://radiostreaming.ert.gr/ert-deftero
+
 #EXTINF:-1 radio="true" tvg-logo="http://cdn.e-radio.gr/logos/gr/big/realfm.png",Real Radio
 http://realfm.live24.gr/realfm
 
@@ -38,5 +50,3 @@ http://netradio.live24.gr/athinaradio
 #EXTINF:-1 radio="true" tvg-logo="https://www.skairadio.gr/themes/s1003/assets/images/logo-1904.png",SKAI
 https://skai.live24.gr/skai1003
 
-#EXTINF:-1 radio="true" tvg-logo="https://upload.wikimedia.org/wikipedia/el/thumb/e/e3/Deytero_programma_2021.png/200px-Deytero_programma_2021.png?20220117040009",Deftero
-https://radiostreaming.ert.gr/ert-deftero
