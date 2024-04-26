@@ -26,7 +26,7 @@ def print_intro():
 # Function to load data from a file and preprocess it
 def load_data():
     # Load data from file, ignoring white spaces and accepting unlimited length numbers
-    data = np.genfromtxt('data-lotto.txt', delimiter=',', dtype=int)
+    data = np.genfromtxt('1-data-joker.txt', delimiter=',', dtype=int)
     # Replace all -1 values with 0
     data[data == -1] = 0
     # Split data into training and validation sets
@@ -36,29 +36,6 @@ def load_data():
     max_value = np.max(data)
     return train_data, val_data, max_value
 
-def load_data_joker():
-    # Load data from file, ignoring white spaces and accepting unlimited length numbers
-    data = np.genfromtxt('data-joker.txt', dtype=int)
-    # Replace all -1 values with 0
-    data[data == -1] = 0
-    # Split data into training and validation sets
-    train_data = data[:int(0.8*len(data))]
-    val_data = data[int(0.8*len(data)):]
-    # Get the maximum value in the data
-    max_value = np.max(data)
-    return train_data, val_data, max_value
-
-def load_data_numbers():
-    # Load data from file, ignoring white spaces and accepting unlimited length numbers
-    data = np.genfromtxt('data-numbers.txt', delimiter=',', dtype=int)
-    # Replace all -1 values with 0
-    data[data == -1] = 0
-    # Split data into training and validation sets
-    train_data = data[:int(0.8*len(data))]
-    val_data = data[int(0.8*len(data)):]
-    # Get the maximum value in the data
-    max_value = np.max(data)
-    return train_data, val_data, max_value
 # Function to create the model
 def create_model(num_features, max_value):
     # Create a sequential model
