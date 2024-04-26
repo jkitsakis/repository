@@ -142,7 +142,7 @@ a:hover { text-decoration: underline; }
 aside {
   font-size: 20px;
   font-weight: 900;
-  width: 300px;
+  width: 20%;
   height: 100%;
   position: fixed;
   top: 0; left: 0;
@@ -274,14 +274,14 @@ aside > h2 {
   left: 0;
   bottom: 0;
   width: 100%;
-  /* background-color:white; */
   text-align: center;
 }
 
 .footer-aside {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  text-align: center;
+  margin: auto;
+  width: 90%;
   font-size: 14px;
 }
 
@@ -445,6 +445,18 @@ aside > h2 {
     height: 50px;
     width: 50px;
     margin: 10px auto;
+  }
+
+  .one {
+
+  }
+  .two {
+    flex-basis: 100%;
+    order: 3;
+  }
+  .three {
+    flex-basis: 100%;
+    order: 2;
   }
 }
 

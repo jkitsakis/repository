@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 import time
 
-LOCAL_BUILD = True
+LOCAL_BUILD = False
 SITEURL = '' if LOCAL_BUILD else '/pelican/sandy'
 
 PATH = "content"

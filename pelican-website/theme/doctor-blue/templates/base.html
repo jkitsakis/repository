@@ -23,7 +23,7 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' type='text/css'>
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css"/>
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" type="text/css"/>
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/carousel.css" type="text/css"/>
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/accordion.css" type="text/css"/>
         <!-- Feed Meta Data -->
         {% if FEED_ALL_ATOM %}
             <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
@@ -136,7 +136,7 @@
 
     {% if DISPLAY_ASIDE_FOOTER or DISPLAY_ASIDE_FOOTER is not defined %}
         <p class="footer-aside">
-            Powered by <a href="http://getpelican.com/">Pelican</a>,
+            Powered by <a href="http://getpelican.com/">Pelican</a> </br>
             Created by <a href="https://jkitsakis.github.io/">jkitsakis</a>.
         </p>
 {% endif %}
@@ -154,7 +154,7 @@
 
 <!-- Footer -->
 {% if DISPLAY_FOOTER or DISPLAY_FOOTER is not defined %}
-    <footer class="footer">
+    <footer class="footer-aside">
         <p>
             Blog powered by <a href="http://getpelican.com/">Pelican</a>,
             which takes great advantage of <a href="http://python.org">Python</a>. Created by <a
