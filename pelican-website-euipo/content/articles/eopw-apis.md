@@ -13,7 +13,7 @@ order:2
 {% set NETWORK_AWS='nonprod.aws.oami.eu'%}
 {% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
 
-## _Website BE_ - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-website-backend/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/website-dev-aws?view=tree&resource=" target="_blank">Argo CD Dev</a>
+## _Website BE_ - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-website-backend/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/website-dev-aws?view=tree&resource=" target="_blank">Argo CD Dev</a> - <a href="https://jenkins.prod.oami.eu/job/EOP/" target="_blank">Jenkins</a>
 
 
 - **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
