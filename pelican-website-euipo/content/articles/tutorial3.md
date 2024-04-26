@@ -1,4 +1,4 @@
-Title: Authentication links for Postman
+Title: Deploy on ArgoCD
 Slug: tutoria3
 Date: 2018-02-26
 Category: Tutorials
