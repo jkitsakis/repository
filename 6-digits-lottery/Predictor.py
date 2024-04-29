@@ -3,9 +3,9 @@ from sklearn.ensemble import RandomForestRegressor
 from random import randint
 
 i = 0
-while i < 10:
+while i < 30:
     # Load the data from Excel file
-    data = pd.read_excel("1-data-joker.xlsx")
+    data = pd.read_excel("2-joker-24-23.xlsx")
 
     # Split the data into features (X) and target (y)
     X = data[['1st_number', '2nd_number', '3rd_number', '4th_number', '5th_number', '6th_number']]
