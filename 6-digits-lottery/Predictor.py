@@ -17,12 +17,12 @@ while i < 30:
 
     # Generate a new set of random features for prediction
     new_data = pd.DataFrame({
-        "1st_number": [randint(1, 70) for _ in range(100)],
-        "2nd_number": [randint(1, 70) for _ in range(100)],
-        "3rd_number": [randint(1, 70) for _ in range(100)],
-        "4th_number": [randint(1, 70) for _ in range(100)],
-        "5th_number": [randint(1, 70) for _ in range(100)],
-        "6th_number": [randint(1, 25) for _ in range(100)],
+        "1st_number": [randint(1, 49) for _ in range(100)],
+        "2nd_number": [randint(1, 49) for _ in range(100)],
+        "3rd_number": [randint(1, 49) for _ in range(100)],
+        "4th_number": [randint(1, 49) for _ in range(100)],
+        "5th_number": [randint(1, 49) for _ in range(100)],
+        "6th_number": [randint(1, 20) for _ in range(100)],
     })
 
     # Use the trained model to predict the next 6 numbers for each set of features

@@ -130,6 +130,8 @@ input[type=radio]:not(:checked) ~ label > * {
   font-size: 1.2em;
   white-space: nowrap;
   transform: rotate(90deg);
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 input[type=radio]:checked ~ label > * {
