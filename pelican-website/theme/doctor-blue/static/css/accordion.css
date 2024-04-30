@@ -46,7 +46,8 @@ label {
   height: 450px;
   width: 40px;
   overflow: hidden;
-  background: #6dc5dd;
+  /*background: #6dc5dd;*/
+  background-image: linear-gradient(#2980b9, white);
   text-align: center;
   font-size: 14px;
   line-height: 50px;
@@ -57,18 +58,18 @@ label:hover {
 }
 
 li:nth-child(even) > input + label {
-  background: #6dc5dd;
+  background-image: linear-gradient(#2980b9, white);
 }
 
 label:hover,
 li:nth-child(even) > input + label:hover {
-  background: #2980b9;
+  background-image: linear-gradient(#2980b9, white);
   color: #fff;
   cursor: pointer;
 }
 
 input[type=radio]:checked ~ label {
-  background: #2980b9;
+  background-image: linear-gradient(#2980b9, white);
   color: #fff;
   cursor: default !important;
 }
