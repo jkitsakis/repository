@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<trackList>
+		<track>
+			<title>ERT1</title>
+			<location>https://ertflix.s.llnwi.net/ertlive/ert1/default/ERT-audio_104621_und=104400-video=800000.m3u8</location>
+			            <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>1</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://files2.app.ertflix.gr/files/channels/ert1-logo-800x300-f.png</image>
+		</track>
+		<track>
+			<title>ERT2</title>
+			<location>https://ertflix.s.llnwi.net/ertlive/ert1/default/ERT-audio_104621_und=104400-video=800000.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>2</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://files2.app.ertflix.gr/files/channels/ert2-logo-800x300-f.png</image>
+		</track>
+		<track>		
+			<title>ERT3</title>
+			<location>https://ertflix.s.llnwi.net/ertlive/ert2/default/ERT2-audio_104621_und=104400-video=800000.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>3</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://files2.app.ertflix.gr/files/channels/ert3-logo-800x300-f.png</image>
+		</track>
+		<track>
+			<title>MEGA</title>
+			<location>https://ertflix.s.llnwi.net/ertlive/ert3/default/ERT3-audio_104621_und=104400-video=800000.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>4</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://iconape.com/wp-content/png_logo_vector/mega-tv-logo.png</image>
+		</track>
+		<track>
+			<title>ANT1</title>
+			<location>https://d1nfykbwa3n98t.cloudfront.net/out/v1/6e5667da5a6843899a337dea72adb61b/antenna.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>5</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://upload.wikimedia.org/wikipedia/el/a/ac/Ant1.png</image>
+		</track>
+		<track>
+			<title>ALPHA</title>
+			<location>https://alphatvlive.siliconweb.com/1/Y2Rsd1lUcUVoajcv/UVdCN25h/hls/live/playlist.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>6</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Alpha-TV-Logo.png/250px-Alpha-TV-Logo.png</image>
+		</track>
+		<track>
+			<title>STAR</title>
+			<location>https://starlive3.siliconweb.com/media/star1/star1mediumhd.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>7</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/STAR_Channel.png/250px-STAR_Channel.png</image>
+		</track>
+		<track>
+			<title>SKAI</title>
+			<location>https://skai-live-back.siliconweb.com/media/cambria4/index_bitrate2000K.m3u8</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>8</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=10000</vlc:option>
+			</extension> 
+			<image>https://upload.wikimedia.org/wikipedia/el/thumb/e/eb/SkaiTV-Logo.png/250px-SkaiTV-Logo.png</image>
+		</track>
+		<track>
+			<title>OPEN</title>
+			<location>https://liveopencloud.siliconweb.com/1/ZlRza2R6L2tFRnFJ/eWVLSlQx/hls/live/playlist.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>9</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://s.tvopen.gr/images/OPEN_BEYOND_Avra.png</image>
+		</track>
+		<track>
+			<title>ERT NEWS</title>
+			<location>https://ertflix.s.llnwi.net/ertlive/ertnews/default/ERTNews-audio_104621_und=104400-video=800000.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>10</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://files2.app.ertflix.gr/files/channels/ert-news-logo-800x300.png</image>
+		</track>
+		<track>
+			<title>ACTION24</title>
+			<location>https://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>11</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Action24-logo-small.png/250px-Action24-logo-small.png</image>
+		</track>
+		<track>
+			<title>RISE</title>
+			<location>http://ovh-edge-h.evrideo.com:8080/23e234f2-aec8-4804-b694-4cdd71d2d48d_MONITORING_HLS/video_240p_WEBRTC_MONITORING.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>12</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://www.rise.gr/wp-content/themes/risetv-1/images/rise-tv-logo-x2.png</image>
+		</track>
+		<track>
+			<title>MAKTV</title>
+			<location>https://dlm34ll53zqql.cloudfront.net/out/v1/d4177931deff4c7ba994b8126d153d9f/maktv.m3u8</location>
+			 <extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>13</vlc:id>
+				<vlc:option>file-caching=300</vlc:option>
+				<vlc:option>network-caching=1000</vlc:option>
+			</extension> 
+			<image>https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Makedonia_TV_2023.svg/250px-Makedonia_TV_2023.svg.png</image>
+		</track>
+	</trackList>
+</playlist>

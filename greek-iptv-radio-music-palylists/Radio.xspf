@@ -117,7 +117,7 @@
 				<vlc:option>file-caching=300</vlc:option>
 				<vlc:option>network-caching=1000</vlc:option>
 			</extension>
-            <image>https://resources.live24.gr/resources/images/stations/1e92d193-695c-4866-ac67-fe9057c584bc.png</image>
+            <image>https://upload.wikimedia.org/wikipedia/el/thumb/3/36/Zeppelin.svg/512px-Zeppelin.svg.png?20220616054938</image>
 		</track> 
 		<track>
 			<location>https://radiostreaming.ert.gr/ert-webjazz</location>
