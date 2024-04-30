@@ -23,7 +23,7 @@ body {
 .blog-card {
   position: relative;
   height: 450px;
-  width: 95%;
+  width: 85%;
   margin: auto;
   border-radius: 25px;
 }
@@ -46,7 +46,7 @@ label {
   height: 450px;
   width: 40px;
   overflow: hidden;
-  background: #2980b94d;
+  background: #6dc5dd;
   text-align: center;
   font-size: 14px;
   line-height: 50px;
@@ -57,7 +57,7 @@ label:hover {
 }
 
 li:nth-child(even) > input + label {
-  background: #2980b94d;
+  background: #6dc5dd;
 }
 
 label:hover,
@@ -99,6 +99,7 @@ input[type=radio]:checked ~ label {
     width: 250px;
     margin: 10px 20px;
 }
+
 .container {
   display: flex;
   flex-wrap: wrap;

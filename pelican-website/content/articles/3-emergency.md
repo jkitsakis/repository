@@ -10,17 +10,20 @@ Summary: Επείγoντα Περιστατικά
 </div>
 
 <div id="rightbox" markdown="1">
-
-- Κατ' οίκον επισκεψεις,  
-
-- Περιποίηση & Συρραφή Τραυμάτων,  
-
-- Αλλεργικές Αντιδράσεις,  
-
-- Διερεύνηση Εμπυρέτου,  
-
-- Διερεύνηση παθολογικών τιμών εργαστηριακών εξετάσεων (αναιμία, τρανσαμινασαιμία, ουραιμία, κτλ)  
-
-- Λοιμώξεις  
+<ul>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Κατ' οίκον επισκεψεις </li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Περιποίηση & Συρραφή Τραυμάτων </li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Αλλεργικές Αντιδράσεις</li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Διερεύνηση Εμπυρέτου</li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Διερεύνηση παθολογικών τιμών εργαστηριακών εξετάσεων <br>
+(αναιμία, τρανσαμινασαιμία, ουραιμία, κτλ)  </li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Λοιμώξεις </li>
+<br>
+</ul>
 
 </div>

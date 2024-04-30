@@ -10,17 +10,19 @@ Summary: Χρόνιες Παθήσεις
 </div>
 
 <div id="rightbox" markdown="1">
-
-- Αρτηριακή Υπέρταση  
-
-- Σακχαρώδης Διαβήτης  
-
-- Δυσλιπιδαιμία  
-
-- Χρόνια Αποφρακτικη Πνευμονοπάθεια (ΧΑΠ)  
-
-- Οστεοπόρωση  
-
-- Αγχώδης Διαταραχή    
+<ul>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Αρτηριακή Υπέρταση </li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Σακχαρώδης Διαβήτης  </li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Δυσλιπιδαιμία</li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Χρόνια Αποφρακτικη Πνευμονοπάθεια (ΧΑΠ)  </li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Οστεοπόρωση</li>
+<br>
+    <li> <img style="width:25px; height:auto; " src="../../images/bullet.png"/> Αγχώδης Διαταραχή </li>
+<br>
+</ul>
 
 </div>
