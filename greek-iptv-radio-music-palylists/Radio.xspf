@@ -3,7 +3,7 @@
 	<title>Radio Playlist</title>
 	<trackList>
 		<track>
-			<location>https://s3.yesstreaming.net:17062/stream</location>
+			<location>https://s7.yesstreaming.net/stream/8000</location>
 			<title>Off Radio</title>
 			<creator>Off Radio</creator>
 			<album>Off Radio</album>

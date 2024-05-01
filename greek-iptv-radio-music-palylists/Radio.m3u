@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1 radio="true" tvg-logo="https://www.offradio.gr/wp-content/uploads/2021/02/off_logo.png",Off Radio
-https://s3.yesstreaming.net:17062/stream
+https://s7.yesstreaming.net/stream/8000
 
 #EXTINF:-1 radio="true" tvg-logo="https://onradio.gr/wp-content/uploads/2021/08/republicradio.png",Republic
 https://metromedia.live24.gr/republicthess
