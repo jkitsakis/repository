@@ -66,6 +66,7 @@ pdflatex Quiz3-question7.tex
 
 
 matrix code :  $C=\begin{bmatrix} -2 & 1 & -1 \\ 1 & -2 & 1 \\ -1 & 1 & -2 \end{bmatrix}$
+Given $z=e^{−y}sin(x)$ the expression $∂^2z / ∂x^2 + ∂^2z/∂y^2 $ equals
 
 To create latex :
 1. ask ChatGPT to provide latex code
