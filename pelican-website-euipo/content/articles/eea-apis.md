@@ -63,7 +63,7 @@ _Syntax_
 
 ## _Eutm Filing Api_ - <a href="https://git.euipo.europa.eu/projects/EEA/repos/eutm-filing-api/browse" target="_blank">BitBucket</a>
 
-{% set EOPW_URI = 'eop/eutm-filing/' %}
+{% set EOPW_URI = 'filing/api/' %}
 {% set APPLICATION_NAME = 'eutm-filing-api' %}
 
 - **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
