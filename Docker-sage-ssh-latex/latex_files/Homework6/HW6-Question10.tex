@@ -368,10 +368,9 @@
 
 \begin{document}
     
-    \(\textbf{Question10}\)
+    $\textbf{Question10}$
 
-Using by hand calculation, show that the LogSumExp function in \(R^2\)\\
-\(LSE(x_1, x_2) = ln(e^{x_1} + e^{x_2})\) is convex using the following
+Using by hand calculation, show that the LogSumExp function in $R^2$ $LSE(x_1, x_2) = ln(e^{x_1} + e^{x_2})$ is convex using the following
 steps:
 
 \begin{enumerate}
@@ -384,24 +383,24 @@ steps:
   Determine whether the function is convex or not
 \end{enumerate}
 
-\(\textbf{Answer}\)
+$\textbf{Answer}$
 
 To calculate the Hessian matrix $ H $ of the function $ LSE(x\_1,  x\_2) = \ln(e^\{x\_1\} + e^\{x\_2\}) $, we need to compute the second partial derivatives.
 
 First, let's find the first partial derivatives:
-\(\frac{\partial LSE}{\partial x_1} = \frac{e^{x_1}}{e^{x_1} + e^{x_2}}\)
+$\frac{\partial LSE}{\partial x_1} = \frac{e^{x_1}}{e^{x_1} + e^{x_2}}$
 
-\(\frac{\partial LSE}{\partial x_2} = \frac{e^{x_2}}{e^{x_1} + e^{x_2}}\)
+$\frac{\partial LSE}{\partial x_2} = \frac{e^{x_2}}{e^{x_1} + e^{x_2}}$
 
 Now, we differentiate again to find the second partial derivatives:
-\(\frac{\partial^2 LSE}{\partial x_1^2} = \frac{e^{x_1}(e^{x_1} + e^{x_2}) - e^{x_1}e^{x_1}}{(e^{x_1} + e^{x_2})^2} = \frac{e^{x_1}}{(e^{x_1} + e^{x_2})^2}\)
+$\frac{\partial^2 LSE}{\partial x_1^2} = \frac{e^{x_1}(e^{x_1} + e^{x_2}) - e^{x_1}e^{x_1}}{(e^{x_1} + e^{x_2})^2} = \frac{e^{x_1}}{(e^{x_1} + e^{x_2})^2}$
 
-\(\frac{\partial^2 LSE}{\partial x_2^2} = \frac{e^{x_2}(e^{x_1} + e^{x_2}) - e^{x_2}e^{x_2}}{(e^{x_1} + e^{x_2})^2} = \frac{e^{x_2}}{(e^{x_1} + e^{x_2})^2}\)
+$\frac{\partial^2 LSE}{\partial x_2^2} = \frac{e^{x_2}(e^{x_1} + e^{x_2}) - e^{x_2}e^{x_2}}{(e^{x_1} + e^{x_2})^2} = \frac{e^{x_2}}{(e^{x_1} + e^{x_2})^2}$
 
-\(\frac{\partial^2 LSE}{\partial x_1 \partial x_2} = \frac{-e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^2}\)
+$\frac{\partial^2 LSE}{\partial x_1 \partial x_2} = \frac{-e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^2}$
 
 So, the Hessian matrix $ H $ is:
-\(H = \begin{bmatrix}\frac{e^{x_1}}{(e^{x_1} + e^{x_2})^2} & \frac{-e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^2} \\\frac{-e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^2} & \frac{e^{x_2}}{(e^{x_1} + e^{x_2})^2}\end{bmatrix}\)
+$H = \begin{bmatrix}\frac{e^{x_1}}{(e^{x_1} + e^{x_2})^2} & \frac{-e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^2} \\\frac{-e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^2} & \frac{e^{x_2}}{(e^{x_1} + e^{x_2})^2}\end{bmatrix}$
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -415,7 +414,7 @@ So, the Hessian matrix $ H $ is:
 \end{enumerate}
 
 The determinant of $ H $ is:
-\(\text{det}(H) = \frac{e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^4} - \frac{e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^4} = 0\)
+$\text{det}(H) = \frac{e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^4} - \frac{e^{x_1}e^{x_2}}{(e^{x_1} + e^{x_2})^4} = 0$
 
 Thus, one eigenvalue is 0.
 
