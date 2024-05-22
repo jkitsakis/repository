@@ -69,7 +69,9 @@ matrix code :  $C=\begin{bmatrix} -2 & 1 & -1 \\ 1 & -2 & 1 \\ -1 & 1 & -2 \end{
 thita expression: Given $z=e^{−y}sin(x)$ the expression $∂^2z / ∂x^2 + ∂^2z/∂y^2 $ equals
 upper arrow: $f_1(overrightarrow{x})
 (in a sagemath markdown cell).
+
 f(x)={9/(4x^3) , 1≤x≤3 && 0, otherwise.
+$ f(x) =\begin{cases} \frac{9}{4x^3} & 1 \leq x \leq 3 \\ 0 & \text{otherwise} \end{cases}$
 
 
 $ ∂^2z / ∂x^2 + ∂^2z/∂y^2 $
