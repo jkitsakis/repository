@@ -14,7 +14,8 @@ Tag: EOPWA APIs : Appeals Search API, Communications API, Designs Search API, Dr
 {% set NETWORK_AWS='nonprod.aws.oami.eu'%}
 {% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
 
-## _Appeals Search API_ - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/appeals-search-api/browse" target="_blank">BitBucket</a>
+## _Appeals Search API_ - <a href="https://git.euipo.europa.eu/projects/EOPWA/repos/appeals-search-api/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/website-api-dev-aws?view=tree&resource=" target="_blank">ArgoCD</a>
+
 
 - **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
 - **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
