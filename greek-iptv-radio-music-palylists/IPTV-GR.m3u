@@ -38,3 +38,15 @@ http://ovh-edge-h.evrideo.com:8080/23e234f2-aec8-4804-b694-4cdd71d2d48d_MONITORI
 
 #EXTINF:-1 group-title="TV" TVG-ID="MAKTV" tvg-name="MAKTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Makedonia_TV_2023.svg/250px-Makedonia_TV_2023.svg.png",MAKTV
 https://dlm34ll53zqql.cloudfront.net/out/v1/d4177931deff4c7ba994b8126d153d9f/maktv.m3u8
+
+#EXTINF:-1 group-title="TV" TVG-ID="Dtv6" tvg-name="Dtv6" tvg-logo="",Dtv6
+https://channel.streams.ovh:8081/dipolotv/index.m3u8
+
+#EXTINF:-1 group-title="TV" TVG-ID="CinemaTime" tvg-name="CinemaTime" tvg-logo="",Cinema Time
+https://s1.cystream.net/live/34100/playlist.m3u8
+
+#EXTINF:-1 group-title="TV" TVG-ID="NetvEurope" tvg-name="NetvEurope" tvg-logo="",Netv Europe
+https://eu1.vectromdigital.com:1936/netveurope/netveurope/playlist.m3u8
+
+#EXTINF:-1 group-title="TV" TVG-ID="NetvToronto" tvg-name="NetvToronto" tvg-logo="",Netv Toronto
+https://eu1.vectromdigital.com:1936/netvtoronto/netvtoronto/playlist.m3u8
