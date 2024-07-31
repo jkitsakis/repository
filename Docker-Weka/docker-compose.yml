@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  weka:
+    build: .
+    image: weka-3.9.6
+    container_name: weka
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: /usr/local/bin/run_weka.sh
