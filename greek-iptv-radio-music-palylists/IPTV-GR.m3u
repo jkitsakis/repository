@@ -1,13 +1,13 @@
 #EXTM3U
 
-#EXTINF:-1 group-title="TV" TVG-ID="ERT1" tvg-name="ERT 1" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert1-logo-800x300-f.png?m=resize&w=240&h=136",ERT1
-https://ertflix.s.llnwi.net/ertlive/ert1/default/ERT-audio_104621_und=104400-video=800000.m3u8
+#EXTINF:-1 Geoblocking group-title="TV" TVG-ID="ERT1" tvg-name="ERT 1" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert1-logo-800x300-f.png?m=resize&w=240&h=136",ERT1
+https://ertflix.s.llnwi.net/ertlive/ert1/encdef/index.mpd
 
-#EXTINF:-1 group-title="TV" TVG-ID="ERT2" tvg-name="ERT 2" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert2-logo-800x300-f.png?m=resize&w=240&h=136",ERT2
-https://ertflix.s.llnwi.net/ertlive/ert2/default/ERT2-audio_104621_und=104400-video=800000.m3u8
+#EXTINF:-1 Geoblocking group-title="TV" TVG-ID="ERT2" tvg-name="ERT 2" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert2-logo-800x300-f.png?m=resize&w=240&h=136",ERT2
+https://ertflix.s.llnwi.net/ertlive/ert2/encdef/index.mpd
 
-#EXTINF:-1 group-title="TV" TVG-ID="ERT3" tvg-name="ERT 3" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert3-logo-800x300-f.png?m=resize&w=240&h=136",ERT3
-https://ertflix.s.llnwi.net/ertlive/ert3/default/ERT3-audio_104621_und=104400-video=800000.m3u8
+#EXTINF:-1 Geoblocking group-title="TV" TVG-ID="ERT3" tvg-name="ERT 3" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert3-logo-800x300-f.png?m=resize&w=240&h=136",ERT3
+https://ertflix.s.llnwi.net/ertlive/ert3/encdef/index.mpd
 
 #EXTINF:-1 group-title="TV" TVG-ID="MEGA" tvg-name="MEGA" tvg-logo="https://iconape.com/wp-content/png_logo_vector/mega-tv-logo.png",MEGA
 https://c98db5952cb54b358365984178fb898a.msvdn.net/live/S86713049/gonOwuUacAxM/playlist.m3u8
@@ -27,8 +27,11 @@ https://skai-live-back.siliconweb.com/media/cambria4/index_bitrate2000K.m3u8
 #EXTINF:-1 group-title="TV" TVG-ID="OPEN" tvg-name="OPEN" tvg-logo="https://s.tvopen.gr/images/OPEN_BEYOND_Avra.png",OPEN
 https://liveopencloud.siliconweb.com/1/ZlRza2R6L2tFRnFJ/eWVLSlQx/hls/live/playlist.m3u8
 
-#EXTINF:-1 group-title="TV" tvg-name="ERT NEWS" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert-news-logo-800x300.png?m=resize&w=240&h=136",ERT NEWS
-https://ertflix.s.llnwi.net/ertlive/ertnews/default/ERTNews-audio_104621_und=104400-video=800000.m3u8
+#EXTINF:-1 Geoblocking group-title="TV" tvg-name="ERT NEWS" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert-news-logo-800x300.png?m=resize&w=240&h=136",ERT NEWS
+https://ertflix.s.llnwi.net/ertlive/ertnews/default/index.mpd
+
+#EXTINF:-1 group-title="TV" tvg-name="ERT World"  tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/bc/ChannelLogo-ERTWORLD1.png",ERT World
+https://ertflix.s.llnwi.net/ertlive/ertworld/default/index.mpd
 
 #EXTINF:-1 group-title="TV" TVG-ID="ACTION24" tvg-name="ACTION24" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Action24-logo-small.png/250px-Action24-logo-small.png",ACTION24
 https://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8
@@ -43,11 +46,10 @@ https://dlm34ll53zqql.cloudfront.net/out/v1/d4177931deff4c7ba994b8126d153d9f/mak
 https://channel.streams.ovh:8081/dipolotv/index.m3u8
 
 #EXTINF:-1 group-title="TV" TVG-ID="CinemaTime" tvg-name="CinemaTime" tvg-logo="",Cinema Time
-#https://s1.cystream.net/live/34100/playlist.m3u8
 https://ssh101.bozztv.com/ssh101/cinematimetv/chunks.m3u8
 
-#EXTINF:-1 group-title="TV" TVG-ID="NetvEurope" tvg-name="NetvEurope" tvg-logo="",Netv Europe
+#EXTINF:-1 group-title="TV" TVG-ID="NetvEurope" tvg-name="NetvEurope" tvg-logo="https://goo.gl/ofVjvQ",Netv Europe
 https://eu1.vectromdigital.com:1936/netveurope/netveurope/playlist.m3u8
 
-#EXTINF:-1 group-title="TV" TVG-ID="NetvToronto" tvg-name="NetvToronto" tvg-logo="",Netv Toronto
+#EXTINF:-1 group-title="TV" TVG-ID="NetvToronto" tvg-name="NetvToronto" tvg-logo="https://goo.gl/ofVjvQ",Netv Toronto
 https://eu1.vectromdigital.com:1936/netvtoronto/netvtoronto/playlist.m3u8
