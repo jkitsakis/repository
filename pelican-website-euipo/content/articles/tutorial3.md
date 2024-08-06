@@ -3,7 +3,7 @@ Slug: tutoria3
 Date: 2018-02-26
 Category: Tutorials
 Summary: Deploy on ArgoCD
-order: 4
+order: 04
 
 **Deploy on ArgoCD **
 

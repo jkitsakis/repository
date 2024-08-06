@@ -3,7 +3,7 @@ Date: 2018-02-26
 Category: Rest APIs
 Slug: emea-apis
 Summary: EMEA APIs : Me API
-order: 5
+order: 05
 
 {% set EOPW_URI = 'eop/me/' %}
 {% set PREFIX_DEV='dev'%}
