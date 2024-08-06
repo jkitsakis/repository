@@ -3,7 +3,7 @@ Date: 2018-02-26
 Category: Rest APIs
 Slug: eopw-apis
 Summary: EOPW APIs : Website BE, Admin Tool, Story Block
-order:2
+order: 2
 
 {% set EOPW_URI = 'portal/app/api' %}
 {% set PREFIX_DEV='dev'%}

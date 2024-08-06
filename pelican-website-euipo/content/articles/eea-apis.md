@@ -3,7 +3,7 @@ Date: 2018-02-26
 Category: Rest APIs
 Slug: eea-apis
 Summary: EEA APIs : EUTM Search API, Eutm Filing Api
-order:3
+order: 3
 
 {% set EOPW_URI = 'eop/eutm-search/trademarks?' %}
 {% set PREFIX_DEV='dev'%}

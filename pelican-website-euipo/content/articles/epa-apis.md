@@ -3,7 +3,7 @@ Date: 2018-02-26
 Category: Rest APIs
 Slug: epa-apis
 Summary: EPA APIs : EOP Persons API
-order:6
+order: 6
 
 ## _EUTM Search API_ - <a href="https://git.euipo.europa.eu/projects/EPA/repos/persons-api/browse" target="_blank">BitBucket</a>
 
