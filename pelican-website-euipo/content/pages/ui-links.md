@@ -23,12 +23,14 @@ Tags: pelican, publishing
 <details>
 	<summary> User Area </summary> 
     <ul>
-        <li><a href="{{aws_dev}}/en/user-area" target="_blank">integration</a></li>
-        <li><a href="{{aws_dev}}/en/new-user-area" target="_blank">integration - new-user-area</a></li>
-        <li><a href="{{aws_pp}}/en/user-area" target="_blank">preprod</a></li>
-        <li><a href="{{aws_pp}}/en/new-user-area" target="_blank">preprod - new-user-area</a></li>
-        <li><a href="{{aws_test}}/en/user-area" target="_blank">test</a></li>
-        <li><a href="{{aws_test}}/en/new-user-area" target="_blank">test- new-user-area</a></li>
+        <li><a href="{{aws_dev}}/en/old-user-area" target="_blank">integration - old-user-area</a></li>
+        <li><a href="{{aws_dev}}/en/user-area" target="_blank">integration - new-user-area</a></li>
+		
+        <li><a href="{{aws_pp}}/en/old-user-area" target="_blank">preprod - old-user-area</a></li>
+        <li><a href="{{aws_pp}}/en/user-area" target="_blank">preprod - new-user-area</a></li>
+		
+        <li><a href="{{aws_test}}/en/old-user-area" target="_blank">test - old-user-area</a></li>
+        <li><a href="{{aws_test}}/en/user-area" target="_blank">test- new-user-area</a></li>
     </ul>    
 </details>
 
