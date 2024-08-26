@@ -5,6 +5,10 @@ services:
     build: .
     image: weka-3.9.6
     container_name: weka
+    privileged: true
+    build:
+     context: .
+     dockerfile: weka.Dockerfile    
     environment:
       - DISPLAY=${DISPLAY}
     volumes:
