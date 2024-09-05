@@ -13,7 +13,7 @@
 		</track>
 		<track>
 			<title>ERT2</title>
-			<location>https://ertflix.s.llnwi.net/ertlive/ert2/clrdef24724c/index.mpd</location>
+			<location>https://ertflix.s.llnwi.net/ertlive/ert2/encakkt6/index.mpd</location>
 			 <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>2</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
@@ -23,7 +23,7 @@
 		</track>
 		<track>		
 			<title>ERT3</title>
-			<location>https://ertflix.s.llnwi.net/ertlive/ert3/clrdef24723a/index.mpd</location>
+			<location>https://ertflix.s.llnwi.net/ertlive/ert3/encdef/index.mpd</location>
 			 <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>3</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
