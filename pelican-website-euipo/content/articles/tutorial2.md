@@ -1,5 +1,5 @@
 Title: Authentication links for Postman
-Slug: tutorial
+Slug: tutorial2
 Date: 2018-02-26
 Category: Tutorials
 Summary: Authentication links for Postman

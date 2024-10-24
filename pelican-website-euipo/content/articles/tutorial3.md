@@ -1,5 +1,5 @@
 Title: Deploy on ArgoCD
-Slug: tutoria3
+Slug: tutorial3
 Date: 2018-02-26
 Category: Tutorials
 Summary: Deploy on ArgoCD
