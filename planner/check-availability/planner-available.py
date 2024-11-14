@@ -112,7 +112,7 @@ def main():
 
                 print(f"Found data for {date}:")
                 print(message_txt)
-                EmailSender.send_email(message_title, message_txt)
+                # EmailSender.send_email(message_title, message_txt)
                 # Dictionary to check
                 search_item = {'code': data['code'], 'date': date}
                 
