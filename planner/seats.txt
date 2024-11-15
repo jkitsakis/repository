@@ -7,12 +7,29 @@
 "y": 1757,
 "code": "004",
 
+
+1. Mesazzine 005
+------------------
+"facilityId": "6448cee7bf530c0226ea4d4d",
+"positionId": "6448cee7bf530c0226ea4d52",
+"x": 1111,
+"y": 1530,
+"code": "005",
+
+1. Mesazzine 006
+------------------
+"facilityId": "6448cee7bf530c0226ea4d4d",
+"positionId": "6448cee7bf530c0226ea4d53",
+"x": 1199.0,
+"y": 1585.0,
+"code": "006",
+
 1. Mesazzine 007
 ------------------
 "facilityId": "6448cee7bf530c0226ea4d4d",
 "positionId": "6448cee7bf530c0226ea4d54",
-"x": 1146.0,
-"y": 1452.0,
+"x": 1146,
+"y": 1452,
 "code": "007",
 
 2. Mesazzine 008
