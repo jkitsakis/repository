@@ -25,17 +25,10 @@ def read_json_and_create_dict():
         print("Error: Failed to decode JSON. Please check the file format.")
     return None
 
-# Example usage:
-# Assuming the JSON file contains a list of dictionaries.
-# json_file_path = "data.json"
-# result = read_json_and_create_dict(json_file_path)
-# print(result)
-
-
 # Function to send a POST request
 def send_post(data):
     try:
-        response = requests.post(Parameters.book_url, json=data, headers=headers)
+        response = requests.post(Parameters.book_url, json=data, headers=Parameters.headers)
         return response.status_code
     except Exception as e:
         print(f"Error occurred: {e}")
@@ -65,7 +58,7 @@ class BookDesk:
         y = desk_value['y']
 
         data_to_send = template.substitute(date=self.date, code=code, positionId=positionId, facilityId=facilityId, x=x, y=y)
-        response = requests.post(url, json=data_to_send, headers=headers)
+        response = requests.post(Parameters.book_url, json=data_to_send, headers=Parameters.headers)
         # Print the response
         print("Status Code:", response.status_code)
         print("Response JSON:", response.json())
