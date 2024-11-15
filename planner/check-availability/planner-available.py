@@ -90,45 +90,44 @@ def show_notification_windows(title, message):
     )
 
 def main():
-    my_booked_desks = make_my_booked_desks_request()
     days = get_days_for_week()
     while True:
-        data_found = False
+        my_booked_desks = make_my_booked_desks_request()
+
         for date in days:
             print(f"Processing data for {date}")
-            data = make_get_request(date)
+            available_desks = make_get_request(date)
 
-            if data:
+            if available_desks:
                 print(f"Found data for {date}:")
-                desk_item = {'code': data['code'], 'date': date}
+                available_desk = {'code': available_desks['code'], 'date': date}
 
-                if (desk_item not in my_booked_desks):
-                    message_title = "Desk available ..."
-                    message_txt = f" Date {date}\n Floor {data['floor']}\n Desk {data['code']}\n "
+                if available_desk not in my_booked_desks:
+                    message_title = Parameters.message_title_template.substitute(date=date, floor=available_desks['floor'])
+                    message_txt = Parameters.message_txt_template.substitute(date=date, floor=available_desks['floor'], code=available_desks['code'])
                     email_txt = message_txt + f"\n \n {Parameters.planner_url}"
                     print(message_txt)
 
                     # --- when away from screen for all desks in amalias
-                    # EmailSender.send_email(message_title, email_txt)
                     # show_notification_windows(message_title, message_txt)
 
                     # --- when on screen for all desks in amalias
                     show_notification_interacted(message_title, message_txt)
                     webbrowser.open_new(Parameters.planner_url)
-                    EmailSender.send_email(message_title, email_txt)
 
                     # --- Specific Floor
                     #if (data['floor'] == "1st Floor"  or data['floor'] =="Mezzazine"):
                         # webbrowser.open_new(planner_url)
-                        # EmailSender.send_email(message_title, email_txt)
                         # show_notification(message_title, message_txt)
-
                         # We are ok ... remove date not search again
                         # days.remove(date)
 
-                    if BookDesk.post_seat(data['code'], date):
-                        print(f"Desk {data['code']} booked for Date {date}  \n")
-                        EmailSender.send_email("Booked", f"Desk {data['code']} booked for Date {date}  \n")
+                    EmailSender.send_email(message_title, email_txt)
+
+                    if BookDesk.post_seat(available_desks['code'], date):
+                        message_success = Parameters.mail_success_template.substitute(date=date, floor=available_desks['floor'])
+                        print(message_success)
+                        EmailSender.send_email("Booked", message_success)
 
                 else:
                     #already booked. no search again

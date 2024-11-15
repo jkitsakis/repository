@@ -4,7 +4,6 @@ import requests
 import json
 from configuration_params import Parameters
 
-template = Template("{\"dates\":[\"$date\"],\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"code\":\"$code\",\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":[{\"date\":\"$date\",\"type\":\"0036\",\"clientName\":\"\",\"clientAddress\":\"\"}]}")
 
 
 def read_json_and_create_dict():
@@ -48,16 +47,13 @@ class BookDesk:
 
     def post_seat(self):
         desk_value = book_seat(self.seat)
-        print(f"desk positionId:{desk_value}")
-        print(f"desk positionId:{desk_value['code']}")
-
         code = desk_value['code']
         positionId = desk_value['positionId']
         facilityId = desk_value['facilityId']
         x = desk_value['x']
         y = desk_value['y']
 
-        data_to_send = template.substitute(date=self.date, code=code, positionId=positionId, facilityId=facilityId, x=x, y=y)
+        data_to_send = Parameters.post_template.substitute(date=self.date, code=code, positionId=positionId, facilityId=facilityId, x=x, y=y)
         response = requests.post(Parameters.book_url, json=data_to_send, headers=Parameters.headers)
         # Print the response
         print("Status Code:", response.status_code)
