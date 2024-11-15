@@ -3,7 +3,7 @@ from string import Template
 
 class Parameters:
 
-    date_strings = ['{2024-11-18}', '{2024-11-19}', '{2024-11-20}', '{2024-11-21}', '{2024-11-22}']
+    date_strings = ['2024-11-18', '2024-11-19', '2024-11-20', '2024-11-21', '2024-11-22']
 
     planner_url = "https://myplanner.netcompany-intrasoft.com"
 

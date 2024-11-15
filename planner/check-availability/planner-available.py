@@ -10,19 +10,6 @@ from book_desk import BookDesk
 
 from configuration_params import Parameters
 
-def get_days_for_week():
-    """Returns the list of dates from tomorrow until Friday."""
-    today = datetime.datetime.now()
-    days = []
-    # Get dates from tomorrow till Friday (5 days in total)
-    for i in range(1, 9):
-        day = today + datetime.timedelta(days=i)
-        # Only include weekdays (Monday = 0, Sunday = 6)
-        if day.weekday() < 5:
-            days.append(day.strftime('%Y-%m-%d'))
-    return days
-
-
 def process_response(response):
     """Process the JSON response to extract the required data."""
     if "AMALIAS" in response:
@@ -90,7 +77,7 @@ def show_notification_windows(title, message):
     )
 
 def main():
-    days = get_days_for_week()
+    days = Parameters.date_strings
     while True:
         my_booked_desks = make_my_booked_desks_request()
 
@@ -116,11 +103,8 @@ def main():
                     webbrowser.open_new(Parameters.planner_url)
 
                     # --- Specific Floor
-                    #if (data['floor'] == "1st Floor"  or data['floor'] =="Mezzazine"):
-                        # webbrowser.open_new(planner_url)
-                        # show_notification(message_title, message_txt)
-                        # We are ok ... remove date not search again
-                        # days.remove(date)
+                    if available_desk['floor'] == "1st Floor"  or available_desk['floor'] == "Mezzazine":
+                        days.remove(date)
 
                     EmailSender.send_email(message_title, email_txt)
 
