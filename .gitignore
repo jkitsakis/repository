@@ -12,3 +12,8 @@
 .ipynb_checkpoints
 /planner/check-availability/__pycache__
 /planner/.idea
+/.idea/*.gitignore
+/.idea/*.name
+/.idea/inspectionProfiles/*.xml
+/.idea/*.xml
+/.idea/*.iml
