@@ -12,13 +12,8 @@ class EmailSender:
         # Email and password for your Yahoo account
         yahoo_email = "j_kitsakis@yahoo.com"
         yahoo_password = "umzcqjllffldauqg"
-
         # Gmail address to send email to
         recipient_email = "jkitsakis@gmail.com"
-
-        # Email subject and body
-       # subject = "Test Email from Yahoo to Gmail"
-       # body = "Hello! This is a test email sent from Yahoo Mail using Python."
 
         # Creating the MIME email message
         message = MIMEMultipart()
