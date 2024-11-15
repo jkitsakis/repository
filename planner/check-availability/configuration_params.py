@@ -3,6 +3,8 @@ from string import Template
 
 class Parameters:
 
+    date_strings = ['{2024-11-18}', '{2024-11-19}', '{2024-11-20}', '{2024-11-21}', '{2024-11-22}']
+
     planner_url = "https://myplanner.netcompany-intrasoft.com"
 
     available_seats_url = "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/facility/facilities/available/map"
@@ -19,8 +21,8 @@ class Parameters:
     post_template = Template(
         "{\"dates\":[\"$date\"],\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"code\":\"$code\",\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":[{\"date\":\"$date\",\"type\":\"0036\",\"clientName\":\"\",\"clientAddress\":\"\"}]}")
 
-    message_title_template = "Desk available $date ,$floor ..."
-    message_txt_template = "Date $date \n Floor $floor \n Desk $code \n "
-    mail_success_template = "Desk $code booked for Date $date."
+    message_title_template = Template("Desk available $date ,$floor ...")
+    message_txt_template = Template("Date $date \n Floor $floor \n Desk $code \n ")
+    mail_success_template = Template("Desk $code booked for Date $date.")
 
 

@@ -45,15 +45,15 @@ class BookDesk:
         self.seat = seat_code
         self.date = date
 
-    def post_seat(self):
-        desk_value = book_seat(self.seat)
+    def post_seat(seat_code, date):
+        desk_value = book_seat(seat_code)
         code = desk_value['code']
         positionId = desk_value['positionId']
         facilityId = desk_value['facilityId']
         x = desk_value['x']
         y = desk_value['y']
 
-        data_to_send = Parameters.post_template.substitute(date=self.date, code=code, positionId=positionId, facilityId=facilityId, x=x, y=y)
+        data_to_send = Parameters.post_template.substitute(date=date, code=code, positionId=positionId, facilityId=facilityId, x=x, y=y)
         response = requests.post(Parameters.book_url, json=data_to_send, headers=Parameters.headers)
         # Print the response
         print("Status Code:", response.status_code)
