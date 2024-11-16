@@ -96,14 +96,14 @@ def main():
                     print(message_txt)
 
                     # --- when away from screen for all desks in amalias
-                    # show_notification_windows(message_title, message_txt)
+                    show_notification_windows(message_title, message_txt)
 
                     # --- when on screen for all desks in amalias
-                    show_notification_interacted(message_title, message_txt)
-                    webbrowser.open_new(Parameters.planner_url)
+                    # show_notification_interacted(message_title, message_txt)
+                    # webbrowser.open_new(Parameters.planner_url)
 
                     # --- Specific Floor
-                    if available_desk['floor'] == "1st Floor"  or available_desk['floor'] == "Mezzazine":
+                    if available_desks['floor'] == '1st Floor'  or available_desks['floor'] == 'Mezzazine':
                         days.remove(date)
 
                     EmailSender.send_email(message_title, email_txt)
@@ -112,6 +112,9 @@ def main():
                         message_success = Parameters.mail_success_template.substitute(date=date, floor=available_desks['floor'])
                         print(message_success)
                         EmailSender.send_email("Booked", message_success)
+
+                elif available_desk in my_booked_desks and (available_desks['floor'] == '2nd Floor' or available_desks['floor'] == '3rd Floor'):
+                    print(f"Desk {available_desk['code']} on {available_desks['floor']} is already booked. Search again ...\n")
 
                 else:
                     #already booked. no search again
@@ -127,7 +130,7 @@ def main():
 
         # Wait before checking again (e.g., 1 hour)
         print("Waiting for the next check...\n ---\n")
-        time.sleep(5)  # Delay in seconds (3600 seconds = 1 hour)
+        time.sleep(60)  # Delay in seconds (3600 seconds = 1 hour)
 
 if __name__ == "__main__":
     main()
