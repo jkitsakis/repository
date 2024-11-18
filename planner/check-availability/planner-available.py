@@ -106,7 +106,7 @@ def main():
 
                     EmailSender.send_email(message_title, email_txt)
 
-                    if BookDesk.post_seat(available_future_desk['code'], date):
+                    if BookDesk.update_seat(available_future_desk['code'], date):
                         message_success = Parameters.mail_success_template.substitute(date=date, floor=available_future_desk['floor'])
                         print(message_success)
                         EmailSender.send_email("Booked", message_success)

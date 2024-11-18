@@ -45,7 +45,7 @@ class BookDesk:
         self.seat = seat_code
         self.date = date
 
-    def post_seat(seat_code, date):
+    def update_seat(seat_code, date):
         desk_value = book_seat(seat_code)
         if desk_value:
             code = desk_value['code']

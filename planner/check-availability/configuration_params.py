@@ -19,7 +19,7 @@ class Parameters:
     }
 
     put_template = Template(
-        "{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":{\"date\":\"$date\",\"type\":\"0036\"}}")
+        "{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":{\"type\":\"0036\",\"date\":\"$date\"}}")
 
     message_title_template = Template("Desk available $date ,$floor ...")
     message_txt_template = Template("Date $date \n Floor $floor \n Desk $code \n ")

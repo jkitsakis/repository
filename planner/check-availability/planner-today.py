@@ -91,11 +91,11 @@ def main():
         email_txt = message_txt + f"\n \n {Parameters.planner_url}"
 
         # if available_desk and (available_desk['floor'] == '1st Floor' or available_desk['floor'] == 'Mezzazine'):
-        if available_desk:
+        if available_desk and available_desk['floor'] == 'Mezzazine':
             print(f"Found data for {today}:")
             show_notification_windows(message_title, message_txt)
             EmailSender.send_email(message_title, email_txt)
-            if BookDesk.post_seat(available_desk['code'], today):
+            if BookDesk.update_seat(available_desk['code'], today):
                 message_success = Parameters.mail_success_template.substitute(date=today,
                                                                               floor=available_desk['floor'])
                 print(message_success)
