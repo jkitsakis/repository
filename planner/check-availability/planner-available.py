@@ -28,7 +28,6 @@ def process_response(response):
                     }
     return None
 
-
 def make_get_request(date):
     """Make a GET request for a specific date."""
     response = requests.get(Parameters.available_seats_url, headers=Parameters.headers, params={"dates": date, "sectorName": "AMALIAS"})
@@ -97,8 +96,8 @@ def main():
                     # show_notification_windows(message_title, message_txt)
 
                     # --- when on screen for all desks in amalias
-                    show_notification_interacted(message_title, message_txt)
                     webbrowser.open_new(Parameters.planner_url)
+                    show_notification_interacted(message_title, message_txt)
 
                     # --- Specific Floor
                     if available_future_desk['floor'] == '1st Floor'  or available_future_desk['floor'] == 'Mezzazine':

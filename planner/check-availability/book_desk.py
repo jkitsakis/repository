@@ -25,9 +25,9 @@ def read_json_and_create_dict():
     return None
 
 # Function to send a POST request
-def send_put(data):
+def send_put(desk_booking_id, data):
     try:
-        response = requests.put(Parameters.book_url, json=data, headers=Parameters.headers)
+        response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id), json=data, headers=Parameters.headers)
         return response
     except Exception as e:
         print(f"Error occurred: {e}")
@@ -54,8 +54,14 @@ class BookDesk:
             x = desk_value['x']
             y = desk_value['y']
 
-            data_to_send = Parameters.put_template.substitute(date=date, code=code, positionId=positionId, facilityId=facilityId, x=x, y=y)
-            response = send_put(data_to_send)
+            """Find desk_booking_id"""
+            data = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.headers,
+                                    params={"fromDate": date, "toDate": date}).json()
+            desk_booking_id = data[0].get("deskBookingId")
+            print("Desk Booking ID:", desk_booking_id)
+
+            data_to_send = Parameters.put_template.substitute(date=date, positionId=positionId, facilityId=facilityId, x=x, y=y)
+            response = send_put(desk_booking_id, data_to_send)
             # Print the response
             print("Response:", response)
             print(f"Status Code: {response.status_code}")
