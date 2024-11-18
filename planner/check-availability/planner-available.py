@@ -111,7 +111,8 @@ def main():
                         print(message_success)
                         EmailSender.send_email("Booked", message_success)
 
-                elif available_desk in my_booked_desks and (available_future_desk['floor'] == '2nd Floor' or available_future_desk['floor'] == '3rd Floor'):
+                # elif available_desk in my_booked_desks and (available_future_desk['floor'] == '2nd Floor' or available_future_desk['floor'] == '3rd Floor'):
+                elif available_desk in my_booked_desks and available_future_desk['floor'] != 'Mezzazine':
                     print(f"Desk {available_desk['code']} on {available_future_desk['floor']} is already booked. Search again ...\n")
 
                 else:
