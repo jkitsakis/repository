@@ -1,4 +1,6 @@
 import time
+from datetime import datetime, timedelta
+
 import requests
 import ctypes
 import webbrowser
@@ -76,59 +78,36 @@ def show_notification_windows(title, message):
     )
 
 def main():
-    days = Parameters.date_strings
+    today = datetime.now().strftime('%Y-%m-%d')
+    # today = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
+    print(f"Processing data for {today}")
+
     while True:
-        my_booked_desks = make_my_booked_desks_request()
+        available_desk = make_get_request(today)
 
-        for date in days:
-            print(f"Processing data for {date}")
-            available_future_desk = make_get_request(date)
+        message_title = Parameters.message_title_template.substitute(date=today, floor=available_desk['floor'])
+        message_txt = Parameters.message_txt_template.substitute(date=today, floor=available_desk['floor'],
+                                                                 code=available_desk['code'])
+        email_txt = message_txt + f"\n \n {Parameters.planner_url}"
 
-            if available_future_desk:
-                print(f"Found data for {date}:")
-                available_desk = {'code': available_future_desk['code'], 'date': date}
+        # if available_desk and (available_desk['floor'] == '1st Floor' or available_desk['floor'] == 'Mezzazine'):
+        if available_desk:
+            print(f"Found data for {today}:")
+            show_notification_windows(message_title, message_txt)
+            EmailSender.send_email(message_title, email_txt)
+            if BookDesk.post_seat(available_desk['code'], today):
+                message_success = Parameters.mail_success_template.substitute(date=today,
+                                                                              floor=available_desk['floor'])
+                print(message_success)
+                EmailSender.send_email("Booked", message_success)
+            break
 
-                if available_desk not in my_booked_desks :
-                    message_title = Parameters.message_title_template.substitute(date=date, floor=available_future_desk['floor'])
-                    message_txt = Parameters.message_txt_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
-                    email_txt = message_txt + f"\n \n {Parameters.planner_url}"
-                    print(message_txt)
-                    # --- when away from screen for all desks in amalias
-                    # show_notification_windows(message_title, message_txt)
-
-                    # --- when on screen for all desks in amalias
-                    show_notification_interacted(message_title, message_txt)
-                    webbrowser.open_new(Parameters.planner_url)
-
-                    # --- Specific Floor
-                    if available_future_desk['floor'] == '1st Floor'  or available_future_desk['floor'] == 'Mezzazine':
-                        days.remove(date)
-
-                    EmailSender.send_email(message_title, email_txt)
-
-                    if BookDesk.post_seat(available_future_desk['code'], date):
-                        message_success = Parameters.mail_success_template.substitute(date=date, floor=available_future_desk['floor'])
-                        print(message_success)
-                        EmailSender.send_email("Booked", message_success)
-
-                elif available_desk in my_booked_desks and (available_future_desk['floor'] == '2nd Floor' or available_future_desk['floor'] == '3rd Floor'):
-                    print(f"Desk {available_desk['code']} on {available_future_desk['floor']} is already booked. Search again ...\n")
-
-                else:
-                    #already booked. no search again
-                    print(f"Already booked for {date} will be removed from dates array \n")
-                    days.remove(date)
-            else:
-                print(f"No data found for {date}\n ")
-
-        if not days:
-            print("All days processed with available data found.")
-            break  # Exit the loop if all days have been processed successfully
-
-
-        # Wait before checking again (e.g., 1 hour)
         print("Waiting for the next check...\n ---\n")
         time.sleep(5)  # Delay in seconds (3600 seconds = 1 hour)
+
+
+
+
 
 if __name__ == "__main__":
     #Get my booked desks

@@ -25,10 +25,10 @@ def read_json_and_create_dict():
     return None
 
 # Function to send a POST request
-def send_post(data):
+def send_put(data):
     try:
-        response = requests.post(Parameters.book_url, json=data, headers=Parameters.headers)
-        return response.status_code
+        response = requests.put(Parameters.book_url, json=data, headers=Parameters.headers)
+        return response
     except Exception as e:
         print(f"Error occurred: {e}")
         return None
@@ -47,16 +47,20 @@ class BookDesk:
 
     def post_seat(seat_code, date):
         desk_value = book_seat(seat_code)
-        code = desk_value['code']
-        positionId = desk_value['positionId']
-        facilityId = desk_value['facilityId']
-        x = desk_value['x']
-        y = desk_value['y']
+        if desk_value:
+            code = desk_value['code']
+            positionId = desk_value['positionId']
+            facilityId = desk_value['facilityId']
+            x = desk_value['x']
+            y = desk_value['y']
 
-        data_to_send = Parameters.post_template.substitute(date=date, code=code, positionId=positionId, facilityId=facilityId, x=x, y=y)
-        response = requests.post(Parameters.book_url, json=data_to_send, headers=Parameters.headers)
-        # Print the response
-        print("Status Code:", response.status_code)
-        print("Response JSON:", response.json())
+            data_to_send = Parameters.put_template.substitute(date=date, code=code, positionId=positionId, facilityId=facilityId, x=x, y=y)
+            response = send_put(data_to_send)
+            # Print the response
+            print("Response:", response)
+            print(f"Status Code: {response.status_code}")
+            print("Response JSON:", response.json())
+        else:
+            return False
 
         return response.status_code == 200
