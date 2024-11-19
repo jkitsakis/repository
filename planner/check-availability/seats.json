@@ -175,6 +175,13 @@
 		"y": 1066
 	},
 	{
+		"facilityId": "6448d14dbf530c0226ea4d6a",
+		"positionId": "6448d14dbf530c0226ea4d89",
+		"x": 12130,
+		"y": 1010,
+		"code": "044"
+	},
+	{
 		"code": "046",
 		"facilityId": "6448d14dbf530c0226ea4d6a",
 		"positionId": "6448d14dbf530c0226ea4d88",
