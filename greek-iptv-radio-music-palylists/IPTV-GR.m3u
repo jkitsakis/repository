@@ -32,20 +32,22 @@ https://liveopencloud.siliconweb.com/1/ZlRza2R6L2tFRnFJ/eWVLSlQx/hls/live/playli
 #EXTINF:-1 group-title="TV" tvg-name="ERT NEWS" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert-news-logo-800x300.png?m=resize&w=240&h=136",ERT NEWS
 https://ertflix.s.llnwi.net/ertlive/ertnews/default/index.mpd
 
+#EXTINF:-1 group-title="TV" TVG-ID="MAKTV" tvg-name="MAKTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Makedonia_TV_2023.svg/250px-Makedonia_TV_2023.svg.png",MAKTV
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+https://mcdn.antennaplus.gr/live/media0/MAK/HLS/MAK.m3u8
+
+#EXTINF:-1 group-title="TV" TVG-ID="ACTION24" tvg-name="ACTION24" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Action24-logo-small.png/250px-Action24-logo-small.png",ACTION24
+https://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8
+
 #EXTINF:-1 group-title="TV" tvg-name="ERT World"  tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/bc/ChannelLogo-ERTWORLD1.png",ERT World
 https://ertflix.s.llnwi.net/ertlive/ertworld/default/index.mpd
 
 #EXTINF:-1 group-title="TV" tvg-name="ERT Music"  tvg-logo="https://files2.app.ertflix.gr/files/channels/ert-music-800x300.png?m=resize&w=200&h=80",ERT Music
 https://ertflix.s.llnwi.net/ertlive/music/default/index.mpd
 
-#EXTINF:-1 group-title="TV" TVG-ID="ACTION24" tvg-name="ACTION24" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Action24-logo-small.png/250px-Action24-logo-small.png",ACTION24
-https://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8
-
 #EXTINF:-1 group-title="TV" TVG-ID="RISE" tvg-name="RISE" tvg-logo="https://www.rise.gr/wp-content/themes/risetv-1/images/rise-tv-logo-x2.png",RISE TV
 http://ovh-edge-h.evrideo.com:8080/23e234f2-aec8-4804-b694-4cdd71d2d48d_MONITORING_HLS/video_240p_WEBRTC_MONITORING.m3u8
-
-#EXTINF:-1 group-title="TV" TVG-ID="MAKTV" tvg-name="MAKTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Makedonia_TV_2023.svg/250px-Makedonia_TV_2023.svg.png",MAKTV
-https://dlm34ll53zqql.cloudfront.net/out/v1/d4177931deff4c7ba994b8126d153d9f/maktv.m3u8
 
 #EXTINF:-1 group-title="TV" TVG-ID="Dtv6" tvg-name="Dtv6" tvg-logo="",Dtv6
 https://channel.streams.ovh:8081/dipolotv/index.m3u8

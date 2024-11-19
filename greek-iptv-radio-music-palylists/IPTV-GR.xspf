@@ -123,7 +123,7 @@
 		</track>
 		<track>
 			<title>MAKTV</title>
-			<location>https://dlm34ll53zqql.cloudfront.net/out/v1/d4177931deff4c7ba994b8126d153d9f/maktv.m3u8</location>
+			<location>https://mcdn.antennaplus.gr/live/media0/MAK/HLS/MAK.m3u8</location>
 			 <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>13</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
