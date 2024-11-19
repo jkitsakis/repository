@@ -85,14 +85,15 @@ def main():
     while True:
         available_desk = make_get_request(today)
 
-        message_title = Parameters.message_title_template.substitute(date=today, floor=available_desk['floor'])
-        message_txt = Parameters.message_txt_template.substitute(date=today, floor=available_desk['floor'],
-                                                                 code=available_desk['code'])
-        email_txt = message_txt + f"\n \n {Parameters.planner_url}"
-
         # if available_desk and (available_desk['floor'] == '1st Floor' or available_desk['floor'] == 'Mezzazine'):
         if available_desk and available_desk['floor'] == 'Mezzazine':
             print(f"Found data for {today}:")
+
+            message_title = Parameters.message_title_template.substitute(date=today, floor=available_desk['floor'])
+            message_txt = Parameters.message_txt_template.substitute(date=today, floor=available_desk['floor'],
+                                                                     code=available_desk['code'])
+            email_txt = message_txt + f"\n \n {Parameters.planner_url}"
+
             show_notification_windows(message_title, message_txt)
             EmailSender.send_email(message_title, email_txt)
             if BookDesk.update_seat(available_desk['code'], today):
