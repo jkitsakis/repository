@@ -1,5 +1,3 @@
-from string import Template
-
 import requests
 import json
 from configuration_params import Parameters
@@ -26,10 +24,12 @@ def read_json_and_create_dict():
 
 # Function to send a POST request
 def send_put(desk_booking_id, data):
-    print("data:", data)
-    print(f"put URL : {Parameters.put_url.substitute(deskbookingid=desk_booking_id)}")
+    put_url = Parameters.put_url.substitute(deskbookingid=desk_booking_id)
+    print(f"data: {data}")
+    print(f"URL : {put_url}")
+    Parameters.headers["Referer"] = put_url
     try:
-        response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id), json=data, headers=Parameters.headers)
+        response = requests.put(put_url, json=data, headers=Parameters.headers)
         return response
     except Exception as e:
         print(f"Error occurred: {e}")
