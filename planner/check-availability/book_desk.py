@@ -26,6 +26,8 @@ def read_json_and_create_dict():
 
 # Function to send a POST request
 def send_put(desk_booking_id, data):
+    print("data:", data)
+    print(f"put URL : {Parameters.put_url.substitute(deskbookingid=desk_booking_id)}")
     try:
         response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id), json=data, headers=Parameters.headers)
         return response
@@ -65,7 +67,6 @@ class BookDesk:
             # Print the response
             print("Response:", response)
             print(f"Status Code: {response.status_code}")
-            print("Response JSON:", response.json())
         else:
             return False
 

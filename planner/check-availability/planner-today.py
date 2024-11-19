@@ -84,6 +84,7 @@ def main():
 
     while True:
         available_desk = make_get_request(today)
+        print(f"There is desk  {available_desk['code']}")
 
         # if available_desk and (available_desk['floor'] == '1st Floor' or available_desk['floor'] == 'Mezzazine'):
         if available_desk and available_desk['floor'] == 'Mezzazine':
@@ -98,7 +99,7 @@ def main():
             EmailSender.send_email(message_title, email_txt)
             if BookDesk.update_seat(available_desk['code'], today):
                 message_success = Parameters.mail_success_template.substitute(date=today,
-                                                                              floor=available_desk['floor'])
+                                                                              floor=available_desk['floor'], code=available_desk['code'])
                 print(message_success)
                 EmailSender.send_email("Booked", message_success)
             break
