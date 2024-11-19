@@ -22,12 +22,12 @@ def read_json_and_create_dict():
         print("Error: Failed to decode JSON. Please check the file format.")
     return None
 
-# Function to send a POST request
+# Function to send a PUT request
 def send_put(desk_booking_id, data):
     put_url = Parameters.put_url.substitute(deskbookingid=desk_booking_id)
     print(f"data: {data}")
     print(f"URL : {put_url}")
-    Parameters.headers["Referer"] = put_url
+    Parameters.headers["Referer"] = Parameters.referer_put_url.substitute(deskbookingid=desk_booking_id)
     try:
         response = requests.put(put_url, json=data, headers=Parameters.headers)
         return response

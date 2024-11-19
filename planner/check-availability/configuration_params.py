@@ -15,6 +15,8 @@ class Parameters:
 
     put_url = Template("https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/$deskbookingid/edit")
 
+    referer_put_url=Template("https://myplanner.netcompany-intrasoft.com/booking/$deskbookingid/edit")
+
     headers = {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json;charset=UTF-8',
