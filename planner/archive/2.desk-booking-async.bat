@@ -24,8 +24,8 @@ set data02="{\"dates\":[\"2024-11-11\"],\"facilityId\":\"64a41c5241d4b80382ab638
 REM set time_start= %time% 
 
 REM Running curl commands in parallel
-start /b curl  -X POST %url%  -H %header% -H %cookie% -d %data2% >> logfile1.txt
-start /b curl  -X POST %url%  -H %header% -H %cookie% -d %data1% >> logfile2.txt
+start /b curl  -X POST %url%  -H %header% -H %cookie% -d %data2% 
+start /b curl  -X POST %url%  -H %header% -H %cookie% -d %data1% 
 start /b curl  -X POST %url%  -H %header% -H %cookie% -d %data3%   
 start /b curl  -X POST %url%  -H %header% -H %cookie% -d %data4%   
 start /b curl  -X POST %url%  -H %header% -H %cookie% -d %data5%  
