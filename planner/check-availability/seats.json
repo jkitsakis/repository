@@ -17,8 +17,8 @@
 		"code": "006",
 		"facilityId": "6448cee7bf530c0226ea4d4d",
 		"positionId": "6448cee7bf530c0226ea4d53",
-		"x": 1199.0,
-		"y": 1585.0
+		"x": 1199,
+		"y": 1585
 	},
 	{
 		"code": "007",
@@ -138,6 +138,13 @@
 		"positionId": "6448d14dbf530c0226ea4d73",
 		"x": 789,
 		"y": 1684
+	},
+	{
+		"code": "025",
+		"facilityId": "6448d14dbf530c0226ea4d6a",
+		"positionId": "6448d14dbf530c0226ea4d71",
+		"x": 945,
+		"y": 1728
 	},
 	{
 		"code": "026",

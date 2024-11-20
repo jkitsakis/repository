@@ -94,17 +94,17 @@ def main():
                     print(message_txt)
 
                     show_notification_windows(message_title, message_txt)
-                    webbrowser.open_new(Parameters.planner_url)
+                    # webbrowser.open_new(Parameters.planner_url)
                     # --- Specific Floor
                     if available_future_desk['floor'] == '1st Floor'  or available_future_desk['floor'] == 'Mezzazine':
                         days.remove(date)
 
-                    EmailSender.send_email(message_title, email_txt)
+                    # EmailSender.send_email(message_title, email_txt)
 
                     if BookDesk.update_seat(available_future_desk['code'], date):
                         message_success = Parameters.mail_success_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
-                        print(message_success)
-                        EmailSender.send_email("Booked", message_success)
+                        print(f"{message_success}\n")
+                        # EmailSender.send_email("Booked", message_success)
 
                 # elif available_desk in my_booked_desks and (available_future_desk['floor'] == '2nd Floor' or available_future_desk['floor'] == '3rd Floor'):
                 elif available_desk in my_booked_desks and available_future_desk['floor'] != 'Mezzazine':
@@ -124,7 +124,7 @@ def main():
 
         # Wait before checking again (e.g., 1 hour)
         print("Waiting for the next check...\n ---\n")
-        time.sleep(5)  # Delay in seconds (3600 seconds = 1 hour)
+        time.sleep(60)  # Delay in seconds (3600 seconds = 1 hour)
 
 if __name__ == "__main__":
     #Get my booked desks
