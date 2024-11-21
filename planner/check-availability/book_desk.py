@@ -1,5 +1,8 @@
 import requests
 import json
+
+from plyer import notification
+
 from configuration_params import Parameters
 
 
@@ -24,35 +27,28 @@ def read_json_and_create_dict():
 
 # Function to send a PUT request
 def send_put(desk_booking_id, put_data):
-    put_url = Parameters.put_url.substitute(deskbookingid=desk_booking_id)
-    get_url =  Parameters.get_my_booking_details_url.substitute(deskbookingid=desk_booking_id)
-
-    # Step 1: Create a session
-    session = requests.Session()
-    # Step 2: Make a GET request to retrieve the cookie
-    get_response = session.get(get_url)
-    # Check if the GET request was successful
-    if get_response.status_code != 200:
-        raise Exception(f"GET request failed with status code {get_response.status_code}")
-
-    # Step 3: Extract the cookie
-    cookies_dict = session.cookies.get_dict()  # Retrieve all cookies as a dictionary
-
-    # Step 4: Include the cookie in the headers for the PUT request
-    cookie_header = '; '.join([f"{key}={value}" for key, value in cookies_dict.items()])
-    headers = {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'text/plain',
-        "Cookie": f"{cookie_header}"
-    }
-    # Step 5: Make the PUT request
-    put_response = session.put(put_url, headers=headers, data=put_data)
-
+    # Make the PUT request
+    put_response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id),
+                                headers=Parameters.headers,
+                                json=put_data)
     print(f"PUT Result :{put_response.text}")
 
-    if put_response.status_code not in [200, 204]:
+    if (put_response.status_code not in [200, 204] or
+            any(keyword in put_response.text.lower() for keyword in ['rejected', 'unauthorized'])):
+        notification.notify(
+            title="Update Failed",
+            message=f"{put_response.text}",
+            app_name="Data Alert",
+            timeout=60  # Duration of the notification in seconds
+        )
         raise Exception(f"PUT request failed with status code {put_response.status_code}")
 
+    notification.notify(
+        title="Update Success !!!",
+        message=f"{put_response.text} \n {put_response.text}",
+        app_name="Data Alert",
+        timeout=60  # Duration of the notification in seconds
+    )
     return put_response
 
 def book_seat(found_seat):
