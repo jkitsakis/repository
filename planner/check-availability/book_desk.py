@@ -23,32 +23,37 @@ def read_json_and_create_dict():
     return None
 
 # Function to send a PUT request
-def send_put(desk_booking_id, payload, cookies_dict):
-    # Update the Cookie header
-    cookie_header = '; '.join([f"{key}={value}" for key, value in cookies_dict.items()])
-    Parameters.headers["Cookie"] = cookie_header
-
+def send_put(desk_booking_id, put_data):
     put_url = Parameters.put_url.substitute(deskbookingid=desk_booking_id)
-    Parameters.headers["Referer"] = Parameters.referer_put_url.substitute(deskbookingid=desk_booking_id)
+    get_url =  Parameters.get_my_booking_details_url.substitute(deskbookingid=desk_booking_id)
 
-    print(f"Update Desk... \n")
-    print(f"URL : {put_url}\n")
-    print(f"Headers : {Parameters.headers}'\n")
-    print(f"Payload: {payload}\n")
-    print(type(f"Payload type: {payload}\n"))  # Should be <class 'dict'> if using json=
-    print(f"Cookies: {cookies_dict}\n")
-    # json=json.loads(data)
-    try:
-        response = requests.put(put_url, data= payload, headers=Parameters.headers)
-        print(f"Request  Headers:{response.request.headers}\n")
-        print(f"Request  Body: {response.request.body}\n")
-        print(f"Response:{response.text}\n")
-        print(f"Response cookies : {response.cookies}\n")
-        print(f"Status Code: {response.status_code}")
-        return response
-    except Exception as e:
-        print(f"Error occurred: {e}")
-        return None
+    # Step 1: Create a session
+    session = requests.Session()
+    # Step 2: Make a GET request to retrieve the cookie
+    get_response = session.get(get_url)
+    # Check if the GET request was successful
+    if get_response.status_code != 200:
+        raise Exception(f"GET request failed with status code {get_response.status_code}")
+
+    # Step 3: Extract the cookie
+    cookies_dict = session.cookies.get_dict()  # Retrieve all cookies as a dictionary
+
+    # Step 4: Include the cookie in the headers for the PUT request
+    cookie_header = '; '.join([f"{key}={value}" for key, value in cookies_dict.items()])
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'text/plain',
+        "Cookie": f"{cookie_header}"
+    }
+    # Step 5: Make the PUT request
+    put_response = session.put(put_url, headers=headers, data=put_data)
+
+    print(f"PUT Result :{put_response.text}")
+
+    if put_response.status_code not in [200, 204]:
+        raise Exception(f"PUT request failed with status code {put_response.status_code}")
+
+    return put_response
 
 def book_seat(found_seat):
     seats_db =read_json_and_create_dict()
@@ -72,21 +77,14 @@ class BookDesk:
             y = desk_value['y']
 
             """Find desk_booking_id"""
-            response_bookingId = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.headers,
-                                    params={"fromDate": date, "toDate": date})
-            data_bookingId = response_bookingId.json()
-            desk_booking_id = data_bookingId[0].get("deskBookingId")
+            print(f"URL desk_booking_id: {Parameters.find_desk_booking_id_url}?fromDate={date}&toDate={date}")
+            data = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.headers,
+                                    params={"fromDate": date, "toDate": date}).json()
+            desk_booking_id = data[0].get("deskBookingId")
             print("Desk Booking ID:", desk_booking_id)
 
-            # make this call because of referer header and get cookies
-            response_referer = requests.get(Parameters.referer_put_url.substitute(deskbookingid=desk_booking_id))
-            print(f"Response Referer:{response_referer.text}\n")
-            print(f"Response Referer cookies : {response_referer.cookies}\n")
-            print(f"Referer Status Code: {response_referer.status_code}")
-            cookies_dict = requests.utils.dict_from_cookiejar(response_referer.cookies)
-
             data_to_send = Parameters.put_template.substitute(date=date, positionId=positionId, facilityId=facilityId, x=x, y=y)
-            response = send_put(desk_booking_id, data_to_send, cookies_dict)
+            response = send_put(desk_booking_id, data_to_send)
         else:
             return False
 
