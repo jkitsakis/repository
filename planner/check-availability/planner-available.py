@@ -124,7 +124,7 @@ def main():
 
         # Wait before checking again (e.g., 1 hour)
         print("Waiting for the next check...\n ---\n")
-        time.sleep(10)  # Delay in seconds (3600 seconds = 1 hour)
+        time.sleep(20)  # Delay in seconds (3600 seconds = 1 hour)
 
 if __name__ == "__main__":
     #Get my booked desks
