@@ -4,7 +4,7 @@ set data="{\"dates\":[\"%1\"],\"facilityId\":\"6448cee7bf530c0226ea4d4d\",\"posi
 
 :start
 title %1
-for /f "tokens=*" %%i in ('curl -o NUL -s -w "%%{http_code}" -X POST %url% -H %header% -H %cookie% -d %data%') do (
+for /f "tokens=*" %%i in ('curl -o NUL -s -w "%%{http_code}" -X POST %url% -H %header% -H %header-agent% -H %cookie% -d %data%') do (
 	set HTTP_STATUS=%%i 
     curl -s -X POST %url% -H %header% -H %cookie% -d %data% >> log-%1.txt
 )

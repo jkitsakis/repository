@@ -5,8 +5,6 @@ from plyer import notification
 
 from configuration_params import Parameters
 
-
-
 def read_json_and_create_dict():
     json_file_path = "seats.json"
     try:
@@ -29,8 +27,8 @@ def read_json_and_create_dict():
 def send_put(desk_booking_id, put_data):
     # Additional headers to append
     additional_headers = {
-        "Accept": "application/json, text/plain, */*",
-        "Content-Type": "text/plain;charset=UTF-8",
+        # "Accept": "application/json, text/plain, */*",
+        # "Content-Type": "text/plain;charset=UTF-8",
         "Referer": f"https://myplanner.netcompany-intrasoft.com/booking/{desk_booking_id}/edit",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
         "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
@@ -38,20 +36,22 @@ def send_put(desk_booking_id, put_data):
         "sec-ch-ua-platform": "\"Windows\""
     }
 
-    Parameters.headers.update(additional_headers)
-
-
+    Parameters.put_headers.update(additional_headers)
     # Make the PUT request
-    put_response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id),
-                                headers=Parameters.headers,
-                                data=put_data)
-    print(f"PUT Result :{put_response.text}")
-
-    if (put_response.status_code not in [200, 204] or
-            any(keyword in put_response.text.lower() for keyword in ['rejected', 'unauthorized'])):
+    response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id),
+                            headers=Parameters.put_headers,
+                            data=put_data)
+    print(f"PUT Result :{response.text}")
+    put_response= {
+        "status_code": response.status_code,
+        "json": response.json() if response.content else None,
+        "data": put_data
+    }
+    if (put_response['status_code'] not in [200, 204] or
+            any(keyword in response.text.lower() for keyword in ['rejected', 'unauthorized'])):
         notification.notify(
             title="Update Failed",
-            message=f"{put_response.text}",
+            message=put_response['json'],
             app_name="Data Alert",
             timeout=60  # Duration of the notification in seconds
         )
@@ -60,13 +60,13 @@ def send_put(desk_booking_id, put_data):
 
     notification.notify(
         title="Update Success !!!",
-        message=f"{put_response.text} \n {put_response.text}",
+        message=put_response['json'],
         app_name="Data Alert",
         timeout=60  # Duration of the notification in seconds
     )
     return put_response
 
-def book_seat(found_seat):
+def find_seat_details(found_seat):
     seats_db =read_json_and_create_dict()
     if found_seat in seats_db:
        return seats_db[found_seat]
@@ -74,32 +74,36 @@ def book_seat(found_seat):
         print("Code not found in the dictionary.")
 
 def get_my_booking_id(date):
-    """Find desk_booking_id"""
     print(f"URL desk_booking_id: {Parameters.find_desk_booking_id_url}?fromDate={date}&toDate={date}")
-    data = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.headers,
+    data = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.put_headers,
                         params={"fromDate": date, "toDate": date}).json()
-    print("Desk Booking ID:", desk_booking_id)
-    desk_booking_id = data[0].get("deskBookingId")
+    # print("Desk Booking ID:", data[0].get("deskBookingId"))
+    if data:
+        return data[0].get("deskBookingId")
+    else:
+        None
 
 
-class BookDesk:
+class UpdateDesk:
     def __init__(self, seat_code, date):
         self.seat = seat_code
         self.date = date
 
-    def update_seat(seat_code, date):
-        desk_value = book_seat(seat_code)
-        if desk_value:
-            code = desk_value['code']
-            positionId = desk_value['positionId']
-            facilityId = desk_value['facilityId']
-            x = desk_value['x']
-            y = desk_value['y']
-
-
+    def book_seat(availale_seat_code, date):
+        seat_details = find_seat_details(availale_seat_code)
+        if seat_details:
+            code = seat_details['code']
+            positionId = seat_details['positionId']
+            facilityId = seat_details['facilityId']
+            x = seat_details['x']
+            y = seat_details['y']
 
             data_to_send = Parameters.put_template.substitute(date=date, positionId=positionId, facilityId=facilityId, x=x, y=y)
-            response = send_put(desk_booking_id, data_to_send)
+
+            if get_my_booking_id(date):
+                response = send_put(get_my_booking_id(date), data_to_send)
+            else:
+                return False
         else:
             return False
 

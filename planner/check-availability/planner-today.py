@@ -7,7 +7,7 @@ import webbrowser
 from plyer import notification
 
 from send_email import EmailSender
-from book_desk import BookDesk
+from update_desk import UpdateDesk
 
 from configuration_params import Parameters
 
@@ -33,7 +33,7 @@ def process_response(response):
 
 def make_get_request(date):
     """Make a GET request for a specific date."""
-    response = requests.get(Parameters.available_seats_url, headers=Parameters.headers, params={"dates": date, "sectorName": "AMALIAS"})
+    response = requests.get(Parameters.available_seats_url, headers=Parameters.put_headers, params={"dates": date, "sectorName": "AMALIAS"})
 
     if response.status_code == 200:
         response_data = response.json()
@@ -57,7 +57,7 @@ def process_response_future(response):
 
 def make_my_booked_desks_request():
     """Make a GET request for a specific date."""
-    response_future = requests.get(Parameters.my_booked_desks_url, headers=Parameters.headers)
+    response_future = requests.get(Parameters.my_booked_desks_url, headers=Parameters.put_headers)
 
     if response_future.status_code == 200:
         response_data_future = response_future.json()
@@ -97,7 +97,7 @@ def main():
 
             show_notification_windows(message_title, message_txt)
             EmailSender.send_email(message_title, email_txt)
-            if BookDesk.update_seat(available_desk['code'], today):
+            if UpdateDesk.book_seat(available_desk['code'], today):
                 message_success = Parameters.mail_success_template.substitute(date=today,
                                                                               floor=available_desk['floor'], code=available_desk['code'])
                 print(message_success)
