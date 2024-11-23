@@ -97,7 +97,7 @@ def start_post():
 
 
 if __name__ == "__main__":
-    target_time = "11:59:58.0000"
+    target_time = "12:00:01.0000"
     while True:
         # Get the current time
         now = datetime.now()

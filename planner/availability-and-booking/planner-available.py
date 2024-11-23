@@ -90,16 +90,16 @@ def main():
                 if available_desk not in my_booked_desks :
                     message_title = Parameters.message_title_template.substitute(date=date, floor=available_future_desk['floor'])
                     message_txt = Parameters.message_txt_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
-                    email_txt = message_txt + f"\n \n {Parameters.planner_url}"
+                    email_txt = message_txt + f"\n \n {Parameters.put_url.substitute(deskbookingid=UpdateDesk.get_my_booking_id(date))}"
                     print(message_txt)
 
                     show_notification_windows(message_title, message_txt)
-                    # webbrowser.open_new(Parameters.planner_url)
-                    # --- Specific Floor
-                    if available_future_desk['floor'] == '1st Floor'  or available_future_desk['floor'] == 'Mezzazine':
-                        days.remove(date)
+                    webbrowser.open_new(Parameters.put_url.substitute(deskbookingid=UpdateDesk.get_my_booking_id(date)))
+                    EmailSender.send_email(message_title, email_txt)
 
-                    # EmailSender.send_email(message_title, email_txt)
+                    # --- Specific Floor
+                    if available_future_desk['floor'] == 'Mezzazine':
+                        days.remove(date)
 
                     if UpdateDesk.book_seat(available_future_desk['code'], date):
                         message_success = Parameters.mail_success_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])

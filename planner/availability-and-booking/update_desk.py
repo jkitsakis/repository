@@ -27,49 +27,29 @@ def read_json_and_create_dict():
 def send_put(desk_booking_id, put_data):
     # Additional headers to append
     additional_headers = {
-        # "Accept": "application/json, text/plain, */*",
-        # "Content-Type": "text/plain;charset=UTF-8",
         "Referer": f"https://myplanner.netcompany-intrasoft.com/booking/{desk_booking_id}/edit",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
         "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"Windows\""
     }
-
-    Parameters.put_headers.update(additional_headers)
+    headers = Parameters.put_headers.update(additional_headers)
     # Make the PUT request
-    response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id),
-                            headers=Parameters.put_headers,
+    response = requests.put(Parameters.put_url.substitute(deskbookingid= desk_booking_id),
+                            headers=headers,
                             data=put_data)
-    print(f"PUT Result :{response.text}")
+
     put_response= {
         "status_code": response.status_code,
         "json": response.json() if response.content else None,
-        "data": put_data
+        "data": put_data,
+        "text": response.text
     }
-    if (put_response['status_code'] not in [200, 204] or
-            any(keyword in response.text.lower() for keyword in ['rejected', 'unauthorized'])):
-        notification.notify(
-            title="Update Failed",
-            message=put_response['json'],
-            app_name="Data Alert",
-            timeout=60  # Duration of the notification in seconds
-        )
-        return None
-        # raise Exception(f"PUT request failed with status code {put_response.status_code}")
-
-    notification.notify(
-        title="Update Success !!!",
-        message=put_response['json'],
-        app_name="Data Alert",
-        timeout=60  # Duration of the notification in seconds
-    )
     return put_response
 
-def find_seat_details(found_seat):
+def find_seat_details(availale_seat_code):
     seats_db =read_json_and_create_dict()
-    if found_seat in seats_db:
-       return seats_db[found_seat]
+    if availale_seat_code in seats_db:
+       return seats_db[availale_seat_code]
     else:
         print("Code not found in the dictionary.")
 
@@ -83,6 +63,47 @@ def get_my_booking_id(date):
     else:
         None
 
+def book_seat(availale_seat_code, date):
+    seat_details = find_seat_details(availale_seat_code)
+    if seat_details:
+        code = seat_details['code']
+        positionId = seat_details['positionId']
+        facilityId = seat_details['facilityId']
+        x = seat_details['x']
+        y = seat_details['y']
+
+        data_to_send = Parameters.put_template.substitute(date=date,
+                                                          positionId=positionId,
+                                                          facilityId=facilityId,
+                                                          x=x,
+                                                          y=y)
+
+        if get_my_booking_id(date):
+            put_response = send_put(get_my_booking_id(date), data_to_send)
+            if (put_response['status_code'] != 200 or
+                    any(keyword in put_response['text'].lower() for keyword in ['rejected', 'unauthorized'])):
+                notification.notify(
+                    title="Update Failed",
+                    message=put_response['json'],
+                    app_name="Data Alert",
+                    timeout=60  # Duration of the notification in seconds
+                )
+                return False
+                # raise Exception(f"PUT request failed with status code {put_response.status_code}")
+            else:
+                notification.notify(
+                    title="Update Success !!!",
+                    message=put_response['json'],
+                    app_name="Data Alert",
+                    timeout=60  # Duration of the notification in seconds
+                )
+                return put_response['status_code'] == 200
+        else:
+            return False
+    else:
+        return False
+
+
 
 class UpdateDesk:
     def __init__(self, seat_code, date):
@@ -90,21 +111,8 @@ class UpdateDesk:
         self.date = date
 
     def book_seat(availale_seat_code, date):
-        seat_details = find_seat_details(availale_seat_code)
-        if seat_details:
-            code = seat_details['code']
-            positionId = seat_details['positionId']
-            facilityId = seat_details['facilityId']
-            x = seat_details['x']
-            y = seat_details['y']
+        book_seat(availale_seat_code, date)
 
-            data_to_send = Parameters.put_template.substitute(date=date, positionId=positionId, facilityId=facilityId, x=x, y=y)
 
-            if get_my_booking_id(date):
-                response = send_put(get_my_booking_id(date), data_to_send)
-            else:
-                return False
-        else:
-            return False
-
-        return response.status_code == 200
+    def get_my_booking_id(date):
+        get_my_booking_id(date)
