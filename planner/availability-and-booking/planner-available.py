@@ -30,7 +30,7 @@ def process_response(response):
 
 def make_get_request(date):
     """Make a GET request for a specific date."""
-    response = requests.get(Parameters.available_seats_url, headers=Parameters.put_headers, params={"dates": date, "sectorName": "AMALIAS"})
+    response = requests.get(Parameters.available_seats_url, headers=Parameters.get_headers, params={"dates": date, "sectorName": "AMALIAS"})
 
     if response.status_code == 200:
         response_data = response.json()
@@ -54,7 +54,7 @@ def process_response_future(response):
 
 def make_my_booked_desks_request():
     """Make a GET request for a specific date."""
-    response_future = requests.get(Parameters.my_booked_desks_url, headers=Parameters.put_headers)
+    response_future = requests.get(Parameters.my_booked_desks_url, headers=Parameters.get_headers)
 
     if response_future.status_code == 200:
         response_data_future = response_future.json()
