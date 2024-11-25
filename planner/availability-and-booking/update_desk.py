@@ -55,7 +55,7 @@ def find_seat_details(availale_seat_code):
 
 def get_my_booking_id(date):
     print(f"URL desk_booking_id: {Parameters.find_desk_booking_id_url}?fromDate={date}&toDate={date}")
-    data = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.put_headers,
+    data = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.get_headers,
                         params={"fromDate": date, "toDate": date}).json()
     # print("Desk Booking ID:", data[0].get("deskBookingId"))
     if data:
@@ -111,8 +111,8 @@ class UpdateDesk:
         self.date = date
 
     def book_seat(availale_seat_code, date):
-        book_seat(availale_seat_code, date)
+        return book_seat(availale_seat_code, date)
 
 
     def get_my_booking_id(date):
-        get_my_booking_id(date)
+        return get_my_booking_id(date)
