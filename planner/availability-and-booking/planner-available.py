@@ -88,13 +88,13 @@ def main():
                 available_desk = {'code': available_future_desk['code'], 'date': date}
 
                 if available_desk not in my_booked_desks :
+                    referer_url= Parameters.referer_url.substitute(deskbookingid=UpdateDesk.get_my_booking_id(date))
                     message_title = Parameters.message_title_template.substitute(date=date, floor=available_future_desk['floor'])
                     message_txt = Parameters.message_txt_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
-                    email_txt = message_txt + f"\n \n {Parameters.put_url.substitute(deskbookingid=UpdateDesk.get_my_booking_id(date))}"
-                    print(message_txt)
+                    email_txt = message_txt + f"\n \n {referer_url}"
 
-                    show_notification_windows(message_title, message_txt)
-                    webbrowser.open_new(Parameters.put_url.substitute(deskbookingid=UpdateDesk.get_my_booking_id(date)))
+                    show_notification_windows(message_title, message_txt+ f"\n \n {referer_url}")
+                    webbrowser.open_new(referer_url)
                     EmailSender.send_email(message_title, email_txt)
 
                     # --- Specific Floor
@@ -124,7 +124,7 @@ def main():
 
         # Wait before checking again (e.g., 1 hour)
         print("Waiting for the next check...\n ---\n")
-        time.sleep(20)  # Delay in seconds (3600 seconds = 1 hour)
+        time.sleep(10)  # Delay in seconds (3600 seconds = 1 hour)
 
 if __name__ == "__main__":
     #Get my booked desks
