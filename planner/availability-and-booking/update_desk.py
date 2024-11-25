@@ -32,7 +32,9 @@ def send_put(desk_booking_id, put_data):
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"Windows\""
     }
-    headers = Parameters.put_headers.update(additional_headers)
+    Parameters.put_headers.update(additional_headers)
+    headers = Parameters.put_headers
+    print(f"PUT headers: {headers}")
     # Make the PUT request
     response = requests.put(Parameters.put_url.substitute(deskbookingid= desk_booking_id),
                             headers=headers,
@@ -40,10 +42,12 @@ def send_put(desk_booking_id, put_data):
 
     put_response= {
         "status_code": response.status_code,
-        "json": response.json() if response.content else None,
+        "json": str(response.json()),
         "data": put_data,
         "text": response.text
     }
+
+    print(f"PUT put_response: {put_response}")
     return put_response
 
 def find_seat_details(availale_seat_code):
@@ -61,10 +65,10 @@ def get_my_booking_id(date):
     if data:
         return data[0].get("deskBookingId")
     else:
-        None
+        return None
 
-def book_seat(availale_seat_code, date):
-    seat_details = find_seat_details(availale_seat_code)
+def book_seat(available_seat_code, date):
+    seat_details = find_seat_details(available_seat_code)
     if seat_details:
         code = seat_details['code']
         positionId = seat_details['positionId']
@@ -77,14 +81,15 @@ def book_seat(availale_seat_code, date):
                                                           facilityId=facilityId,
                                                           x=x,
                                                           y=y)
+        booking_id = get_my_booking_id(date)
 
-        if get_my_booking_id(date):
-            put_response = send_put(get_my_booking_id(date), data_to_send)
+        if booking_id:
+            put_response = send_put(booking_id, data_to_send)
             if (put_response['status_code'] != 200 or
                     any(keyword in put_response['text'].lower() for keyword in ['rejected', 'unauthorized'])):
                 notification.notify(
                     title="Update Failed",
-                    message=put_response['json'],
+                    message=f"Error: {put_response['json']} (Status: {put_response['status_code']})",
                     app_name="Data Alert",
                     timeout=60  # Duration of the notification in seconds
                 )
@@ -93,11 +98,11 @@ def book_seat(availale_seat_code, date):
             else:
                 notification.notify(
                     title="Update Success !!!",
-                    message=put_response['json'],
+                    message=f"Success: {put_response['json']} (Status: {put_response['status_code']})",
                     app_name="Data Alert",
                     timeout=60  # Duration of the notification in seconds
                 )
-                return put_response['status_code'] == 200
+                return True
         else:
             return False
     else:
