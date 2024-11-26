@@ -12,11 +12,11 @@ set cookie="Cookie: Path=/; Path=/; Path=/; Path=/; _ga=GA1.1.2086248922.1725605
 
 set url=%url_planner%
 
-set mon=2024-11-25
-set tue=2024-11-26
-set wed=2024-11-27
-set thu=2024-11-28
-set fri=2024-11-29
+set mon=2024-12-02
+set tue=2024-12-03
+set wed=2024-12-04
+set thu=2024-12-05
+set fri=2024-12-06
 
 echo %time%
 REM risky desks : 012

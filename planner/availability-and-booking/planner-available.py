@@ -93,18 +93,18 @@ def main():
                     message_txt = Parameters.message_txt_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
                     email_txt = message_txt + f"\n \n {referer_url}"
 
-                    show_notification_windows(message_title, message_txt+ f"\n \n {referer_url}")
                     webbrowser.open_new(referer_url)
-                    EmailSender.send_email(message_title, email_txt)
-
-                    # --- Specific Floor
-                    if available_future_desk['floor'] == 'Mezzazine':
-                        days.remove(date)
+                    # EmailSender.send_email(message_title, email_txt)
+                    show_notification_windows(message_title, message_txt + f"\n \n {referer_url}")
 
                     if UpdateDesk.book_seat(available_future_desk['code'], date):
                         message_success = Parameters.mail_success_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
                         print(f"{message_success}\n")
                         EmailSender.send_email("Booked", message_success + f"\n \n {Parameters.planner_url}")
+
+                    # --- Specific Floor
+                    if available_future_desk['floor'] == 'Mezzazine':
+                        days.remove(date)
 
                 # elif available_desk in my_booked_desks and (available_future_desk['floor'] == '2nd Floor' or available_future_desk['floor'] == '3rd Floor'):
                 elif available_desk in my_booked_desks and available_future_desk['floor'] != 'Mezzazine':
