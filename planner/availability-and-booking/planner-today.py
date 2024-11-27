@@ -96,7 +96,7 @@ def main():
             email_txt = message_txt + f"\n \n {Parameters.planner_url}"
 
             show_notification_windows(message_title, message_txt)
-            EmailSender.send_email(message_title, email_txt)
+            # EmailSender.send_email(message_title, email_txt)
             if UpdateDesk.book_seat(available_desk['code'], today):
                 message_success = Parameters.mail_success_template.substitute(date=today,
                                                                               floor=available_desk['floor'], code=available_desk['code'])

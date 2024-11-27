@@ -20,8 +20,13 @@ def pick_random_seat(file_path):
         if not seats:
             raise ValueError("The JSON list is empty.")
 
+        # Extract weights
+        weights = [obj['weight'] for obj in seats]
+
+        # Make a weighted random choice
+        random_seat = random.choices(seats, weights=weights, k=1)[0]
         # Select a random object from the list
-        random_seat = random.choice(seats)
+        # random_seat = random.choice(seats)
         return random_seat
 
     except FileNotFoundError:
@@ -71,9 +76,10 @@ def prepare_json_list(days):
     return json_list
 
 def start_post():
+    start_time = time.time()
     days = Parameters.date_strings
     while days:
-        start_time = time.time()
+        start_time_parallel = time.time()
         desk_list = prepare_json_list(days)
         responses = post_json_in_parallel(desk_list, 5)
         for response in responses:
@@ -84,9 +90,9 @@ def start_post():
             if response['status_code'] == 200:
                 days.remove(date)
 
-            end_time_per_list = time.time()
-            execution_time_per_list = end_time_per_list - start_time
-            print(f"Execution Time for a List: {execution_time_per_list:.3f} seconds")
+        end_time_parallel = time.time()
+        execution_time_parallel = end_time_parallel - start_time_parallel
+        print(f"Execution Time parallel call: {execution_time_parallel:.3f} seconds")
         if not days:
             print("All days processed with available data found.")
             break  # Exit the loop if all days have been processed successfully
@@ -97,7 +103,7 @@ def start_post():
 
 
 if __name__ == "__main__":
-    target_time = "12:00:01.0000"
+    target_time = "12:00:01.5000"
     while True:
         # Get the current time
         now = datetime.now()
