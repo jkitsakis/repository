@@ -27,10 +27,7 @@ def read_json_and_create_dict():
 def send_put(desk_booking_id, put_data):
     # Additional headers to append
     additional_headers = {
-        "Referer": f"https://myplanner.netcompany-intrasoft.com/booking/{desk_booking_id}/edit",
-        "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "\"Windows\""
+        "Referer": f"https://myplanner.netcompany-intrasoft.com/booking/{desk_booking_id}/edit"
     }
     Parameters.put_headers.update(additional_headers)
     headers = Parameters.put_headers
@@ -39,7 +36,7 @@ def send_put(desk_booking_id, put_data):
     response = requests.put(Parameters.put_url.substitute(deskbookingid= desk_booking_id),
                             headers=headers,
                             data=put_data)
-
+    print(f"PUT response: {response}")
     put_response= {
         "status_code": response.status_code,
         "json": str(response.json()),
@@ -58,11 +55,12 @@ def find_seat_details(availale_seat_code):
         print("Code not found in the dictionary.")
 
 def get_my_booking_id(date):
-    print(f"URL desk_booking_id: {Parameters.find_desk_booking_id_url}?fromDate={date}&toDate={date}")
+    # print(f"URL desk_booking_id: {Parameters.find_desk_booking_id_url}?fromDate={date}&toDate={date}")
     data = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.get_headers,
                         params={"fromDate": date, "toDate": date}).json()
     # print("Desk Booking ID:", data[0].get("deskBookingId"))
     if data:
+        print(f"desk_booking_id: {data[0].get("deskBookingId")}")
         return data[0].get("deskBookingId")
     else:
         return None

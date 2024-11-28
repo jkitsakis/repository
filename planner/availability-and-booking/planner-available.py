@@ -52,7 +52,7 @@ def process_response_future(response):
 
     return data_list
 
-def make_my_booked_desks_request():
+def get_my_booked_desks():
     """Make a GET request for a specific date."""
     response_future = requests.get(Parameters.my_booked_desks_url, headers=Parameters.get_headers)
 
@@ -77,7 +77,7 @@ def show_notification_windows(title, message):
 def main():
     days = Parameters.date_strings
     while True:
-        my_booked_desks = make_my_booked_desks_request()
+        my_booked_desks = get_my_booked_desks()
 
         for date in days:
             print(f"Processing data for {date}")
@@ -92,10 +92,11 @@ def main():
                     message_title = Parameters.message_title_template.substitute(date=date, floor=available_future_desk['floor'])
                     message_txt = Parameters.message_txt_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
                     email_txt = message_txt + f"\n \n {referer_url}"
+                    print(message_txt)
 
                     webbrowser.open_new(referer_url)
                     # EmailSender.send_email(message_title, email_txt)
-                    show_notification_windows(message_title, message_txt + f"\n \n {referer_url}")
+                    show_notification_windows(message_title, message_txt)
 
                     if UpdateDesk.book_seat(available_future_desk['code'], date):
                         message_success = Parameters.mail_success_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
@@ -124,7 +125,7 @@ def main():
 
         # Wait before checking again (e.g., 1 hour)
         print("Waiting for the next check...\n ---\n")
-        time.sleep(10)  # Delay in seconds (3600 seconds = 1 hour)
+        time.sleep(30)  # Delay in seconds (3600 seconds = 1 hour)
 
 if __name__ == "__main__":
     #Get my booked desks

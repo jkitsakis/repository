@@ -3,10 +3,10 @@ from string import Template
 
 class Parameters:
 
-    # date_strings = ['2024-11-28']
-    date_strings = ['2024-12-02','2024-12-03','2024-12-05','2024-12-06']
+    date_strings = ['2024-11-29','2024-12-03','2024-12-04']
+    # date_strings = ['2024-12-02','2024-12-03','2024-12-05','2024-12-06']
 
-    cookie = 'Path=/; Path=/; Path=/; Path=/; _ga=GA1.1.2086248922.1725605193; _ga_PV0JVKBGJ5=GS1.1.1728549146.3.1.1728549241.0.0.0; TS00000000076=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4109d0002c414daca58a0b699f46146bcbde638c98ad92ed06571e023144e38b763b9466c6b7bf992381b930f3125a803c7b3e4e3bda2704b04d7c23c1bf8fbb57c98046742f4ddb9b2e79b8514879e75568ac15d179109caeaebf3e0a82af0718e8372c5870af9f96c815662ae274527f65aa5e977b4fd7820b34da5938db370b9138f90138be50d7c51564be260b2d32c0e4ddf82d17a7bef6a7fd0ca61788d469ad71428bf9c346073af2a64d77d44810d7005e3f11a26b0480f6b76c05f82fc5a4bfb36cb5f3ee07a899697550a1a8ae6d59; TSPD_101_DID=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4106380090e31c1c8fd8def8622a1c50a3e582f0eafd739bc15ef7424e7b0df059e5eb21ab4ad20ffe6c716dfc942ac32212737c2234ecd3605f0866; JSESSIONID=90F817159AACF58CADC0DB555AB49D3D; TS010ee64b=01eb1053a0e0713e8f270c995c0bd6f47a135f00018a5d0757f78f68cf1c76abc73b29753d30381e0689ceae158123e654042a67f592217e2b48e8938123aba69a70298092fe967142dabf3e55b8fe77b84942c44f; TSf455e12a027=0804a8c53bab20006ab196a4697679331da38dc6413244b818737ef6a3116d41745c3580cd2cc72c08b27018d1113000d65cafce01da141dbded7619c957f4ce3c8781e507f02768cd87bbe5715a3793aa1ad3828d2ade4602f2b0aa22db6b61'
+    cookie = 'Path=/; Path=/; Path=/; Path=/; _ga=GA1.1.2086248922.1725605193; _ga_PV0JVKBGJ5=GS1.1.1728549146.3.1.1728549241.0.0.0; TS00000000076=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4109d0002c414daca58a0b699f46146bcbde638c98ad92ed06571e023144e38b763b9466c6b7bf992381b930f3125a803c7b3e4e3bda2704b04d7c23c1bf8fbb57c98046742f4ddb9b2e79b8514879e75568ac15d179109caeaebf3e0a82af0718e8372c5870af9f96c815662ae274527f65aa5e977b4fd7820b34da5938db370b9138f90138be50d7c51564be260b2d32c0e4ddf82d17a7bef6a7fd0ca61788d469ad71428bf9c346073af2a64d77d44810d7005e3f11a26b0480f6b76c05f82fc5a4bfb36cb5f3ee07a899697550a1a8ae6d59; TSPD_101_DID=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4106380090e31c1c8fd8def8622a1c50a3e582f0eafd739bc15ef7424e7b0df059e5eb21ab4ad20ffe6c716dfc942ac32212737c2234ecd3605f0866; JSESSIONID=90F817159AACF58CADC0DB555AB49D3D; TS010ee64b=01eb1053a0b28b7a7c935e83a91435ee0a52719d0265d53581da5c647052f8dd36d97cb81874a3aafde7715030ee92d00eec5afcdbeb950d83935217f4b33f5e19696a7f258bc8d763b932c40c1a5f6b765e0a8a7d; TSf455e12a027=0804a8c53bab2000b79e5894ec44d22e9bc436b3544452d095737f147202acff4192f1068c94f73a083f84aa151130005524e82a822fe35acbf22d0fcdc6f00f73ef1a3e97b79b413cf7c7983eeeea06744a639fa0b2be8ed6c1469f277bd628'
 
     planner_url = "https://myplanner.netcompany-intrasoft.com"
 
@@ -19,8 +19,8 @@ class Parameters:
     # put_url = "https://httpbin.org/put"
     put_url = Template("https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/$deskbookingid/edit")
 
-    post_url = "https://httpbin.org/post"
-    # post_url = "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking"
+    # post_url = "https://httpbin.org/post"
+    post_url = "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking"
 
     referer_url=Template("https://myplanner.netcompany-intrasoft.com/booking/$deskbookingid/edit")
 
@@ -38,6 +38,12 @@ class Parameters:
         'Content-Type': 'application/json;charset=UTF-8',
         'Host': 'myplanner.netcompany-intrasoft.com',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'Origin': 'https://myplanner.netcompany-intrasoft.com',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
         'Cookie': cookie
     }
 
@@ -50,7 +56,7 @@ class Parameters:
 
     post_template = Template("{\"dates\":[\"$date\"],\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"code\":\"$code\",\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":[{\"date\":\"$date\",\"type\":\"0036\",\"clientName\":\"\",\"clientAddress\":\"\"}]}")
 
-    put_template = Template("{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":null}],\"datesAndType\":{\"type\":\"0036\",\"date\":\"$date\"}}")
+    put_template = Template("{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":{\"type\":\"0036\",\"date\":\"$date\"}}")
 
     message_title_template = Template("Desk available $date, on $floor ...")
     message_txt_template = Template("Date $date \n Floor $floor \n Desk $code \n ")
