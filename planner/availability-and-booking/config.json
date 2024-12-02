@@ -1,0 +1,43 @@
+{
+  "date_strings": ["2024-12-03", "2024-12-04"],
+  "cookie": "Path=/; Path=/; Path=/; Path=/; _ga=GA1.1.2086248922.1725605193; _ga_PV0JVKBGJ5=GS1.1.1728549146.3.1.1728549241.0.0.0; TS00000000076=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4109d0002c414daca58a0b699f46146bcbde638c98ad92ed06571e023144e38b763b9466c6b7bf992381b930f3125a803c7b3e4e3bda2704b04d7c23c1bf8fbb57c98046742f4ddb9b2e79b8514879e75568ac15d179109caeaebf3e0a82af0718e8372c5870af9f96c815662ae274527f65aa5e977b4fd7820b34da5938db370b9138f90138be50d7c51564be260b2d32c0e4ddf82d17a7bef6a7fd0ca61788d469ad71428bf9c346073af2a64d77d44810d7005e3f11a26b0480f6b76c05f82fc5a4bfb36cb5f3ee07a899697550a1a8ae6d59; TSPD_101_DID=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4106380090e31c1c8fd8def8622a1c50a3e582f0eafd739bc15ef7424e7b0df059e5eb21ab4ad20ffe6c716dfc942ac32212737c2234ecd3605f0866; JSESSIONID=90F817159AACF58CADC0DB555AB49D3D; TS010ee64b=01eb1053a029f468db9ae44152caa480c3c28f29c79723057200a889988e75d95c5e5d9f37b199569f204c25c507d4e086682c318819ad4b37b522d4cc312a3d5311b1f37c0d8fd2d3fc07aa32d67bcae9b93c73c8; TSf455e12a027=0804a8c53bab2000daccf6282b7c92ee284be55de6139c14f02b6150e0106dbc6610dabb4449242608e12d3663113000781a26860b7f76d415997f93cbcd21b71804c01bbd0f0295b0d4894a5d97c16cd0c29454a806f290e63c5df003dd3d64",
+  "planner_url": "https://myplanner.netcompany-intrasoft.com",
+  "available_seats_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/facility/facilities/available/map",
+  "my_booked_desks_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/future?page=0&size=15",
+  "find_desk_booking_id_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/calendar",
+  "put_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/$deskbookingid/edit",
+  "post_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking",
+  "referer_url": "https://myplanner.netcompany-intrasoft.com/booking/$deskbookingid/edit",
+  "get_my_booking_details_url": "https://myplanner.netcompany-intrasoft.com/booking/$deskbookingid",
+  "get_headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Content-Type": "application/json;charset=UTF-8",
+    "Host": "myplanner.netcompany-intrasoft.com",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Cookie": "cookie_placeholder"
+  },
+  "put_headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Content-Type": "application/json;charset=UTF-8",
+    "Host": "myplanner.netcompany-intrasoft.com",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Origin": "https://myplanner.netcompany-intrasoft.com",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Cookie": "cookie_placeholder"
+  },
+  "post_headers": {
+    "Content-Type": "application/json",
+    "Host": "myplanner.netcompany-intrasoft.com",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Cookie": "cookie_placeholder"
+  },
+  "post_template": "{\"dates\":[\"$date\"],\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"code\":\"$code\",\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":[{\"date\":\"$date\",\"type\":\"0036\",\"clientName\":\"\",\"clientAddress\":\"\"}]}",
+  "put_template": "{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":{\"type\":\"0036\",\"date\":\"$date\"}}",
+  "message_title_template": "Desk available $date, on $floor ...",
+  "message_txt_template": "Date $date \n Floor $floor \n Desk $code \n ",
+  "mail_success_template": "Desk $code booked for Date $date."
+}
