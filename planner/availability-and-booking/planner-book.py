@@ -30,11 +30,11 @@ def pick_random_seat(file_path):
         return random_seat
 
     except FileNotFoundError:
-        print(f"File not found: {file_path}")
+        print(f"File not found: {file_path} \n")
     except json.JSONDecodeError:
-        print(f"Error decoding JSON in file: {file_path}")
+        print(f"Error decoding JSON in file: {file_path} \n")
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"An error occurred: {e} \n")
 
 
 lock = threading.Lock()
@@ -77,13 +77,13 @@ def prepare_json_list(days):
 
 def start_post():
     start_time = time.time()
-    days = Parameters.date_strings
+    days = Parameters.dates
     while days:
         start_time_parallel = time.time()
         desk_list = prepare_json_list(days)
         responses = post_json_in_parallel(desk_list, 5)
         for response in responses:
-            print(f"{response}")
+            print(f"{response} \n")
             data_str = response.get('data', '')
             data_dict = json.loads(data_str)
             date = data_dict['dates'][0]
@@ -92,24 +92,24 @@ def start_post():
 
         end_time_parallel = time.time()
         execution_time_parallel = end_time_parallel - start_time_parallel
-        print(f"Execution Time parallel call: {execution_time_parallel:.3f} seconds")
+        print(f"Execution Time parallel call: {execution_time_parallel:.3f} seconds \n")
         if not days:
             print("All days processed with available data found.")
             break  # Exit the loop if all days have been processed successfully
 
     end_time = time.time()
     execution_time = end_time - start_time
-    print(f"Execution Time: {execution_time:.3f} seconds")
+    print(f"Execution Time: {execution_time:.3f} seconds \n")
 
 
 if __name__ == "__main__":
-    target_time = "12:00:01.5000"
+    target_time= Parameters.start_time
     while True:
         # Get the current time
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S.%f")[:-2]  # Match format to "12:00:00.0000"
         if current_time >= target_time:
-            print(f"Execution Time: {current_time}")
+            print(f"Execution Time: {current_time}\n")
             start_post()
             break  # Exit loop after execution
 

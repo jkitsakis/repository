@@ -3,7 +3,8 @@ from string import Template
 
 
 class Parameters:
-    date_strings = []
+    dates = []
+    start_time=""
     cookie = ""
     planner_url = ""
     available_seats_url = ""
@@ -23,7 +24,8 @@ class Parameters:
         with open(json_file, 'r') as file:
             config = json.load(file)
 
-        Parameters.date_strings = config.get("date_strings", [])
+        Parameters.dates = config.get("dates", [])
+        Parameters.start_time= config.get("start_time", "")
         Parameters.cookie = config.get("cookie", "")
         Parameters.planner_url = config.get("planner_url", "")
         Parameters.available_seats_url = config.get("available_seats_url", "")

@@ -75,7 +75,7 @@ def show_notification_windows(title, message):
     )
 
 def main():
-    days = Parameters.date_strings
+    days = Parameters.dates
     while True:
         my_booked_desks = get_my_booked_desks()
 
