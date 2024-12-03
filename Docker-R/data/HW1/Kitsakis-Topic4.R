@@ -1,5 +1,5 @@
 # Load the dataset 
-poke_data <- read.csv("DAMA51//HW1//datasets//pokedex.csv", header = TRUE, sep = ",")
+poke_data <- read.csv("datasets//pokedex.csv", header = TRUE, sep = ",")
 
 #
 #a.
@@ -15,7 +15,7 @@ poke_data$Name <- NULL
 
 # Fetch record for "Omastar"
 omastar_record <- poke_data["Omastar",]
-omastar_data
+omastar_record
 
 #b. Identifying Specific pokemons
 # number of Pokemon that do not have a second type

@@ -8,4 +8,4 @@ services:
     environment:
       - PASSWORD=rstudio  # Replace with a secure password
     volumes:
-      - ./data:/home/rstudio  # Mount data directory for persistence
+      - ./data:/home/rstudio:rw  # Mount data directory for persistence

@@ -5,7 +5,7 @@
 #  a.	
 #
 # load and read data 
-data <- read.csv("DAMA51//HW1//datasets//Disease_symptom_and_patient_profile_dataset.csv", header = TRUE, sep = ",")
+data <- read.csv("datasets//Disease_symptom_and_patient_profile_dataset.csv", header = TRUE, sep = ",")
 
 # Inspect dataset structure
 str(data)

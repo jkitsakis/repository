@@ -1,5 +1,5 @@
 # a
-studentData <- read.csv("DAMA51//HW1//datasets//StudentPerformanceFactors.csv", header = TRUE, sep = ",")
+studentData <- read.csv("datasets//StudentPerformanceFactors.csv", header = TRUE, sep = ",")
 
 # Inspect structure
 str(studentData)
