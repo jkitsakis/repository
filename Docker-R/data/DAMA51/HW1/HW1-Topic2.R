@@ -1,102 +1,65 @@
 # 
 # Topic 2
 # 
-#  a.	Inspect the dataset, using the str() and head() functions, 
-#      and fill in the information requested in the table below
-# 
-# | |  Answer  |
-# |:-----------------------------------------------------------|:--|
-# | Number of dataset records                                  |   |
-# | Number of numeric attributes (integer)                     |   |
-# | Value of the attribute “Disease” of the 3rd dataset record |   |
+
+#  a.	
 #
+# load and read data 
+data <- read.csv("DAMA51//HW1//datasets//Disease_symptom_and_patient_profile_dataset.csv", header = TRUE, sep = ",")
 
-# step 1 : read data from disease-symptoms-and-patient-profile-dataset.csv
-df <- read.csv("DAMA51//HW1//Disease_symptom_and_patient_profile_dataset.csv", header = TRUE, sep = ",")
+# Inspect dataset structure
+str(data)
 
-head(df)
-# print(data.class(df))
-# print(data.frame(df))
+# view the first rows
+head(data)
 
-num_records <- nrow(df)
+num_records <- nrow(data)
 sprintf("Number of dataset records: %d", num_records)
 
-str(df)
-numeric_columns <- sum(sapply(df, is.numeric))
+
+numeric_columns <- sum(sapply(data, is.numeric))
 sprintf("Total numeric columns: %d", numeric_columns)
 
-third_row_value <- df[3, "Disease"]
-print(third_row_value)
+third_row <- data[3, "Disease"]
+print(third_row)
 
 
 resultdf <- data.frame(
   Questions = c("Number of dataset records", "Number of numeric attributes (integer)", "Value of the attribute “Disease” of the 3rd dataset record"),
-  Answer = c(num_records, numeric_columns, third_row_value)
+  Answer = c(num_records, numeric_columns, third_row)
 )
 
 print(resultdf)
 
 # 
-# b. Create a contingency table, using R, with absolute frequencies for the attributes Fever and Cough. 
-#
-# |  | Cough |
-# | --- | --- |
-# | Fever | No | Yes | Sum |
-# | No |  |  |  |
-# | Yes |  |  |  |
-# | Sum |  |  |  |
+# b. Create a contingency table
 
-fever <- c(df$Fever)
-cough <- c(df$Cough)
-dfb <- data.frame(Fever=fever,Cough=cough)
-print(dfb)
-
-contingency_table <- table(dfb$Fever, dfb$Cough)
-print(contingency_table)
-
-# Add row and column sums. The addmargins() function in R adds row and column sums to the contingency table, providing additional details on data’s distribution
-contingency_table_with_sums <- addmargins(contingency_table)
-
-# Print the table
-print(contingency_table_with_sums)
+# Contingency table
+table <- table(data$Fever, data$Cough)
+print(table)
+addmargins(table)  # Add row and column sums
 
 
-#c
-
-fatigue_counts  <- table(df$Fatigue)
-print(fatigue_counts )
-
-# Create the bar chart
-ggplot(df, aes(x = Fatigue)) +
-  geom_bar(fill = "skyblue", color = "black") +
-  labs(title = "Frequency of Fatigue Symptom",
-       x = "Fatigue",
-       y = "Frequency") +
-  theme_minimal()
+#c. bar chart 
+fatigue_sums <- table(data$Fatigue)
+print(fatigue_sums)
+barplot(fatigue_sums, col = c("blue", "red"), main = "Fatigue Symptom Frequency",
+        xlab = "Fatigue", ylab = "Count")
 
 
-#d
-# Create a table of counts for Cholesterol levels
-cholesterol_counts <- table(df$Cholesterol)
-
-# Basic pie chart
-pie(cholesterol_counts, main = "Distribution of Cholesterol Levels", col = c("lightblue", "lightgreen", "lightcoral"))
+#d. Pie chart 
+cholesterol_sums <- table(data$Cholesterol)
+pie(cholesterol_sums, main = "Cholesterol Levels", col = c("blue", "green", "red"))
 
 
 
-#e
-# Create the data frame
-dfe <- data.frame(Disease = df$Disease, Age = df$Age)
+#e. Box plots for Age by Disease
+boxplot(Age ~ Disease, data = data, main = "Age Distribution by Disease",
+        xlab = "Disease", ylab = "Age")
 
-# Print the data frame
-print(dfe)
+# Specific analysis for Typhoid Fever
+typhoid_age <- data$Age[data$Disease == "Typhoid Fever"]
+# statistical summary of the typhoid_age 
+summary(typhoid_age)  # Provides a summary of the age group
 
-df_typhoid <- df[df$Disease == "Typhoid Fever", ]
 
-ggplot(dfe, aes(x = Disease, y = Age, fill = Disease)) +
-  geom_boxplot() +
-  scale_fill_brewer(palette = "Set3") +
-  labs(title = "Age Distribution Across Diseases",
-       x = "Disease",
-       y = "Age") +
-  theme_minimal()

@@ -17,6 +17,11 @@ class Parameters:
     get_headers = {}
     post_headers = {}
     put_headers = {}
+    message_title_template=""
+    message_txt_template=""
+    mail_success_template=""
+    post_template=""
+    put_template=""
 
     @staticmethod
     def load_from_json(json_file):

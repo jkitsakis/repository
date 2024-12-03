@@ -17,3 +17,5 @@
 /.idea/inspectionProfiles/*.xml
 /.idea/*.xml
 /.idea/*.iml
+/planner/availability-and-booking/__pycache__/*.pyc
+/planner/availability-and-booking-structured/.idea

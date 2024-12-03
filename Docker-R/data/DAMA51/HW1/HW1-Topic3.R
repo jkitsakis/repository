@@ -1,55 +1,62 @@
 # a
-StudentData <- read.csv("DAMA51//HW1//StudentPerformanceFactors.csv", header = TRUE, sep = ",")
+studentData <- read.csv("DAMA51//HW1//datasets//StudentPerformanceFactors.csv", header = TRUE, sep = ",")
 
-str(StudentData)
+# Inspect structure
+str(studentData)
 
-num_records <- nrow(StudentData)
+# Number of records
+num_records <- nrow(studentData)
 sprintf("Number of dataset records: %d", num_records)
 
-num_columns <- ncol(StudentData)
+# Number of attributes
+num_columns <- ncol(studentData)
 sprintf("Total number of columns: %d", num_columns)
 
-numeric_columns <- sum(sapply(StudentData, is.numeric))
+numeric_columns <- sum(sapply(studentData, is.numeric))
 sprintf("Total numeric columns: %d", numeric_columns)
 
-resultdf <- data.frame(
+result_a <- data.frame(
   Questions = c("Number of records in the dataset", "Number of different attributes", "Number of numeric attributes (integer)"),
   Answer = c(num_records, num_columns, numeric_columns)
 )
 
-#b
-StudentDataNumeric <- StudentData[, sapply(StudentData, is.numeric)]
+print(result_a)
+
+#b. numeric attributes
+StudentDataNumeric <- studentData[, sapply(studentData, is.numeric)]
 print(StudentDataNumeric)
 
-#c
-# Calculate the correlation matrix for the numeric subset
+#c.Calculate the correlation matrix for the numeric subset
 correlation_matrix <- cor(StudentDataNumeric, method = "pearson")
-
-# Display the correlation matrix
 print(correlation_matrix)
 
 
 # Create a heatmap of the correlation matrix
 heatmap(correlation_matrix)
+max_corr_value <- max(correlation_matrix[correlation_matrix != 1])  # Exclude diagonal (1's)
+print(max_corr_value)
+# Find the position of the maximum correlation value
+max_corr_pair <- which(correlation_matrix == max_corr_value, arr.ind = TRUE)
+print(max_corr_pair)
 
-# Assuming you have already created `correlation_matrix`:
-# correlation_matrix <- cor(StudentDataNumeric, method = "pearson")
+#d. Specific correlations
+cor_attendance_hours <- cor(studentData$Attendance, studentData$Hours_Studied, method = "pearson")
+cor_attendance_exam <- cor(studentData$Attendance, studentData$Exam_Score, method = "pearson")
+cor_tutoring_prev <- cor(studentData$Tutoring_Sessions, studentData$Previous_Scores, method = "pearson")
+cor_physical_sleep <- cor(studentData$Physical_Activity, studentData$Sleep_Hours, method = "pearson")
 
-# Set the lower triangle of the matrix to NA to avoid duplicates
-correlation_matrix[lower.tri(correlation_matrix)] <- NA
+# Create a table to display the pairs and their correlation coefficients
+result_d <- data.frame(
+  Pair = c("(Attendance, Hours_Studied)", "(Attendance, Exam_Score)", 
+           "(Tutoring_Sessions, Previous_Scores)", "(Physical_Activity, Sleep_Hours)"),
+  Pearson_Correlation = c(cor_attendance_hours, cor_attendance_exam, cor_tutoring_prev, cor_physical_sleep)
+)
+print(result_d)
 
-# Find the maximum absolute correlation value
-max_corr <- max(abs(correlation_matrix), na.rm = TRUE)
-
-# Identify the pairs of variables with the strongest positive and negative correlations
-strongest_positive_pair <- which(correlation_matrix == max_corr, arr.ind = TRUE)
-strongest_negative_pair <- which(correlation_matrix == -max_corr, arr.ind = TRUE)
-
-# Display results
-print(paste("The pair with the strongest positive correlation is:", 
-            colnames(correlation_matrix)[strongest_positive_pair[1]], "and", 
-            rownames(correlation_matrix)[strongest_positive_pair[2]]))
-
-print(paste("The pair with the strongest negative correlation is:", 
-            colnames(correlation_matrix)[strongest_negative_pair[1]], "and", 
-            rownames(correlation_matrix)[strongest_negative_pair[2]]))
+#e. Scatter plot of attributes Exam_Score and Hours_Studied
+plot(studentData$Hours_Studied, studentData$Exam_Score,
+     xlab = "Hours Studied",  # Label for x-axis
+     ylab = "Exam Score",     # Label for y-axis
+     main = "Scatter Plot",   # Title
+     pch = 19,                # Point type (19 is a solid circle)
+     col = "blue")            # Point color (blue)
