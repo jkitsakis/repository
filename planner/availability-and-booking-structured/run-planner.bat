@@ -1,6 +1,6 @@
 @echo off
 :start
-title planner availability check
+title planner
 echo Running Planner script...
 python main.py
 echo Python script finished. Waiting for the next run...
