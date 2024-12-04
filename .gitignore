@@ -21,3 +21,8 @@
 /planner/availability-and-booking-structured/.idea
 /Docker-R/data/.local
 /Docker-R/data/.config
+/planner/availability-and-booking-structured/availability/__pycache__/*.pyc
+/planner/availability-and-booking-structured/booking/__pycache__/*.pyc
+/planner/availability-and-booking-structured/configuration/__pycache__/*.pyc
+/planner/availability-and-booking-structured/utilities/__pycache__/*.pyc
+/planner/availability-and-booking/.idea/*.name
