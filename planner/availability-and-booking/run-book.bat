@@ -1,8 +1,6 @@
 @echo off
 :start
-title planner availability check
+title Planner Book Desk
 echo Running Python script...
 python planner-book.py
-echo Python script finished. Waiting for the next run...
-timeout /t 60 /nobreak
-goto start
+pause

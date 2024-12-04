@@ -94,7 +94,7 @@ def main_avalilability():
                     email_txt = message_txt + f"\n \n {referer_url}"
                     print(message_txt)
 
-                    webbrowser.open_new(referer_url)
+                    # webbrowser.open_new(referer_url)
                     # EmailSender.send_email(message_title, email_txt)
                     show_notification_windows(message_title, message_txt)
 
@@ -110,7 +110,6 @@ def main_avalilability():
                 # elif available_desk in my_booked_desks and (available_future_desk['floor'] == '2nd Floor' or available_future_desk['floor'] == '3rd Floor'):
                 elif available_desk in my_booked_desks and available_future_desk['floor'] != 'Mezzazine':
                     print(f"Desk {available_desk['code']} on {available_future_desk['floor']} is already booked. Search again ...\n")
-
                 else:
                     #already booked. no search again
                     print(f"Already booked for {date} will be removed from dates array \n")
