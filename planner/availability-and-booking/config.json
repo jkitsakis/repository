@@ -1,7 +1,7 @@
 {
-  "dates": ["2024-12-04"],
-  "start_time": "11:31:02.5000",
-  "cookie": "Path=/; Path=/; Path=/; Path=/; _ga=GA1.1.2086248922.1725605193; _ga_PV0JVKBGJ5=GS1.1.1728549146.3.1.1728549241.0.0.0; TS00000000076=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4109d0002c414daca58a0b699f46146bcbde638c98ad92ed06571e023144e38b763b9466c6b7bf992381b930f3125a803c7b3e4e3bda2704b04d7c23c1bf8fbb57c98046742f4ddb9b2e79b8514879e75568ac15d179109caeaebf3e0a82af0718e8372c5870af9f96c815662ae274527f65aa5e977b4fd7820b34da5938db370b9138f90138be50d7c51564be260b2d32c0e4ddf82d17a7bef6a7fd0ca61788d469ad71428bf9c346073af2a64d77d44810d7005e3f11a26b0480f6b76c05f82fc5a4bfb36cb5f3ee07a899697550a1a8ae6d59; TSPD_101_DID=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4106380090e31c1c8fd8def8622a1c50a3e582f0eafd739bc15ef7424e7b0df059e5eb21ab4ad20ffe6c716dfc942ac32212737c2234ecd3605f0866; JSESSIONID=3A274348EEBDD3EA39692F8B4EF84A52; TS010ee64b=01eb1053a0e4beac02956dbe436de936cc33fea9cd765785beb4d5ced4504246be53935b7c96e20b83e72ef9b1ea6fd9d5f15b7fedc8abbeb5cf966779f33783eb4cd39f77fc05a3997561f05ffd81a80e0755ee1e; TSf455e12a027=0804a8c53bab2000a55bbc5e5c2645d80b3f06bee3c2b67952efa6b3e217d5bbe37bf018e6058d24083c9f8ab81130003a0f8b85393b7a9c5b6fb3d1142b7c4668a5a7de7b2baa83df377f955b3a9e965e6353129d29daaee3c35d2756d59e82",
+  "dates": ["2024-12-06"],
+  "start_time": "12:00:02.5000",
+  "cookie": "Path=/; Path=/; Path=/; Path=/; _ga=GA1.1.2086248922.1725605193; _ga_PV0JVKBGJ5=GS1.1.1728549146.3.1.1728549241.0.0.0; TS00000000076=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4109d0002c414daca58a0b699f46146bcbde638c98ad92ed06571e023144e38b763b9466c6b7bf992381b930f3125a803c7b3e4e3bda2704b04d7c23c1bf8fbb57c98046742f4ddb9b2e79b8514879e75568ac15d179109caeaebf3e0a82af0718e8372c5870af9f96c815662ae274527f65aa5e977b4fd7820b34da5938db370b9138f90138be50d7c51564be260b2d32c0e4ddf82d17a7bef6a7fd0ca61788d469ad71428bf9c346073af2a64d77d44810d7005e3f11a26b0480f6b76c05f82fc5a4bfb36cb5f3ee07a899697550a1a8ae6d59; TSPD_101_DID=0804a8c53bab2800052b11046155e2079d406b493688b1c1eae347c0cdc79b6a22bbc0c27f3b3f57d05d3f07d9fd062808406f9e4106380090e31c1c8fd8def8622a1c50a3e582f0eafd739bc15ef7424e7b0df059e5eb21ab4ad20ffe6c716dfc942ac32212737c2234ecd3605f0866; JSESSIONID=3A274348EEBDD3EA39692F8B4EF84A52; TS010ee64b=01eb1053a0f34ec8e0a79739cb197da361c34f5452dc5356041a5cd03869ed11c84c47b3a8ce09dc1d01f0831b72f2b403e3a316b25424b877bc29c026eb242dcb61029333ba7d300adeaa63a129adb45ce70eb5bb; TSf455e12a027=0804a8c53bab20002981c0d296083775cf5ed96964bc52cb1c87e29c250350dbdec4dd207e0179a408b9ad9ac2113000cd5092b3ed415ffbb8164ed50c34f920a2384e80950c8dd95c9911aed43b254ebdac3292a13e90f1118f868697933f6a",
   "planner_url": "https://myplanner.netcompany-intrasoft.com",
   "available_seats_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/facility/facilities/available/map",
   "my_booked_desks_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/future?page=0&size=15",
@@ -18,16 +18,10 @@
     "Cookie": "cookie_placeholder"
   },
   "put_headers": {
-    "Accept": "application/json, text/plain, */*",
     "Content-Type": "application/json;charset=UTF-8",
     "Host": "myplanner.netcompany-intrasoft.com",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "Origin": "https://myplanner.netcompany-intrasoft.com",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": "\"Windows\"",
     "Cookie": "cookie_placeholder"
   },
   "post_headers": {
@@ -37,7 +31,7 @@
     "Cookie": "cookie_placeholder"
   },
   "post_template": "{\"dates\":[\"$date\"],\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"code\":\"$code\",\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":[{\"date\":\"$date\",\"type\":\"0036\",\"clientName\":\"\",\"clientAddress\":\"\"}]}",
-  "put_template": "{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":{\"type\":\"0036\",\"date\":\"$date\"}}",
+  "put_template": "{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"},\"datesAndType\":{\"type\":\"0036\",\"extraDay\": false,\"date\":\"$date\"}}",
   "message_title_template": "Desk available $date, on $floor ...",
   "message_txt_template": "Date $date \n Floor $floor \n Desk $code \n ",
   "mail_success_template": "Desk $code booked for Date $date."

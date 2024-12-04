@@ -33,13 +33,12 @@ def send_put(desk_booking_id, put_data):
     headers = Parameters.put_headers
     print(f"PUT headers: {headers}")
     # Make the PUT request
-    response = requests.put(Parameters.put_url.substitute(deskbookingid= desk_booking_id),
+    response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id),
                             headers=headers,
                             data=put_data)
     print(f"PUT response: {response}")
     put_response= {
         "status_code": response.status_code,
-        "json": str(response.json()),
         "data": put_data,
         "text": response.text
     }
@@ -75,6 +74,7 @@ def book_seat(available_seat_code, date):
         y = seat_details['y']
 
         data_to_send = Parameters.put_template.substitute(date=date,
+                                                          code=code,
                                                           positionId=positionId,
                                                           facilityId=facilityId,
                                                           x=x,
@@ -86,8 +86,8 @@ def book_seat(available_seat_code, date):
             if (put_response['status_code'] != 200 or
                     any(keyword in put_response['text'].lower() for keyword in ['rejected', 'unauthorized'])):
                 notification.notify(
-                    title="Update Failed",
-                    message=f"Error: {put_response['json']} (Status: {put_response['status_code']})",
+                    title=f"Update Failed (Status: {put_response['status_code']})",
+                    message=f"Error: {put_response['text']} ",
                     app_name="Data Alert",
                     timeout=60  # Duration of the notification in seconds
                 )
@@ -96,7 +96,7 @@ def book_seat(available_seat_code, date):
             else:
                 notification.notify(
                     title="Update Success !!!",
-                    message=f"Success: {put_response['json']} (Status: {put_response['status_code']})",
+                    message=f"Success: {put_response['text']} (Status: {put_response['status_code']})",
                     app_name="Data Alert",
                     timeout=60  # Duration of the notification in seconds
                 )
