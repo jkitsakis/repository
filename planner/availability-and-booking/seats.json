@@ -101,7 +101,7 @@
 		"x": 964,
 		"y": 1943,
 		"code": "018",
-		"weight": 5
+		"weight": 1
 	},
 	{
 		"facilityId": "6448d14dbf530c0226ea4d6a",
@@ -109,7 +109,7 @@
 		"x": 925,
 		"y": 2061,
 		"code": "017",
-		"weight": 5
+		"weight": 1
 	},
 	{
 		"facilityId": "6448d14dbf530c0226ea4d6a",
@@ -117,7 +117,7 @@
 		"x": 998,
 		"y": 2088,
 		"code": "019",
-		"weight": 1
+		"weight": 3
 	},
 	{
 		"facilityId": "6448d14dbf530c0226ea4d6a",
@@ -125,7 +125,7 @@
 		"x": 1069,
 		"y": 2122,
 		"code": "020",
-		"weight": 1
+		"weight": 3
 	},
 	{
 		"facilityId": "6448d14dbf530c0226ea4d6a",

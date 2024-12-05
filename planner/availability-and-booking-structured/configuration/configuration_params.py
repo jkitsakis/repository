@@ -30,7 +30,7 @@ class Parameters:
             config = json.load(file)
 
         Parameters.dates = config.get("dates", [])
-        Parameters.start_time= config.get("start_time", "12:00:02.0000")
+        Parameters.start_time= config.get("start_time", "12:00:03.0000")
         Parameters.sleep_in_availability= config.get("sleep_in_availability", 10)
         Parameters.sleep_in_book = config.get("sleep_in_book", 0.001)
         Parameters.cookie = config.get("cookie", "")

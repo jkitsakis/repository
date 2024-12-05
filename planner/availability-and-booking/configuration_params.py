@@ -30,7 +30,7 @@ class Parameters:
             config = json.load(file)
 
         Parameters.dates = config.get("dates", [])
-        Parameters.start_time= config.get("start_time", "12:00:02.0000")
+        Parameters.start_time= config.get("start_time", "12:00:03.0000")
         Parameters.cookie = config.get("cookie", "")
         Parameters.planner_url = config.get("planner_url", "")
         Parameters.available_seats_url = config.get("available_seats_url", "")
