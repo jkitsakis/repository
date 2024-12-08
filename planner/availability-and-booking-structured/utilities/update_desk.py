@@ -59,7 +59,6 @@ def get_my_booking_id(date):
                         params={"fromDate": date, "toDate": date}).json()
     # print("Desk Booking ID:", data[0].get("deskBookingId"))
     if data:
-        print(f"desk_booking_id: {data[0].get("deskBookingId")}")
         return data[0].get("deskBookingId")
     else:
         return None
