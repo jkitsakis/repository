@@ -26,3 +26,14 @@
 /planner/availability-and-booking-structured/configuration/__pycache__/*.pyc
 /planner/availability-and-booking-structured/utilities/__pycache__/*.pyc
 /planner/availability-and-booking/.idea/*.name
+/planner/availability-and-booking/.idea
+/planner/availability-and-booking/.idea/*.gitignore
+/planner/availability-and-booking/.idea/*.iml
+/planner/availability-and-booking/.idea/inspectionProfiles/*.xml
+/planner/availability-and-booking/.idea/*.xml
+/planner/availability-and-booking/.idea/.gitignore
+/planner/availability-and-booking/.idea/availability-and-booking.iml
+/planner/availability-and-booking/.idea/inspectionProfiles/profiles_settings.xml
+/planner/availability-and-booking/.idea/misc.xml
+/planner/availability-and-booking/.idea/modules.xml
+/planner/availability-and-booking/.idea/vcs.xml

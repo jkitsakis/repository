@@ -31,19 +31,19 @@ def send_put(desk_booking_id, put_data):
     }
     Parameters.put_headers.update(additional_headers)
     headers = Parameters.put_headers
-    print(f"PUT headers: {headers}")
+    # print(f"PUT headers: {headers}")
     # Make the PUT request
     response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id),
                             headers=headers,
                             data=put_data)
-    print(f"PUT response: {response}")
+    # print(f"PUT response: {response}")
     put_response= {
         "status_code": response.status_code,
         "data": put_data,
         "text": response.text
     }
 
-    print(f"PUT put_response: {put_response}")
+    # print(f"PUT put_response: {put_response}")
     return put_response
 
 def find_seat_details(availale_seat_code):
@@ -94,6 +94,7 @@ def book_seat(available_seat_code, date):
                 return False
                 # raise Exception(f"PUT request failed with status code {put_response.status_code}")
             else:
+                print(f"Desk booked: {code}")
                 notification.notify(
                     title="Update Success !!!",
                     message=f"Success: {put_response['text']} (Status: {put_response['status_code']})",

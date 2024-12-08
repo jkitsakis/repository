@@ -103,12 +103,13 @@ def start_post():
 
 def main_book():
     target_time = Parameters.start_time
+    print(f"Execution Starting Time: {target_time}\n")
     while True:
         # Get the current time
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S.%f")[:-2]  # Match format to "12:00:00.0000"
         if current_time >= target_time:
-            print(f"Execution Time: {current_time}\n")
+            print(f"-> {current_time}\n")
             start_post()
             break  # Exit loop after execution
 
