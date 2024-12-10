@@ -31,19 +31,15 @@ def send_put(desk_booking_id, put_data):
     }
     Parameters.put_headers.update(additional_headers)
     headers = Parameters.put_headers
-    # print(f"PUT headers: {headers}")
     # Make the PUT request
     response = requests.put(Parameters.put_url.substitute(deskbookingid=desk_booking_id),
                             headers=headers,
                             data=put_data)
-    # print(f"PUT response: {response}")
     put_response= {
         "status_code": response.status_code,
         "data": put_data,
         "text": response.text
     }
-
-    # print(f"PUT put_response: {put_response}")
     return put_response
 
 def find_seat_details(availale_seat_code):
@@ -54,10 +50,8 @@ def find_seat_details(availale_seat_code):
         print("Code not found in the dictionary.")
 
 def get_my_booking_id(date):
-    # print(f"URL desk_booking_id: {Parameters.find_desk_booking_id_url}?fromDate={date}&toDate={date}")
     data = requests.get(Parameters.find_desk_booking_id_url, headers=Parameters.get_headers,
                         params={"fromDate": date, "toDate": date}).json()
-    # print("Desk Booking ID:", data[0].get("deskBookingId"))
     if data:
         return data[0].get("deskBookingId")
     else:

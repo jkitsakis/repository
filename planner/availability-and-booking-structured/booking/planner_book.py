@@ -12,21 +12,14 @@ from configuration.configuration_params import Parameters
 
 def pick_random_seat(file_path):
     try:
-        # Open and load the JSON file
         with open(file_path, 'r') as file:
             seats = json.load(file)
-
-        # Check if the list is not empty
         if not seats:
             raise ValueError("The JSON list is empty.")
-
-        # Extract weights
         weights = [obj['weight'] for obj in seats]
 
         # Make a weighted random choice
         random_seat = random.choices(seats, weights=weights, k=1)[0]
-        # Select a random object from the list
-        # random_seat = random.choice(seats)
         return random_seat
 
     except FileNotFoundError:
@@ -83,7 +76,7 @@ def start_post():
         desk_list = prepare_json_list(days)
         responses = post_json_in_parallel(desk_list, 5)
         for response in responses:
-            print(f"{response} \n")
+            print(f"{response}")
             data_str = response.get('data', '')
             data_dict = json.loads(data_str)
             date = data_dict['dates'][0]
@@ -103,13 +96,13 @@ def start_post():
 
 def main_book():
     target_time = Parameters.start_time
-    print(f"Execution Starting Time: {target_time}\n")
+    print(f"Execution Starting Time: {target_time}")
     while True:
         # Get the current time
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S.%f")[:-2]  # Match format to "12:00:00.0000"
         if current_time >= target_time:
-            print(f"-> {current_time}\n")
+            print(f"---> GO... - {current_time}\n")
             start_post()
             break  # Exit loop after execution
 
