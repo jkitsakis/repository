@@ -48,7 +48,7 @@ set /p URL=Please paste the url:
 echo Will now download the video or video and playlist located at the above url, is this correct?
 choice
 if errorlevel 2 goto start
-yt-dlp -i -f mp4  %URL% -o "./Downloads/%%(title)s.%%(ext)s"
+yt-dlp -i -f mp4  %URL% -o "./Downloads/%(title)s.%%(ext)s%"
 echo   ____ ___  __  __ ____  _     _____ _____ _____
 echo  / ___/ _ \^|  \/  ^|  _ \^| ^|   ^| ____^|_   _^| ____^|
 echo ^| ^|  ^| ^| ^| ^| ^|\/^| ^| ^|_) ^| ^|   ^|  _^|   ^| ^| ^|  _^|
@@ -71,7 +71,7 @@ set /p URL=Please paste the url:
 echo Will now download the video or video and playlist located at the above url as mp3 files, is this correct?
 choice
 if errorlevel 2 goto start
-yt-dlp -i --extract-audio --audio-quality 0 --embed-metadata --embed-thumbnail --audio-format mp3 %URL% -o "%CD%\Downloads\%(title)s.%(ext)s"
+yt-dlp -i --extract-audio --audio-quality 0 --embed-metadata --embed-thumbnail --audio-format mp3 -o "%(title)s.%%(ext)s%" %URL%
 echo   ____ ___  __  __ ____  _     _____ _____ _____
 echo  / ___/ _ \^|  \/  ^|  _ \^| ^|   ^| ____^|_   _^| ____^|
 echo ^| ^|  ^| ^| ^| ^| ^|\/^| ^| ^|_) ^| ^|   ^|  _^|   ^| ^| ^|  _^|
