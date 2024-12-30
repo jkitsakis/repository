@@ -20,7 +20,7 @@ def main():
     print("1. Booking Module")
     print("2. Availability Module")
     choice = input("Enter the number of your choice: ")
-
+    print("---")
     if choice == "1":
         call_booking_module()
     elif choice == "2":

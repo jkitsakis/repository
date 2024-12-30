@@ -83,28 +83,29 @@ def main_avalilability():
             my_booked_desks = get_my_booked_desks()
 
             for date in days:
-                print(f"Processing data for {date}")
+                print(f"Processing for {date} ...")
                 available_future_desk = make_get_request(date)
 
                 if available_future_desk:
-                    print(f"Found data for {date}:")
+                    print(f"Found desk for {date}:")
                     available_desk = {'code': available_future_desk['code'], 'date': date}
 
                     if available_desk not in my_booked_desks :
-                        referer_url= Parameters.referer_url.substitute(deskbookingid=UpdateDesk.get_my_booking_id(date))
                         message_title = Parameters.message_title_template.substitute(date=date, floor=available_future_desk['floor'])
                         message_txt = Parameters.message_txt_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
-                        email_txt = message_txt + f"\n \n {referer_url}"
                         print(message_txt)
 
                         # webbrowser.open_new(referer_url)
+                        # referer_url = Parameters.referer_url.substitute(
+                        # deskbookingid=UpdateDesk.get_my_booking_id(date))
+                        # email_txt = message_txt + f"\n \n {referer_url}"
                         # EmailSender.send_email(message_title, email_txt)
                         show_notification_windows(message_title, message_txt)
 
                         if UpdateDesk.book_seat(available_future_desk['code'], date):
                             message_success = Parameters.mail_success_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
                             print(f"{message_success}\n")
-                            EmailSender.send_email("Booked", message_success + f"\n \n {Parameters.planner_url}")
+                            EmailSender.send_email("Planner, Desk Booked", message_success + f"\n \n {Parameters.planner_url}")
 
                         # --- Specific Floor
                         if available_future_desk['floor'] == 'Mezzazine':
@@ -130,7 +131,7 @@ def main_avalilability():
             time.sleep(Parameters.sleep_in_availability)  # Delay in seconds (3600 seconds = 1 hour)
         except Exception as e:
             print(f"Connection refused by the server..")
-            print(f"Original cause: {e.__cause__}\n")
+            print(f"Original cause: {e}\n")
             print("Let me sleep for 5 seconds")
             time.sleep(5)
             print(f"Was a nice sleep, now let me continue...\n")
