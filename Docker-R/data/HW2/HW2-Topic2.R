@@ -39,7 +39,15 @@ plot(
   pch = 19
 )
 
-# Combine PC1, PC2, and PC3 in a single pairwise plot
-pairs(pc_data[, 1:3],
-      main = "Pairwise Scatter Plot of PC1, PC2, and PC3",
-      col = "red", pch = 19)
+# 3D Scatter Plot using the first three principal components
+scatterplot3d(
+  x = pc_data[, 1],  # PC1
+  y = pc_data[, 2],  # PC2
+  z = pc_data[, 3],  # PC3
+  xlab = "Principal Component 1",
+  ylab = "Principal Component 2",
+  zlab = "Principal Component 3",
+  main = "3D Scatter Plot: PC1, PC2, and PC3",
+  color = "blue",
+  pch = 19
+)
