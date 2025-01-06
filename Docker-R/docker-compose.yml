@@ -1,11 +1,15 @@
-version: '3'
+version: '3.8'
+
 services:
   rstudio:
     build: .
-    container_name: rstudio_server
+    image: rstudio-server:latest
+    container_name: rstudio
     ports:
       - "8787:8787"
     environment:
-      - PASSWORD=rstudio  # Replace with a secure password
+      PASSWORD: rstudio # Set your password
+      USER: rstudio     # Username for RStudio
     volumes:
-      - ./data:/home/rstudio:rw  # Mount data directory for persistence
+      - ./data:/home/rstudio # Bind a volume for persistent data
+    restart: unless-stopped
