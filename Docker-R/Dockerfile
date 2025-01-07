@@ -1,15 +1,20 @@
-# Use the rocker/rstudio base image
+# Dockerfile
 FROM rocker/rstudio:latest
 
-# Set environment variables
-ENV PASSWORD=rstudio
-ENV USER=rstudio
 
-# Expose RStudio server port
+# Install system dependencies (if required)
+RUN apt-get update && \
+    apt-get install -y \
+    libxml2-dev \
+    libcurl4-openssl-dev \
+    libssl-dev && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+
+# Install any necessary R libraries here
+RUN R -e "install.packages(c('dplyr', 'caret', 'e1071', 'ggplot2', 'tidyverse'), repos='https://cloud.r-project.org')"
+
+# Expose port for RStudio
 EXPOSE 8787
 
-# Set working directory (optional)
-WORKDIR /home/$USER
-
-# Run RStudio as the specified user
 CMD ["/init"]

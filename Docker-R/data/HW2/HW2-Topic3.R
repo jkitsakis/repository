@@ -40,3 +40,27 @@ cat("Accuracy:", accuracy, "\n")
 cat("Precision:", precision, "\n")
 cat("Recall:", recall, "\n")
 cat("F1-Score:", f1_score, "\n")
+
+
+thresholds <- seq(0.1, 0.8, by = 0.1)
+TPR_FPR <- data.frame(Threshold = thresholds, TPR = NA, FPR = NA)
+
+for (i in 1:length(thresholds)) {
+  thr <- thresholds[i]
+  preds <- ifelse(eyes_data$UseOfGlassesPredicted >= thr, 1, 0)
+  conf <- table(preds, true_labels)
+  TP <- conf[2, 2]
+  FP <- conf[2, 1]
+  FN <- conf[1, 2]
+  TN <- conf[1, 1]
+  
+  TPR_FPR$TPR[i] <- TP / (TP + FN)
+  TPR_FPR$FPR[i] <- FP / (FP + TN)
+}
+
+print(TPR_FPR)
+
+
+plot(TPR_FPR$FPR, TPR_FPR$TPR, type = "b", col = "blue", xlab = "False Positive Rate", ylab = "True Positive Rate", main = "ROC Curve")
+
+
