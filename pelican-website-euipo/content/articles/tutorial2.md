@@ -7,10 +7,7 @@ order: 03
 
 **Authentication links**
 
-- Integration : 
-
-Auth.openidconnect.issuerUri: https://auth.test.euipo.europa.eu/t/euipo.europa.eu/oauth2/token
-
-- Other
-
-openidconnect.issuerUri: https://pp.euipo.europa.eu/cas-server-webapp/oidc
+access token url (TEST): https://pp.euipo.europa.eu/cas-server-webapp/oidc/oidcAccessToken
+ 
+access token url (DEV): https://auth.integration.euipo.europa.eu/t/euipo.europa.eu/oauth2/token/oidcAccessToken
+ 
