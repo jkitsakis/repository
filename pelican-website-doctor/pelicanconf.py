@@ -3,7 +3,7 @@ from plugins.configuration_params import Parameters
 
 AUTHOR = Parameters.AUTHOR
 SITENAME = Parameters.SITENAME
-SITEURL = ""
+SITEURL = Parameters.SITEURL
 SITESUBTITLE = Parameters.SITESUBTITLE
 SITESUBTITLE_ESY = Parameters.SITESUBTITLE_ESY
 HOME = Parameters.HOME
@@ -71,7 +71,7 @@ ARTICLE_URL = 'services/{category}/{slug}.html'
 ARTICLE_SAVE_AS = 'services/{category}/{slug}.html'
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['plugins.inject_constants']
+PLUGINS = ['plugins.inject_constants', 'plugins.update_category']
 
 
 # Translations

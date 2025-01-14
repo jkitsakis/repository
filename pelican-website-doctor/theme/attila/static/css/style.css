@@ -191,7 +191,7 @@ td,th {
     --color-background-main: url('/images/background.png');
     --color-background-secondary: #F7F8FA;
     --color-background-contrast: #E1E3E6;
-    --color-background-overlay: rgba(37,40,43,0.9);
+    --color-background-overlay: rgba(74, 100, 120,.30);
     --color-content-lead: #000;
     --color-content-main: #222426;
     --color-content-secondary: #73777D
@@ -801,8 +801,8 @@ button,input,select,textarea {
     width: 100%;
     max-width: 100%;
     margin: 0 0 4rem;
-    border: 1px solid var(--color-background-contrast);
-    background: var(--color-background-secondary)
+/*    border: 1px solid var(--color-background-contrast);*/
+/*    background: var(--color-background-secondary)*/
 }
 
 .post-content table td,.post-content table th {
@@ -810,7 +810,7 @@ button,input,select,textarea {
     padding: 1.5rem;
     font-size: 0.75em;
     line-height: 1.33334em;
-    border: 1px solid var(--color-background-contrast)
+/*    border: 1px solid var(--color-background-contrast)*/
 }
 
 .post-content table th {
@@ -830,7 +830,15 @@ button,input,select,textarea {
     margin: 0 0 4rem
 }
 
+.post-content td:first-child {
+    width: 30%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+
 /* ---- */
+
 .contact-list {
     display: flex;
     flex-direction: column; /* Stack rows vertically */
@@ -849,6 +857,21 @@ button,input,select,textarea {
     display: block; /* Ensures no extra space around the image */
 }
 
+.reduced-width {
+    width: 5%; /* 10% smaller */
+    max-width: 5%;
+    display: block; /* Optional: Ensures no extra space around the image */
+}
+
+@media (max-width: 640px) {
+    .contact-item {
+        max-width: 100%; /* Allow the contact item to take full width */
+    }
+
+    .contact-item img {
+        width: 70%; /* Reduce the image size further for small screens */
+    }
+}
 /*---*/
 
 .post-content .fluid-width-video-wrapper {
@@ -1261,7 +1284,7 @@ button,input,select,textarea {
 }
 
 .blog-header.has-cover {
-    padding-top: calc(24rem + 8vw);
+    padding-top: calc(16rem + 8vw);
     color: white;
     background: black;
     overflow: hidden;
@@ -1744,7 +1767,9 @@ button,input,select,textarea {
     left: 0;
     width: 100%;
     z-index: 400;
-    transition: all ease-out 0.3s
+    transition: all ease-out 0.3s;
+    background: var(--color-background-overlay)
+
 }
 
 @media only screen and (max-width: 640px) {
@@ -2352,7 +2377,7 @@ button,input,select,textarea {
 }
 
 .post-header.has-cover {
-    padding: calc(16rem + 8vw) 0 calc(4rem + 6vw);
+    padding: calc(10rem + 8vw) 0 calc(4rem + 6vw);
     margin-bottom: calc(4rem + 2vw);
     background: black;
     overflow: hidden;
@@ -2605,6 +2630,14 @@ button,input,select,textarea {
 .post-info-label {
     margin-right: 0.75em;
     font-size: 1.6em;
+    line-height: 3rem;
+    font-weight: 400;
+    color: var(--color-content-secondary)
+}
+
+.post-summary {
+    margin-right: 0.75em;
+    font-size: 0.8em;
     line-height: 3rem;
     font-weight: 400;
     color: var(--color-content-secondary)

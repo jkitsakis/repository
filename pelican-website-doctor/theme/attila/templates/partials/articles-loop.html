@@ -1,0 +1,39 @@
+    <div class="extra-pagination">
+        {% include "partials/pagination.html" %}
+    </div>
+
+    {% for article in articles_page.object_list %}
+
+        {% set primary_tag=None %}
+        {% if article.category %}
+            {% set primary_tag=article.category %}
+        {% elif article.tags %}
+            {% set primary_tag=article.tags[0] %}
+        {% endif %}
+
+    <article class="post">
+        <div class="inner">
+            <div class="box post-box">
+                <div class="post-content">
+                    <table class="post-content" >
+                        <tr>
+                            <td>
+                                <img src="{{ SITEURL }}/images/services/eopyy.png"/>
+                            </td>
+                            <td style="padding-left: 15px;">
+                                 <h2 class="post-title">
+                                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.metadata['title']|striptags }}">{{ article.metadata['title'] }}</a>
+                                </h2>
+                               <span class="post-summary">
+                                    {{ article.summary }}
+                               </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+
+    {% include "partials/pagination.html" %}
