@@ -1,0 +1,35 @@
+    <div class="extra-pagination">
+        {% include "partials/pagination.html" %}
+    </div>
+
+    {% for article in articles_page.object_list %}
+        {% if article.category == 'misc' %}
+            {% set primary_tag=None %}
+            {% if article.category %}
+                {% set primary_tag=article.category %}
+            {% elif article.tags %}
+                {% set primary_tag=article.tags[0] %}
+            {% endif %}
+
+            <article class="post">
+                <div class="inner">
+                    <div class="box post-box">
+                        <h2 class="post-title">{{ article.metadata['title'] }} </h2>
+                        <div class="post-content">
+                                <div class="contact-item">
+                                    {% if article.order == '1' %}
+                                        <img src="{{SITEURL}}/images/me.png" style="max-width: 25%;"/>
+                                    {% elif article.order == '2' %}
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.470283633111!2d23.737692499999994!3d37.919442499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bddd0c15cecd%3A0x6b4c9fdbd96baeb1!2zzonPgc-Jzr_PgiDOnM6sz4TPg863IDcwLCDOhs67zrnOvM6_z4IgMTc0IDU2!5e0!3m2!1sel!2sgr!4v1707293961096!5m2!1sel!2sgr"
+                                            style="border:0; height:350px; width:500px" allowfullscreen="true" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    {% endif %}
+                                    <p>{{ article.content }}</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        {% endif %}
+    {% endfor %}
+
+

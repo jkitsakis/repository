@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} - Tags{% endblock %}
+
+{% if HEADER_COVER %}
+  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HEADER_COVER %}
+  {% elif HEADER_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HEADER_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
+  {% endif %}
+{% elif HOME_COVER %}
+  {% if HOME_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HOME_COVER %}
+  {% elif HOME_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HOME_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HOME_COVER %}
+  {% endif %}
+{% elif HEADER_COLOR %}
+  {% set selected_color = HEADER_COLOR %}
+{% endif %}
+
+{% block canonical_url %}<link href="{{ SITEURL }}/{{ TAGS_URL }}" rel="canonical" />{% endblock canonical_url %}
+
+{% if tags %}
+{% set body_class='tags-template' %}
+{% set current_url='/'+TAGS_URL %}
+{% set current_title=SITENAME+' - Tags' %}
+{% set current_display_title='Tags' %}
+{% endif %}
+
+{% block header %}
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="blog-header {% if selected_cover or selected_color %} has-cover {% endif %}">
+      <div class="inner">
+        <h1 class="post-title">{{ current_display_title }}</h1>
+        {% if selected_cover %}
+          <div class="post-cover cover">
+            <img src="{{ selected_cover }}" alt="{{ current_title }}" />
+          </div>
+        {% elif selected_color %}
+          <div class="post-cover cover" style="background-color: {{ selected_color }}">
+        {% endif %}
+      </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+  {% set max_count = (tags|map('last')|map('count')|max) or 1 %}
+  {% set steps = (TAG_CLOUD_STEPS|default(5, true)) - 1 %}
+  <article class="post">
+    <div class="inner tag-cloud">
+      {% for tag, articles in tags|sort %}
+        {% set count = articles|count %}
+        <div class="tag tag-weight-{{ (count/(max_count/steps))|int + 1 }}">
+          <a href="{{ SITEURL }}/{{ tag.url }}" title="{{ count }} article(s) tagged '{{ tag }}'">{{ tag }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </article>
+{% endblock content %}

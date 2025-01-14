@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} - Archives for {{ period | reverse | join (' ') }}{% endblock %}
+
+{% if HEADER_COVER %}
+  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HEADER_COVER %}
+  {% elif HEADER_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HEADER_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
+  {% endif %}
+{% elif HOME_COVER %}
+  {% if HOME_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HOME_COVER %}
+  {% elif HOME_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HOME_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HOME_COVER %}
+  {% endif %}
+{% elif HEADER_COLOR %}
+  {% set selected_color = HEADER_COLOR %}
+{% endif %}
+
+<!-- Year, Month, Date -->
+{% block canonical_url %}<link href="{{ SITEURL }}/{{ period_num[0] }}/{{ period_num[1] }}" rel="canonical" />{% endblock canonical_url %}
+
+{% block header %}
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="blog-header {% if selected_cover or selected_color %} has-cover {% endif %}">
+      <div class="inner">
+        <h1 class="post-title">Archives for {{ period | reverse | join (' ') }}</h1>
+        {% if selected_cover %}
+          <div class="post-cover cover">
+            <img src="{{ selected_cover }}" alt="Archives for {{ period | reverse | join (' ') }}" />
+          </div>
+        {% elif selected_color %}
+          <div class="post-cover cover" style="background-color: {{ selected_color }}">
+        {% endif %}
+    </header>
+{% endblock header %}
+
+{% block content %}
+  <article class="post">
+    <div class="inner">
+      <section class="post-content">
+        <dl>
+        {% for article in dates %}
+          <dt>{{ article.locale_date }}</dt>
+          <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+        {% endfor %}
+        </dl>
+      </section>
+    </div>
+  </article>
+{% endblock content %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} - Articles in the {{ category }} category{% endblock %}
+
+{# <!-- Choosing cover image --> #}
+{% set category_cover = None %}
+{% set category_description = None %}
+{% if CATEGORY_META and CATEGORY_META[category.name.lower()] %}
+  {% set category_cover = CATEGORY_META[category.name.lower()].cover %}
+  {% set category_color = CATEGORY_META[category.name.lower()].color %}
+  {% set category_description = CATEGORY_META[category.name.lower()].description %}
+{% endif %}
+
+{% if category_cover %}
+  {% if category_cover|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = category_cover %}
+  {% elif category_cover.startswith('/') %}
+    {% set selected_cover = SITEURL+category_cover %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+category_cover %}
+  {% endif %}
+{% elif category_color %}
+  {% set selected_color = category_color %}
+{% elif HEADER_COVER %}
+  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HEADER_COVER %}
+  {% elif HEADER_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HEADER_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
+  {% endif %}
+{% elif HOME_COVER %}
+  {% if HOME_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HOME_COVER %}
+  {% elif HOME_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HOME_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HOME_COVER %}
+  {% endif %}
+{% elif HEADER_COLOR %}
+  {% set selected_color = HEADER_COLOR %}
+{% endif %}
+
+{% block canonical_url %}<link href="{{ SITEURL }}/{{category.url}}" rel="canonical" />{% endblock canonical_url %}
+
+{% block header %}
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="blog-header {% if selected_cover or selected_color %} has-cover {% endif %}">
+      <div class="inner">
+        <div class="archive archive-tag box archive-box">
+          <span class="archive-info">
+            <span class="archive-type">{{"Category"}}</span>
+            <span class="archive-count">
+            {% if articles|count == 1 %}
+            {{ articles|count }} Post
+            {% else %}
+            {{ articles|count }} Posts
+            {% endif %}
+            </span>
+          </span>
+          <h2 class="archive-title">{{category.name | title}}</h2>
+          {% if category_description %}
+            <span class="archive-description">{{category_description}}</span>
+          {% endif %}
+        </div>
+
+        {% if selected_cover %}
+          <div class="blog-cover cover">
+            <img src="{{ selected_cover }}" alt="{{ current_title }}" />
+          </div>
+        {% elif selected_color %}
+          <div class="blog-cover cover" style="background-color: {{ selected_color }}">
+        {% endif %}
+      </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+
+<div id="index" class="container">
+  <main class="content" role="main">
+    {% include "partials/loop.html" %}
+  </main>
+</div>
+{% endblock content %}

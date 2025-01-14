@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    {% include 'partials/og.html' %}
+    {% include 'partials/jsonld.html' %}
+{% endblock %}
+
+{% if HEADER_COVER %}
+  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HEADER_COVER %}
+  {% elif HEADER_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HEADER_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
+  {% endif %}
+{% elif HOME_COVER %}
+  {% if HOME_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HOME_COVER %}
+  {% elif HOME_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HOME_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HOME_COVER %}
+  {% endif %}
+{% elif HEADER_COLOR %}
+  {% set selected_color = HEADER_COLOR %}
+{% elif HOME_COLOR %}
+  {% set selected_color = HOME_COLOR %}
+{% endif %}
+
+{% block header %}
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="blog-header {% if selected_cover or selected_color %} has-cover {% endif %}">
+      <div class="inner">
+        <div class="box blog-box">
+          <h1 class="blog-name">{{ SITENAME }}</h1>
+          {% if SITESUBTITLE %}
+          <span class="blog-description">{{ SITESUBTITLE }}</span>
+          {% endif %}
+        </div>
+
+        {% if selected_cover %}
+          <div class="blog-cover cover">
+            <img src="{{ selected_cover }}" alt="{{current_title}}" />
+          </div>
+        {% elif selected_color %}
+          <div class="blog-cover cover" style="background-color: {{ selected_color }}" />
+        {% endif %}
+      </div>
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+
+<div id="index" class="container">
+  <main class="content" role="main">
+    {% include "partials/index-content.html" %}
+  </main>
+</div>
+{% endblock content %}

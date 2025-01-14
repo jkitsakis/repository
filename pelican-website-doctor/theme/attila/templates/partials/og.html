@@ -1,0 +1,56 @@
+{# <!-- Choosing locale --> #}
+{% if OG_LOCALE %}
+  {% set default_locale = OG_LOCALE %}
+{% else %}
+  {% set default_locale = 'en_US' %}
+{% endif %}
+
+{# <!-- Choosing cover image --> #}
+{% if HEADER_COVER %}
+  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HEADER_COVER %}
+  {% elif HEADER_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HEADER_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
+  {% endif %}
+{% elif HOME_COVER %}
+  {% if HOME_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HOME_COVER %}
+  {% elif HOME_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HOME_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HOME_COVER %}
+  {% endif %}
+{% else %}
+  {% set selected_cover = SITEURL+"/"+THEME_STATIC_DIR+"/images/home-bg.jpg" %}
+{% endif %}
+
+{# <!-- Choosing description --> #}
+{% if SITESUBTITLE %}
+    {% set description = SITESUBTITLE %}
+{% else %}
+    {% set description = 'View the blog.' %}
+{% endif %}
+
+<!-- Open Graph -->
+{% for admin in FACEBOOK_ADMINS %}
+  <meta property="fb:admins" content="{{ admin }}" />
+{% endfor %}
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="{{ SITENAME }}"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="blog"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ SITENAME }}"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{ description }}"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="{{ default_locale }}"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{ SITEURL }}/"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{ selected_cover }}">
+
+<!-- Twitter Card -->
+{% for name,link in SOCIAL if name.lower() in ['twitter'] %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ link|replace('http://', 'https://')|replace('https://twitter.com/', '') }}">
+  <meta name="twitter:title" content="{{ SITENAME }}">
+  <meta name="twitter:description" content="{{ description}}">
+  <meta name="twitter:url" content="{{ SITEURL }}/">
+  <meta name="twitter:image:src" content="{{ selected_cover }}">
+{% endfor %}

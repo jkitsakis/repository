@@ -1,0 +1,401 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{# <!-- Choosing cover image --> #}
+{% if article.cover %}
+  {% if article.cover|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = article.cover %}
+  {% elif article.cover.startswith('/') %}
+    {% set selected_cover = SITEURL+article.cover %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+article.cover %}
+  {% endif %}
+{% elif article.og_image %}
+  {% if article.og_image|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = article.og_image %}
+  {% elif article.og_image.startswith('/') %}
+    {% set selected_cover = SITEURL+article.og_image %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+article.og_image %}
+  {% endif %}
+{% elif article.color %}
+  {% set selected_color = article.color %}
+{% elif HEADER_COVER %}
+  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
+    {% set selected_cover = HEADER_COVER %}
+  {% elif HEADER_COVER.startswith('/') %}
+    {% set selected_cover = SITEURL+HEADER_COVER %}
+  {% else %}
+    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
+  {% endif %}
+{% elif HEADER_COLOR %}
+  {% set selected_color = HEADER_COLOR %}
+{% endif %}
+
+{% block canonical_url %}<link href="{{ SITEURL }}/{{ article.url }}" rel="canonical" />{% endblock canonical_url %}
+{% block head %}
+  {{ super() }}
+
+  {% for keyword in article.keywords %}
+    <meta name="keywords" content="{{keyword}}" >
+  {% endfor %}
+
+  {% if description %}
+    <meta name="description" content="{{ description }}">
+  {% elif article.headline %}
+    <meta name="description" content="{{ article.headline }}">
+  {% elif article.summary %}
+    <meta name="description" content="{{ article.summary|striptags|truncate(140) }}">
+  {% endif %}
+
+  {% for author in article.authors %}
+    <meta name="author" content="{{ author }}">
+  {% endfor %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}">
+  {% endfor %}
+
+  {% include 'partials/og_article.html' %}
+  {% include 'partials/jsonld_article.html' %}
+{% endblock %}
+
+{% set primary_tag=None %}
+{% if article.category %}
+    {% set primary_tag=article.category %}
+{% elif article.tags %}
+    {% set primary_tag=article.tags[0] %}
+{% endif %}
+
+{% block header %}
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header {% if selected_cover or selected_color %} has-cover {% endif %}">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">{{ "Article" }}</span>
+          {% if primary_tag %}
+          <span class="post-count">{{primary_tag.name | title}}</span>
+          {% endif %}
+        </span>
+        <h1 class="post-title">{{ article.title }}</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+          {% for author in article.authors %}
+            {% set author_name = author.name | title %}
+            {% if AUTHOR_META and author.name.lower() in AUTHOR_META %}
+              {% set author_name = AUTHOR_META[author.name.lower()].name or author.name %}
+              {% set author_avatar = AUTHOR_META[author.name.lower()].image %}
+            {% endif %}
+
+            {% if author_avatar %}
+              {% if author_avatar|lower|truncate(4, True, '') != "http" %}
+                {% set author_avatar = SITEURL+"/"+author_avatar %}
+              {% endif %}
+            {% endif %}
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="{{ SITEURL }}/{{ author.url }}">
+                <img class="author-profile-image" src="{{author_avatar}}" alt="{{ author_name }}" />
+              </a>
+            </figure>
+          {% endfor %}
+          </div>
+
+          <h4 class="post-meta-author">
+          {% for author in article.authors %}
+            {% set author_name = author.name | title %}
+            {% if AUTHOR_META and author.name.lower() in AUTHOR_META %}
+              {% set author_name = AUTHOR_META[author.name.lower()].name or author.name %}
+            {% endif %}
+            {{ author_name }}
+          {% endfor %}
+          </h4>
+          <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
+          {% if article.modified and SHOW_ARTICLE_MODIFIED_TIME|default(False) %}
+          &bull; <time datetime="{{ article.locale_modified }}"> Updated on {{ article.locale_modified }}</time>
+          {% endif %}
+          {% if article.stats and 'read_mins' in article.stats %}
+          &bull; {{ article.stats['read_mins'] }} min read
+          {% endif %}
+        </div>
+        {% if selected_cover %}
+          <div class="post-cover cover">
+            <img src="{{ selected_cover }}" alt="{{ current_title }}" />
+          </div>
+        {% elif selected_color %}
+          <div class="post-cover cover" style="background-color: {{ selected_color }}">
+        {% endif %}
+      </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            {{article.content}}
+          </section>
+
+          {% set post_footer_inline_style="" %}
+          {% if SHOW_AUTHOR_BIO_IN_ARTICLE | default(False) %}
+            {% set post_footer_inline_style='style="margin: 12rem 0 0;"' %}
+          {% endif %}
+
+          <section class="post-footer" {{post_footer_inline_style}}>
+            <div class="post-share">
+              <span class="post-info-label">{{"Share"}}</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text={{ article.title }}&amp;url={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ SITEURL }}/{{ article.url }}&amp;title={{ article.title }}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject={{ article.title }}&amp;body={{ SITEURL }}/{{ article.url }}">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+            {% if article.tags %}
+            <aside class="post-tags">
+              {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>{% if not loop.last %}{% endif %}{% endfor %}
+            </aside>
+            {% endif %}
+
+            <div class="clear"></div>
+
+            {% if SHOW_AUTHOR_BIO_IN_ARTICLE | default(False) %}
+            {% for author in article.authors %}
+            {% if AUTHOR_META and author.name.lower() in AUTHOR_META %}
+            <aside class="post-author">
+              {% set author_name = AUTHOR_META[author.name.lower()].name or author.name %}
+              {% set author_avatar = AUTHOR_META[author.name.lower()].image %}
+              {% if author_avatar %}
+
+                {% if author_avatar|lower|truncate(4, True, '') != "http" %}
+                  {% set author_avatar = SITEURL+"/"+author_avatar %}
+                {% endif %}
+
+                <figure class="post-author-avatar">
+                  <img src="{{author_avatar}}" alt="{{author_name}}" />
+                </figure>
+              {% endif %}
+                <div class="post-author-bio">
+                  <h4 class="post-author-name"><a href="{{ SITEURL }}/{{author.url}}">{{author_name}}</a></h4>
+                  {% if AUTHOR_META[author.name.lower()].bio %}
+                    <p class="post-author-about">{{AUTHOR_META[author.name.lower()].bio}}</p>
+                  {% endif %}
+                  {% if AUTHOR_META[author.name.lower()].location %}
+                    <span class="post-author-location"><i class="icon icon-location"></i> {{AUTHOR_META[author.name.lower()].location}}</span>
+                  {% endif %}
+                  {% if AUTHOR_META[author.name.lower()].website %}
+                    <span class="post-author-website"><a href="{{AUTHOR_META[author.name.lower()].website}}"><i class="icon icon-globe"></i> Website</a></span>
+                  {% endif %}
+                  <!-- Social linkes in alphabet order. -->
+                  {% if AUTHOR_META[author.name.lower()].facebook %}
+                    <span class="post-author-facebook"><a target="_blank" href="https://facebook.com/{{AUTHOR_META[author.name.lower()].facebook}}"><i class="icon icon-facebook"></i> Facebook</a></span>
+                  {% endif %}
+                  {% if AUTHOR_META[author.name.lower()].github %}
+                    <span class="post-author-github"><a target="_blank" href="https://github.com/{{AUTHOR_META[author.name.lower()].github}}"><i class="icon icon-github"></i> GitHub</a></span>
+                  {% endif %}
+                  {% if AUTHOR_META[author.name.lower()].linkedin %}
+                    <span class="post-author-linkedin"><a target="_blank" href="https://www.linkedin.com/in/{{AUTHOR_META[author.name.lower()].linkedin}}"><i class="icon icon-linkedin"></i> LinkedIn</a></span>
+                  {% endif %}
+                  {% if AUTHOR_META[author.name.lower()].twitter %}
+                    <span class="post-author-twitter"><a target="_blank" href="https://twitter.com/{{AUTHOR_META[author.name.lower()].twitter}}"><i class="icon icon-twitter"></i> Twitter</a></span>
+                  {% endif %}
+                  {% if AUTHOR_META and AUTHOR_META[author.name.lower()] and AUTHOR_META[author.name.lower()].instagram %}
+                  <a target="_blank" href="https://instagram.com/{{AUTHOR_META[author.name.lower()].instagram}}"><i class="icon icon-instagram"></i><span>Instagram</span></a>
+                  {% endif %}
+                </div>
+                <div class="clear"></div>
+            </aside>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+          </section>
+
+          {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+          <script type="text/javascript">
+            var disqus = '{{ DISQUS_SITENAME }}';
+            var disqus_shortname = '{{ DISQUS_SITENAME }}';
+            {% if article.disqus_identifier %}
+            var disqus_identifier = '{{ article.disqus_identifier }}';
+            {% else %}
+            var disqus_identifier = '/{{ article.url }}';
+            {% endif %}
+            var disqus_url = '{{ SITEURL }}/{{ article.url }}';
+          </script>
+          <noscript>Please enable JavaScript to view the comments.</noscript>
+          <section class="post-comments">
+            {% if article.disqus_identifier %}
+              <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="{{ article.disqus_identifier }}" >Show Comments</a>
+            {% else %}
+              <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/{{ article.url }}" >Show Comments</a>
+            {% endif %}
+            <div id="disqus_thread"></div>
+          </section>
+          {% endif %}
+
+          <aside class="post-nav">
+            {% if article.next_article %}
+            <a class="post-nav-next" href="{{ SITEURL }}/{{ article.next_article.url}}">
+              <section class="post-nav-teaser">
+                <i class="icon icon-arrow-left"></i>
+                  <h2 class="post-nav-title">{{ article.next_article.title }}</h2>
+                <p class="post-nav-excerpt">{{ article.next_article.summary|striptags|truncate(90) }}</p>
+                <p class="post-nav-meta"><time datetime="{{ article.next_article.locale_date }}">{{ article.next_article.locale_date }}</time></p>
+              </section>
+            </a>
+            {% endif %}
+            {% if article.prev_article %}
+            <a class="post-nav-prev" href="{{ SITEURL }}/{{ article.prev_article.url}}">
+              <section class="post-nav-teaser">
+                <i class="icon icon-arrow-right"></i>
+                  <h2 class="post-nav-title">{{ article.prev_article.title }}</h2>
+                <p class="post-nav-excerpt">{{ article.prev_article.summary|striptags|truncate(90) }}</p>
+                <p class="post-nav-meta"><time datetime="{{ article.prev_article.locale_date }}">{{ article.prev_article.locale_date }}</time></p>
+              </section>
+            </a>
+            {% endif %}
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+{% endblock content %}
+
+
+{% block scripts %}
+{{ super() }}
+<!-- Add MathJax and FontAwesome for Asciidoc -->\
+{% if article.source_path and article.source_path.lower().endswith(('.adoc','.asciidoc')) %}
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    tex2jax: {
+      inlineMath: [["\\(", "\\)"]],
+      displayMath: [["\\[", "\\]"]],
+      ignoreClass: "nostem|nolatexmath"
+    },
+    asciimath2jax: {
+      delimiters: [["\\$", "\\$"]],
+      ignoreClass: "nostem|noasciimath"
+    },
+    TeX: { equationNumbers: { autoNumber: "none" } }
+  })
+  MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+    MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+      if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+        data.math.root.display = "block"
+      }
+      return data
+    })
+  })
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+{% endif %}
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    // For ":source-highlighter: highlight.js`" in asciidoc
+    var adocSelector="pre.highlight > code[data-lang]"
+    {% if article.source_path and article.source_path.lower().endswith(('.md','.markdown')) %}
+    var selector=mdSelector;
+    {% elif article.source_path and article.source_path.lower().endswith(('.rst','.rest')) %}
+    var selector=rstSelector;
+    {% elif article.source_path and article.source_path.lower().endswith(('.adoc','.asciidoc')) %}
+    var selector=adocSelector;
+    {% else %}
+    var selector=rstSelector;
+    {% endif %}
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+    {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+      var disqus = '{{DISQUS_SITENAME}}';
+      $('#show-disqus').on('click', function() {
+        $.ajax({
+          type: "GET",
+          url: "//" + disqus + ".disqus.com/embed.js",
+          dataType: "script",
+          cache: true
+        });
+        $(this).parent().addClass('activated');
+      });
+    {% endif %}
+  });
+</script>
+{% endblock %}
