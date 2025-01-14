@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}{{ SITENAME }} - Articles in the {{ category }} category{% endblock %}
-
 {% if category == 'SERVICES' %}
   {% set category_name =  SERVICES  %}
   {% set category_title =  SERVICES  %}
 {% endif %}
 
+{% block title %}{{ SITENAME }} - {{ category_name }} {% endblock %}
 
 {# <!-- Choosing cover image --> #}
 {% set category_cover = None %}

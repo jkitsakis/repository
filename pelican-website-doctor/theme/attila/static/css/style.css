@@ -872,6 +872,50 @@ button,input,select,textarea {
         width: 70%; /* Reduce the image size further for small screens */
     }
 }
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Space between items */
+}
+
+.flex-item:first-child {
+    flex: 0 0 30%; /* Fixed to 30% width */
+    box-sizing: border-box;
+}
+
+.flex-item:last-child {
+    flex: 0 0 70%; /* Fixed to 70% width */
+    box-sizing: border-box;
+}
+
+.flex-item img {
+    max-width: 100%; /* Ensure image scales to fit container */
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+ul li img {
+    margin-right: 10px;
+    width: 20px; /* Adjust bullet icon size */
+    height: auto;
+}
+
+
+
 /*---*/
 
 .post-content .fluid-width-video-wrapper {

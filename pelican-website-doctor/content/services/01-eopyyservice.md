@@ -2,48 +2,35 @@ Title: {{ EOPYY_SERVICE }}
 Slug: eopyyservice
 Order: 1
 Summary: Συνταγογράφηση, Παραπεμπτικά, Δικαιολογητικά
+Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
 
-<div class="contact-list">
-    <div class="contact-item">
-        <img src="{{ SITEURL }}/images/services/eopyy.png"/>
+<div class="flex-container">
+    <div class="flex-item">
+        <img src="{{ SITEURL }}/images/services/eopyy.png" alt="EOPYY Service Image" />
     </div>
-    <div class="contact-item">
+    <div class="flex-item">
         <h2>Συνταγογράφηση</h2>  
         <ul>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Μηνιαία ή 3μηνιαία επαναλαμβανόμενη συνταγογράφηση </li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Προσαρμογή του θεραπευτικού σχήματος με βάση τις ιδιαίτερες ανάγκες του ασθενή</li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Παρακολούθηση της αποτελεσματικότητας της αγωγής</li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Έλεγχος των αλληλεπιδράσεων των φαρμάκων</li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Πρόληψη ανεπιθύμητων ενεργειών πολυφαρμακίας</li>
+            <li> Μηνιαία ή 3μηνιαία επαναλαμβανόμενη συνταγογράφηση</li>
+            <li> Προσαρμογή του θεραπευτικού σχήματος με βάση τις ιδιαίτερες ανάγκες του ασθενή</li>
+            <li> Παρακολούθηση της αποτελεσματικότητας της αγωγής</li>
+            <li> Έλεγχος των αλληλεπιδράσεων των φαρμάκων</li>
+            <li> Πρόληψη ανεπιθύμητων ενεργειών πολυφαρμακίας</li>
         </ul>        
-        <br/>        
         <h2>Παραπεμπτικά</h2>  
         <ul>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Αιματολογικες/βιοχημικές εξετάσεις & εξετάσεις ούρων </li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Απλές ακτινογραφίες </li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Υπερήχους</li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Μαστογραφίες</li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Τεστ ΠΑΠ</li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Tripplex αγγείων </li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/>  Μετρήσεις Οστικής Πυκνότητας </li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Αξονικές Τομογραφίες </li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Μαγνητικές Τομογραφίες</li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Holter πίεσης </li>
-        <br>
-            <li> <img  src="{{ SITEURL }}/images/bullet.png"/> Ηolter ρυθμού </li>
+            <li> Αιματολογικές/βιοχημικές εξετάσεις & εξετάσεις ούρων</li>
+            <li> Απλές ακτινογραφίες</li>
+            <li> Υπερήχους</li>
+            <li> Μαστογραφίες</li>
+            <li> Τεστ ΠΑΠ</li>
+            <li> Tripplex αγγείων</li>
+            <li> Μετρήσεις Οστικής Πυκνότητας</li>
+            <li> Αξονικές Τομογραφίες</li>
+            <li> Μαγνητικές Τομογραφίες</li>
+            <li> Holter πίεσης</li>
+            <li> Holter ρυθμού</li>
         </ul>
     </div>    
 </div>
+
