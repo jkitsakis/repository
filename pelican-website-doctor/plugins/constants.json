@@ -13,5 +13,11 @@
 	"PREVENTIVE_MEDICINE_SERVICE": "Προληπτική Ιατρική",
 	"PREVENTIVE_MEDICINE_SERVICE_IMG": "images/services/preventive-medicine.png",
 	"EMERGENCY_SERVICE": "Επείγoντα Περιστατικά",
-	"EMERGENCY_SERVICE_IMG": "images/services/emergency.png"
+	"EMERGENCY_SERVICE_IMG": "images/services/emergency.png",
+	"CHRONIC_DISEASES_SERVICE": "Χρόνιες Παθήσεις",
+	"CHRONIC_DISEASES_SERVICE_IMG": "images/services/chronic-diseases.png",
+	"ASSISTANCE_SERVICE": "Κατ’ οίκον Φροντίδα",
+	"ASSISTANCE_SERVICE_IMG": "images/services/assistance.png",
+	"CERTIFICATES_SERVICE": "Ιατρικά Πιστοποιητικά & Βεβαιώσεις",
+	"CERTIFICATES_SERVICE_IMG": "images/services/medical-certificates.png"
 }
