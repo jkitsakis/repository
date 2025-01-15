@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}{{ article.metadata['title'] }}{% endblock %}
+{% set primary_tag=None %}
+{% if article.category %}
+    {% set primary_tag=article.category %}
+{% elif article.tags %}
+    {% set primary_tag=article.tags[0] %}
+{% endif %}
+
+{% if primary_tag == 'SERVICES' %}
+  {% set primary_category_name =  SERVICES  %}
+  {% set primary_category_title =  SERVICES  %}
+{% endif %}
+
+{% block title %} {{ primary_category_name}} - {{ article.metadata['title'] }}{% endblock %}
 
 {# <!-- Choosing cover image --> #}
 {% if article.cover %}
@@ -61,17 +73,7 @@
   {% include 'partials/jsonld_article.html' %}
 {% endblock %}
 
-{% set primary_tag=None %}
-{% if article.category %}
-    {% set primary_tag=article.category %}
-{% elif article.tags %}
-    {% set primary_tag=article.tags[0] %}
-{% endif %}
 
-{% if primary_tag == 'SERVICES' %}
-  {% set primary_category_name =  SERVICES  %}
-  {% set primary_category_title =  SERVICES  %}
-{% endif %}
 
 {% block header %}
     <!-- Progressbar -->
