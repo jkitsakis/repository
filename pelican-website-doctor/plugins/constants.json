@@ -8,5 +8,10 @@
 	"ADDRESS": "123 Main Street, Springfield, USA",
 	"EMAIL": "contact@example.com",
 	"MOBILE": "+1234567890",
-	"EOPYY_SERVICE": "ΕΟΠΥΥ"
+	"EOPYY_SERVICE": "ΕΟΠΥΥ",
+	"EOPYY_SERVICE_IMG": "images/services/eopyy.png",
+	"PREVENTIVE_MEDICINE_SERVICE": "Προληπτική Ιατρική",
+	"PREVENTIVE_MEDICINE_SERVICE_IMG": "images/services/preventive-medicine.png",
+	"EMERGENCY_SERVICE": "Επείγoντα Περιστατικά",
+	"EMERGENCY_SERVICE_IMG": "images/services/emergency.png"
 }

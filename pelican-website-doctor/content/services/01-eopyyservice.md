@@ -1,12 +1,13 @@
 Title: {{ EOPYY_SERVICE }}
-Slug: eopyyservice
+Slug: eopyyService
 Order: 1
 Summary: Συνταγογράφηση, Παραπεμπτικά, Δικαιολογητικά
 Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
+Image_url: {{ EOPYY_SERVICE_IMG }}
 
 <div class="flex-container">
     <div class="flex-item">
-        <img src="{{ SITEURL }}/images/services/eopyy.png" alt="EOPYY Service Image" />
+        <img src="{{ SITEURL }}/{{ EOPYY_SERVICE_IMG }} " alt="{{ EOPYY_SERVICE }}" />
     </div>
     <div class="flex-item">
         <h2>Συνταγογράφηση</h2>  

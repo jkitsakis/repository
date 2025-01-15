@@ -25,6 +25,9 @@ def inject_constants(generator, content):
         if hasattr(content, 'metadata') and 'title' in content.metadata and content.metadata['title'] == placeholder:
             content.metadata.update({'title': value})
 
+        if hasattr(content, 'metadata') and 'image_url' in content.metadata and content.metadata['image_url'] == placeholder:
+            content.metadata.update({'image_url': value})
+
 
 
 def register():

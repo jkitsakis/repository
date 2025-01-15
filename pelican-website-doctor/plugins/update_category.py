@@ -7,5 +7,6 @@ def update_category(generator):
             article.category.title = 'SERVICES'
 
 
+
 def register():
     signals.article_generator_finalized.connect(update_category)

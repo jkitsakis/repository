@@ -71,7 +71,7 @@ ARTICLE_URL = 'services/{category}/{slug}.html'
 ARTICLE_SAVE_AS = 'services/{category}/{slug}.html'
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['plugins.inject_constants', 'plugins.update_category']
+PLUGINS = ['plugins.inject_constants', 'plugins.update_category', 'plugins.article_order_navigation']
 
 
 # Translations
