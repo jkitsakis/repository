@@ -21,5 +21,6 @@
 	"CERTIFICATES_SERVICE": "Ιατρικά Πιστοποιητικά & Βεβαιώσεις",
 	"CERTIFICATES_SERVICE_IMG": "images/services/medical-certificates.png",
 	"AESTHETIC_SERVICE": "Αισθητική Ιατρική",
-	"AESTHETIC_SERVICE_IMG": "images/services/botox.png"
+	"AESTHETIC_SERVICE_IMG": "images/services/botox.png",
+	"MEDICAL_OFFICE": "Το ιατρείο"
 }

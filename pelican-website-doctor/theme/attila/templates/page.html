@@ -1,12 +1,12 @@
 {% extends "index.html" %}
 
-{% block title %}{{ page.title }}{% endblock title %}
+{% block title %}{{ page.metadata['title'] }}{% endblock title %}
 
 {% block canonical_url %}
 <link href="{{ SITEURL }}/{{ page.url }}" rel="canonical" />
 {% endblock canonical_url %}
 
-{% set current_title= page.metadata['title'] %}
+
 
 {# <!-- Choosing cover image --> #}
 {% if page.cover %}
@@ -52,13 +52,13 @@
     <!-- Set your background image for this header on the line below. -->
     <header class="post-header {% if selected_cover or selected_color %} has-cover {% endif %}">
       <div class="inner">
-        <h1 class="post-title">{{ current_title }}</h1>
+        <h1 class="post-title">{{  page.metadata['title'] }}</h1>
         {% if selected_cover %}
           <div class="post-cover cover">
-            <img src="{{ selected_cover }}" alt="{{ current_title }}" />
+            <img src="{{ selected_cover }}" alt="{{  page.metadata['title'] }}" />
           </div>
         {% elif selected_color %}
-          <div class="post-cover cover" style="background-color: {{ selected_color }}">
+          <div class="post-cover cover" style="background-color: {{ selected_color }}" >
         {% endif %}
     </header>
 {% endblock header %}

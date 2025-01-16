@@ -853,11 +853,6 @@ button,input,select,textarea {
 }
 
 
-
-
-
-
-
 @media (max-width: 640px) {
     .contact-item {
         max-width: 100%; /* Allow the contact item to take full width */
@@ -909,7 +904,81 @@ ul li img {
     height: auto;
 }
 
+.section-padding {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
 
+/* 11 - Galley
+******************************************************/
+
+.isotope {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 4 columns of equal width */
+  gap: 10px; /* Space between grid items */
+}
+#boxer {
+	z-index: 99999;
+}
+
+.post-content .isotope-filters button:hover:after,
+.post-content .isotope-filters button.active:after{
+	margin-left: -20px;
+	width: 40px;
+}
+.post-content .galerry-item {
+	margin: 5px;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+}
+.post-content .galerry-item a:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255,255,255,.8);
+	z-index: -1;
+}
+.post-content .galerry-item a {
+	color: #000;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+	z-index: 1;
+	opacity: 0;
+}
+.post-content .galerry-item:hover a {
+	opacity: 1;
+}
+.post-content .galerry-item a>.item-title {
+	position: absolute;
+	top: 30%;
+	left: 0;
+	right: 0;
+	line-height: 20px;
+    font-size: 0.75em;
+	text-align: center;
+}
+.post-content .galerry-item>img {
+	max-width: inherit;
+	width: 100%;
+}
+.post-content .isotope-filters button:after,
+.post-content .galerry-item a,
+.post-content .galerry-item:before {
+	-webkit-transition: all .25s ease;
+	   -moz-transition: all .25s ease;
+	    -ms-transition: all .25s ease;
+	     -o-transition: all .25s ease;
+	        transition: all .25s ease;
+}
+/* 11 - Galley End
+******************************************************/
 
 /*---*/
 
