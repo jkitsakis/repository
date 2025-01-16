@@ -845,13 +845,26 @@ button,input,select,textarea {
     gap: 1rem; /* Space between rows */
 }
 
+.content-list-row {
+    display: flex;
+    flex-direction: row; /* Stack rows vertically */
+    gap: 1rem; /* Space between rows */
+}
+
 .content-info {
     display: flex;
     align-items: center; /* Align items vertically */
     margin-bottom: 10px; /* Add spacing between each contact item */
     gap: 2rem;
 }
-
+.content-info-row {
+    display: flex;
+    justify-content: center; /* Align items horizontally in the center */
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 10px; /* Add spacing between each contact item */
+    gap: 2rem;
+    font-size: 0.75em;
+}
 
 @media (max-width: 640px) {
     .contact-item {
@@ -926,13 +939,13 @@ ul li img {
 	margin-left: -20px;
 	width: 40px;
 }
-.post-content .galerry-item {
+.post-content .gallery-item {
 	margin: 5px;
 	overflow: hidden;
 	position: relative;
 	z-index: 0;
 }
-.post-content .galerry-item a:before {
+.post-content .gallery-item a:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -942,7 +955,7 @@ ul li img {
 	background: rgba(255,255,255,.8);
 	z-index: -1;
 }
-.post-content .galerry-item a {
+.post-content .gallery-item a {
 	color: #000;
 	position: absolute;
 	top: 20px;
@@ -952,10 +965,10 @@ ul li img {
 	z-index: 1;
 	opacity: 0;
 }
-.post-content .galerry-item:hover a {
+.post-content .gallery-item:hover a {
 	opacity: 1;
 }
-.post-content .galerry-item a>.item-title {
+.post-content .gallery-item a>.item-title {
 	position: absolute;
 	top: 30%;
 	left: 0;
@@ -964,13 +977,13 @@ ul li img {
     font-size: 0.75em;
 	text-align: center;
 }
-.post-content .galerry-item>img {
+.post-content .gallery-item>img {
 	max-width: inherit;
 	width: 100%;
 }
 .post-content .isotope-filters button:after,
-.post-content .galerry-item a,
-.post-content .galerry-item:before {
+.post-content .gallery-item a,
+.post-content .gallery-item:before {
 	-webkit-transition: all .25s ease;
 	   -moz-transition: all .25s ease;
 	    -ms-transition: all .25s ease;
