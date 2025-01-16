@@ -1,7 +1,7 @@
 Title: {{ EMERGENCY_SERVICE }}
 Slug: emergencyService
 Order: 3
-Summary: 
+Summary: Τραύματα, Αλεργίες, Λοιμώξεις
 Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
 Image_url:{{ EMERGENCY_SERVICE_IMG }}
 
@@ -16,7 +16,7 @@ Image_url:{{ EMERGENCY_SERVICE_IMG }}
             <li>Αλλεργικές Αντιδράσεις</li>       
             <li>Διερεύνηση Εμπυρέτου</li>       
             <li>Διερεύνηση παθολογικών τιμών εργαστηριακών εξετάσεων (αναιμία, τρανσαμινασαιμία, ουραιμία, κτλ)  </li>
-            <li>Λοιμώξεις </li>       
+            <li>Αντιμετώπιση Λοιμώξεων </li>       
         </ul>
     </div>    
 </div>

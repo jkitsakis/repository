@@ -1,7 +1,7 @@
 Title: {{ CHRONIC_DISEASES_SERVICE }}
 Slug: chronicDiseasesService
 Order: 4
-Summary: 
+Summary: Υπέρταση, Διαβήτης, Δυσλιπιδαιμία, ΧΑΠ
 Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
 Image_url:{{ CHRONIC_DISEASES_SERVICE_IMG }}
 

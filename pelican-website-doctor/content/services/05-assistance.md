@@ -1,7 +1,7 @@
 Title: {{ ASSISTANCE_SERVICE }}
 Slug: assistanceService
 Order: 5
-Summary: 
+Summary: Κατ' οίκον επισκεψεις, 
 Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
 Image_url:{{ ASSISTANCE_SERVICE_IMG }}
 

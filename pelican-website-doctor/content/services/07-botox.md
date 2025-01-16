@@ -1,7 +1,7 @@
 Title: {{ AESTHETIC_SERVICE }}
 Slug: aestheticMedicineService
 Order: 7
-Summary: 
+Summary: Αισθητικές Επεμβάσεις
 Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
 Image_url:{{ AESTHETIC_SERVICE_IMG }}
 

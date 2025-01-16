@@ -839,13 +839,13 @@ button,input,select,textarea {
 
 /* ---- */
 
-.contact-list {
+.content-list {
     display: flex;
     flex-direction: column; /* Stack rows vertically */
     gap: 1rem; /* Space between rows */
 }
 
-.contact-info {
+.content-info {
     display: flex;
     align-items: center; /* Align items vertically */
     margin-bottom: 10px; /* Add spacing between each contact item */
@@ -1323,7 +1323,7 @@ ul li img {
 }
 
 .blog-header.has-cover {
-    padding-top: calc(16rem + 8vw);
+    padding-top: calc(16rem + 5vw); /* index cover img height */
     color: white;
     background: black;
     overflow: hidden;
@@ -2386,8 +2386,8 @@ ul li img {
 }
 
 .container .post .post-box {
-    padding-top: calc(4rem + 2vw);
-    padding-bottom: calc(4rem + 2vw);
+    padding-top: calc(3rem + 2vw);
+    padding-bottom: calc(3rem + 2vw);
     border-bottom: 1px solid var(--color-background-contrast)
 }
 
@@ -2416,7 +2416,7 @@ ul li img {
 }
 
 .post-header.has-cover {
-    padding: calc(10rem + 8vw) 0 calc(4rem + 6vw);
+    padding: calc(10rem + 5vw) 0 calc(4rem + 6vw); /* article header cover */
     margin-bottom: calc(4rem + 2vw);
     background: black;
     overflow: hidden;
@@ -2512,7 +2512,8 @@ ul li img {
     line-height: 1.25em;
     font-weight: 700;
     text-indent: -1px;
-    color: var(--color-content-lead)
+    color: var(--color-content-lead);
+    max-width: 100%;
 }
 
 @media only screen and (max-width: 480px) {
@@ -2530,8 +2531,8 @@ ul li img {
 
 .post-header .post-title {
     margin: 0 0 4rem;
-    font-size: 6em;
-    line-height: 1.25em
+    font-size: 5em;
+    line-height: 1.25em;
 }
 
 .has-cover .post-title {
