@@ -827,7 +827,7 @@ button,input,select,textarea {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0 0 4rem
+    margin: 0 0 0rem
 }
 
 .post-content td:first-child {
@@ -845,23 +845,18 @@ button,input,select,textarea {
     gap: 1rem; /* Space between rows */
 }
 
-.contact-item {
-    display: flex; /* Aligns items in one row */
-    align-items: center; /* Vertically centers items */
-    gap: 10px; /* Space between the image and the text */
-    padding: 10px; /* Adds some padding around each row */
+.contact-info {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px; /* Add spacing between each contact item */
+    gap: 2rem;
 }
 
-.contact-item img {
-    max-width: 15%; /* Set the image size */
-    display: block; /* Ensures no extra space around the image */
-}
 
-.reduced-width {
-    width: 5%; /* 10% smaller */
-    max-width: 5%;
-    display: block; /* Optional: Ensures no extra space around the image */
-}
+
+
+
+
 
 @media (max-width: 640px) {
     .contact-item {
