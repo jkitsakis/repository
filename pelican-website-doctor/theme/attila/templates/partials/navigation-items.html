@@ -16,7 +16,7 @@
   {% endif %}
 </ul>
 <ul class="nav-meta">
-  {% for name,link in SOCIAL if name.lower() in ['facebook', 'twitter', 'linkedin', 'github'] %}
+  {% for name,link in SOCIAL if name.lower() in ['facebook', 'twitter', 'linkedin', 'instagram'] %}
     <li class="nav-{{name.lower()}}"><a aria-label="{{name|title}}" href="{{ link }}" target="_blank"><i class="icon icon-{{name.lower()}}" aria-hidden="true"></i>
     <span>{{name}}</span>
     </a></li>

@@ -67,6 +67,11 @@ LINKS = (
 )
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
+    ("Facebook", "https://www.facebook.com/your-profile"),
+    ("Twitter", "https://twitter.com/your-profile"),
+    ("LinkedIn", "https://www.linkedin.com/in/your-profile"),
+    ("Instagram", "https://www.instagram.com/your-profile")
 )
+
+
+

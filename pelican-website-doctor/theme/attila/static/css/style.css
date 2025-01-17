@@ -225,13 +225,13 @@ td,th {
   font-weight: 600;
   src: url(https://fonts.bunny.net/open-sans/files/open-sans-latin-400-normal.woff2) format('woff2'), url(https://fonts.bunny.net/open-sans/files/open-sans-latin-400-normal.woff) format('woff');
 }
-/*@font-face {
+@font-face {
     font-family: 'icon';
     src: url("../font/icon.eot?89549845");
     src: url("../font/icon.eot?89549845#iefix") format("embedded-opentype"),url("../font/icon.woff2?89549845") format("woff2"),url("../font/icon.woff?89549845") format("woff"),url("../font/icon.ttf?89549845") format("truetype"),url("../font/icon.svg?89549845#icon") format("svg");
     font-weight: normal;
     font-style: normal
-}*/
+}
 
 [class^="icon-"]:before,[class*=" icon-"]:before {
     font-family: "icon";
@@ -923,6 +923,11 @@ ul li img {
 .section-padding {
 	padding-top: 50px;
 	padding-bottom: 50px;
+}
+
+.emphasize {
+    font-weight: bold;
+    color: var(--color-primary-active);
 }
 
 /* 11 - Galley

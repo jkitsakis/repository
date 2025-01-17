@@ -1,26 +1,26 @@
-    <div class="extra-pagination">
-        {% include "partials/pagination.html" %}
-    </div>
+<div class="extra-pagination">
+    {% include "partials/pagination.html" %}
+</div>
 
-    {% for article in articles_page.object_list %}
-        {% if article.category == 'misc' %}
-            {% set primary_tag=None %}
-            {% if article.category %}
-                {% set primary_tag=article.category %}
-            {% elif article.tags %}
-                {% set primary_tag=article.tags[0] %}
-            {% endif %}
+{% for article in articles_page.object_list %}
+    {% if article.category == 'misc' %}
+        {% set primary_tag=None %}
+        {% if article.category %}
+            {% set primary_tag=article.category %}
+        {% elif article.tags %}
+            {% set primary_tag=article.tags[0] %}
+        {% endif %}
 
-            <article class="post">
-                <div class="inner">
-                    <div class="box post-box">
-                        <div class="post-content">
-                            {{ article.content }}
-                        </div>
+        <article class="post">
+            <div class="inner">
+                <div class="box post-box">
+                    <div class="post-content">
+                        {{ article.content }}
                     </div>
                 </div>
-            </article>
-        {% endif %}
-    {% endfor %}
+            </div>
+        </article>
+    {% endif %}
+{% endfor %}
 
 
