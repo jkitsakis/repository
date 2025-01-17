@@ -842,13 +842,16 @@ button,input,select,textarea {
 .content-list {
     display: flex;
     flex-direction: column; /* Stack rows vertically */
-    gap: 1rem; /* Space between rows */
+    gap: 3rem; /* Space between rows */
 }
 
 .content-list-row {
     display: flex;
     flex-direction: row; /* Stack rows vertically */
     gap: 1rem; /* Space between rows */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .content-info {
@@ -862,8 +865,8 @@ button,input,select,textarea {
     justify-content: center; /* Align items horizontally in the center */
     align-items: center; /* Align items vertically in the center */
     margin-bottom: 10px; /* Add spacing between each contact item */
-    gap: 2rem;
-    font-size: 0.75em;
+    gap: 1rem;
+    font-size: 0.95em;
 }
 
 @media (max-width: 640px) {
