@@ -1,13 +1,13 @@
 #EXTM3U
 
 #EXTINF:-1 group-title="TV" TVG-ID="ERT1" tvg-name="ERT 1" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert1-logo-800x300-f.png?m=resize&w=240&h=136",ERT1
-https://ertflix.s.llnwi.net/ertlive/ert1/clrdef24723b/index.mpd
+https://ertflix.akamaized.net/ertlive/ert1/clrdef24723b/index.mpd
 
 #EXTINF:-1 group-title="TV" TVG-ID="ERT2" tvg-name="ERT 2" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert2-logo-800x300-f.png?m=resize&w=240&h=136",ERT2
-https://ertflix.s.llnwi.net/ertlive/ert2/clrdef24828z/index.mpd
+https://ertflix.akamaized.net/ertlive/ert2/clrdef24828z/index.mpd
 
 #EXTINF:-1 group-title="TV" TVG-ID="ERT3" tvg-name="ERT 3" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert3-logo-800x300-f.png?m=resize&w=240&h=136",ERT3
-https://ertflix.s.llnwi.net/ertlive/ert3/clrdef24828n/index.mpd
+https://ertflix.akamaized.net/ertlive/ert3/clrdef24828n/index.mpd
 
 #EXTINF:-1 group-title="TV" TVG-ID="MEGA" tvg-name="MEGA" tvg-logo="https://iconape.com/wp-content/png_logo_vector/mega-tv-logo.png",MEGA
 https://c98db5952cb54b358365984178fb898a.msvdn.net/live/S86713049/gonOwuUacAxM/playlist.m3u8
@@ -30,7 +30,7 @@ https://skai-live.siliconweb.com/media/cambria4/index.m3u8
 https://liveopencloud.siliconweb.com/1/ZlRza2R6L2tFRnFJ/eWVLSlQx/hls/live/playlist.m3u8
 
 #EXTINF:-1 group-title="TV" tvg-name="ERT NEWS" tvg-logo="https://files2.app.ertflix.gr/files/channels/ert-news-logo-800x300.png?m=resize&w=240&h=136",ERT NEWS
-https://ertflix.s.llnwi.net/ertlive/ertnews/default/index.mpd
+https://ertflix.akamaized.net/ertlive/ertnews/default/index.mpd
 
 #EXTINF:-1 group-title="TV" TVG-ID="MAKTV" tvg-name="MAKTV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Makedonia_TV_2023.svg/250px-Makedonia_TV_2023.svg.png",MAKTV
 #KODIPROP:inputstream=inputstream.adaptive
@@ -41,10 +41,10 @@ https://mcdn.antennaplus.gr/live/media0/MAK/HLS/MAK.m3u8
 https://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8
 
 #EXTINF:-1 group-title="TV" tvg-name="ERT World"  tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/bc/ChannelLogo-ERTWORLD1.png",ERT World
-https://ertflix.s.llnwi.net/ertlive/ertworld/default/index.mpd
+https://ertflix.akamaized.net/ertlive/ertworld/default/index.mpd
 
 #EXTINF:-1 group-title="TV" tvg-name="ERT Music"  tvg-logo="https://files2.app.ertflix.gr/files/channels/ert-music-800x300.png?m=resize&w=200&h=80",ERT Music
-https://ertflix.s.llnwi.net/ertlive/music/default/index.mpd
+https://ertflix.akamaized.net/ertlive/music/default/index.mpd
 
 #EXTINF:-1 group-title="TV" TVG-ID="RISE" tvg-name="RISE" tvg-logo="https://www.rise.gr/wp-content/themes/risetv-1/images/rise-tv-logo-x2.png",RISE TV
 http://ovh-edge-h.evrideo.com:8080/23e234f2-aec8-4804-b694-4cdd71d2d48d_MONITORING_HLS/video_240p_WEBRTC_MONITORING.m3u8

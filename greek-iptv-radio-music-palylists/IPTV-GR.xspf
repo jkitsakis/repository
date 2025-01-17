@@ -3,7 +3,7 @@
 	<trackList>
 		<track>
 			<title>ERT1</title>
-			<location>https://ertflix.s.llnwi.net/ertlive/ert1/clrdef24723b/index.mpd</location>
+			<location>https://ertflix.akamaized.net/ertlive/ert1/clrdef24723b/index.mpd</location>
 			            <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>1</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
@@ -13,7 +13,7 @@
 		</track>
 		<track>
 			<title>ERT2</title>
-			<location>https://ertflix.s.llnwi.net/ertlive/ert2/clrdef24828z/index.mpd</location>
+			<location>https://ertflix.akamaized.net/ertlive/ert2/clrdef24828z/index.mpd</location>
 			 <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>2</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
@@ -23,7 +23,7 @@
 		</track>
 		<track>		
 			<title>ERT3</title>
-			<location>https://ertflix.s.llnwi.net/ertlive/ert3/clrdef24828n/index.mpd</location>
+			<location>https://ertflix.akamaized.net/ertlive/ert3/clrdef24828n/index.mpd</location>
 			 <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>3</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
@@ -93,7 +93,7 @@
 		</track>
 		<track>
 			<title>ERT NEWS</title>
-			<location>https://ertflix.s.llnwi.net/ertlive/ertnews/default/index.mpd</location>
+			<location>https://ertflix.akamaized.net/ertlive/ertnews/default/index.mpd</location>
 			 <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>10</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
