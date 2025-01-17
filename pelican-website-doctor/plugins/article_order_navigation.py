@@ -5,7 +5,7 @@ from pelican import signals
 
 def load_constants():
     """Load constants from the JSON file."""
-    constants_file = os.path.join(os.path.dirname(__file__), 'constants.json')
+    constants_file = os.path.join(os.path.dirname(__file__), 'resources.json')
     if os.path.exists(constants_file):
         with open(constants_file, 'r', encoding="utf-8", errors="replace") as f:
             return json.load(f)

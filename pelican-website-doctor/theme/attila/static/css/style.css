@@ -225,13 +225,13 @@ td,th {
   font-weight: 600;
   src: url(https://fonts.bunny.net/open-sans/files/open-sans-latin-400-normal.woff2) format('woff2'), url(https://fonts.bunny.net/open-sans/files/open-sans-latin-400-normal.woff) format('woff');
 }
-/*@font-face {
+@font-face {
     font-family: 'icon';
     src: url("../font/icon.eot?89549845");
     src: url("../font/icon.eot?89549845#iefix") format("embedded-opentype"),url("../font/icon.woff2?89549845") format("woff2"),url("../font/icon.woff?89549845") format("woff"),url("../font/icon.ttf?89549845") format("truetype"),url("../font/icon.svg?89549845#icon") format("svg");
     font-weight: normal;
     font-style: normal
-}*/
+}
 
 [class^="icon-"]:before,[class*=" icon-"]:before {
     font-family: "icon";
@@ -842,13 +842,16 @@ button,input,select,textarea {
 .content-list {
     display: flex;
     flex-direction: column; /* Stack rows vertically */
-    gap: 1rem; /* Space between rows */
+    gap: 3rem; /* Space between rows */
 }
 
 .content-list-row {
     display: flex;
     flex-direction: row; /* Stack rows vertically */
     gap: 1rem; /* Space between rows */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .content-info {
@@ -862,8 +865,8 @@ button,input,select,textarea {
     justify-content: center; /* Align items horizontally in the center */
     align-items: center; /* Align items vertically in the center */
     margin-bottom: 10px; /* Add spacing between each contact item */
-    gap: 2rem;
-    font-size: 0.75em;
+    gap: 1rem;
+    font-size: 0.95em;
 }
 
 @media (max-width: 640px) {
@@ -920,6 +923,11 @@ ul li img {
 .section-padding {
 	padding-top: 50px;
 	padding-bottom: 50px;
+}
+
+.emphasize {
+    font-weight: bold;
+    color: var(--color-primary-active);
 }
 
 /* 11 - Galley

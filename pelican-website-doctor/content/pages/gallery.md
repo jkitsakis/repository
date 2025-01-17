@@ -1,18 +1,18 @@
-Title: Το ιατρείο
+Title: Το Ιατρείο
 Slug: gallery
 Order: 3
 
 <div class="content-list-row">    
     <div class="content-info-row">
-      <img src="{{ SITEURL }}/images/locate.png" alt="Location Icon" style="max-width:15%">
+      <img src="{{ SITEURL }}/images/locate.png" alt="Location Icon" style="width:40px">
       <a href="https://maps.app.goo.gl/RstcEQ91LDKZVg2d8" target="_blank">{{ ADDRESS }}</a>
     </div>    
     <div class="content-info-row">
-      <img src="{{ SITEURL }}/images/email.png" alt="Email Icon" style="max-width:15%">
+      <img src="{{ SITEURL }}/images/email.png" alt="Email Icon" style="width:40px">
       <a href="mailto:{{ EMAIL }}" target="_blank">{{ EMAIL }}</a>
     </div>    
     <div class="content-info-row">
-      <img src="{{ SITEURL }}/images/tel.png" alt="Phone Icon"style="max-width:15%" >
+      <img src="{{ SITEURL }}/images/tel.png" alt="Phone Icon"style="width:40px" >
       <a href="tel:{{ MOBILE }}" target="_blank">{{ MOBILE }}</a>
     </div>
 </div>
