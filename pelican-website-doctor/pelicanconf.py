@@ -50,7 +50,20 @@ ARTICLE_URL = 'services/{category}/{slug}.html'
 ARTICLE_SAVE_AS = 'services/{category}/{slug}.html'
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['plugins.inject_constants', 'plugins.article_order_navigation']
+PLUGINS = ['plugins.sitemap', 'plugins.inject_constants', 'plugins.article_order_navigation']
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'pages': 0.7,
+        'indexes': 0.1,
+    },
+    'changefreqs': {
+        'articles': 'weekly',
+        'pages': 'monthly',
+        'indexes': 'daily',
+    },
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
