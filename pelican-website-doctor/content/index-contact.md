@@ -5,11 +5,7 @@ Order: 2
 <h2 class="post-title">{{ CONTACT_TITLE }}</h2>
 <div class="content-list">   
     <div class="content-info">
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.470283633111!2d23.737692499999994!3d37.919442499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bddd0c15cecd%3A0x6b4c9fdbd96baeb1!2zzonPgc-Jzr_PgiDOnM6sz4TPg863IDcwLCDOhs67zrnOvM6_z4IgMTc0IDU2!5e0!3m2!1sel!2sgr!4v1707293961096!5m2!1sel!2sgr"
-                    style="border:0; height:350px; width:100%;" 
-                    allowfullscreen="true" 
-                    loading="eager" 
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196.70295746077647!2d23.7408136602325!3d37.92465228894623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bdc27ce37dad%3A0x18d7e5205327f846!2zzprOlc6gIM6UzpfOnM6fzqUgzpHOm86ZzpzOn86lICjOkc6bzpnOnM6fzqUgKM6gzpHOoc6RzqHOpM6XzpzOkSkp!5e0!3m2!1sel!2sgr!4v1737389198186!5m2!1sel!2sgr" style="border:0; height:350px; width:100%;" allowfullscreen="true" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>   
     <div class="content-info">
       <img src="{{ SITEURL }}/{{ OFFICE_TEL_IMG }}" alt="Phone Icon"style="width:40px" >
