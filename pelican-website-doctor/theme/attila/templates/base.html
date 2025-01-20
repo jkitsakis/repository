@@ -104,6 +104,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <script>
     var siteUrl = '{{ SITEURL }}';
@@ -218,23 +220,7 @@
         {% endfor %}
         </span>
         <span class="nav-credits">
-
-          <!--{% if SHOW_CREDITS|default(True) %}
-          {% if SHOW_CREDITS and SHOW_CREDITS.left %}
-          {% set left=SHOW_CREDITS.left %}
-          {% else %}
-          {% set left='Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;' %}
-          {% endif %}
-
-          {% if SHOW_CREDITS and SHOW_CREDITS.right %}
-          {% set right=SHOW_CREDITS.right %}
-          {% else %}
-          {% set right='Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull;' %}
-          {% endif %}
-
-          {{right}}{{" "}}{{left}}
-          {% endif %}-->
-
+          <button id="goToTop" class="go-to-top"><i class="fas fa-chevron-up"></i></button>
           <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
             <span class="theme-icon"></span><span class="theme-text">System theme</span>
           </a>
@@ -248,6 +234,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.fitvids.js"></script>
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js"></script>
+  <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/go-to-top.js"></script>
 
   {% if JS_OVERRIDE %}
   <!-- Script specified by the user -->
@@ -266,7 +253,9 @@
   {% include 'partials/disqus.js' %}
 
   <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
-  {% block scripts %}{% endblock scripts %}
+  {% block scripts %}
+
+  {% endblock scripts %}
 </body>
 
 </html>

@@ -1001,6 +1001,39 @@ ul li img {
 /* 11 - Galley End
 ******************************************************/
 
+/* Style for the Go to Top Button */
+.go-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--color-background-overlay);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;  /* Icon size */
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.go-to-top:hover {
+    background: var(--color-background-overlay);
+    transform: scale(1.1);
+}
+
+/* Active state */
+.go-to-top:active {
+    background: var(--color-background-overlay);
+}
+
+/* Center the icon inside the button */
+.go-to-top i {
+    pointer-events: none; /* Prevent the icon from blocking the button click */
+}
+
 /*---*/
 
 .post-content .fluid-width-video-wrapper {
