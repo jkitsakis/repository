@@ -7,6 +7,7 @@ class Parameters:
     SITENAME= ""
     SITESUBTITLE=""
     SITESUBTITLE_ESY=""
+    HOME_COVER=""
     HOME = ""
     SERVICES= ""
     KEYWORDS=""
@@ -23,6 +24,7 @@ class Parameters:
         Parameters.SITENAME = config.get("SITENAME", "")
         Parameters.SITESUBTITLE = config.get("SITESUBTITLE", "")
         Parameters.SITESUBTITLE_ESY = config.get("SITESUBTITLE_ESY", "")
+        Parameters.HOME_COVER = config.get("HOME_COVER", "")
         Parameters.HOME = config.get("HOME", "")
         Parameters.SERVICES= config.get("SERVICES", "")
         Parameters.KEYWORDS = config.get("KEYWORDS", "")

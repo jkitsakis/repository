@@ -1,11 +1,13 @@
 from __future__ import unicode_literals
 from plugins.configuration_params import Parameters
 
+
 AUTHOR = Parameters.AUTHOR
 SITENAME = Parameters.SITENAME
 SITEURL = Parameters.SITEURL
 SITESUBTITLE = Parameters.SITESUBTITLE
 SITESUBTITLE_ESY = Parameters.SITESUBTITLE_ESY
+HOME_COVER = Parameters.HOME_COVER + '?w=1380'
 HOME = Parameters.HOME
 SERVICES = Parameters.SERVICES
 KEYWORDS = Parameters.KEYWORDS
@@ -17,7 +19,6 @@ DEFAULT_LANG = 'Greek'
 DEFAULT_DATE = 'fs' #Pelican will use the file system's last modified date
 
 THEME = 'theme/attila'
-HOME_COVER = 'https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380'
 INDEX_SAVE_AS = 'index.html'  # Ensure the homepage is saved as index.html
 ARTICLE_ORDER_BY = 'order'
 PAGE_ORDER_BY = 'order'
