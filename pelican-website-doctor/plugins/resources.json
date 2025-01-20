@@ -18,7 +18,7 @@
 	"CONTACT_TITLE": "Επικοινωνία",
 	"ADDRESS": "123 Main Street, Springfield, USA",
 	"ADDRESS_IMG": "images/address.png",
-	"EMAIL": "contact@example.com",
+	"EMAIL": "prosopiki.iatros@gmail.com",
 	"EMAIL_IMG": "images/email.png",
 	"MOBILE": "+1234567890",
 	"MOBILE_IMG": "images/mob.png",
@@ -38,5 +38,8 @@
 	"CERTIFICATES_SERVICE_IMG": "images/services/medical-certificates.png",
 	"AESTHETIC_SERVICE": "Αισθητική Ιατρική",
 	"AESTHETIC_SERVICE_IMG": "images/services/botox.png",
-	"MEDICAL_OFFICE": "Το Ιατρείο"
+	"MEDICAL_OFFICE": "Το Ιατρείο",
+	"FACEBOOK_URL": "https://www.facebook.com/your-profile",
+	"LINKEDIN_URL": "https://www.linkedin.com/in/your-profile",
+	"INSTAGRAM_URL": "https://www.instagram.com/your-profile"
 }

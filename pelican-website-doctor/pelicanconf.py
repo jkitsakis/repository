@@ -51,7 +51,7 @@ ARTICLE_URL = 'services/{category}/{slug}.html'
 ARTICLE_SAVE_AS = 'services/{category}/{slug}.html'
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['sitemap', 'plugins.inject_constants', 'plugins.article_order_navigation']
+PLUGINS = ['sitemap', 'plugins.inject_constants', 'plugins.article_order_navigation', 'plugins.minify' ]
 
 STATIC_PATHS = ['robots.txt', 'images', 'favicon.ico']
 
@@ -71,10 +71,10 @@ LINKS = (
 )
 # Social widget
 SOCIAL = (
-    ("Facebook", "https://www.facebook.com/your-profile"),
-    ("Twitter", "https://twitter.com/your-profile"),
-    ("LinkedIn", "https://www.linkedin.com/in/your-profile"),
-    ("Instagram", "https://www.instagram.com/your-profile")
+    ("Facebook", Parameters.FACEBOOK_URL),
+    # ("Twitter", "https://twitter.com/your-profile"),
+    ("LinkedIn", Parameters.LINKEDIN_URL),
+    ("Instagram", Parameters.INSTAGRAM_URL)
 )
 
 

@@ -1,5 +1,7 @@
 import json
+import logging
 
+logger = logging.getLogger(__name__)
 
 class Parameters:
     AUTHOR= ""
@@ -12,6 +14,9 @@ class Parameters:
     SERVICES= ""
     KEYWORDS=""
     SITE_DESCRIPTION=""
+    FACEBOOK_URL=""
+    LINKEDIN_URL=""
+    INSTAGRAM_URL=""
 
     @staticmethod
     def load_from_json(json_file):
@@ -29,6 +34,11 @@ class Parameters:
         Parameters.SERVICES= config.get("SERVICES", "")
         Parameters.KEYWORDS = config.get("KEYWORDS", "")
         Parameters.SITE_DESCRIPTION = config.get("SITE_DESCRIPTION", "")
+        Parameters.FACEBOOK_URL = config.get("FACEBOOK_URL", "")
+        Parameters.LINKEDIN_URL = config.get("LINKEDIN_URL", "")
+        Parameters.INSTAGRAM_URL = config.get("INSTAGRAM_URL", "")
 
+
+logger.info(f"load configuration: plugins/resources.json")
 # Example usage
 Parameters.load_from_json('plugins/resources.json')

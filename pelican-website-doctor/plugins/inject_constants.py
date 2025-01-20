@@ -1,6 +1,10 @@
 import json
 import os
 from pelican import signals
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 def load_constants():
     """Load constants from the JSON file."""
@@ -18,6 +22,7 @@ def inject_constants(generator, content):
     # Substitute values from constants in the content
     for key, value in constants.items():
         placeholder = f'{{{{ {key} }}}}'
+        logger.info(f"placeholder: {placeholder}")
 
         if hasattr(content, '_content') and content._content:
             content._content = content._content.replace(placeholder, value)

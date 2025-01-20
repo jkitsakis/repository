@@ -2,6 +2,9 @@ import json
 import os
 import re
 from pelican import signals
+import logging
+
+logger = logging.getLogger(__name__)
 
 def load_constants():
     """Load constants from the JSON file."""
@@ -36,7 +39,7 @@ def set_article_navigation(generator):
         article.prev_article = ordered_articles[i - 1] if i > 0 else None
         article.next_article = ordered_articles[i + 1] if (len(ordered_articles) - 1) > i >= 0 else None
 
-        # print(f"Index: {i}, article: {article.title} - {inject_constants(extract_placeholder(article.title))}")
+        logger.info(f"Index: {i}, article: {article.title} - {inject_constants(extract_placeholder(article.title))}")
         # Inject constants or modify titles only if the articles exist
         if article.prev_article and article.prev_article.title:
             if article.prev_article and 'title' in article.prev_article.metadata :
