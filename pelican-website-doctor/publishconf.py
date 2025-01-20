@@ -16,6 +16,28 @@ CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
 DELETE_OUTPUT_DIRECTORY = True
 
+
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'pages': 0.7,
+        'indexes': 0.1,
+    },
+    'changefreqs': {
+        'articles': 'weekly',
+        'pages': 'monthly',
+        'indexes': 'daily',
+    },
+}
+
+MINIFY = {
+    'html': True,
+    'css': True,
+    'js': True
+}
+
+
 # Following items are often useful when publishing
 
 # DISQUS_SITENAME = ""
