@@ -1,0 +1,21 @@
+$TTL 14400
+@ IN SOA ns1.server40.net. hostmaster.prosopikosiatrosalimos.gr. (
+2025012013
+7200
+3600
+1209600
+86400 )
+
+prosopikosiatrosalimos.gr. 14400 IN NS ns1.server40.net.
+prosopikosiatrosalimos.gr. 14400 IN NS ns2.server40.net.
+
+localhost    14400    IN    A    127.0.0.1
+prosopikosiatrosalimos.gr.    14400    IN    MX    10 mail
+prosopikosiatrosalimos.gr.    14400    IN    TXT    "v=spf1 a mx ip4:136.243.233.178 ?all"
+_github-pages-challenge-prosopikosiatros.prosopikosiatrosalimos.gr.    14400    IN    TXT    "dbf8fcf7f440ab12e23d4e5b54a6c5"
+prosopikosiatrosalimos.gr.    14400    IN    A    185.199.108.153
+prosopikosiatrosalimos.gr.    14400    IN    A    185.199.109.153
+prosopikosiatrosalimos.gr.    14400    IN    A    185.199.110.153
+prosopikosiatrosalimos.gr.    14400    IN    A    185.199.111.153
+
+www.prosopikosiatrosalimos.gr. 14400 IN CNAME prosopikosiatros.github.io.
