@@ -1,6 +1,6 @@
 $TTL 14400
 @ IN SOA ns1.server40.net. hostmaster.prosopikosiatrosalimos.gr. (
-2025012013
+2025012101
 7200
 3600
 1209600
@@ -18,4 +18,4 @@ prosopikosiatrosalimos.gr.    14400    IN    A    185.199.109.153
 prosopikosiatrosalimos.gr.    14400    IN    A    185.199.110.153
 prosopikosiatrosalimos.gr.    14400    IN    A    185.199.111.153
 
-www.prosopikosiatrosalimos.gr. 14400 IN CNAME prosopikosiatros.github.io.
+www.prosopikosiatrosalimos.gr.    14400    IN    CNAME    prosopikosiatros.github.io.
