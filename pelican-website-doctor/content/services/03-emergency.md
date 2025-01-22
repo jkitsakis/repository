@@ -2,7 +2,7 @@ Title: {{ EMERGENCY_SERVICE }}
 Slug: emergencyService
 Order: 3
 Summary: Τραύματα, Αλεργίες, Λοιμώξεις
-Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
+Cover: /images/doctor-front-bright-background-with-stethoscope-hand.avif
 Image_url:{{ EMERGENCY_SERVICE_IMG }}
 
 <div class="flex-container">

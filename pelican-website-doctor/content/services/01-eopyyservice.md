@@ -2,7 +2,7 @@ Title: {{ EOPYY_SERVICE }}
 Slug: eopyyService
 Order: 1
 Summary: Συνταγογράφηση, Παραπεμπτικά
-Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
+Cover: /images/doctor-front-bright-background-with-stethoscope-hand.avif
 Image_url: {{ EOPYY_SERVICE_IMG }}
 
 <div class="flex-container">

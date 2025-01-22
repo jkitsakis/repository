@@ -2,7 +2,7 @@ Title: {{ PREVENTIVE_MEDICINE_SERVICE }}
 Slug: preventiveMedicineService
 Order: 2
 Summary: Προληπτικές Εξετάσεις, Εµβολιασµοί, Συµβουλευτική
-Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
+Cover: /images/doctor-front-bright-background-with-stethoscope-hand.avif
 Image_url:{{ PREVENTIVE_MEDICINE_SERVICE_IMG }}
 
 

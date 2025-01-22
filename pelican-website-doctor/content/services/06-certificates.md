@@ -2,8 +2,8 @@ Title: {{ CERTIFICATES_SERVICE }}
 Slug: certificatesService
 Order: 6
 Summary: Πιστοποιητικά, Βεβαιώσεις
-Cover: https://img.freepik.com/premium-photo/doctor-front-bright-background-with-stethoscope-hand_397897-55.jpg?w=1380
-Image_url:{{ CERTIFICATES_SERVICE_IMG }}
+Cover: /images/doctor-front-bright-background-with-stethoscope-hand.avif
+Image_url: {{ CERTIFICATES_SERVICE_IMG }}
 
 <div class="flex-container">
     <div class="flex-item">
