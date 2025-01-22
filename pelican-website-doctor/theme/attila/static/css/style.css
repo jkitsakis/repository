@@ -948,6 +948,7 @@ ul li img {
 	width: 40px;
 }
 .post-content .gallery-item {
+    width: 50%;
 	margin: 5px;
 	overflow: hidden;
 	position: relative;
@@ -1043,7 +1044,7 @@ ul li img {
     transform: translate(-50%, -50%);
     max-width: 90%;
     max-height: 90%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--color-background-overlay);
     z-index: 9999;
 }
 
@@ -1059,8 +1060,8 @@ ul li img {
 .popup-image {
     max-width: 90%;
     max-height: 90%;
-    border: 2px solid #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+/*    border: 2px solid #fff;*/
+    box-shadow: var(--color-background-overlay);
 }
 
 /* Close button styling */
@@ -1070,7 +1071,7 @@ ul li img {
     right: 0px;
     color: white;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--color-background-overlay);
     border-radius: 50%;
     padding: 5px;
     width: 30px;
