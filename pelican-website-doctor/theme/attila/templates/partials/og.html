@@ -33,6 +33,7 @@
     {% set description = 'View the blog.' %}
 {% endif %}
 
+
 <!-- Open Graph -->
 {% for admin in FACEBOOK_ADMINS %}
   <meta property="fb:admins" content="{{ admin }}" />
@@ -43,7 +44,7 @@
 <meta prefix="og: http://ogp.me/ns#" property="og:description" content="{{ description }}"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:locale" content="{{ default_locale }}"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{ SITEURL }}/"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{ selected_cover }}">
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{ selected_cover }}"/>
 
 <!-- Twitter Card -->
 {% for name,link in SOCIAL if name.lower() in ['twitter'] %}

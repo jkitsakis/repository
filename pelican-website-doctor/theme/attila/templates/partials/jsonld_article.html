@@ -1,24 +1,24 @@
 {# <!-- Choosing cover image --> #}
 {% if article.og_image %}
     {% if article.og_image|lower|truncate(4, True, '') == "http" %}
-        {% set default_cover = article.og_image %}
+        {% set selected_cover = article.og_image %}
     {% elif article.og_image.startswith('/') %}
         {% set selected_cover = SITEURL+article.og_image %}
     {% else %}
-        {% set default_cover = SITEURL+"/"+article.og_image %}
+        {% set selected_cover = SITEURL+"/"+article.og_image %}
     {% endif %}
 {% elif article.cover %}
     {% if article.cover|lower|truncate(4, True, '') == "http" %}
-        {% set default_cover = article.cover %}
+        {% set selected_cover = article.cover %}
     {% elif article.cover.startswith('/') %}
         {% set selected_cover = SITEURL+article.cover %}
     {% else %}
-        {% set default_cover = SITEURL+"/"+article.cover %}
+        {% set selected_cover = SITEURL+"/"+article.cover %}
     {% endif %}
 {% elif HEADER_COVER %}
-  {% set default_cover = SITEURL+"/"+HEADER_COVER %}
+  {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
 {% else %}
-  {% set default_cover = SITEURL+"/"+THEME_STATIC_DIR+"/images/post-bg.jpg" %}
+  {% set selected_cover = SITEURL+"/"+THEME_STATIC_DIR+"/images/post-bg.jpg" %}
 {% endif %}
 
 {# <!-- Choosing description --> #}
@@ -27,20 +27,16 @@
 {% elif article.summary %}
     {% set description = article.summary|striptags|truncate(140) %}
 {% endif %}
+
+{% set title = article.metadata['title']|striptags %}
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Article",
-  "name": "{{ article.metadata['title']|striptags }}",
-  "headline": "{{ article.metadata['title']|striptags }}",
-  "datePublished": "{{ article.date }}",
-  "dateModified": "{{ article.modified }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ article.author.name | title }}",
-    "url": "{{ SITEURL }}/{{ article.author.url }}"
-  },
-  "image": "{{ default_cover }}",
+  "name": "{{ title }}",
+  "headline": "{{ SITENAME }}",
+  "image": "{{ selected_cover }}",
   "url": "{{ SITEURL }}/{{ article.url }}",
   "description": "{{ description }}"
 }

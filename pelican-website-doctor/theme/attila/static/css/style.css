@@ -887,12 +887,12 @@ button,input,select,textarea {
 }
 
 .flex-item:first-child {
-    flex: 0 0 25%; /* Fixed to 30% width */
+    flex: 0 0 25%; /* Fixed to 25% width */
     box-sizing: border-box;
 }
 
 .flex-item:last-child {
-    flex: 0 0 75%; /* Fixed to 70% width */
+    flex: 0 0 75%; /* Fixed to 75% width */
     box-sizing: border-box;
 }
 
@@ -901,6 +901,50 @@ button,input,select,textarea {
     height: auto;
     display: block;
 }
+
+.flex-container-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Space between items */
+}
+
+.flex-item-contact:first-child {
+    flex: 0 0 50%; /* Fixed to 25% width */
+    box-sizing: border-box;
+}
+
+.flex-item-contact:last-child {
+    flex: 0 0 50%; /* Fixed to 75% width */
+    box-sizing: border-box;
+}
+
+.flex-item-contact img {
+    max-width: 90%; /* Ensure image scales to fit container */
+    height: auto;
+    display: block;
+}
+
+.contact-detail {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 1rem;
+    font-size: calc(1rem + 0.5vw); /* Scalable font size */
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-detail a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit; /* Matches the parent font size */
+}
+
 
 ul {
     list-style: none;
