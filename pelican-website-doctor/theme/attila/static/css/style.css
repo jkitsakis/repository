@@ -887,17 +887,17 @@ button,input,select,textarea {
 }
 
 .flex-item:first-child {
-    flex: 0 0 30%; /* Fixed to 30% width */
+    flex: 0 0 25%; /* Fixed to 30% width */
     box-sizing: border-box;
 }
 
 .flex-item:last-child {
-    flex: 0 0 70%; /* Fixed to 70% width */
+    flex: 0 0 75%; /* Fixed to 70% width */
     box-sizing: border-box;
 }
 
 .flex-item img {
-    max-width: 100%; /* Ensure image scales to fit container */
+    max-width: 90%; /* Ensure image scales to fit container */
     height: auto;
     display: block;
 }
