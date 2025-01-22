@@ -2,7 +2,7 @@ Title: {{ CONTACT_TITLE }}
 Slug: contact
 Order: 2
 
-<h2 class="post-title">{{ CONTACT_TITLE }}</h2>
+<h2>{{ CONTACT_TITLE }}</h2>
 <div class="content-list">   
     <div class="content-info">
       {{ ADDRESS_MAP_IFRAME }}

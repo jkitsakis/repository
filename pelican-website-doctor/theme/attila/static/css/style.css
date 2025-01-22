@@ -1564,10 +1564,11 @@ ul li img {
     margin: 0;
     padding: 0;
     font-weight: 700;
-    font-size: 6em;
+    font-size: clamp(3em, 6vw, 6em); /* The font size will scale between 3em and 6em */
     line-height: 1em;
     text-decoration: none;
-    color: var(--color-content-lead)
+    color: var(--color-content-lead);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust the values for the shadow effect */
 }
 
 .has-cover .blog-name {
@@ -1579,9 +1580,10 @@ ul li img {
     display: block;
     margin-top: 1rem;
     padding: 0;
-    font-size: 3em;
+    font-size: clamp(1em, 3vw, 3em); /* The font size will scale between 3em and 6em */
     line-height: 1.33334em;
-    color: var(--color-content-secondary)
+    color: var(--color-content-secondary);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust the values for the shadow effect */
 }
 
 .has-cover .blog-description {
@@ -2192,7 +2194,7 @@ ul li img {
 
 .nav-header li.active a {
     color: var(--color-content-main);
-    font-weight: 500
+    font-weight: 700
 }
 
 @media only screen and (max-width: 640px) {
@@ -2691,6 +2693,7 @@ ul li img {
     text-indent: -1px;
     color: var(--color-content-lead);
     max-width: 100%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust the values for the shadow effect */
 }
 
 @media only screen and (max-width: 480px) {
@@ -2708,7 +2711,7 @@ ul li img {
 
 .post-header .post-title {
     margin: 0 0 4rem;
-    font-size: 5em;
+    font-size: clamp(3em, 6vw, 6em); /* The font size will scale between 3em and 6em */
     line-height: 1.25em;
 }
 
