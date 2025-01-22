@@ -69,12 +69,12 @@ LINKS = (
     ("You can modify those links in your config file", "#"),
 )
 # Social widget
-SOCIAL = (
-    ("Facebook", Parameters.FACEBOOK_URL),
-    # ("Twitter", "https://twitter.com/your-profile"),
-    ("LinkedIn", Parameters.LINKEDIN_URL),
-    ("Instagram", Parameters.INSTAGRAM_URL)
-)
+# SOCIAL = (
+#     ("Facebook", Parameters.FACEBOOK_URL),
+#     # ("Twitter", "https://twitter.com/your-profile"),
+#     ("LinkedIn", Parameters.LINKEDIN_URL),
+#     ("Instagram", Parameters.INSTAGRAM_URL)
+# )
 
 
 

@@ -7,31 +7,31 @@ Order: 3
 		<div class="isotope">
 			<div class="item height14x cat-space">
 				<div class="gallery-item">
-					<img src="{{ SITEURL }}/images/screenshots/RCE_screenshot_140827-600x320px.png" alt="img 1" class="gallery-img" onclick="openPopup(this)"/>
+					<img src="{{ SITEURL }}/{{ EOPYY_SERVICE_IMG }}" alt="{{ EOPYY_SERVICE }}" class="gallery-img" onclick="openPopup(this)"/>
                 </div>
 			</div><!-- /.item --> 
 			<div class="item squire cat-aeronautics">
 				<div class="gallery-item">
-                    <img src="{{ SITEURL }}/images/screenshots/RCE_mdo-600x370.png" alt="img 1" class="gallery-img" onclick="openPopup(this)"/>
+                    <img src="{{ SITEURL }}/{{ PREVENTIVE_MEDICINE_SERVICE_IMG }} " alt="{{ PREVENTIVE_MEDICINE_SERVICE }}" class="gallery-img" onclick="openPopup(this)"/>
                 </div>
 			</div><!-- /.item -->
 			<div class="item squire cat-aeronautics">
 				<div class="gallery-item">
-					<img src="{{ SITEURL }}/images/screenshots/RCE_release_7_complete_600x330px.png" alt="img 1" class="gallery-img" onclick="openPopup(this)"/>
+					<img src="{{ SITEURL }}/{{ EMERGENCY_SERVICE_IMG }} " alt="{{ EMERGENCY_SERVICE }}" class="gallery-img" onclick="openPopup(this)"/>
 				</div>
 			</div><!-- /.item -->
 			<div class="item squire cat-aeronautics">
 				<div class="gallery-item">
-					<img src="{{ SITEURL }}/images/screenshots/RCE_release_81_screenshot-600x324.png" alt="img 1" class="gallery-img" onclick="openPopup(this)"/>
+					<img src="{{ SITEURL }}/{{ CHRONIC_DISEASES_SERVICE_IMG }} " alt="{{ CHRONIC_DISEASES_SERVICE }}" class="gallery-img" onclick="openPopup(this)"/>
 				</div>
 			</div><!-- /.item --> <div class="item height14x cat-space">
 				<div class="gallery-item">
-					<img src="{{ SITEURL }}/images/screenshots/RCE_screenshot_140827-600x320px.png" alt="img 1" class="gallery-img" onclick="openPopup(this)"/>
+					<img src="{{ SITEURL }}/{{ ASSISTANCE_SERVICE_IMG }} " alt="{{ ASSISTANCE_SERVICE }}" class="gallery-img" onclick="openPopup(this)"/>
 				</div>
 			</div><!-- /.item --> 
 			<div class="item squire cat-aeronautics">
 				<div class="gallery-item">
-					<img src="{{ SITEURL }}/images/screenshots/RCE_mdo-600x370.png" alt="img 1" class="gallery-img" onclick="openPopup(this)"/>
+					<img src="{{ SITEURL }}/{{ CERTIFICATES_SERVICE_IMG }} " alt="{{ CERTIFICATES_SERVICE }}" class="gallery-img" onclick="openPopup(this)"/>
 				</div>						
 			</div><!-- /.item -->            
 		</div><!-- /.isotope -->
