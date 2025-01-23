@@ -1132,6 +1132,48 @@ ul li img {
     cursor: pointer;
 }
 
+/* cookie banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-content-secondary);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 9999;
+}
+
+.cookie-btn {
+  background-color: #45a049;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.cookie-btn-reject {
+  background-color: var(--color-primary-active);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.cookie-btn:hover {
+  background-color: #45a049;
+}
+
+#cookie-banner a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+
 /*---*/
 
 .post-content .fluid-width-video-wrapper {

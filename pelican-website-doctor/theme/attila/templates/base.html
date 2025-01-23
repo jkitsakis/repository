@@ -149,7 +149,6 @@
     </style>
     {% endif %}
   {% endif %}
-
   {% endblock head %}
 
 </head>
@@ -205,7 +204,6 @@
 {% endif %}
 
 <body class="{{body_class}}">
-
   {% include 'partials/navigation.html' %}
 
   <section id="wrapper" class="page-wrapper">
@@ -236,6 +234,7 @@
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js"></script>
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/go-to-top.js"></script>
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/popup.js"></script>
+  <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/cookie.js"></script>
 
   {% if JS_OVERRIDE %}
   <!-- Script specified by the user -->
@@ -257,6 +256,14 @@
   {% block scripts %}
 
   {% endblock scripts %}
+  <div id="cookie-banner" class="cookie-banner" style="display:none;">
+    <p>Αυτή η ιστοσελίδα χρησιμοποιεί cookies για να βελτιώσει την εμπειρία σας. Συνεχίζοντας την περιήγηση στον ιστότοπο, αποδέχεστε τη χρήση των cookies μας.
+      <a href="/cookies/policy.html" target="_blank">Μάθετε περισσότερα</a>.</p>
+    <button id="accept-cookies" class="cookie-btn">Αποδοχή</button>
+    <button id="reject-cookies" class="cookie-btn-reject">Reject</button>
+  </div>
+
+
 </body>
 
 </html>

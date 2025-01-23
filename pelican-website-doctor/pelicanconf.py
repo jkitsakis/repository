@@ -55,7 +55,11 @@ ARTICLE_SAVE_AS = 'services/{category}/{slug}.html'
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['sitemap', 'plugins.inject_constants', 'plugins.article_order_navigation', 'plugins.minify' ]
 
-STATIC_PATHS = ['robots.txt', 'images', 'favicon.ico']
+STATIC_PATHS = ['robots.txt', 'images', 'favicon.ico', 'cookies']
+# Map extra files to specific locations
+EXTRA_PATH_METADATA = {
+    'cookies/policy.html': {'path': 'policy.html'},
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
