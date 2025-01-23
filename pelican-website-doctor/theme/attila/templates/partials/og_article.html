@@ -42,6 +42,8 @@
   {% set selected_cover = SITEURL+"/"+THEME_STATIC_DIR+"/images/home-bg.jpg" %}
 {% endif %}
 
+{% set selected_cover = HOME_COVER_URL_OG %}
+
 {# <!-- Choosing description --> #}
 {% if article.headline %}
     {% set description = article.headline %}

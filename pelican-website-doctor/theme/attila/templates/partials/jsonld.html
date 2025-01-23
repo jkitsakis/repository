@@ -1,9 +1,11 @@
 {# <!-- Choosing cover image --> #}
 {% if HEADER_COVER %}
-  {% set default_cover = SITEURL+"/"+HEADER_COVER %}
+  {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
 {% else %}
-  {% set default_cover = SITEURL+"/"+THEME_STATIC_DIR+"/images/home-bg.jpg" %}
+  {% set selected_cover = SITEURL+"/"+THEME_STATIC_DIR+"/images/home-bg.jpg" %}
 {% endif %}
+
+{% set selected_cover = HOME_COVER_URL_OG %}
 
 {# <!-- Choosing description --> #}
 {% if SITESUBTITLE %}
@@ -17,7 +19,7 @@
   "@type" : "Website",
   "name": " {{ SITENAME }} ",
   "url" : "{{ SITEURL }}/",
-  "image": "{{ default_cover }}",
+  "image": "{{ selected_cover }}",
   "description": "{{ description }}"
 }
 </script>

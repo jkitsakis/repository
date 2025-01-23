@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /private/
 Allow: /
-Sitemap: https://prosopikosiatrosalimos.eu/sitemap.xml
 Sitemap: https://prosopikosiatrosalimos.gr/sitemap.xml
