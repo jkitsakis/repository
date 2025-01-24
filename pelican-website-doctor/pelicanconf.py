@@ -5,6 +5,7 @@ from plugins.configuration_params import Parameters
 AUTHOR = Parameters.AUTHOR
 SITENAME = Parameters.SITENAME
 SITEURL = Parameters.SITEURL
+SITEURL_OG = Parameters.SITEURL_OG
 SITESUBTITLE = Parameters.SITESUBTITLE
 SITESUBTITLE_ESY = Parameters.SITESUBTITLE_ESY
 HOME_COVER = Parameters.HOME_COVER + '?w=1380'

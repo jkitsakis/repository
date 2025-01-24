@@ -6,6 +6,7 @@ logger = logging.getLogger(__name__)
 class Parameters:
     AUTHOR= ""
     SITEURL=""
+    SITEURL_OG=""
     SITENAME= ""
     SITESUBTITLE=""
     SITESUBTITLE_ESY=""
@@ -27,6 +28,7 @@ class Parameters:
 
         Parameters.AUTHOR = config.get("AUTHOR", "")
         Parameters.SITEURL = config.get("SITEURL", "")
+        Parameters.SITEURL_OG = config.get("SITEURL_OG", "")
         Parameters.SITENAME = config.get("SITENAME", "")
         Parameters.SITESUBTITLE = config.get("SITESUBTITLE", "")
         Parameters.SITESUBTITLE_ESY = config.get("SITESUBTITLE_ESY", "")
