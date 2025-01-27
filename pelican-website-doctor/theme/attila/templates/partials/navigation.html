@@ -2,7 +2,11 @@
   <nav class="nav-wrapper" aria-label="Main">
       {% if SITE_LOGO %}
       <span class="logo">
-        <a href="{{ SITEURL }}" title="Home"><img src="{{ SITEURL }}/{{SITE_LOGO}}" alt="Blog Logo" /></a>
+        <a href="{{ SITEURL }}/" title="Home"><img src="{{ SITEURL }}/{{SITE_LOGO}}" alt="Blog Logo" /></a>
+      </span>
+      {% elif SITE_LOGO_IMG %}
+      <span class="logo">
+        <a href="{{ SITEURL }}/" title="Home"><img src="{{ SITEURL }}/{{SITE_LOGO_IMG}}" alt="Blog Logo" /></a>
       </span>
       {% endif %}
       {% include 'partials/navigation-items.html' %}
