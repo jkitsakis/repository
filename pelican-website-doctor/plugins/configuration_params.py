@@ -7,6 +7,7 @@ class Parameters:
     AUTHOR= ""
     SITEURL=""
     SITEURL_OG=""
+    SITE_LOGO=""
     SITENAME= ""
     SITESUBTITLE=""
     SITESUBTITLE_ESY=""
@@ -29,6 +30,7 @@ class Parameters:
         Parameters.AUTHOR = config.get("AUTHOR", "")
         Parameters.SITEURL = config.get("SITEURL", "")
         Parameters.SITEURL_OG = config.get("SITEURL_OG", "")
+        Parameters.SITE_LOGO = config.get("SITE_LOGO", "")
         Parameters.SITENAME = config.get("SITENAME", "")
         Parameters.SITESUBTITLE = config.get("SITESUBTITLE", "")
         Parameters.SITESUBTITLE_ESY = config.get("SITESUBTITLE_ESY", "")

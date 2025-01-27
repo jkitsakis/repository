@@ -6,6 +6,7 @@ AUTHOR = Parameters.AUTHOR
 SITENAME = Parameters.SITENAME
 SITEURL = Parameters.SITEURL
 SITEURL_OG = Parameters.SITEURL_OG
+SITE_LOGO_IMG = Parameters.SITE_LOGO
 SITESUBTITLE = Parameters.SITESUBTITLE
 SITESUBTITLE_ESY = Parameters.SITESUBTITLE_ESY
 HOME_COVER = Parameters.HOME_COVER + '?w=1380'
@@ -26,13 +27,6 @@ INDEX_SAVE_AS = 'index.html'  # Ensure the homepage is saved as index.html
 ARTICLE_ORDER_BY = 'order'
 PAGE_ORDER_BY = 'order'
 DEFAULT_PAGINATION = 10
-
-
-MENUITEMS = [
-    (HOME, '/'),
-    (SERVICES, '/services/services.html')
-]
-
 USE_TAGS = False
 TAGS_URL = ''
 TAGS_SAVE_AS = ''
@@ -44,6 +38,13 @@ AUTHORS_URL = ''
 AUTHORS_SAVE_AS = ''
 CATEGORIES_URL = ''
 CATEGORIES_SAVE_AS = ''
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 # URL structure for categories
 CATEGORY_URL = 'services/{slug}.html'  # Single category URL
@@ -62,12 +63,12 @@ EXTRA_PATH_METADATA = {
     'cookies/policy.html': {'path': 'policy.html'},
 }
 
-# Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+MENUITEMS = [
+    (HOME, '/'),
+    (SERVICES, '/services/services.html')
+]
+
+
 # Blogroll
 LINKS = (
     ("Pelican", "https://getpelican.com/"),
