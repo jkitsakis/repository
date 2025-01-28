@@ -73,7 +73,7 @@
 		</track>
 		<track>
 			<title>SKAI</title>
-			<location>https://skai-live.siliconweb.com/media/cambria4/index.m3u8</location>
+			<location>https://skai-live-gr.siliconweb.com/media/cambria4/index_media_bitrate2000K_avc1_mp4a.m3u8</location>
 			<extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>8</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>
