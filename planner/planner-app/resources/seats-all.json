@@ -1,0 +1,4009 @@
+// 20250129125820
+// https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/facility/facilities/available/map?dates=
+
+{
+  "AMALIAS": [
+    {
+      "id": "6448cee7bf530c0226ea4d4d",
+      "city": "Athens",
+      "sectorName": "AMALIAS",
+      "floor": "Mezzazine",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/MEZZANINE-1682492980.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        {
+          "id": "6448cee7bf530c0226ea4d52",
+          "x": 1111.0,
+          "y": 1530.0,
+          "code": "005",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d53",
+          "x": 1199.0,
+          "y": 1585.0,
+          "code": "006",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d54",
+          "x": 1146.0,
+          "y": 1452.0,
+          "code": "007",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d55",
+          "x": 1225.0,
+          "y": 1504.0,
+          "code": "008",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d56",
+          "x": 1268.0,
+          "y": 1175.0,
+          "code": "009",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d57",
+          "x": 1349.0,
+          "y": 1238.0,
+          "code": "010",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d58",
+          "x": 1304.0,
+          "y": 1104.0,
+          "code": "011",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d59",
+          "x": 1382.0,
+          "y": 1171.0,
+          "code": "012",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d5a",
+          "x": 1361.0,
+          "y": 954.0,
+          "code": "013",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d5b",
+          "x": 1437.0,
+          "y": 1017.0,
+          "code": "014",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d5c",
+          "x": 1404.0,
+          "y": 881.0,
+          "code": "015",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448cee7bf530c0226ea4d5d",
+          "x": 1464.0,
+          "y": 932.0,
+          "code": "016",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        }
+      ]
+    },
+    {
+      "id": "6448d14dbf530c0226ea4d6a",
+      "city": "Athens",
+      "sectorName": "AMALIAS",
+      "floor": "1st Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/plan-01-1682493587.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        {
+          "id": "6448d14dbf530c0226ea4d6b",
+          "x": 964.0,
+          "y": 1943.0,
+          "code": "018",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d6c",
+          "x": 925.0,
+          "y": 2061.0,
+          "code": "017",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d6d",
+          "x": 998.0,
+          "y": 2088.0,
+          "code": "019",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d6e",
+          "x": 1069.0,
+          "y": 2122.0,
+          "code": "020",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d6f",
+          "x": 1026.0,
+          "y": 2001.0,
+          "code": "021",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d70",
+          "x": 1103.0,
+          "y": 2040.0,
+          "code": "022",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d71",
+          "x": 945.0,
+          "y": 1728.0,
+          "code": "025",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d72",
+          "x": 759.0,
+          "y": 1768.0,
+          "code": "023",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d73",
+          "x": 789.0,
+          "y": 1684.0,
+          "code": "024",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d74",
+          "x": 1020.0,
+          "y": 1773.0,
+          "code": "026",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d75",
+          "x": 1091.0,
+          "y": 1812.0,
+          "code": "027",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d76",
+          "x": 1192.0,
+          "y": 1778.0,
+          "code": "028",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d77",
+          "x": 1229.0,
+          "y": 1674.0,
+          "code": "029",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d78",
+          "x": 1262.0,
+          "y": 1577.0,
+          "code": "030",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d79",
+          "x": 1293.0,
+          "y": 1476.0,
+          "code": "031",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d7a",
+          "x": 1002.0,
+          "y": 1467.0,
+          "code": "033",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d7b",
+          "x": 1071.0,
+          "y": 1506.0,
+          "code": "032",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d7c",
+          "x": 925.0,
+          "y": 1425.0,
+          "code": "036",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d7d",
+          "x": 968.0,
+          "y": 1319.0,
+          "code": "037",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d7e",
+          "x": 1038.0,
+          "y": 1386.0,
+          "code": "035",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d7f",
+          "x": 1102.0,
+          "y": 1426.0,
+          "code": "034",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d80",
+          "x": 1140.0,
+          "y": 1199.0,
+          "code": "038",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d81",
+          "x": 1205.0,
+          "y": 1249.0,
+          "code": "039",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d82",
+          "x": 1270.0,
+          "y": 1303.0,
+          "code": "040",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d83",
+          "x": 1375.0,
+          "y": 1252.0,
+          "code": "041",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d84",
+          "x": 1406.0,
+          "y": 1154.0,
+          "code": "042",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d85",
+          "x": 1441.0,
+          "y": 1066.0,
+          "code": "043",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d86",
+          "x": 1283.0,
+          "y": 1065.0,
+          "code": "045",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d87",
+          "x": 1314.0,
+          "y": 978.0,
+          "code": "047",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d88",
+          "x": 1247.0,
+          "y": 921.0,
+          "code": "046",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d89",
+          "x": 1213.0,
+          "y": 1010.0,
+          "code": "044",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d8a",
+          "x": 1023.0,
+          "y": 1044.0,
+          "code": "048",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d8b",
+          "x": 1065.0,
+          "y": 959.0,
+          "code": "049",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d8c",
+          "x": 1368.0,
+          "y": 792.0,
+          "code": "050",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d8d",
+          "x": 1432.0,
+          "y": 850.0,
+          "code": "051",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d8e",
+          "x": 1488.0,
+          "y": 903.0,
+          "code": "052",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d8f",
+          "x": 764.0,
+          "y": 1004.0,
+          "code": "054",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6448d14dbf530c0226ea4d91",
+          "x": 687.0,
+          "y": 1187.0,
+          "code": "055",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        }
+      ]
+    },
+    {
+      "id": "6448d397bf530c0226ea4daf",
+      "city": "Athens",
+      "sectorName": "AMALIAS",
+      "floor": "2nd Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/plan-01-1682494257.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        
+      ]
+    },
+    {
+      "id": "6448dc26bf530c0226ea4e0b",
+      "city": "Athens",
+      "sectorName": "AMALIAS",
+      "floor": "3rd Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/plan-02 (1)-1682495496.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        
+      ]
+    }
+  ],
+  "ORBIT": [
+    {
+      "id": "63f73fbd79d8d3143f3ae2ba",
+      "city": "Athens",
+      "sectorName": "ORBIT",
+      "floor": "6th floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/plan_06 (1)-1677223560.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        {
+          "id": "63f73fbd79d8d3143f3ae2de",
+          "x": 473.8196481541572,
+          "y": 1471.3333129882812,
+          "code": "217",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2df",
+          "x": 501.8345885437536,
+          "y": 1489.3333129882812,
+          "code": "216",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2e0",
+          "x": 532.8511296893782,
+          "y": 1506.3333129882812,
+          "code": "215",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2e1",
+          "x": 485.82605117827006,
+          "y": 1435.3333129882812,
+          "code": "214",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2e2",
+          "x": 518.8436594945802,
+          "y": 1451.3333129882812,
+          "code": "213",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2e3",
+          "x": 551.8612678108902,
+          "y": 1470.3333129882812,
+          "code": "212",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2e4",
+          "x": 506.8372564704673,
+          "y": 1378.3333129882812,
+          "code": "211",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2e5",
+          "x": 567.8698051763738,
+          "y": 1419.3333129882812,
+          "code": "209",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2e6",
+          "x": 538.8543312014347,
+          "y": 1398.3333129882812,
+          "code": "210",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2e7",
+          "x": 525.8473945919792,
+          "y": 1341.3333129882812,
+          "code": "208",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2fc",
+          "x": 944.6120834558351,
+          "y": 246.33334350585938,
+          "code": "150",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2fd",
+          "x": 968.6248895040608,
+          "y": 272.3333435058594,
+          "code": "149",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2fe",
+          "x": 993.638229137629,
+          "y": 294.3333435058594,
+          "code": "148",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae2ff",
+          "x": 958.6195536506334,
+          "y": 198.33334350585938,
+          "code": "147",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae300",
+          "x": 985.6339604548871,
+          "y": 222.33334350585938,
+          "code": "146",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae302",
+          "x": 971.6264902600889,
+          "y": 160.33334350585938,
+          "code": "144",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae303",
+          "x": 999.6414306496854,
+          "y": 181.33334350585938,
+          "code": "143",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae304",
+          "x": 1021.6531695272254,
+          "y": 210.33334350585938,
+          "code": "142",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae305",
+          "x": 995.6392963083144,
+          "y": 118.33334350585938,
+          "code": "141",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae306",
+          "x": 1019.6521023565399,
+          "y": 142.33334350585938,
+          "code": "140",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f73fbd79d8d3143f3ae307",
+          "x": 1038.662240478052,
+          "y": 169.33334350585938,
+          "code": "139",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f8c89c2f443e08d6c186b3",
+          "x": 1011.6282103263047,
+          "y": 248.6283796474703,
+          "code": "145",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f8ca1e2f443e08d6c186db",
+          "x": 595.8114400271812,
+          "y": 1376.2626779834636,
+          "code": "206",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f8ca1e2f443e08d6c186dc",
+          "x": 562.8014999647163,
+          "y": 1360.258786457783,
+          "code": "207",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        }
+      ]
+    },
+    {
+      "id": "63f86ec62f443e08d6c18506",
+      "city": "Athens",
+      "sectorName": "ORBIT",
+      "floor": "7th floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/plan_07-1677225494.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        {
+          "id": "63f86f3c2f443e08d6c1851f",
+          "x": 1007.9999783067805,
+          "y": 1208.0000712076867,
+          "code": "063",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18520",
+          "x": 1036.9999800839087,
+          "y": 1139.0000669277822,
+          "code": "065",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18521",
+          "x": 1022.9999792259847,
+          "y": 1175.0000691607759,
+          "code": "064",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18522",
+          "x": 1083.999982964082,
+          "y": 1171.0000689126655,
+          "code": "068",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18523",
+          "x": 1067.9999819835973,
+          "y": 1207.0000711456591,
+          "code": "067",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18524",
+          "x": 1050.9999809418325,
+          "y": 1244.0000734406804,
+          "code": "066",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18525",
+          "x": 1078.9999826576804,
+          "y": 1268.0000749293429,
+          "code": "069",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18526",
+          "x": 1090.9999833930437,
+          "y": 1234.0000728204045,
+          "code": "070",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18527",
+          "x": 1108.999984496089,
+          "y": 1195.0000704013278,
+          "code": "071",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18528",
+          "x": 1142.9999865796185,
+          "y": 1223.0000721381007,
+          "code": "074",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c18529",
+          "x": 1127.9999856604143,
+          "y": 1257.0000742470393,
+          "code": "073",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86f3c2f443e08d6c1852a",
+          "x": 1110.9999846186495,
+          "y": 1294.0000765420605,
+          "code": "072",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86fad2f443e08d6c1852b",
+          "x": 1134.999986089376,
+          "y": 1317.0000779686952,
+          "code": "075",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86fad2f443e08d6c1852c",
+          "x": 1145.9999867634592,
+          "y": 1286.0000760458397,
+          "code": "076",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86fad2f443e08d6c1852d",
+          "x": 1162.999987805224,
+          "y": 1249.0000737508185,
+          "code": "077",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86fad2f443e08d6c1852e",
+          "x": 1190.999989521072,
+          "y": 1304.0000771623365,
+          "code": "079",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86fad2f443e08d6c1852f",
+          "x": 1170.999986457058,
+          "y": 1341.0000794573577,
+          "code": "078",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "63f86fad2f443e08d6c18530",
+          "x": 1203.9999867634592,
+          "y": 1262.0000745571772,
+          "code": "080",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        }
+      ]
+    },
+    {
+      "id": "6453c8c2bf530c0226ea5f72",
+      "city": "Athens",
+      "sectorName": "ORBIT",
+      "floor": "3rd Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/plan_03_revised (1) (1)-1683212454.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        
+      ]
+    }
+  ],
+  "LUX A": [
+    {
+      "id": "6762e07a42901d39bf1984b8",
+      "city": "Luxembourg",
+      "sectorName": "LUX A",
+      "floor": "1st Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/Luxembourg-1734533147.jpg",
+      "parkingSupported": false,
+      "positionDtoList": [
+        {
+          "id": "6762e07a42901d39bf1984c8",
+          "x": 670.8061235503602,
+          "y": 573.4657262799371,
+          "code": "026",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984c9",
+          "x": 596.8487025244691,
+          "y": 568.4645101781618,
+          "code": "024",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984ca",
+          "x": 604.844099392133,
+          "y": 658.4864000101171,
+          "code": "025",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984cb",
+          "x": 675.8032465926501,
+          "y": 662.4873728915373,
+          "code": "027",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984d4",
+          "x": 383.97126092291785,
+          "y": 631.4798330605305,
+          "code": "020",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984d7",
+          "x": 387.9689593567498,
+          "y": 726.5029389942612,
+          "code": "021",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984e6",
+          "x": 887.6812635857434,
+          "y": 721.5017228924859,
+          "code": "043",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984e7",
+          "x": 887.6812635857434,
+          "y": 651.4846974676317,
+          "code": "042",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984e8",
+          "x": 821.7192394275162,
+          "y": 643.4827517047912,
+          "code": "040",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984e9",
+          "x": 825.7169378613481,
+          "y": 719.5012364517758,
+          "code": "041",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984ea",
+          "x": 863.6950729827516,
+          "y": 830.5282339111873,
+          "code": "046",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e07a42901d39bf1984eb",
+          "x": 910.6680295802771,
+          "y": 804.5219101819557,
+          "code": "047",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "6762e0cb42901d39bf198511",
+          "x": 985.2916625117634,
+          "y": 1854.6661195025054,
+          "code": "081",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        }
+      ]
+    }
+  ],
+  "BASTION": [
+    {
+      "id": "66716a00f53944220421c9d7",
+      "city": "Brussels",
+      "sectorName": "BASTION",
+      "floor": "3rd Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/Brussles-bastion. final 3-1718707452.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        {
+          "id": "66716a00f53944220421c9d9",
+          "x": 994.7025225727792,
+          "y": 1716.561352579476,
+          "code": "002",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421c9da",
+          "x": 936.735895282216,
+          "y": 1647.544570374977,
+          "code": "003",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421c9ff",
+          "x": 775.415524193389,
+          "y": 690.9882948979565,
+          "code": "042",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca00",
+          "x": 808.3965362725027,
+          "y": 640.9761338802035,
+          "code": "041",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca01",
+          "x": 840.3781237431582,
+          "y": 589.9637296420955,
+          "code": "040",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca02",
+          "x": 825.3867546162885,
+          "y": 766.0065364245859,
+          "code": "045",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca03",
+          "x": 855.369492870028,
+          "y": 710.9931593050577,
+          "code": "044",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca04",
+          "x": 888.3505049491416,
+          "y": 666.9824576094351,
+          "code": "043",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca1e",
+          "x": 1202.9366840553648,
+          "y": 2595.6578509900837,
+          "code": "073",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca1f",
+          "x": 1161.9602751085872,
+          "y": 2616.6629586175395,
+          "code": "074",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca20",
+          "x": 1208.9332317061126,
+          "y": 2714.6867942123354,
+          "code": "071",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca21",
+          "x": 1166.9573981508772,
+          "y": 2737.6923882805017,
+          "code": "072",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca22",
+          "x": 1147.9683305901754,
+          "y": 2455.6238001403754,
+          "code": "083",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca23",
+          "x": 1154.9643028493813,
+          "y": 2568.6512840404966,
+          "code": "079",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca24",
+          "x": 1107.991346251856,
+          "y": 2469.627205225346,
+          "code": "084",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca25",
+          "x": 1115.9867431195198,
+          "y": 2589.6563916679534,
+          "code": "080",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca26",
+          "x": 1075.0103341727424,
+          "y": 2488.631826412092,
+          "code": "085",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca27",
+          "x": 1080.0074572150324,
+          "y": 2603.6597967529237,
+          "code": "081",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca28",
+          "x": 1032.035076009049,
+          "y": 2509.6369340395486,
+          "code": "086",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca29",
+          "x": 1040.0304728767128,
+          "y": 2617.6632018378946,
+          "code": "082",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca2a",
+          "x": 1094.998826341902,
+          "y": 2650.6712281096115,
+          "code": "077",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca2b",
+          "x": 1046.0270205274608,
+          "y": 2674.677065398133,
+          "code": "078",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca2c",
+          "x": 1100.99537399265,
+          "y": 2769.7001713318637,
+          "code": "075",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca2d",
+          "x": 1044.0281713105448,
+          "y": 2781.7030899761244,
+          "code": "076",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca2e",
+          "x": 1053.0229927866667,
+          "y": 2331.593640816348,
+          "code": "089",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca2f",
+          "x": 1093.999401733444,
+          "y": 2397.609693359782,
+          "code": "088",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "66716a00f53944220421ca30",
+          "x": 1126.9804138125578,
+          "y": 2307.5878035278265,
+          "code": "087",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        }
+      ]
+    }
+  ],
+  "THESS DC": [
+    {
+      "id": "6204d937bb98fb26232f2ad3",
+      "city": "Thessaloniki",
+      "sectorName": "THESS DC",
+      "floor": "2nd Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/IMG_0374-1713186482.jpeg",
+      "parkingSupported": false,
+      "positionDtoList": [
+        {
+          "id": "6259682cde435d1006f95c73",
+          "x": 1346.9792949923508,
+          "y": 1957.6927643604902,
+          "code": "004",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c75",
+          "x": 1379.9863389640252,
+          "y": 1938.698968080505,
+          "code": "005",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c77",
+          "x": 1413.9935963893868,
+          "y": 1918.7054983120997,
+          "code": "006",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c78",
+          "x": 1358.981856436596,
+          "y": 2000.6787243625618,
+          "code": "007",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c79",
+          "x": 1373.9850582419026,
+          "y": 2042.6650108762133,
+          "code": "010",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c7a",
+          "x": 1392.9891138619575,
+          "y": 1976.6865606404754,
+          "code": "008",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c7b",
+          "x": 1402.9912483988287,
+          "y": 2020.6721941309672,
+          "code": "011",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c7c",
+          "x": 1427.9965847410062,
+          "y": 1961.6914583141713,
+          "code": "009",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c7d",
+          "x": 1439.9991461852514,
+          "y": 2005.6770918046632,
+          "code": "012",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c7e",
+          "x": 1391.9889004082704,
+          "y": 2107.643787623531,
+          "code": "013",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c7f",
+          "x": 1408.9925291209513,
+          "y": 2162.6258294866457,
+          "code": "016",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c80",
+          "x": 1420.9950905651965,
+          "y": 2090.649338320386,
+          "code": "014",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c81",
+          "x": 1435.9982923705031,
+          "y": 2142.6323597182404,
+          "code": "017",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c82",
+          "x": 1465.0044825274292,
+          "y": 2086.650644366705,
+          "code": "015",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c84",
+          "x": 1419.9948771115094,
+          "y": 2204.612116000297,
+          "code": "019",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c85",
+          "x": 1430.9972251020677,
+          "y": 2252.5964434444704,
+          "code": "022",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c86",
+          "x": 1450.0012807221226,
+          "y": 2184.618646231892,
+          "code": "020",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c87",
+          "x": 1465.0044825274292,
+          "y": 2232.6029736760647,
+          "code": "023",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c88",
+          "x": 1489.0096054159199,
+          "y": 2170.623217394008,
+          "code": "021",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c89",
+          "x": 1503.0125937675393,
+          "y": 2216.60819786134,
+          "code": "024",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c8a",
+          "x": 1311.9718241133019,
+          "y": 2164.6251764634862,
+          "code": "031",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c8b",
+          "x": 1321.973958650173,
+          "y": 2203.612442511877,
+          "code": "029",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c8c",
+          "x": 1277.9645666879403,
+          "y": 2182.6192992550514,
+          "code": "032",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c8d",
+          "x": 1285.9662743174372,
+          "y": 2222.606238791862,
+          "code": "030",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c8e",
+          "x": 1334.9767335481054,
+          "y": 2258.5944843749917,
+          "code": "027",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c90",
+          "x": 1297.9688357616824,
+          "y": 2271.5902397244554,
+          "code": "028",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c92",
+          "x": 923.5253400480603,
+          "y": 2118.8220213742966,
+          "code": "035",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c93",
+          "x": 940.5289687607411,
+          "y": 2171.804716260571,
+          "code": "038",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c94",
+          "x": 884.5170153542632,
+          "y": 2133.817123700601,
+          "code": "034",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c95",
+          "x": 901.520644066944,
+          "y": 2182.801124633194,
+          "code": "037",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c96",
+          "x": 847.5091175678403,
+          "y": 2154.8102669574264,
+          "code": "033",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c97",
+          "x": 862.5123193731469,
+          "y": 2200.7952474247586,
+          "code": "036",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c98",
+          "x": 949.5308898439251,
+          "y": 2213.7910027742223,
+          "code": "041",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c99",
+          "x": 962.5336647418575,
+          "y": 2257.7766362647144,
+          "code": "044",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c9a",
+          "x": 913.5232055111893,
+          "y": 2230.785452077367,
+          "code": "040",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c9b",
+          "x": 928.5264073164959,
+          "y": 2270.7723916141776,
+          "code": "043",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c9c",
+          "x": 869.5138135489566,
+          "y": 2252.778268822613,
+          "code": "039",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c9d",
+          "x": 886.5174422616375,
+          "y": 2294.7645553362645,
+          "code": "042",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c9e",
+          "x": 808.5007928740431,
+          "y": 2294.7645553362645,
+          "code": "045",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95c9f",
+          "x": 821.5035677719756,
+          "y": 2335.7511683614957,
+          "code": "048",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ca0",
+          "x": 769.492468180246,
+          "y": 2309.7596576625683,
+          "code": "046",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ca1",
+          "x": 781.4950296244913,
+          "y": 2350.7462706877996,
+          "code": "049",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ca2",
+          "x": 733.4847838475102,
+          "y": 2327.7537804541334,
+          "code": "047",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ca3",
+          "x": 744.4871318380683,
+          "y": 2368.7403934793647,
+          "code": "050",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ca6",
+          "x": 752.7616638037791,
+          "y": 1569.81957288388,
+          "code": "061",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ca7",
+          "x": 699.7503507583624,
+          "y": 1535.8306742775908,
+          "code": "063",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ca8",
+          "x": 710.7526987489206,
+          "y": 1584.814675210184,
+          "code": "060",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ca9",
+          "x": 739.7588889058467,
+          "y": 1522.8349189281273,
+          "code": "064",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95caa",
+          "x": 656.7411722498168,
+          "y": 1551.8254500923151,
+          "code": "062",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cab",
+          "x": 670.7441606014363,
+          "y": 1594.811410094387,
+          "code": "059",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cac",
+          "x": 770.7655059701469,
+          "y": 1616.8042268396327,
+          "code": "058",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cad",
+          "x": 784.7684943217664,
+          "y": 1656.7911663764437,
+          "code": "055",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cae",
+          "x": 730.7569678226628,
+          "y": 1632.799002654357,
+          "code": "057",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95caf",
+          "x": 740.7591023595337,
+          "y": 1672.785942191168,
+          "code": "054",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb0",
+          "x": 686.7475758604301,
+          "y": 1648.7937784690814,
+          "code": "056",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb1",
+          "x": 699.7503507583624,
+          "y": 1687.781044517472,
+          "code": "053",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb2",
+          "x": 593.7277246675292,
+          "y": 1572.8185933491409,
+          "code": "070",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb3",
+          "x": 557.7200403347933,
+          "y": 1589.8130426522855,
+          "code": "069",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb4",
+          "x": 568.7223883253515,
+          "y": 1623.8019412585747,
+          "code": "066",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb5",
+          "x": 524.7129963631188,
+          "y": 1601.8091245133287,
+          "code": "068",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb6",
+          "x": 536.7155578073641,
+          "y": 1639.796717073299,
+          "code": "065",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb7",
+          "x": 609.7311399265229,
+          "y": 1608.8068389322707,
+          "code": "067",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb8",
+          "x": 702.7509911194237,
+          "y": 1390.8780184566515,
+          "code": "085",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cb9",
+          "x": 712.7531256562947,
+          "y": 1435.8633254355636,
+          "code": "083",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cba",
+          "x": 660.7420260645653,
+          "y": 1412.8708352018975,
+          "code": "086",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cbb",
+          "x": 671.7443740551234,
+          "y": 1449.8587542734476,
+          "code": "084",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cbc",
+          "x": 686.7475758604301,
+          "y": 1342.8936910124785,
+          "code": "096",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cbd",
+          "x": 676.745441323559,
+          "y": 1295.9090370567258,
+          "code": "093",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cbe",
+          "x": 634.7364762687005,
+          "y": 1313.9031598482907,
+          "code": "094",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cbf",
+          "x": 640.7377569908232,
+          "y": 1354.889772873522,
+          "code": "097",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cc0",
+          "x": 554.719399973732,
+          "y": 1444.8603868313462,
+          "code": "076",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cc1",
+          "x": 572.7232421401,
+          "y": 1499.8424286944612,
+          "code": "073",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cc2",
+          "x": 509.7097945578123,
+          "y": 1465.853530088172,
+          "code": "075",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cc3",
+          "x": 530.7142770852415,
+          "y": 1520.8355719512867,
+          "code": "072",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cc4",
+          "x": 472.70189677138933,
+          "y": 1485.8469998565772,
+          "code": "074",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cc7",
+          "x": 458.69890841976985,
+          "y": 1428.8656110166219,
+          "code": "077",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cc8",
+          "x": 484.70445821563465,
+          "y": 1356.8891198503625,
+          "code": "081",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cc9",
+          "x": 499.70766002094115,
+          "y": 1414.870182178738,
+          "code": "078",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95cca",
+          "x": 522.7125694557446,
+          "y": 1347.89205845458,
+          "code": "082",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "6259682cde435d1006f95ccb",
+          "x": 541.7166250757997,
+          "y": 1397.8757328755935,
+          "code": "079",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cd6",
+          "x": 524.2386717462769,
+          "y": 998.7017031995882,
+          "code": "087",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cd7",
+          "x": 663.2683418087846,
+          "y": 943.7196613364733,
+          "code": "103",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cd8",
+          "x": 677.2713301604041,
+          "y": 980.7075804080234,
+          "code": "101",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cd9",
+          "x": 719.2802952152625,
+          "y": 970.7108455238207,
+          "code": "102",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cda",
+          "x": 710.2783741320786,
+          "y": 930.7239059870099,
+          "code": "104",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cdb",
+          "x": 689.2738916046494,
+          "y": 872.7428436586341,
+          "code": "106",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cdc",
+          "x": 683.2726108825268,
+          "y": 837.7542715639246,
+          "code": "108",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cdd",
+          "x": 643.2640727350424,
+          "y": 847.7510064481273,
+          "code": "107",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cde",
+          "x": 653.2662072719136,
+          "y": 882.7395785428369,
+          "code": "105",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cdf",
+          "x": 211.17186074221263,
+          "y": 635.8202269030298,
+          "code": "109",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ce0",
+          "x": 253.18082579707107,
+          "y": 626.8231655072474,
+          "code": "110",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ce1",
+          "x": 240.17805089913873,
+          "y": 583.8372055051758,
+          "code": "112",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ce2",
+          "x": 196.168658936906,
+          "y": 597.8326343430596,
+          "code": "111",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ce5",
+          "x": 215.17271455696118,
+          "y": 521.8574492231189,
+          "code": "120",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ce6",
+          "x": 176.16438986316393,
+          "y": 535.8528780610028,
+          "code": "119",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ce7",
+          "x": 361.20387879527857,
+          "y": 604.8303487620014,
+          "code": "113",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ce8",
+          "x": 401.21241694276273,
+          "y": 585.8365524820163,
+          "code": "114",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ce9",
+          "x": 437.22010127549856,
+          "y": 569.8417766672919,
+          "code": "115",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cea",
+          "x": 430.2186070996888,
+          "y": 527.8554901536406,
+          "code": "118",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ceb",
+          "x": 390.21006895220467,
+          "y": 539.8515720146838,
+          "code": "117",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cec",
+          "x": 342.1998231752236,
+          "y": 555.8463478294082,
+          "code": "116",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95ced",
+          "x": 326.1964079162299,
+          "y": 490.86757108209054,
+          "code": "123",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cee",
+          "x": 375.20686714689805,
+          "y": 480.87083619788785,
+          "code": "124",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cef",
+          "x": 421.21668601650504,
+          "y": 460.87736642948244,
+          "code": "125",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cf0",
+          "x": 358.20323843421716,
+          "y": 435.88552921897565,
+          "code": "127",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cf1",
+          "x": 316.1942733793587,
+          "y": 449.88095805685947,
+          "code": "126",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "62596eb2de435d1006f95cf2",
+          "x": 408.21391111857247,
+          "y": 423.8894473579324,
+          "code": "128",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656d8cdaa752386eed3d93b6",
+          "x": 321.0,
+          "y": 330.0,
+          "code": "099",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656d8cdaa752386eed3d93b7",
+          "x": 282.0,
+          "y": 341.0,
+          "code": "100",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656d8cdaa752386eed3d93b8",
+          "x": 1381.0,
+          "y": 2366.0,
+          "code": "091",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656d8cdaa752386eed3d93b9",
+          "x": 1416.0,
+          "y": 2351.0,
+          "code": "092",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656dd54ba752386eed3d9571",
+          "x": 500.0,
+          "y": 1044.0,
+          "code": "090",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656dd54ba752386eed3d9573",
+          "x": 489.0,
+          "y": 1008.0,
+          "code": "089",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656dd54ba752386eed3d9575",
+          "x": 597.0,
+          "y": 1175.0,
+          "code": "129",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656dd54ba752386eed3d9576",
+          "x": 617.0,
+          "y": 1221.0,
+          "code": "130",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656dd54ba752386eed3d9577",
+          "x": 560.0,
+          "y": 1190.0,
+          "code": "131",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "656dd568a752386eed3d957a",
+          "x": 581.0,
+          "y": 1232.0,
+          "code": "132",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "65b8b8472ff4cb422c73c40e",
+          "x": 601.001519879055,
+          "y": 1325.1418403517273,
+          "code": "095",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "65b8b8472ff4cb422c73c40f",
+          "x": 609.0028147929202,
+          "y": 1365.1543372990159,
+          "code": "098",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df0",
+          "x": 1388.7364778861256,
+          "y": 1692.2000122070312,
+          "code": "159",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df1",
+          "x": 1373.9406870993964,
+          "y": 1638.3999633789062,
+          "code": "156",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df2",
+          "x": 1340.9501813495635,
+          "y": 1655.3999633789062,
+          "code": "157",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df3",
+          "x": 1352.9467288949572,
+          "y": 1706.3999633789062,
+          "code": "160",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df4",
+          "x": 1309.9591001906297,
+          "y": 1672.3999633789062,
+          "code": "158",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df5",
+          "x": 1320.9559354405737,
+          "y": 1728.3999633789062,
+          "code": "161",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df6",
+          "x": 1336.9513321677655,
+          "y": 1509.3999633789062,
+          "code": "150",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df7",
+          "x": 1348.9478797131594,
+          "y": 1567.3999633789062,
+          "code": "153",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df8",
+          "x": 1303.9608264179326,
+          "y": 1522.3999633789062,
+          "code": "151",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9df9",
+          "x": 1319.9562231451243,
+          "y": 1590.3999633789062,
+          "code": "154",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9dfa",
+          "x": 1273.9694575544481,
+          "y": 1537.3999633789062,
+          "code": "152",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9dfb",
+          "x": 1289.9648542816399,
+          "y": 1607.3999633789062,
+          "code": "155",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9dfc",
+          "x": 1253.9752116454583,
+          "y": 1693.3999633789062,
+          "code": "164",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9dfd",
+          "x": 1276.9685944407966,
+          "y": 1757.3999633789062,
+          "code": "162",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9dfe",
+          "x": 1215.986144418378,
+          "y": 1714.3999633789062,
+          "code": "165",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "661d276b577c3628495e9dff",
+          "x": 1240.9789518046152,
+          "y": 1776.3999633789062,
+          "code": "163",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        }
+      ]
+    }
+  ],
+  "MAROUSSI": [
+    {
+      "id": "64a41c5241d4b80382ab638b",
+      "city": "Maroussi",
+      "sectorName": "MAROUSSI",
+      "floor": "Ground Floor ",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/GROUND GLOOR FINAL-1688476693.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        {
+          "id": "64a41c5241d4b80382ab638c",
+          "x": 412.2213447171823,
+          "y": 1202.0018395677394,
+          "code": "103",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab638d",
+          "x": 457.21173959445025,
+          "y": 1229.0017884686356,
+          "code": "104",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab638e",
+          "x": 504.20170757737446,
+          "y": 1259.0017316918534,
+          "code": "105",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab638f",
+          "x": 361.23223052294543,
+          "y": 1295.0016635597149,
+          "code": "100",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab6390",
+          "x": 411.2215581643543,
+          "y": 1324.0016086754922,
+          "code": "101",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab6391",
+          "x": 456.2119530416221,
+          "y": 1355.0015500061506,
+          "code": "102",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab639e",
+          "x": 691.1617929562433,
+          "y": 1595.0010957918942,
+          "code": "060",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab639f",
+          "x": 638.17310565635,
+          "y": 1690.0009159987508,
+          "code": "061",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab63a0",
+          "x": 617.1775880469584,
+          "y": 1750.0008024451868,
+          "code": "062",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41c5241d4b80382ab63a1",
+          "x": 576.1863393810031,
+          "y": 1847.0006188669247,
+          "code": "063",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b0",
+          "x": 461.21088580576304,
+          "y": 1586.0011128249287,
+          "code": "079",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b1",
+          "x": 507.201067235859,
+          "y": 1614.0010598332653,
+          "code": "078",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b2",
+          "x": 556.1906083244396,
+          "y": 1647.000997378805,
+          "code": "077",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b3",
+          "x": 507.201067235859,
+          "y": 1490.0012945106314,
+          "code": "076",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b4",
+          "x": 552.1914621131269,
+          "y": 1521.0012358412898,
+          "code": "075",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b5",
+          "x": 598.181643543223,
+          "y": 1550.0011809570672,
+          "code": "074",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b6",
+          "x": 542.1935965848452,
+          "y": 1709.0008800401222,
+          "code": "080",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b7",
+          "x": 513.1997865528281,
+          "y": 1775.0007551312017,
+          "code": "081",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b8",
+          "x": 487.2053361792955,
+          "y": 1835.0006415776375,
+          "code": "082",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63b9",
+          "x": 401.2236926360724,
+          "y": 1784.000738098167,
+          "code": "085",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63ba",
+          "x": 422.2192102454642,
+          "y": 1731.0008384038154,
+          "code": "084",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63bb",
+          "x": 452.21280683030943,
+          "y": 1672.00095006482,
+          "code": "083",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63bc",
+          "x": 411.2215581643543,
+          "y": 1642.0010068416022,
+          "code": "086",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63bd",
+          "x": 386.22689434364975,
+          "y": 1704.000889502919,
+          "code": "087",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63be",
+          "x": 358.2328708644609,
+          "y": 1767.0007702716769,
+          "code": "088",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c0",
+          "x": 297.49583778014926,
+          "y": 1656.2509798726308,
+          "code": "090",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c1",
+          "x": 324.4900747065101,
+          "y": 1602.2510820708385,
+          "code": "089",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c2",
+          "x": 259.50394877267877,
+          "y": 1536.251206979759,
+          "code": "093",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c4",
+          "x": 280.4994663820703,
+          "y": 1485.2513035002887,
+          "code": "094",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c5",
+          "x": 329.4890074706509,
+          "y": 1508.2512599714223,
+          "code": "095",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c6",
+          "x": 378.4785485592315,
+          "y": 1538.2512031946403,
+          "code": "096",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c7",
+          "x": 324.4900747065101,
+          "y": 1378.2515060041446,
+          "code": "097",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c8",
+          "x": 370.48025613660593,
+          "y": 1415.2514359794468,
+          "code": "098",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64a41cb441d4b80382ab63c9",
+          "x": 418.4700106723585,
+          "y": 1446.2513773101052,
+          "code": "099",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        }
+      ]
+    },
+    {
+      "id": "64a41f6f41d4b80382ab6407",
+      "city": "Maroussi",
+      "sectorName": "MAROUSSI",
+      "floor": "1st Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/1ST FLOOR FINAL-1688477501.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        
+      ]
+    },
+    {
+      "id": "64a6ab0769e1697cc79dbf9d",
+      "city": "Maroussi",
+      "sectorName": "MAROUSSI",
+      "floor": "2nd Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/2ND FLOOR FINAL-1688643350.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        
+      ]
+    },
+    {
+      "id": "64ad313b69e1697cc79dc940",
+      "city": "Maroussi",
+      "sectorName": "MAROUSSI",
+      "floor": "3rd Floor",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/3RD FLOOR FINAL-1689071896.jpg",
+      "parkingSupported": true,
+      "positionDtoList": [
+        {
+          "id": "64ad317669e1697cc79dc956",
+          "x": 885.0,
+          "y": 809.8741207571466,
+          "code": "398",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc957",
+          "x": 926.0,
+          "y": 838.8646519213344,
+          "code": "399",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc958",
+          "x": 937.0,
+          "y": 717.9041598224817,
+          "code": "396",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc959",
+          "x": 998.0,
+          "y": 586.9469328394262,
+          "code": "392",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc95a",
+          "x": 1035.0,
+          "y": 625.9341988878167,
+          "code": "393",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc95b",
+          "x": 948.0,
+          "y": 672.9188528435694,
+          "code": "394",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc95c",
+          "x": 991.0,
+          "y": 702.9090574961775,
+          "code": "395",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc95d",
+          "x": 970.0,
+          "y": 746.8946909866695,
+          "code": "397",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc95e",
+          "x": 1147.0,
+          "y": 660.9227709825261,
+          "code": "401",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc95f",
+          "x": 1187.0,
+          "y": 693.9119961003951,
+          "code": "402",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc960",
+          "x": 1104.0,
+          "y": 763.8891402898141,
+          "code": "403",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc963",
+          "x": 1090.0,
+          "y": 917.8388575065358,
+          "code": "408",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc964",
+          "x": 1064.0,
+          "y": 839.8643254097547,
+          "code": "405",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc965",
+          "x": 1103.0,
+          "y": 871.8538770392033,
+          "code": "406",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc966",
+          "x": 1009.0,
+          "y": 970.8215523928102,
+          "code": "409",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc967",
+          "x": 1050.0,
+          "y": 998.8124100685778,
+          "code": "410",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc96b",
+          "x": 1220.0,
+          "y": 773.8858751740167,
+          "code": "411",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc96c",
+          "x": 1211.0,
+          "y": 1000.8117570454183,
+          "code": "421",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad317669e1697cc79dc96d",
+          "x": 1194.0,
+          "y": 1051.7951049548521,
+          "code": "422",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc971",
+          "x": 1255.7272491455078,
+          "y": 1099.3249909841231,
+          "code": "424",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc972",
+          "x": 1276.7272491455078,
+          "y": 1045.3426226094284,
+          "code": "423",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc973",
+          "x": 1262.7272491455078,
+          "y": 903.3889872537501,
+          "code": "417",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc974",
+          "x": 1280.7272491455078,
+          "y": 855.404659809577,
+          "code": "416",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc975",
+          "x": 1300.7272491455078,
+          "y": 810.4193528306648,
+          "code": "415",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc976",
+          "x": 1374.7272491455078,
+          "y": 857.4040067864175,
+          "code": "418",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc977",
+          "x": 1349.7272491455078,
+          "y": 902.3893137653298,
+          "code": "419",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc978",
+          "x": 1327.7272491455078,
+          "y": 952.3729881863434,
+          "code": "420",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc97a",
+          "x": 1368.7272491455078,
+          "y": 1244.2776468050624,
+          "code": "426",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc97c",
+          "x": 1295.7272491455078,
+          "y": 1296.2606682029166,
+          "code": "428",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc97d",
+          "x": 1333.7272491455078,
+          "y": 1323.251852390264,
+          "code": "429",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc97e",
+          "x": 1376.7272491455078,
+          "y": 1355.2414040197127,
+          "code": "430",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc97f",
+          "x": 1276.7272491455078,
+          "y": 1346.2443426239302,
+          "code": "431",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc980",
+          "x": 1319.7272491455078,
+          "y": 1368.237159369176,
+          "code": "432",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc981",
+          "x": 1355.7272491455078,
+          "y": 1399.2270375102044,
+          "code": "433",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc982",
+          "x": 1316.7272491455078,
+          "y": 1482.199937049087,
+          "code": "436",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc984",
+          "x": 1280.7272491455078,
+          "y": 1453.2094058848993,
+          "code": "435",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc985",
+          "x": 1298.7272491455078,
+          "y": 1545.1793668195642,
+          "code": "437",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc986",
+          "x": 1231.7272491455078,
+          "y": 1550.1777342616656,
+          "code": "438",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc98a",
+          "x": 433.99998474121094,
+          "y": 1278.811899515325,
+          "code": "455",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc98b",
+          "x": 477.99998474121094,
+          "y": 1307.802430679513,
+          "code": "456",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc98c",
+          "x": 527.9999847412109,
+          "y": 1337.792635332121,
+          "code": "457",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc98d",
+          "x": 500.99998474121094,
+          "y": 1456.7537804541334,
+          "code": "464",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc98e",
+          "x": 545.9999847412109,
+          "y": 1485.7443116183213,
+          "code": "465",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc98f",
+          "x": 460.99998474121094,
+          "y": 1547.724067900378,
+          "code": "466",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc990",
+          "x": 503.99998474121094,
+          "y": 1578.7139460414064,
+          "code": "467",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc992",
+          "x": 374.99998474121094,
+          "y": 1379.7789218457724,
+          "code": "459",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc994",
+          "x": 280.99998474121094,
+          "y": 1455.7541069657132,
+          "code": "461",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc995",
+          "x": 322.99998474121094,
+          "y": 1478.7465971993793,
+          "code": "462",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc996",
+          "x": 370.99998474121094,
+          "y": 1508.7368018519874,
+          "code": "463",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc997",
+          "x": 338.99998474121094,
+          "y": 1569.716884645624,
+          "code": "470",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc998",
+          "x": 307.99998474121094,
+          "y": 1634.6956613929417,
+          "code": "471",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc99a",
+          "x": 420.99998474121094,
+          "y": 1617.701212089797,
+          "code": "473",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc99b",
+          "x": 391.99998474121094,
+          "y": 1677.6816213950133,
+          "code": "474",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc99c",
+          "x": 359.99998474121094,
+          "y": 1739.66137767707,
+          "code": "475",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc99e",
+          "x": 435.99998474121094,
+          "y": 1706.672152559201,
+          "code": "477",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc99f",
+          "x": 463.99998474121094,
+          "y": 1643.692722788724,
+          "code": "476",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9a0",
+          "x": 540.9999847412109,
+          "y": 1687.678356279216,
+          "code": "479",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9a1",
+          "x": 515.9999847412109,
+          "y": 1743.6600716307512,
+          "code": "480",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9a9",
+          "x": 1333.3636322021484,
+          "y": 582.9483609162002,
+          "code": "385",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9aa",
+          "x": 1356.3636322021484,
+          "y": 530.965339518346,
+          "code": "386",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9ab",
+          "x": 1377.3636322021484,
+          "y": 490.9783999815352,
+          "code": "387",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9ac",
+          "x": 1266.3636322021484,
+          "y": 535.9637069604474,
+          "code": "382",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9ad",
+          "x": 1281.3636322021484,
+          "y": 491.97807346995546,
+          "code": "383",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9ae",
+          "x": 1311.3636322021484,
+          "y": 441.9943990489419,
+          "code": "384",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9af",
+          "x": 1226.3636322021484,
+          "y": 506.9731757962595,
+          "code": "378",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9b0",
+          "x": 1253.3636322021484,
+          "y": 452.9908074215649,
+          "code": "379",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9b1",
+          "x": 1274.3636322021484,
+          "y": 406.0061534658122,
+          "code": "380",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9b3",
+          "x": 1187.3636322021484,
+          "y": 401.00778602371076,
+          "code": "376",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9b4",
+          "x": 1164.3636322021484,
+          "y": 453.9904809099852,
+          "code": "375",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9b7",
+          "x": 1114.8182220458984,
+          "y": 401.09869871278215,
+          "code": "372",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9b8",
+          "x": 1135.8182220458984,
+          "y": 352.114697780189,
+          "code": "373",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9ba",
+          "x": 1083.8182220458984,
+          "y": 247.14898149606046,
+          "code": "371",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9bb",
+          "x": 1067.8182220458984,
+          "y": 300.13167638233483,
+          "code": "370",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9bc",
+          "x": 1043.8182220458984,
+          "y": 345.116983361247,
+          "code": "369",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9bd",
+          "x": 987.8182220458984,
+          "y": 370.10882057175377,
+          "code": "368",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9bf",
+          "x": 1027.2727508544922,
+          "y": 265.96101341313044,
+          "code": "365",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9c0",
+          "x": 1050.2727508544922,
+          "y": 221.97537992263847,
+          "code": "366",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        },
+        {
+          "id": "64ad32a369e1697cc79dc9c2",
+          "x": 956.2727508544922,
+          "y": 208.97962457317493,
+          "code": "362",
+          "available": true,
+          "assignmentType": "DEPARTMENT"
+        }
+      ]
+    }
+  ],
+  "PATRAS DC": [
+    {
+      "id": "62596247de435d1006f95c6b",
+      "city": "Patras",
+      "sectorName": "PATRAS DC",
+      "floor": "1st",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/Patra_First Floor-1650024840.jpg",
+      "parkingSupported": false,
+      "positionDtoList": [
+        {
+          "id": "625d0ac6de435d1006f95d09",
+          "x": 1153.3131270010672,
+          "y": 2337.7500004731396,
+          "code": "019",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d0a",
+          "x": 1117.320811099253,
+          "y": 2276.7501159192634,
+          "code": "021",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d0b",
+          "x": 1154.3129135538954,
+          "y": 2229.750204869555,
+          "code": "022",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d0c",
+          "x": 1185.3062966915688,
+          "y": 2294.750081853194,
+          "code": "020",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d0d",
+          "x": 1030.3393810032017,
+          "y": 2132.7503884478174,
+          "code": "035",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d0e",
+          "x": 998.3462113127001,
+          "y": 2057.7505303897724,
+          "code": "037",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d0f",
+          "x": 1042.3368196371398,
+          "y": 2018.7506041995894,
+          "code": "038",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d10",
+          "x": 1073.3302027748132,
+          "y": 2082.7504830757875,
+          "code": "036",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d11",
+          "x": 1240.2945570971185,
+          "y": 2096.750456579956,
+          "code": "025",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d12",
+          "x": 1274.2872998932764,
+          "y": 2153.75034870407,
+          "code": "023",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d13",
+          "x": 1277.286659551761,
+          "y": 2051.750541745129,
+          "code": "026",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d14",
+          "x": 1312.2791889007472,
+          "y": 2107.7504357618022,
+          "code": "024",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d15",
+          "x": 1143.3152614727856,
+          "y": 1887.750852124871,
+          "code": "041",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d16",
+          "x": 1170.3094983991462,
+          "y": 1947.750738571307,
+          "code": "039",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d17",
+          "x": 1180.307363927428,
+          "y": 1858.7509070090937,
+          "code": "042",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d18",
+          "x": 1202.3026680896478,
+          "y": 1907.7508142736829,
+          "code": "040",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d19",
+          "x": 1403.259765208111,
+          "y": 1879.7508672653462,
+          "code": "029",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d1a",
+          "x": 1433.2533617929562,
+          "y": 1941.750749926663,
+          "code": "027",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d1b",
+          "x": 1438.2522945570972,
+          "y": 1843.7509353974847,
+          "code": "030",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d1c",
+          "x": 1468.2458911419424,
+          "y": 1902.75082373648,
+          "code": "028",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d1d",
+          "x": 1535.2315901814302,
+          "y": 1710.501187581025,
+          "code": "033",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d1e",
+          "x": 1559.2264674493063,
+          "y": 1761.5010910604956,
+          "code": "031",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d1f",
+          "x": 1570.2241195304164,
+          "y": 1666.5012708536387,
+          "code": "034",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d20",
+          "x": 1593.2192102454642,
+          "y": 1726.5011573000747,
+          "code": "032",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d21",
+          "x": 1318.2779082177162,
+          "y": 1698.5012102917378,
+          "code": "045",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d22",
+          "x": 1344.2723585912488,
+          "y": 1758.5010967381738,
+          "code": "043",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d23",
+          "x": 1357.269583778015,
+          "y": 1670.5012632834012,
+          "code": "046",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d24",
+          "x": 1385.2636072572038,
+          "y": 1726.5011573000747,
+          "code": "044",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d26",
+          "x": 1464.0452508004269,
+          "y": 1562.0021064186153,
+          "code": "049",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d27",
+          "x": 1504.0367129135539,
+          "y": 1526.0021745507538,
+          "code": "050",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d28",
+          "x": 1530.0311632870864,
+          "y": 1585.002062889749,
+          "code": "048",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d29",
+          "x": 1153.1116328708645,
+          "y": 1615.0020061129667,
+          "code": "053",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d2a",
+          "x": 1189.1039487726787,
+          "y": 1686.0018717412493,
+          "code": "051",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d2b",
+          "x": 1196.102454642476,
+          "y": 1581.0020704599865,
+          "code": "054",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d2c",
+          "x": 1224.0964781216649,
+          "y": 1630.0019777245757,
+          "code": "052",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d2d",
+          "x": 1265.08772678762,
+          "y": 1496.0022313275358,
+          "code": "057",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d2e",
+          "x": 1296.0811099252935,
+          "y": 1560.002110203734,
+          "code": "055",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d2f",
+          "x": 1301.0800426894343,
+          "y": 1462.0022956745554,
+          "code": "058",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d30",
+          "x": 1329.0740661686232,
+          "y": 1521.0021840135507,
+          "code": "056",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d31",
+          "x": 1360.0674493062966,
+          "y": 1363.0024830379361,
+          "code": "061",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d32",
+          "x": 1394.0601921024545,
+          "y": 1431.002354343897,
+          "code": "059",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d34",
+          "x": 1436.051227321238,
+          "y": 1396.0024205834761,
+          "code": "060",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d35",
+          "x": 710.2061899679828,
+          "y": 1177.002835053985,
+          "code": "063",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d36",
+          "x": 676.2134471718249,
+          "y": 1117.0029486075493,
+          "code": "068",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d37",
+          "x": 730.2019210245463,
+          "y": 1070.0030375578413,
+          "code": "069",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d38",
+          "x": 759.1957310565634,
+          "y": 1126.0029315745146,
+          "code": "064",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d39",
+          "x": 771.1931696905016,
+          "y": 1026.003120830455,
+          "code": "070",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d3a",
+          "x": 809.1850586979722,
+          "y": 1075.0030280950443,
+          "code": "065",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d3b",
+          "x": 823.1820704375666,
+          "y": 977.0032135658657,
+          "code": "071",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d3c",
+          "x": 850.1763073639273,
+          "y": 1032.0031094750987,
+          "code": "066",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d3d",
+          "x": 859.1743863393809,
+          "y": 943.0032779128856,
+          "code": "072",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d3f",
+          "x": 1020.1400213447171,
+          "y": 881.0033952515685,
+          "code": "076",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d40",
+          "x": 1045.1346851654216,
+          "y": 931.0033006235983,
+          "code": "073",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d41",
+          "x": 1059.1316969050158,
+          "y": 835.003482309301,
+          "code": "077",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d42",
+          "x": 1085.1261472785486,
+          "y": 887.003383896212,
+          "code": "074",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d44",
+          "x": 1119.1188900747065,
+          "y": 856.0034425655535,
+          "code": "075",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d45",
+          "x": 947.1144076840982,
+          "y": 738.0032495244944,
+          "code": "079",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d46",
+          "x": 920.1201707577374,
+          "y": 685.0033498301427,
+          "code": "082",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d47",
+          "x": 962.1112059765208,
+          "y": 655.0034066069248,
+          "code": "083",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d48",
+          "x": 983.1067235859125,
+          "y": 702.0033176566329,
+          "code": "080",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d4a",
+          "x": 1030.0966915688366,
+          "y": 660.0033971441278,
+          "code": "081",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d4b",
+          "x": 565.1959445037353,
+          "y": 891.0029599629058,
+          "code": "085",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d4c",
+          "x": 530.2034151547491,
+          "y": 837.0030621611136,
+          "code": "090",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d4d",
+          "x": 583.1921024546424,
+          "y": 793.0031454337272,
+          "code": "091",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d4e",
+          "x": 613.1856990394876,
+          "y": 843.0030508057571,
+          "code": "086",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d4f",
+          "x": 630.1820704375666,
+          "y": 743.0032400616974,
+          "code": "092",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d50",
+          "x": 658.1760939167556,
+          "y": 798.0031359709303,
+          "code": "087",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d51",
+          "x": 677.1720384204908,
+          "y": 710.0033025161576,
+          "code": "093",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d52",
+          "x": 705.1660618996798,
+          "y": 772.0031851774747,
+          "code": "088",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d53",
+          "x": 717.1635005336178,
+          "y": 667.003383896212,
+          "code": "094",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d54",
+          "x": 752.156029882604,
+          "y": 722.0032798054449,
+          "code": "089",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d55",
+          "x": 823.1408751334044,
+          "y": 492.0037150941075,
+          "code": "098",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d56",
+          "x": 850.1351120597651,
+          "y": 545.0036147884591,
+          "code": "095",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d57",
+          "x": 876.1295624332977,
+          "y": 447.00380025928064,
+          "code": "099",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d58",
+          "x": 897.1250800426894,
+          "y": 503.0036942759541,
+          "code": "096",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d59",
+          "x": 910.1223052294556,
+          "y": 410.00387028397853,
+          "code": "100",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d5a",
+          "x": 938.1163287086446,
+          "y": 471.00375483785496,
+          "code": "097",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d5b",
+          "x": 382.23500533617926,
+          "y": 1046.0026666161984,
+          "code": "119",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d5c",
+          "x": 348.24226254002133,
+          "y": 978.0027953102377,
+          "code": "121",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d5d",
+          "x": 393.23265741728915,
+          "y": 941.0028653349357,
+          "code": "122",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d5e",
+          "x": 426.2256136606188,
+          "y": 1010.0027347483369,
+          "code": "120",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d5f",
+          "x": 461.218143009605,
+          "y": 603.0035050200138,
+          "code": "111",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d60",
+          "x": 421.226680896478,
+          "y": 525.0036526396473,
+          "code": "113",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d61",
+          "x": 473.21558164354315,
+          "y": 477.0037434824985,
+          "code": "114",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d62",
+          "x": 498.21024546424746,
+          "y": 546.0036128958998,
+          "code": "112",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0ac6de435d1006f95d63",
+          "x": 630.1820704375666,
+          "y": 451.00379268904305,
+          "code": "107",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0e59de435d1006f95d64",
+          "x": 269.5018143009604,
+          "y": 761.5029836198983,
+          "code": "115",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0e59de435d1006f95d65",
+          "x": 238.508431163287,
+          "y": 695.503108528819,
+          "code": "117",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0e59de435d1006f95d66",
+          "x": 320.4909284951973,
+          "y": 720.5030612148339,
+          "code": "116",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0e59de435d1006f95d67",
+          "x": 284.4986125933831,
+          "y": 647.5031993716702,
+          "code": "118",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d68",
+          "x": 823.3835645677694,
+          "y": 221.25400607511568,
+          "code": "106",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d69",
+          "x": 844.3790821771611,
+          "y": 284.2538868438733,
+          "code": "103",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d6a",
+          "x": 772.3944503735325,
+          "y": 257.2539379429772,
+          "code": "105",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d6b",
+          "x": 802.3880469583778,
+          "y": 315.25382817453186,
+          "code": "102",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d6c",
+          "x": 725.4044823906082,
+          "y": 296.2538641331605,
+          "code": "104",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d6d",
+          "x": 764.3961579509071,
+          "y": 351.2537600423933,
+          "code": "101",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d6e",
+          "x": 632.4243329775879,
+          "y": 354.2537543647151,
+          "code": "110",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d6f",
+          "x": 664.4175026680896,
+          "y": 416.25363702603215,
+          "code": "108",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        },
+        {
+          "id": "625d0f04de435d1006f95d70",
+          "x": 588.4337246531483,
+          "y": 386.25369380281427,
+          "code": "109",
+          "available": true,
+          "assignmentType": "NOT_ASSIGNED"
+        }
+      ]
+    },
+    {
+      "id": "62596498de435d1006f95c6f",
+      "city": "Patras",
+      "sectorName": "PATRAS DC",
+      "floor": "Ground Floor ",
+      "floorPlanUrl": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/floorplan/Patra-ground-1710923592.jpg",
+      "parkingSupported": false,
+      "positionDtoList": [
+        
+      ]
+    }
+  ]
+}
