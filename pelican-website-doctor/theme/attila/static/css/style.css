@@ -1049,13 +1049,13 @@ ul li img {
 /* Style for the Go to Top Button */
 .go-to-top {
     position: fixed;
-    bottom: 100px;
-    right: 80px;
+    bottom: 40px;
+    right: 60px;
     background: var(--color-background-overlay);
     color: white;
     border: none;
     border-radius: 50%;
-    padding: 20px;
+    padding: 10px;
     font-size: 24px;  /* Icon size */
     cursor: pointer;
     display: none; /* Initially hidden */
