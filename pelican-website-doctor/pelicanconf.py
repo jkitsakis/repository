@@ -54,7 +54,7 @@ CATEGORY_SAVE_AS = 'services/{slug}.html'  # Save path for single category pages
 ARTICLE_URL = 'services/{category}/{slug}.html'
 ARTICLE_SAVE_AS = 'services/{category}/{slug}.html'
 
-PLUGIN_PATHS = ['./plugins']
+PLUGIN_PATHS = ['plugins']
 PLUGINS = ['sitemap', 'plugins.inject_constants', 'plugins.article_order_navigation', 'plugins.minify' ]
 
 STATIC_PATHS = ['robots.txt', 'images', 'favicon.ico', 'cookies']

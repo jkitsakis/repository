@@ -20,7 +20,7 @@
 	"TIME_SCHEDULE_TITLE": "Ωράριο Λειτουργίας",
 	"TIME_SCHEDULE": "Δευτέρα - Παρασκευή: 17.00 - 20.00",
 	"CONTACT_TITLE": "Επικοινωνία",
-	"ADDRESS": "Λεωφόρος Ιωνίας 35, Άλιμος (πλησίον ΚΕΠ Αλίμου)",
+	"ADDRESS": "Λεωφόρος Ιωνίας 35, Άλιμος <br/> (πλησίον ΚΕΠ Αλίμου)",
 	"ADDRESS_IMG": "images/location.png",
 	"ADDRESS_MAP_IFRAME": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.2450846047836!2d23.73852847554681!3d37.924704503509886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bde9c0250409%3A0xbdc866fa265ae05a!2zzpvOtc-Jz4YuIM6Zz4nOvc6vzrHPgiAzNSwgzobOu865zrzOv8-CIDE3NCA1Ng!5e0!3m2!1sel!2sgr!4v1737978869637!5m2!1sel!2sgr\" style=\"border:0; height:350px; width:100%;\" allowfullscreen=\"true\" loading=\"eager\"  referrerpolicy=\"no-referrer-when-downgrade\"></iframe> ",
 	"ADDRESS_MAP_URL": "https://maps.app.goo.gl/2PYnwri4tqVjcmuJ9",

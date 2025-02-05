@@ -16,7 +16,7 @@ Order: 2
             <a href="tel:{{ MOBILE }}" target="_blank">{{ MOBILE }}</a></div>   
          <div class="contact-detail">
                 <img src="{{ SITEURL }}/{{ EMAIL_IMG }}" alt="Phone Icon" class="contact-icon">
-                <a href="tel:{{ EMAIL }}" target="_blank">{{ EMAIL }}</a></div>   
+                <a href="mailto:{{ EMAIL }}" target="_blank">{{ EMAIL }}</a></div>   
          <div class="contact-detail">
             <img src="{{ SITEURL }}/{{ ADDRESS_IMG }}" alt="Location Icon" class="contact-icon">
             <a href="{{ ADDRESS_MAP_URL }}" target="_blank">{{ ADDRESS }}</a></div>   
