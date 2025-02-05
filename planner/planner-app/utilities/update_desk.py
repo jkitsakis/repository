@@ -96,8 +96,10 @@ def book_seat(available_seat_code, date):
                 )
                 return True
         else:
+            print(f"No booking_id Found for {date}")
             return False
     else:
+        print(f"No seat_details Found for {date}")
         return False
 
 
