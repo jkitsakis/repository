@@ -12,7 +12,7 @@ Order: 2
             <img src="{{ SITEURL }}/{{ OFFICE_TEL_IMG }}" alt="Phone Icon"  class="contact-icon"/>
             <a href="javascript:void(0);" onclick="openPopupLink(this)">
                 {{ OFFICE_TEL }}
-                <img src="{{ SITEURL }}/{{ OFFICE_TEL_QR_IMG }}" style="display:none;" alt="Service Image"/>
+                <img src="{{ SITEURL }}/{{ OFFICE_TEL_QR_IMG }}" info={{ OFFICE_TEL }} style="display:none;" alt="Service Image"/>
             </a>
         </div>  
          <div class="contact-detail">
@@ -33,7 +33,9 @@ Order: 2
     <div id="popup-container" class="popup-container">
         <span class="close-btn" onclick="closePopupLink()">&times;</span>
         <div class="popup-content">
-            <img id="popup-image" class="popup-image" alt="Popup Image">
+            <a id="popup-link" class="popup-link" href="#" target="_blank">
+                <img id="popup-image" class="popup-image" alt="Popup Image">
+            </a>
         </div>
     </div>
 </div>

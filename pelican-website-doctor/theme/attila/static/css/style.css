@@ -1108,6 +1108,16 @@ ul li img {
     box-shadow: var(--color-background-overlay);
 }
 
+/* Clickable link styling */
+.popup-link {
+    text-decoration: none;  /* Remove underline */
+    border: none;           /* Remove any borders */
+    box-shadow: none;
+    display: flex;          /* Flexbox for proper alignment */
+    justify-content: center;
+    align-items: center;
+}
+
 /* Close button styling */
 .close-btn {
     position: absolute;

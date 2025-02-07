@@ -2,12 +2,16 @@
 function openPopupLink(linkElement) {
     const popupContainer = document.getElementById('popup-container');
     const popupImage = document.getElementById('popup-image');
+    const popupLink = document.getElementById('popup-link');
+    const phoneNumber = linkElement.textContent.trim();
 
     // Set the source of the popup image to the clicked image's src
     popupImage.src = linkElement.querySelector('img').src;
+    popupLink.href = "tel:" + phoneNumber;
+
 
     // Show the popup
-    popupContainer.style.display = 'flex';
+     popupContainer.style.display = 'flex'; // Only show the popup when triggered
 }
 
 // Function to close the popup

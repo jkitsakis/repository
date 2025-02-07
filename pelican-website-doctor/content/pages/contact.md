@@ -37,7 +37,9 @@ Order: 1
     <div id="popup-container" class="popup-container">
         <span class="close-btn" onclick="closePopupLink()">&times;</span>
         <div class="popup-content">
-            <img id="popup-image" class="popup-image" alt="Popup Image">
+            <a id="popup-link" class="popup-link" href="#" target="_blank">
+                <img id="popup-image" class="popup-image" alt="Popup Image">
+            </a>
         </div>
     </div>
 </div>
