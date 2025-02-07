@@ -24,7 +24,8 @@ Order: 3
 				<div class="gallery-item">
 					<img src="{{ SITEURL }}/{{ CHRONIC_DISEASES_SERVICE_IMG }} " alt="{{ CHRONIC_DISEASES_SERVICE }}" class="gallery-img" onclick="openPopup(this)"/>
 				</div>
-			</div><!-- /.item --> <div class="item height14x cat-space">
+			</div><!-- /.item --> 
+            <div class="item height14x cat-space">
 				<div class="gallery-item">
 					<img src="{{ SITEURL }}/{{ ASSISTANCE_SERVICE_IMG }} " alt="{{ ASSISTANCE_SERVICE }}" class="gallery-img" onclick="openPopup(this)"/>
 				</div>
