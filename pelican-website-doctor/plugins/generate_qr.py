@@ -21,14 +21,14 @@ def generate_qr_with_text(data, filename="qrcode.png", output_size=(500, 500)):
 
     # Load font (adjust path if needed)
     try:
-        font = ImageFont.truetype("arial.ttf", 40)  # Standard font
+        font = ImageFont.truetype("arial.ttf", 30)  # Standard font
     except IOError:
         font = ImageFont.load_default()  # Fallback font
 
     draw = ImageDraw.Draw(img)
 
     # Define the text
-    text = " Σκανάρετε για κλήση "
+    text = " https://prosopikosiatrosalimos.gr \n "
 
     # Calculate text size and position
     bbox = draw.textbbox((0, 0), text, font=font)
@@ -56,5 +56,5 @@ def generate_qr_with_text(data, filename="qrcode.png", output_size=(500, 500)):
 
 # Example Usage
 if __name__ == "__main__":
-    phone_number = "tel:2109921619"
-    generate_qr_with_text(phone_number, "../content/images/telephone_qr.png", output_size=(500, 500))
+    phone_number = "https://prosopikosiatrosalimos.gr/"
+    generate_qr_with_text(phone_number, "../content/images/website_qr.png", output_size=(500, 500))
