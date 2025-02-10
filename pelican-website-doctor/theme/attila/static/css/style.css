@@ -898,8 +898,28 @@ button,input,select,textarea {
 
 .flex-item img {
     max-width: 90%; /* Ensure image scales to fit container */
+    max-height: 350px; /* Set a reasonable max height */
     height: auto;
     display: block;
+}
+
+
+@media screen and (max-width: 640px) {
+    .flex-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .flex-item {
+        flex: 0 0 100%; /* Make each item take full width */
+        text-align: center; /* Optional: Center content */
+    }
+
+    .flex-item img {
+        max-width: 80%; /* Ensure the image doesn't stretch too much */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove extra space below image */
+    }
 }
 
 .flex-container-contact {
@@ -924,6 +944,23 @@ button,input,select,textarea {
     height: auto;
     display: block;
 }
+
+@media screen and (max-width: 768px) {
+    .flex-container-contact {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .flex-item-contact {
+        flex: 0 0 100%; /* Make each item take full width */
+        text-align: center; /* Optional: Center content */
+    }
+
+    .flex-item-contact img {
+        max-width: 100%; /* Ensure images fit within their container */
+    }
+}
+
 
 .contact-detail {
     display: flex;

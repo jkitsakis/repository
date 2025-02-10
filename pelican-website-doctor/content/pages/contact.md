@@ -6,11 +6,7 @@ Order: 1
 <div class="content-list">   
     <div class="content-info">
         {{ ADDRESS_MAP_IFRAME }}
-    </div>  
-    <div class="content-info">
-       <h3>{{ TIME_SCHEDULE_TITLE }}:</h3>
-       <p>{{ TIME_SCHEDULE }}</p>
-    </div>
+    </div>      
     <div class="content-info">
         <img src="{{ SITEURL }}/{{ OFFICE_TEL_IMG }}" alt="Phone Icon"style="width:8%" />
         <a href="javascript:void(0);" onclick="openPopupLink(this)">
