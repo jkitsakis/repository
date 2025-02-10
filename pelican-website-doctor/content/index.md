@@ -4,10 +4,10 @@ Order: 1
 
 
 <div class="flex-container">
-    <div class="flex-item">
+    <!-- div class="flex-item">
         <img src="{{ SITEURL }}/images/me.png" alt="{{ AUTHOR }}" style="box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), -8px -8px 20px rgba(255, 255, 255, 0.5);"/>
-    </div>
-    <div class="flex-item">
+    </div -->
+    <div class="flex-item" style="flex: 0 0 100%;">
         <p style="font-size: calc(0.90rem + 0.5vw);margin: 0 0 1rem; text-align: left">{{ WELCOME_INDEX_1 }}</p>
         <p style="font-size: calc(0.90rem + 0.5vw);margin: 0 0 1rem; text-align: left">{{ WELCOME_INDEX_2 }}</p>
         <p style="font-size: calc(0.90rem + 0.5vw);margin: 0 0 1rem; text-align: left">{{ WELCOME_INDEX_3 }}</p>
