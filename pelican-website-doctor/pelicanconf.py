@@ -57,10 +57,13 @@ ARTICLE_SAVE_AS = 'services/{category}/{slug}.html'
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['sitemap', 'plugins.inject_constants', 'plugins.article_order_navigation', 'plugins.minify' ]
 
-STATIC_PATHS = ['robots.txt', 'images', 'favicon.ico', 'cookies']
+STATIC_PATHS = ['extra/googlef0d770d29307c27d.html', 'extra/CNAME', 'extra/apple-developer-domain-association.txt', 'robots.txt', 'images', 'favicon.ico', 'cookies']
 # Map extra files to specific locations
 EXTRA_PATH_METADATA = {
-    'cookies/policy.html': {'path': 'policy.html'},
+    'extra/googlef0d770d29307c27d.html': {'path': 'googlef0d770d29307c27d.html'},
+    'extra/CNAME': {'path': 'CNAME'},
+    'extra/apple-developer-domain-association.txt': {'path': 'apple-developer-domain-association.txt'},
+    'cookies/policy.html': {'path': 'policy.html'}
 }
 
 MENUITEMS = [
