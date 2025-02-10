@@ -988,12 +988,14 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left; /* Ensures text is aligned to the left */
 }
 
 ul li {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    justify-content: flex-start; /* Ensures text stays aligned to the left */
 }
 
 ul li img {
