@@ -212,7 +212,15 @@
     <div class="nav-footer">
       <nav class="nav-wrapper" aria-label="Footer">
         <span class="nav-copy">
-          <p>{{ SITENAME }}</p>
+          <p style="font-size: calc(0.90rem + 0.5vw);margin: 0 0 1rem; text-align: left">{{ SITENAME }}</p>
+          <p style="font-size: calc(0.90rem + 0.5vw);margin: 0 0 1rem; text-align: left">© <span id="year"></span> All rights reserved.</p>
+          <p style="display: flex; align-items: center; font-size: calc(0.90rem + 0.5vw); margin: 0 0 1rem; text-align: left;">
+            Created By:
+            <a href="https://jkitsakis.github.io/" target="_blank" style="display: flex; align-items: center;">
+              <img src="{{ SITEURL }}/images/JKlogo-initials.png" style="width:20px; margin: 0 0.5rem;">
+            </a>
+          </p>
+
         {% for name,link in SOCIAL if name.lower() in ['rss', 'rss-square', 'feed'] %}
           <a class="nav-rss" title="RSS" href="{{ link }}" target="_blank"><i class="icon icon-rss"></i></a>
         {% endfor %}
@@ -228,6 +236,7 @@
 
   </section>
 
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/jquery.fitvids.js"></script>

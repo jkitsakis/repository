@@ -919,6 +919,7 @@ button,input,select,textarea {
         max-width: 80%; /* Ensure the image doesn't stretch too much */
         height: auto; /* Maintain aspect ratio */
         display: block; /* Remove extra space below image */
+        margin: 0 auto; /* Centers the image */
     }
 }
 
