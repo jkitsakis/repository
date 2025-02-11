@@ -19,7 +19,11 @@ SITE_DESCRIPTION = Parameters.SITE_DESCRIPTION
 GOOGLE_ANALYTICS = "G-GX37CVK7L3"
 PATH = "content"
 TIMEZONE = 'Europe/Athens'
-DEFAULT_LANG = 'Greek'
+DEFAULT_LANG = 'el'  # Default language
+LANGUAGES = [('en', 'English'), ('el', 'Greek')]  # List of available languages
+# Specify the available locales
+LOCALE = ('en', 'en_US')
+
 DEFAULT_DATE = 'fs' #Pelican will use the file system's last modified date
 
 THEME = 'theme/attila'
@@ -55,7 +59,7 @@ ARTICLE_URL = 'services/{category}/{slug}.html'
 ARTICLE_SAVE_AS = 'services/{category}/{slug}.html'
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['sitemap', 'plugins.inject_constants', 'plugins.article_order_navigation', 'plugins.minify' ]
+PLUGINS = ['sitemap', 'inject_constants', 'article_order_navigation', 'minify']
 
 STATIC_PATHS = ['extra/googlef0d770d29307c27d.html', 'extra/CNAME', 'extra/apple-developer-domain-association.txt', 'robots.txt', 'images', 'favicon.ico', 'cookies']
 # Map extra files to specific locations
