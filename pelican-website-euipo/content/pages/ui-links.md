@@ -46,9 +46,9 @@ Tags: pelican, publishing
 <details>
 	<summary> Designs </summary> 
     <ul>
-        <li><a href="https://integration.euipo.europa.eu/design-efiling" target="_blank">integration</a></li>
-        <li><a href="https://pp.euipo.europa.eu/design-efiling" target="_blank">preprod</a></li>
-        <li><a href="https://test.euipo.europa.eu/design-efiling" target="_blank">test</a></li>
+        <li><a href="https://dev-eud.euipo.europa.eu/design-efiling/" target="_blank">integration</a></li>
+        <li><a href="https://pp-eud.euipo.europa.eu/design-efiling/" target="_blank">preprod</a></li>
+        <li><a href="https://test-eud.euipo.europa.eu/design-efiling/" target="_blank">test</a></li>
     </ul>    
 </details>
 

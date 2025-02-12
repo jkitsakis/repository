@@ -14,3 +14,4 @@
 /planner/planner-app/booking/__pycache__/*.pyc
 /planner/planner-app/configuration/__pycache__/*.pyc
 /planner/planner-app/utilities/__pycache__/*.pyc
+/pelican-website-euipo/.venv

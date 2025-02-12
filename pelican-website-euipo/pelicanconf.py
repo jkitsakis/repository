@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 import os
 
-LOCAL_BUILD = False
+LOCAL_BUILD = True
 SITEURL = '' if LOCAL_BUILD else '/pelican/euipo'
 
 SITENAME = 'EUIPO dev'
@@ -18,7 +18,3 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 DEFAULT_PAGINATION = 5
-PLUGIN_PATHS = [os.getenv('PYTHON_PLUGINS_PATH')]
-PLUGINS = [
-    "jinja2content",
-]
