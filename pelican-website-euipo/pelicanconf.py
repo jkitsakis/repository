@@ -43,7 +43,7 @@ ARTICLE_URL = '{category}/{slug}.html'
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['jinja2content']
+PLUGINS = ['jinja2content', 'minify']
 
 #values like SITEURL will be globally accessible in all Jinja templates.
 JINJA_GLOBALS = {
