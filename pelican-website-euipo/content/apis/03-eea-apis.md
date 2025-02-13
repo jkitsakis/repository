@@ -1,6 +1,4 @@
 Title: EEA APIs
-Date: 2018-02-26
-Category: Rest APIs
 Slug: eea-apis
 Summary: EEA APIs : EUTM Search API, Eutm Filing Api
 order: 03

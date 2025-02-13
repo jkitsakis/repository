@@ -1,6 +1,4 @@
 Title: EPA APIs
-Date: 2018-02-26
-Category: Rest APIs
 Slug: epa-apis
 Summary: EPA APIs : EOP Persons API
 order: 06

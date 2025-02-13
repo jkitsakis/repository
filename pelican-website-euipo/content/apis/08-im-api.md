@@ -1,6 +1,4 @@
 Title: IM - Infrastructure Microservices
-Date: 2018-02-26
-Category: Rest APIs
 Slug: im-api
 Summary: document-generator , document-repository
 order: 08

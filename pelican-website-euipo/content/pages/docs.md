@@ -1,7 +1,6 @@
 Title: Documents
 Slug: docs
-Tags: pelican, publishing
-
+Order: 2
 
 <a href="http://sharedox.prod.oami.eu/share/page/repository?file=Configuration%20management.xlsx#filter=path%7C%2FOffice_Docs%2FP%2520OFFICE%2520PF%2FP20%2520SP2025%2FP2020%2520Strategic%2520Driver%25203%2F02%2520-%2520Robust%2520Digital%2520Backbone%2520Programme%2FModernised%2520EUIPO%2520Online%2520Platform%2520%2528PR1748%2529%7C&page=1" target="_blank">Alfresco</a></li>
 

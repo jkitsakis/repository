@@ -1,6 +1,4 @@
 Title: EOPWA APIs
-Date: 2018-02-26
-Category: Rest APIs
 Slug: eopwa-apis
 Summary: EOPWA APIs : Appeals Search API, Communications API, Designs Search API, Drafts Search API, Feedback Search API, Interpartes Search API, User Profile Api
 order: 01

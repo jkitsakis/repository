@@ -1,6 +1,4 @@
 Title: EWS APIs
-Date: 2018-02-26
-Category: Rest APIs
 Slug: ews-apis
 Summary: EWS APIs : document download
 order: 10

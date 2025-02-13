@@ -1,6 +1,6 @@
 Title: UI Links
 Slug: ui-links
-Tags: pelican, publishing
+Order: 1
 
 {% set aws_dev = 'https://dev-www.euipo.europa.eu' %}
 {% set aws_pp = 'https://pp-www.euipo.europa.eu' %}
@@ -14,9 +14,9 @@ Tags: pelican, publishing
 <details>
 	<summary> EUTM </summary>
     <ul>
-        <li><a href="{{aws_dev}}/en/trade-marks" target="_blank">integration</a></li>
-        <li><a href="{{aws_pp}}/en/trade-marks" target="_blank">preprod</a></li>
-        <li><a href="{{aws_test}}/en/trade-marks" target="_blank">test</a></li>
+        <li><a href="{{ aws_dev }}/en/trade-marks" target="_blank">integration</a></li>
+        <li><a href="{{ aws_pp }}/en/trade-marks" target="_blank">preprod</a></li>
+        <li><a href="{{ aws_test }}/en/trade-marks" target="_blank">test</a></li>
     </ul>
 </details>
 

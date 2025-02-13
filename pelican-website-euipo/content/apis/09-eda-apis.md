@@ -1,6 +1,4 @@
 Title: EDA APIs
-Date: 2018-02-26
-Category: Rest APIs
 Slug: eda-apis
 Summary: EDA APIs : Design Filing API
 order: 09

@@ -1,9 +1,7 @@
 Title: Find API URLs
-Date: 2018-02-26
-Slug: tutorial1
-Category: Tutorials
+Slug: findApisUrls
 Summary: API URLs for AWS
-order: 02
+order: 01
 
 **How to Find API URLs for AWS (e.g. for test env)
 

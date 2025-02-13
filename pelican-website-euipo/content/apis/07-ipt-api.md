@@ -1,6 +1,4 @@
 Title: IPT API
-Date: 2018-02-26
-Category: Rest APIs
 Slug: ipt-api
 Summary: Proceeding Search API
 order: 07

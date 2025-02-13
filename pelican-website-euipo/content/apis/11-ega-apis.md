@@ -1,6 +1,4 @@
 Title: EGA APIs
-Date: 2018-02-26
-Category: Rest APIs
 Slug: ega-apis
 Summary: EGA APIs : gs-loader, gs-lists, gs-api
 order: 11

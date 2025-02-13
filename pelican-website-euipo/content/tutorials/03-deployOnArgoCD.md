@@ -1,9 +1,7 @@
 Title: Deploy on ArgoCD
-Slug: tutorial3
-Date: 2018-02-26
-Category: Tutorials
+Slug: deployOnArgoCD
 Summary: Deploy on ArgoCD
-order: 04
+order: 03
 
 **Deploy on ArgoCD **
 

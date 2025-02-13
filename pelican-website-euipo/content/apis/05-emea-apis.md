@@ -1,6 +1,4 @@
 Title: EMEA APIs
-Date: 2018-02-26
-Category: Rest APIs
 Slug: emea-apis
 Summary: EMEA APIs : Me API
 order: 05

@@ -1,9 +1,7 @@
 Title: Authentication links for Postman
-Slug: tutorial2
-Date: 2018-02-26
-Category: Tutorials
+Slug: authentication
 Summary: Authentication links for Postman
-order: 03
+order: 02
 
 **Authentication links**
 
