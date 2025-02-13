@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 
-LOCAL_BUILD = True
+LOCAL_BUILD = False
 SITEURL = '' if LOCAL_BUILD else '/pelican/euipo'
 DEFAULT_DATE = 'fs' #Pelican will use the file system's last modified date
 SITENAME = 'EUIPO FO Dev Hub'
@@ -42,22 +42,17 @@ CATEGORY_SAVE_AS = '/{slug}.html'  # Save path for single category pages
 ARTICLE_URL = '{category}/{slug}.html'
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
 
-MARKDOWN = {
-    'extensions': [
-        'markdown.extensions.extra',
-        'markdown.extensions.meta',
-    ],
-    'output_format': 'html5',
-}
-
-JINJA_ENVIRONMENT = {'trim_blocks': True, 'lstrip_blocks': True}
+PLUGIN_PATHS = ['plugins']
 PLUGINS = ['jinja2content']
 
-
+#values like SITEURL will be globally accessible in all Jinja templates.
+JINJA_GLOBALS = {
+    'SITEURL': SITEURL
+}
 
 MENUITEMS = [
-    ("APIs", '/apis.html'),
-    ("Tutorials", '/tutorials.html')
+    ("APIs", SITEURL+'/apis.html'),
+    ("Tutorials", SITEURL+'/tutorials.html')
 ]
 
 DISPLAY_CATEGORIES_ON_MENU = False
