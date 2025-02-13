@@ -3,8 +3,6 @@ plugins/__pycache__/*
 .idea/
 output/
 source/
-run.bat
-*.bat
-.env
+.venv/
 
 
