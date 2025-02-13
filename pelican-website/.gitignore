@@ -1,8 +1,7 @@
 __pycache__/*
 .idea/
+.venv/
 output/
 source/
-run.bat
-*.bat
 
 
