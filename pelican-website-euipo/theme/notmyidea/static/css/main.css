@@ -13,13 +13,12 @@
 @import url("pygment.css");
 @import url("typogrify.css");
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-
 /***** Global *****/
 /* Body */
 body {
-    background: url('/images/background.png') no-repeat center center fixed;
+    background-image: var(--background-image-uri);
     background-size: cover;
+	background-position: no-repeat center ;
 	font-family: 'Lato', sans-serif;
     font-size: 1em;
     line-height: 2em;
