@@ -15,3 +15,4 @@
 /planner/planner-app/configuration/__pycache__/*.pyc
 /planner/planner-app/utilities/__pycache__/*.pyc
 /pelican-website-euipo/.venv
+/pelican-website-euipo/plugins/__pycache__/*.pyc
