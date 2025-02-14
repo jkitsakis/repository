@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 LOCAL_BUILD = True
-SITEURL = '' if LOCAL_BUILD else '/pelican/euipo'
+SITEURL = '' if LOCAL_BUILD else '/euipo'
 DEFAULT_DATE = 'fs' #Pelican will use the file system's last modified date
 SITENAME = 'EUIPO FO Dev Hub'
 PATH = "content"
