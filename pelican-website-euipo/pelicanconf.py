@@ -42,6 +42,8 @@ CATEGORY_SAVE_AS = '/{slug}.html'  # Save path for single category pages
 ARTICLE_URL = '{category}/{slug}.html'
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
 
+STATIC_PATHS = ['images', 'favicon.ico']
+
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['jinja2content', 'minify']
 
