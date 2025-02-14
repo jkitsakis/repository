@@ -1,10 +1,10 @@
 @echo off
 
 SET DEMO_NAME=MyPlanner App
-SET APP_HOME=C:\Workspace\My-Applications\GitHub\repository\planner\planner-app
+SET APP_HOME=%cd%
 SET PYTHON_ENV=%APP_HOME%\.venv
 SET PYTHON_SCRIPTS_PATH=%PYTHON_ENV%\Scripts
-set PYTHONPATH=%APP_HOME%;%PYTHONPATH%
+SET PATH=%PYTHON_SCRIPTS_PATH%;%PATH%
 
 :start
 cls
