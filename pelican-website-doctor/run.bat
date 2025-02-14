@@ -27,7 +27,15 @@ if "%opt%"=="1" goto build
 if "%opt%"=="2" goto run
 if "%opt%"=="3" goto req
 if "%opt%"=="4" goto update-packages
+if "%opt%"=="5" goto uninstall-all
 if "%opt%"=="cmd" goto cmd
+goto start
+
+:uninstall-all
+call %PYTHON_SCRIPTS_PATH%\activate
+cd %APP_HOME%
+for /F "delims=" %%i in ('pip freeze') do pip uninstall -y %%i
+pause
 goto start
 
 :cmd
