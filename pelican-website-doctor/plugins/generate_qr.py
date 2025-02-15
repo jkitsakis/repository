@@ -28,7 +28,7 @@ def generate_qr_with_text(data, filename="qrcode.png", output_size=(500, 500)):
     draw = ImageDraw.Draw(img)
 
     # Define the text
-    text = " https://prosopikosiatrosalimos.gr \n "
+    text = " Σκανάρετε ή Κάντε Κλικ  \n"
 
     # Calculate text size and position
     bbox = draw.textbbox((0, 0), text, font=font)
@@ -56,5 +56,5 @@ def generate_qr_with_text(data, filename="qrcode.png", output_size=(500, 500)):
 
 # Example Usage
 if __name__ == "__main__":
-    phone_number = "https://prosopikosiatrosalimos.gr/"
-    generate_qr_with_text(phone_number, "../content/images/website_qr.png", output_size=(500, 500))
+    phone_number = "6907218124"
+    generate_qr_with_text(phone_number, "../content/images/mobile_qr.png", output_size=(500, 500))
