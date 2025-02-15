@@ -12,14 +12,14 @@ kramdown:
   hard_wrap: false  # Controls whether hard line breaks are added for paragraphs
 
 # Exclude non-relevant files from Jekyll processing (such as .yml or .json files)
-exclude:
-  - docker-compose.yml
-  - .gitignore
+# exclude:
+  # - docker-compose.yml
+  # - .gitignore
 
-# Enable Liquid templating in Markdown files
-defaults:
-  - scope:
-      path: "_posts"
-    values:
-      layout: post
+Enable Liquid templating in Markdown files
+# defaults:
+  # - scope:
+      # path: "_posts"
+    # values:
+      # layout: post
 
