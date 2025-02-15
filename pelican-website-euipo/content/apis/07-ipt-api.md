@@ -3,19 +3,12 @@ Slug: ipt-api
 Summary: Proceeding Search API
 order: 07
 
-## _Proceeding Search API_ - <a href="https://git.euipo.europa.eu/projects/IPT/repos/proceeding-search-api/browse" target="_blank">BitBucket</a>
+## <a href="https://git.euipo.europa.eu/projects/IPT/repos/proceeding-search-api/browse" target="_blank">BitBucket</a>
 
-{% set EOPW_URI = 'search?query=type==RCD' %}
-{% set PREFIX_DEV='dev'%}
-{% set PREFIX_TEST='test'%}
-{% set PREFIX_PREPROD='pp'%}
-{% set PREFIX_PROD='production'%}
-{% set APPLICATION_NAME='api.dev.oami.eu/proceeding-search-api'%}
-{% set NETWORK_AWS='nonprod.aws.oami.eu'%}
-{% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
+## _Proceeding Search API_ 
 
-- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}/{{EOPW_URI}}
-- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}/{{EOPW_URI}}
-- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}/{{EOPW_URI}}
+- **AWS-Dev**:  http://{{ PROCEEDING_SEARCH_API_PREFIX_DEV }}-{{ PROCEEDING_SEARCH_API_APPLICATION_NAME }}/{{ PROCEEDING_SEARCH_API_EOPW_URI }}
+- **AWS-Test**:  http://{{ PROCEEDING_SEARCH_API_PREFIX_TEST }}-{{ PROCEEDING_SEARCH_API_APPLICATION_NAME }}/{{ PROCEEDING_SEARCH_API_EOPW_URI }}
+- **AWS-Prod**:  http://{{ PROCEEDING_SEARCH_API_PREFIX_PROD }}-{{ PROCEEDING_SEARCH_API_APPLICATION_NAME }}/{{ PROCEEDING_SEARCH_API_EOPW_URI }}
 
 

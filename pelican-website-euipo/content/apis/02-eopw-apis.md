@@ -3,32 +3,15 @@ Slug: eopw-apis
 Summary: EOPW APIs : Website BE, Admin Tool, Story Block
 order: 02
 
-{% set EOPW_URI = 'portal/app/api' %}
-{% set PREFIX_DEV='dev'%}
-{% set PREFIX_TEST='test'%}
-{% set PREFIX_PROD='production'%}
-{% set APPLICATION_NAME='website-backend'%}
-{% set NETWORK_AWS='nonprod.aws.oami.eu'%}
-{% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
+## <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-website-backend/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/website-dev-aws?view=tree&resource=" target="_blank">Argo CD Dev</a> - <a href="https://jenkins.prod.oami.eu/job/EOP/" target="_blank">Jenkins</a>
 
-## _Website BE_ - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-website-backend/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/website-dev-aws?view=tree&resource=" target="_blank">Argo CD Dev</a> - <a href="https://jenkins.prod.oami.eu/job/EOP/" target="_blank">Jenkins</a>
+## _Website BE_ 
 
-
-- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
-- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
-- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
+- **AWS-Dev**:  http://{{ EOPW_PREFIX_DEV }}-{{ WEBSITE_BE_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS }}/{{ WEBSITE_BE_EOPW_URI }}
+- **AWS-Test**:  http://{{ EOPW_PREFIX_TEST }}-{{ WEBSITE_BE_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS }}/{{ WEBSITE_BE_EOPW_URI }}
+- **AWS-Prod**:  http://{{ EOPW_PREFIX_PROD }}-{{ WEBSITE_BE_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS_PROD }}/{{ WEBSITE_BE_EOPW_URI }}
 
 ---------------------
-<details>
-<summary>Legacy links</summary>
-<ul>
-  <li>**Integration**:  https://integration.euipo.europa.eu/{{EOPW_URI}}</li>
-  <li>**PreProd**:  https://pp.euipo.europa.eu/{{EOPW_URI}}</li>
-  <li>**Prod**:  https://www.euipo.europa.eu/{{EOPW_URI}}</li>
-</ul>
-</details>
----------------------
-
 <details>
 <summary>Syntax</summary>
 <ul>
@@ -62,42 +45,20 @@ order: 02
 
 </details>
 
----- 
+--------------------- 
 
 ## _Admin Tool_ - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-admintool-backend/browse" target="_blank">BitBucket</a>
-{% set EOPW_URI = 'eop/admintool/app/api/' %}
-{% set APPLICATION_NAME = 'eop-admintool-backend' %}
-- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
-- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
-- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
+
+- **AWS-Dev**:  http://{{ EOPW_PREFIX_DEV }}-{{ ADMIN_TOOL_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS }}/{{ ADMIN_TOOL_EOPW_URI }}
+- **AWS-Test**:  http://{{ EOPW_PREFIX_TEST }}-{{ ADMIN_TOOL_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS }}/{{ ADMIN_TOOL_EOPW_URI }}
+- **AWS-Prod**:  http://{{ EOPW_PREFIX_PROD }}-{{ ADMIN_TOOL_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS_PROD }}/{{ ADMIN_TOOL_EOPW_URI }}
 
 ---------------------
-<details>
-<summary>Legacy links</summary>
-<ul>
-  <li>**Integration**:  https://integration.euipo.europa.eu/{{EOPW_URI}}</li>
-  <li>**PreProd**:  https://pp.euipo.europa.eu/{{EOPW_URI}}</li>
-  <li>**Prod**:  https://www.euipo.europa.eu/{{EOPW_URI}}</li>
-</ul>
-</details>
----------------------
-
 
 ## _Story Blok_ - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-storyblok-api/browse" target="_blank">BitBucket</a>
-{% set EOPW_URI = 'eop/storyblok/' %}
-{% set APPLICATION_NAME = 'storyblok-api' %}
-- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
-- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
-- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}
+
+- **AWS-Dev**:  http://{{ EOPW_PREFIX_DEV }}-{{ STORY_BLOK_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS }}/{{ STORY_BLOK_EOPW_URI }}
+- **AWS-Test**:  http://{{ EOPW_PREFIX_TEST }}-{{ STORY_BLOK_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS }}/{{ STORY_BLOK_EOPW_URI }}
+- **AWS-Prod**:  http://{{ EOPW_PREFIX_PROD }}-{{ STORY_BLOK_APPLICATION_NAME }}.{{ EOPW_NETWORK_AWS_PROD }}/{{ STORY_BLOK_EOPW_URI }}
 
 
----------------------
-<details>
-<summary>Legacy links</summary>
-<ul>
-  <li>**Integration**:  https://integration.euipo.europa.eu/{{EOPW_URI}}</li>
-  <li>**PreProd**:  https://pp.euipo.europa.eu/{{EOPW_URI}}</li>
-  <li>**Prod**:  https://www.euipo.europa.eu/{{EOPW_URI}}</li>
-</ul>
-</details>
----------------------

@@ -2,19 +2,14 @@ Title: UI Links
 Slug: ui-links
 Order: 1
 
-{% set aws_dev = 'https://dev-www.euipo.europa.eu' %}
-{% set aws_pp = 'https://pp-www.euipo.europa.eu' %}
-{% set aws_test = 'https://test-www.euipo.europa.eu'%}
-{% set aws_dev1 = 'https://dev-eutm.euipo.europa.eu' %}
-{% set aws_pp1 = 'https://pp-eutm.euipo.europa.eu' %}
-{% set aws_test1 = 'https://test-eutm.euipo.europa.eu'%}
+
 
 ---
 
 <details>
 	<summary> EUTM </summary>
     <ul>
-        <li><a href="{{ aws_dev }}/en/trade-marks" target="_blank">integration</a></li>
+        <li><a href="{{ AWS_DEV }}/en/trade-marks" target="_blank">integration</a></li>
         <li><a href="{{ aws_pp }}/en/trade-marks" target="_blank">preprod</a></li>
         <li><a href="{{ aws_test }}/en/trade-marks" target="_blank">test</a></li>
     </ul>
@@ -23,23 +18,23 @@ Order: 1
 <details>
 	<summary> User Area </summary> 
     <ul>
-        <li><a href="{{aws_dev}}/en/old-user-area" target="_blank">integration - old-user-area</a></li>
-        <li><a href="{{aws_dev}}/en/user-area" target="_blank">integration - new-user-area</a></li>
+        <li><a href="{{ AWS_DEV }}/en/old-user-area" target="_blank">integration - old-user-area</a></li>
+        <li><a href="{{ AWS_DEV }}/en/user-area" target="_blank">integration - new-user-area</a></li>
 		
-        <li><a href="{{aws_pp}}/en/old-user-area" target="_blank">preprod - old-user-area</a></li>
-        <li><a href="{{aws_pp}}/en/user-area" target="_blank">preprod - new-user-area</a></li>
+        <li><a href="{{ aws_pp }}/en/old-user-area" target="_blank">preprod - old-user-area</a></li>
+        <li><a href="{{ aws_pp }}/en/user-area" target="_blank">preprod - new-user-area</a></li>
 		
-        <li><a href="{{aws_test}}/en/old-user-area" target="_blank">test - old-user-area</a></li>
-        <li><a href="{{aws_test}}/en/user-area" target="_blank">test- new-user-area</a></li>
+        <li><a href="{{ aws_test }}/en/old-user-area" target="_blank">test - old-user-area</a></li>
+        <li><a href="{{ aws_test }}/en/user-area" target="_blank">test- new-user-area</a></li>
     </ul>    
 </details>
 
 <details>
 	<summary> eForms </summary>
     <ul>
-        <li><a href="{{aws_dev1}}/eutm-efiling/" target="_blank">integration</a></li>
-        <li><a href="{{aws_pp1}}/eutm-efiling/" target="_blank">preprod</a></li>
-        <li><a href="{{aws_test1}}/eutm-efiling/" target="_blank">test</a></li>
+        <li><a href="{{ AWS_DEV1 }}/eutm-efiling/" target="_blank">integration</a></li>
+        <li><a href="{{ aws_pp1 }}/eutm-efiling/" target="_blank">preprod</a></li>
+        <li><a href="{{ aws_test1 }}/eutm-efiling/" target="_blank">test</a></li>
     </ul>
 </details>
 

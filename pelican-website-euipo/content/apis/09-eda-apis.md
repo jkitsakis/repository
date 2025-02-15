@@ -3,21 +3,13 @@ Slug: eda-apis
 Summary: EDA APIs : Design Filing API
 order: 09
 
-## _Design Filing API_ - <a href="https://git.euipo.europa.eu/projects/EDA/repos/design-filing-api/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/design-api-dev-aws?view=tree&resource=" target="_blank">ArgoCD Dev</a>
+## <a href="https://git.euipo.europa.eu/projects/EDA/repos/design-filing-api/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/design-api-dev-aws?view=tree&resource=" target="_blank">ArgoCD Dev</a>
 
+## _Design Filing API_ 
 
-
-{% set EOPW_URI = 'eop/design-filing/' %}
-{% set PREFIX_DEV='dev'%}
-{% set PREFIX_TEST='test'%}
-{% set PREFIX_PROD='production'%}
-{% set APPLICATION_NAME='design-filing-api'%}
-{% set NETWORK_AWS='nonprod.aws.oami.eu'%}
-{% set NETWORK_AWS_PROD='prod.aws.oami.eu'%}
-
-- **AWS-Dev**:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
-- **AWS-Test**:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
-- **AWS-Prod**:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}  
+- **AWS-Dev**:  http://{{ DESIGN_FILING_API_PREFIX_DEV }}-{{ DESIGN_FILING_API_APPLICATION_NAME }}.{{ DESIGN_FILING_API_NETWORK_AWS }}/{{ DESIGN_FILING_API_EOPW_URI }}
+- **AWS-Test**: http://{{ DESIGN_FILING_API_PREFIX_TEST }}-{{ DESIGN_FILING_API_APPLICATION_NAME }}.{{ DESIGN_FILING_API_NETWORK_AWS }}/{{ DESIGN_FILING_API_EOPW_URI }}
+- **AWS-Prod**: http://{{ DESIGN_FILING_API_PREFIX_PROD }}-{{ DESIGN_FILING_API_APPLICATION_NAME }}.{{ DESIGN_FILING_API_NETWORK_AWS_PROD }}/{{ DESIGN_FILING_API_EOPW_URI }}  
 <br/>
 ---------------------  
 _Syntax_  
