@@ -2,6 +2,24 @@ theme: jekyll-theme-cayman
 title: Kitsakis Yannis 
 description: My GitHub Repository
 
+
+# Markdown Configuration
+markdown: kramdown   # kramdown is the default Markdown processor in Jekyll
+
+# Kramdown Options
+kramdown:
+  input: GFM        # GFM (GitHub Flavored Markdown) allows features like tables, strikethrough, etc.
+  hard_wrap: false  # Controls whether hard line breaks are added for paragraphs
+
+# Exclude non-relevant files from Jekyll processing (such as .yml or .json files)
 exclude:
   - docker-compose.yml
-  - projects/wildfly-postgres/docker-compose.yml
+  - .gitignore
+
+# Enable Liquid templating in Markdown files
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+
