@@ -1,4 +1,12 @@
 # My Portfolio
+
+Welcome to my GitHub portfolio! 
+
+📄 **[View My Resume](https://jkitsakis.github.io/)**  
+📫 **Contact me**: [j_kitsakis@yahoo.com](mailto:j_kitsakis@yahoo.com)
+
+
+
 - Docker, docker-images, Dockerfiles, docker-compose
 - Dockerizing apps
   - Viber
