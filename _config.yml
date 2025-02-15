@@ -1,0 +1,7 @@
+theme: jekyll-theme-cayman
+title: Kitsakis Yannis 
+description: My GitHub Repository
+
+exclude:
+  - docker-compose.yml
+  - projects/wildfly-postgres/docker-compose.yml
