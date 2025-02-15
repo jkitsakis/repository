@@ -11,6 +11,7 @@ click==8.1.8
 colorama==0.4.6
 contourpy==1.3.1
 cycler==0.12.1
+django-qrcode==0.3
 docutils==0.21.2
 feedgenerator==2.1.0
 Flask==2.2.5
@@ -63,6 +64,7 @@ python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 pytz==2025.1
 PyYAML==6.0.2
+qrcode==8.0
 rcssmin==1.2.0
 requests==2.32.3
 requests-oauthlib==2.0.0
@@ -84,6 +86,3 @@ watchfiles==1.0.4
 Werkzeug==3.1.3
 wheel==0.45.1
 zipp==3.21.0
-
-qrcode~=8.0
-django-qrcode~=0.3
