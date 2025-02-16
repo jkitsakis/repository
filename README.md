@@ -1,4 +1,4 @@
-# My Portfolio
+# Yannis Kitsakis - My Portfolio
 
 Welcome to my GitHub portfolio! 
 
@@ -23,5 +23,6 @@ Welcome to my GitHub portfolio!
   - M3U
 - SageMath Dockerized with PDF Tools
 - Jupyter Notebooks Docker
+- R Studio in Docker
 - Greek IPTV Playlists
 - Greek Internet Radio
