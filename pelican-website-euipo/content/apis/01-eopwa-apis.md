@@ -93,8 +93,6 @@ _Syntax_
 
 ## Settings Search API-<a href="https://git.euipo.europa.eu/projects/EOPWA/repos/settings-api/browse" target="_blank">BitBucket</a>
 
-{% set SETTINGS_SEARCH_EOPW_URI = 'eop/settings/' %}
-{% set SETTINGS_SEARCH_APPLICATION_NAME = 'settings-api' %}
 - **AWS-Dev**:  http://{{ EOPWA_PREFIX_DEV }}-{{ SETTINGS_SEARCH_APPLICATION_NAME }}.{{ EOPWA_NETWORK_AWS }}/{{ SETTINGS_SEARCH_EOPW_URI }}
 - **AWS-Test**:  http://{{ EOPWA_PREFIX_TEST }}-{{ SETTINGS_SEARCH_APPLICATION_NAME }}.{{ EOPWA_NETWORK_AWS }}/{{ SETTINGS_SEARCH_EOPW_URI }}
 - **AWS-Prod**:  http://{{ EOPWA_PREFIX_PROD }}-{{ SETTINGS_SEARCH_APPLICATION_NAME }}.{{ EOPWA_NETWORK_AWS_PROD }}/{{ SETTINGS_SEARCH_EOPW_URI }}
