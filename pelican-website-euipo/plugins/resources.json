@@ -1,5 +1,8 @@
 {
-	"IMG_URL": "",
+	"LOCAL_BUILD": "True",
+	"SITEURL": "",
+	"SITEURL_GITHUB": "/euipo",
+	"IMG_URL": "images/euipo.png",
 	"AWS_DEV": "https://dev-www.euipo.europa.eu",
 	"aws_pp": "https://pp-www.euipo.europa.eu",
 	"aws_test": "https://test-www.euipo.europa.eu",
@@ -27,6 +30,8 @@
 	"NOTES_SEARCH_APPLICATION_NAME": "notes-api",
 	"PRE_ASSESEMENT_SEARCH_EOPW_URI": "eop/pre-assessment/",
 	"PRE_ASSESEMENT_SEARCH_APPLICATION_NAME": "pre-assessment-api",
+	"SETTINGS_SEARCH_APPLICATION_NAME": "settings-api",
+	"SETTINGS_SEARCH_EOPW_URI": "eop/settings/",
 	"USER_PROFILE_EOPW_URI": "eop/user-profile/",
 	"USER_PROFILE_APPLICATION_NAME": "user-profile-api",
 	"EOPW_PREFIX_DEV": "dev",

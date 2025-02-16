@@ -1,7 +1,8 @@
 from __future__ import unicode_literals
+from plugins.configuration_params import Parameters
 
-LOCAL_BUILD = False
-SITEURL = '' if LOCAL_BUILD else '/euipo'
+LOCAL_BUILD = Parameters.LOCAL_BUILD
+SITEURL = Parameters.SITEURL if LOCAL_BUILD else Parameters.SITEURL_GITHUB
 DEFAULT_DATE = 'fs' #Pelican will use the file system's last modified date
 SITENAME = 'EUIPO FO Dev Hub'
 PATH = "content"
@@ -11,7 +12,7 @@ THEME = './theme/notmyidea'
 CACHE_CONTENT = False
 DELETE_OUTPUT_DIRECTORY = True
 
-INDEX_SAVE_AS = 'index.html'  # Ensure the homepage is saved as index.html
+INDEX_SAVE_AS = 'index.html'  # Ensure the homepage is saved as index.md
 ARTICLE_ORDER_BY = 'order'
 PAGE_ORDER_BY = 'order'
 DEFAULT_PAGINATION = 10
