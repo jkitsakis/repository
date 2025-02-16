@@ -25,7 +25,7 @@ def inject_constants(generator, content):
         placeholder = f'{{{{ {key} }}}}'
         logger.info(f"placeholder: {placeholder}")
         if key == "IMG_URL" and site_url:
-            content._content = content._content.replace(placeholder, f"{site_url}'/'{value}")
+            content._content = content._content.replace(placeholder, f"{site_url}/{value}")
 
         if hasattr(content, '_content') and content._content:
             content._content = content._content.replace(placeholder, value)
