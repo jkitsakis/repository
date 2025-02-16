@@ -1,5 +1,6 @@
 {
 	"LOCAL_BUILD": "True",
+	"SITENAME": "EUIPO FO Dev Hub",
 	"SITEURL": "",
 	"SITEURL_GITHUB": "/euipo",
 	"IMG_URL": "images/euipo.png",

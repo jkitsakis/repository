@@ -18,20 +18,17 @@ def load_constants():
 def inject_constants(generator, content):
     """Inject constants into the content and metadata of each article/page."""
     constants = load_constants()
+    site_url = generator.settings.get("SITEURL", "").strip()# Ensure it's not empty :
 
     # Substitute values from constants in the content
     for key, value in constants.items():
         placeholder = f'{{{{ {key} }}}}'
         logger.info(f"placeholder: {placeholder}")
+        if key == "IMG_URL" and site_url:
+            content._content = content._content.replace(placeholder, f"{site_url}'/'{value}")
 
         if hasattr(content, '_content') and content._content:
             content._content = content._content.replace(placeholder, value)
-
-        if hasattr(content, 'metadata') and 'title' in content.metadata and content.metadata['title'] == placeholder:
-            content.metadata.update({'title': value})
-
-        if hasattr(content, 'metadata') and 'image_url' in content.metadata and content.metadata['image_url'] == placeholder:
-            content.metadata.update({'image_url': value})
 
 
 

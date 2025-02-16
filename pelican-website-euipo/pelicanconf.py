@@ -2,9 +2,9 @@ from __future__ import unicode_literals
 from plugins.configuration_params import Parameters
 
 LOCAL_BUILD = Parameters.LOCAL_BUILD
-SITEURL = Parameters.SITEURL if LOCAL_BUILD=="True" else Parameters.SITEURL_GITHUB
+SITEURL = Parameters.SITEURL if LOCAL_BUILD == "True" else Parameters.SITEURL_GITHUB
 DEFAULT_DATE = 'fs' #Pelican will use the file system's last modified date
-SITENAME = 'EUIPO FO Dev Hub'
+SITENAME = Parameters.SITENAME
 PATH = "content"
 TIMEZONE = 'Europe/Athens'
 DEFAULT_LANG = 'en'
@@ -49,9 +49,11 @@ PLUGIN_PATHS = ['plugins']
 PLUGINS = ['inject_constants', 'minify']
 
 #values like SITEURL will be globally accessible in all Jinja templates.
-JINJA_GLOBALS = {
-    'SITEURL': SITEURL
-}
+# JINJA_GLOBALS = {
+#     "SITEURL": SITEURL,
+#     "IMG_URL": f"{SITEURL}/images/euipo.png"  # Using f-string for clarity
+# }
+
 
 MENUITEMS = [
     ("APIs", SITEURL+'/apis.html'),

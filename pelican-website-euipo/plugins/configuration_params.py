@@ -8,6 +8,7 @@ class Parameters:
     LOCAL_BUILD = ""
     SITEURL=""
     SITEURL_GITHUB=""
+    SITENAME=""
 
     @staticmethod
     def load_from_json(json_file):
@@ -18,6 +19,7 @@ class Parameters:
         Parameters.LOCAL_BUILD = config.get("LOCAL_BUILD", "")
         Parameters.SITEURL_GITHUB = config.get("SITEURL_GITHUB", "")
         Parameters.SITEURL = config.get("SITEURL", "")
+        Parameters.SITENAME = config.get("SITENAME", "")
 
 logger.info(f"load configuration: resources.json")
 # Example usage
