@@ -1,3 +1,18 @@
-theme: jekyll-theme-cayman
-title: Kitsakis Yannis 
+title: Kitsakis Yannis - My Portfolio
 description: My GitHub Repository
+author: "John Kitsakis"
+
+theme: jekyll-theme-cayman
+
+# Build settings
+markdown: kramdown
+
+# Plugins (optional, useful for SEO, feeds, etc.)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  
+# Exclude unnecessary files from build
+exclude:
+  - node_modules/
+  - vendor/
