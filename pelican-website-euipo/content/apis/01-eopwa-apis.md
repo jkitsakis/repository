@@ -43,13 +43,13 @@ _Syntax_
 - **AWS-Prod**:  http://{{ EOPWA_PREFIX_PROD }}-{{ DRAFTS_SEARCH_APPLICATION_NAME }}.{{ EOPWA_NETWORK_AWS_PROD }}/{{ DRAFTS_SEARCH_EOPW_URI }}
 
 
-### eutms: /drafts/eutms?size=10&page=0&sort=creationDate:DESC
+> eutms: /drafts/eutms?size=10&page=0&sort=creationDate:DESC
 
-### designs: /drafts/designs?size=10&page=0&sort=creationDate:DESC
+> designs: /drafts/designs?size=10&page=0&sort=creationDate:DESC
 
-### interpartes: /drafts/interpartes?page=0&size=10&actions=OPPOSITION&sort=draftdate:desc
+> interpartes: /drafts/interpartes?page=0&size=10&actions=OPPOSITION&sort=draftdate:desc
 
-### other: /drafts/other?size=10&page=0&sort=creationDate:DESC
+> other: /drafts/other?size=10&page=0&sort=creationDate:DESC
 
 -------------------
 
@@ -67,11 +67,11 @@ _Syntax_
 - **AWS-Test**:  http://{{ EOPWA_PREFIX_TEST }}-{{ INTERPARTES_SEARCH_APPLICATION_NAME }}.{{ EOPWA_NETWORK_AWS }}/{{ INTERPARTES_SEARCH_EOPW_URI }}
 - **AWS-Prod**:  http://{{ EOPWA_PREFIX_PROD }}-{{ INTERPARTES_SEARCH_APPLICATION_NAME }}.{{ EOPWA_NETWORK_AWS_PROD }}/{{ INTERPARTES_SEARCH_EOPW_URI }}
 
-### oppositions: /oppositions?query=opponentRepresentatives.identifier==10014&size=100&page=0&sort=oppositionDate:desc
+> oppositions: /oppositions?query=opponentRepresentatives.identifier==10014&size=100&page=0&sort=oppositionDate:desc
 
-### cancellations: /cancellations?page=0&sort=cancellationNumber:desc&size=160
+> cancellations: /cancellations?page=0&sort=cancellationNumber:desc&size=160
 
-### invalidities: /invalidities?query=claimantRepresentatives.name=="HO+*"&size=100&page=0&sort=invalidityDate:desc
+> invalidities: /invalidities?query=claimantRepresentatives.name=="HO+*"&size=100&page=0&sort=invalidityDate:desc
 
 -------------------
 

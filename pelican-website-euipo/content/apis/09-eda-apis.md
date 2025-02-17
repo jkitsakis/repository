@@ -13,6 +13,7 @@ order: 09
 <br/>
 ---------------------  
 _Syntax_  
+
 > templates?keyword=template1&page.page=0&page.size=10&page.sort=draftdate&page.sort.dir=asc
 
 > templates/78023ccc-2a91-49aa-b759-3e1c19cdaa10/documents/012e81f5-00d3-45de-a60f-ee55ffe53d13/export  
