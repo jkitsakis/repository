@@ -27,4 +27,4 @@ rules_sorted <- sort(rules, by = "lift", decreasing = TRUE)
 inspect(head(rules_sorted, 5))
 
 library(arulesViz)
-plot(head(sorted_rules, 5), method = "graph")
+plot(head(rules_sorted, 5), method = "graph")

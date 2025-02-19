@@ -12,7 +12,7 @@ RUN apt-get update && \
 
 
 # Install any necessary R libraries here
-RUN R -e "install.packages(c('dplyr', 'caret', 'e1071', 'ggplot2', 'tidyverse'), repos='https://cloud.r-project.org')"
+RUN R -e "install.packages(c('dplyr', 'caret', 'e1071', 'ggplot2', 'tidyverse'), repos='https://cloud.r-project.org')" && rm -rf /var/lib/apt/lists/*
 
 # Expose port for RStudio
 EXPOSE 8787
