@@ -59,20 +59,12 @@ call pip install --upgrade --no-cache-dir -r requirements.txt
 pause
 goto start
 
-:build
-call %PYTHON_SCRIPTS_PATH%\activate
-cd %APP_HOME%
-rmdir /s /q output
-call pelican content --delete-output
-call pelican content -D
-pause
-goto start
-
 
 :run
 cls
 cd %APP_HOME%
-python transcriber.py
+rmdir /s /q audio_chunks
+python transcriber.py --model_size medium --language el
 echo Planner script finished.
 pause
 goto start
