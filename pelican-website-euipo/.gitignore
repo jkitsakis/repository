@@ -3,4 +3,5 @@ output/
 source/
 .idea/
 .venv/
+.vs/
 

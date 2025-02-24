@@ -1,0 +1,9 @@
+__pycache__/*
+output/
+source/
+.idea/
+.venv/
+.vs/
+*.wav
+audio_chunks/
+ffmpeg-2025-02-20-full-build/
