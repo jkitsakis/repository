@@ -1,0 +1,12 @@
+services:
+  whisper-transcriber:
+    build:
+      context: .
+      container_name: whisper_transcriber_container
+    environment:
+      - MODEL_SIZE=medium
+      - LANGUAGE=el
+    volumes:
+      - ./app:/app
+    command: ["tail", "-f", "/dev/null"] #the container stay idle and execute commands manually
+#    command: ["python", "transcriber.py", "--model_size", "${MODEL_SIZE}", "--language", "${LANGUAGE}"]

@@ -40,11 +40,12 @@ Enter a Running Container (Interactive Shell)
 podman ps -a
 podman exec -it <container_id> /bin/sh
 
-Rebuild your container
+Build the Dockerfile (or Container Image)
 podman build -t <container_name> .
 podman run --rm <container_name>
 
-
+Run the script without rebuilding the container
+podman exec -it docker_whisper-transcriber_1 python /app/transcriber.py --model_size medium --language el
 
 
 Check Podman + Podman Compose Status

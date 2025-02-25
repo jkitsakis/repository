@@ -18,7 +18,7 @@ echo              Main Menu
 echo        ---------------------------
 echo   1. Run %DEMO_NAME%
 echo   2. Export requirements.txt %DEMO_NAME%
-echo   3. Upgrade packages %DEMO_NAME%
+echo   3. Install requirements.txt %DEMO_NAME%
 echo   4. Uninstall All packages %DEMO_NAME%
 
 set /p opt=Type option:
