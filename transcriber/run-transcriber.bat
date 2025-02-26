@@ -1,6 +1,7 @@
 @echo off
 
 SET DEMO_NAME=Transcriber App
+SET PYTHON_EXEC=%programfiles%\Python311
 SET APP_HOME=%cd%
 SET PYTHON_ENV=%APP_HOME%\.venv
 SET PYTHON_SCRIPTS_PATH=%PYTHON_ENV%\Scripts
@@ -20,6 +21,7 @@ echo   1. Run %DEMO_NAME%
 echo   2. Export requirements.txt %DEMO_NAME%
 echo   3. Install requirements.txt %DEMO_NAME%
 echo   4. Uninstall All packages %DEMO_NAME%
+echo   5. Create Virtual Env with 
 
 set /p opt=Type option:
 if "%opt%"=="0" goto exit
@@ -27,7 +29,14 @@ if "%opt%"=="1" goto run
 if "%opt%"=="2" goto req
 if "%opt%"=="3" goto update-packages
 if "%opt%"=="4" goto uninstall-all
+if "%opt%"=="5" goto create-venv
 if "%opt%"=="cmd" goto cmd
+goto start
+
+
+:create-venv
+call "%PYTHON_EXEC%"\python.exe -m venv .venv
+pause
 goto start
 
 :uninstall-all

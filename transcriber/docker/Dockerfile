@@ -1,5 +1,7 @@
 FROM python:3.11
 
+
+ENV HF_TOKEN="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"
 WORKDIR /app
 
 # Install ffmpeg and dependencies

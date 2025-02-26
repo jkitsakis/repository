@@ -2,7 +2,6 @@ import os
 import argparse
 import subprocess
 import tkinter as tk
-from multiprocessing import Pool
 from tkinter import filedialog
 from tkinter import ttk
 import whisper
