@@ -3,76 +3,148 @@ import argparse
 import subprocess
 import whisper
 import time
-from multiprocessing import Pool
-from functools import partial
+import torch
+from multiprocessing import Pool, cpu_count
+from concurrent.futures import ThreadPoolExecutor
+from pyannote.audio.pipelines import SpeakerDiarization
+
+# Load Pyannote model once per worker process
+diarization_model = None
+whisper_model = None  # Store Whisper model globally for reuse
 
 
-# Function to extract audio from an MP4 file
+def load_diarization_model():
+    """Loads and returns the Pyannote speaker diarization model with GPU support."""
+    global diarization_model
+    if diarization_model is None:
+        try:
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            diarization_model = SpeakerDiarization.from_pretrained(
+                "pyannote/speaker-diarization-3.1",
+                use_auth_token="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"
+            )
+            diarization_model.to(torch.device(device))
+            print(f"Speaker diarization model loaded on {device.upper()}.")
+        except Exception as e:
+            print(f"Error loading Pyannote model: {e}")
+            diarization_model = None
+    return diarization_model
+
+
+def load_whisper_model(model_size):
+    """Loads and returns the Whisper model for transcription."""
+    global whisper_model
+    if whisper_model is None:
+        print(f"Loading Whisper model: {model_size}...")
+        whisper_model = whisper.load_model(model_size)
+    return whisper_model
+
+
 def extract_audio(mp4_file, output_audio):
     """Extracts audio from an MP4 file as WAV format."""
+    if not os.path.exists(mp4_file):
+        print(f"File not found: {mp4_file}")
+        return None
+
     print(f"Extracting audio from {mp4_file}...")
-    command = [
-        "ffmpeg", "-i", mp4_file,
-        "-ac", "1", "-ar", "16000", "-vn",
-        output_audio
-    ]
+    command = ["ffmpeg", "-i", mp4_file, "-ac", "1", "-ar", "16000", "-vn", output_audio, "-y"]
     subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print(f"Audio extracted: {output_audio}")
+
+    if not os.path.exists(output_audio):
+        print(f"Error: Audio extraction failed for {mp4_file}")
+        return None
+
+    return output_audio
 
 
-# Function to get audio duration
-def get_audio_duration(input_audio):
-    """Extracts duration from an audio file using FFmpeg."""
-    command = ["ffmpeg", "-i", input_audio, "-f", "null", "-"]
-    result = subprocess.run(command, stderr=subprocess.PIPE, text=True)
+def apply_diarization(audio_file):
+    """Applies speaker diarization and returns timestamps with speaker labels."""
+    model = load_diarization_model()
+    if model is None:
+        print("Skipping diarization due to model loading failure.")
+        return []
 
-    duration_str = None
-    for line in result.stderr.splitlines():
-        if "Duration:" in line:
-            duration_str = line.split("Duration:")[1].split(",")[0].strip()
-            break
+    print(f"Applying speaker diarization on {audio_file}...")
+    diarization_result = model(audio_file)
 
-    if not duration_str:
-        return 0
+    speaker_segments = []
+    speaker_map = {}
+    speaker_counter = 1
 
-    hours, minutes, seconds = map(float, duration_str.split(":"))
-    return int(hours * 3600 + minutes * 60 + seconds)
+    for turn, _, speaker in diarization_result.itertracks(yield_label=True):
+        if speaker not in speaker_map:
+            speaker_map[speaker] = f"SPEAKER_{speaker_counter}"
+            speaker_counter += 1
+        speaker_segments.append((turn.start, turn.end, speaker_map[speaker]))
 
+    if not speaker_segments:
+        print(f"No speakers detected in {audio_file}")
 
-# Function to split audio into smaller chunks
-def split_audio(input_audio, output_folder, chunk_length_sec=600):
-    """Splits the audio file into smaller chunks."""
-    os.makedirs(output_folder, exist_ok=True)
-    total_seconds = get_audio_duration(input_audio)
-
-    chunks = []
-    for start_sec in range(0, total_seconds, chunk_length_sec):
-        chunk_filename = os.path.join(output_folder, f"chunk_{start_sec}.wav")
-        command = [
-            "ffmpeg", "-i", input_audio, "-ss", str(start_sec), "-t", str(chunk_length_sec),
-            "-ac", "1", "-ar", "16000", "-vn", chunk_filename
-        ]
-        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        chunks.append(chunk_filename)
-
-    return chunks
+    return speaker_segments
 
 
-# Function to transcribe audio
-def transcribe_audio(audio_file, model_size, language):
-    """Transcribes an audio file using OpenAI Whisper."""
-    model = whisper.load_model(model_size)
-    result = model.transcribe(audio_file, temperature=0.0, beam_size=1, language=language)
-    return result["text"]
+def transcribe_segment(args):
+    """Transcribes a specific time segment of an audio file."""
+    audio_file, start, end, model_size, language = args
+
+    whisper_model = load_whisper_model(model_size)
+    temp_file = f"{audio_file}_segment_{start:.2f}_{end:.2f}.wav"
+
+    # Extract segment
+    command = ["ffmpeg", "-i", audio_file, "-ss", str(start), "-t", str(end - start), "-ac", "1", "-ar", "16000", "-vn", temp_file, "-y"]
+    subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+    if not os.path.exists(temp_file):
+        print(f"Error: Failed to extract segment {start:.2f}-{end:.2f}")
+        return start, end, "[ERROR: Failed extraction]"
+
+    # Transcribe
+    result = whisper_model.transcribe(temp_file, temperature=0.0, beam_size=1, language=language)
+    os.remove(temp_file)
+    return start, end, result["text"]
 
 
-# Wrapper function for transcription
-def transcribe_audio_wrapper(chunk, model_size, language):
-    print(f"Transcribing chunk : {chunk}")
-    return transcribe_audio(chunk, model_size, language)
+def process_file(file, input_folder, output_folder, model_size, language):
+    """Processes a single file: extracts audio, applies diarization, and transcribes."""
+    print(f"Processing file: {file}")
+
+    mp4_file = os.path.join(input_folder, file)
+    audio_file = os.path.join(output_folder, f"{file}.wav")
+
+    # Extract audio
+    extracted_audio = extract_audio(mp4_file, audio_file)
+    if not extracted_audio:
+        return
+
+    # Apply speaker diarization
+    speaker_segments = apply_diarization(audio_file)
+    if not speaker_segments:
+        print(f"Skipping transcription for {file}: No speakers detected.")
+        return
+
+    print(f"Speaker Segments for {file}: {len(speaker_segments)} segments found.")
+
+    # Use ThreadPool for transcriptions
+    with ThreadPoolExecutor(max_workers=cpu_count()) as executor:
+        transcriptions = list(executor.map(
+            transcribe_segment,
+            [(audio_file, start, end, model_size, language) for start, end, _ in speaker_segments]
+        ))
+
+    # Format output
+    full_transcript = []
+    for (start, end, speaker), (_, _, text) in zip(speaker_segments, transcriptions):
+        full_transcript.append(f"[{speaker}] {start:.2f} - {end:.2f}: {text}")
+
+    transcript_path = os.path.join(output_folder, file.replace(".mp4", "_diarized_transcript.txt"))
+
+    # Save transcript
+    with open(transcript_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(full_transcript))
+
+    print(f"Transcript saved: {transcript_path}")
 
 
-# Main function
 def main():
     start_time = time.time()
 
@@ -83,37 +155,24 @@ def main():
     parser.add_argument('--output_folder', type=str, default="/app/output", help="Folder for transcripts")
 
     args = parser.parse_args()
-    print(f"Using Whisper Model  : {args.model_size}")
+    print(f"Using Whisper Model: {args.model_size}")
 
     os.makedirs(args.output_folder, exist_ok=True)
 
-    for file in os.listdir(args.input_folder):
-        if file.endswith(".mp4"):
-            mp4_file = os.path.join(args.input_folder, file)
-            audio_file = os.path.join(args.output_folder, "temp_audio.wav")
+    # List all MP4 files
+    files = [file for file in os.listdir(args.input_folder) if file.endswith(".mp4")]
+    if not files:
+        print("No MP4 files found in the input folder.")
+        return
 
-            # Extract audio
-            extract_audio(mp4_file, audio_file)
+    print(f"Processing {len(files)} files in parallel...")
 
-            # Split audio into chunks
-            chunks = split_audio(audio_file, os.path.join(args.output_folder, "chunks"))
-            print(f"Extracted chunks : {chunks}")
-
-            # Create a partial function with the required additional arguments
-            transcribe_partial = partial(transcribe_audio_wrapper, model_size=args.model_size, language=args.language)
-
-            # Use multiprocessing to speed up transcription
-            print(f"Use multiprocessing to speed up transcription")
-            with Pool() as pool:
-                transcripts = pool.map(transcribe_partial, chunks)
-
-            full_transcript = "\n".join(transcripts)
-            print(f"Full Transcript: {full_transcript}")
-
-            # Save transcript
-            transcript_path = os.path.join(args.output_folder, file.replace(".mp4", "_transcript_" + args.model_size + ".txt"))
-            with open(transcript_path, "w", encoding="utf-8") as f:
-                f.write(f"Transcription:\n{full_transcript}")
+    num_workers = min(cpu_count(), len(files))
+    with Pool(processes=num_workers) as pool:
+        pool.starmap(
+            process_file,
+            [(file, args.input_folder, args.output_folder, args.model_size, args.language) for file in files]
+        )
 
     print(f"Total execution time: {time.time() - start_time:.2f} seconds")
 
