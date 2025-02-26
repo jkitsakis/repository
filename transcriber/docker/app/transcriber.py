@@ -21,7 +21,7 @@ def load_diarization_model():
             device = "cuda" if torch.cuda.is_available() else "cpu"
             diarization_model = SpeakerDiarization.from_pretrained(
                 "pyannote/speaker-diarization-3.1",
-                use_auth_token="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"
+                use_auth_token=""
             )
             diarization_model.to(torch.device(device))
             print(f"Speaker diarization model loaded on {device.upper()}.")
