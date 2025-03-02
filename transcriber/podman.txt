@@ -45,7 +45,7 @@ podman build -t <container_name> .
 podman run --rm <container_name>
 
 Run the script without rebuilding the container
-podman exec -it docker_whisper-transcriber_1 python /app/transcriber.py --model_size medium --language el
+podman exec -it docker_whisper-transcriber_1 python /app/transcriber.py --model_size medium --hftoken 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 --language el
 
 
 Check Podman + Podman Compose Status

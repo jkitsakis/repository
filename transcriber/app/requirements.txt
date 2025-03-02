@@ -4,5 +4,5 @@ torchlibrosa
 pyannote.audio
 numpy
 ffmpeg-python
-more-itertools
-tiktoken
+whisper-timestamped
+
