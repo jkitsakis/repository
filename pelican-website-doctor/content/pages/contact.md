@@ -29,6 +29,12 @@ Order: 1
       <img src="{{ SITEURL }}/{{ ADDRESS_IMG }}" alt="Location Icon" style="width:8%"/>
       <a href="{{ ADDRESS_MAP_URL }}" target="_blank">{{ ADDRESS }}</a>
     </div> 
+    <div class="content-list">   
+        <div class="content-info">
+           <h3>{{ TIME_SCHEDULE_TITLE }}:</h3>
+           <p>{{ TIME_SCHEDULE }}</p>
+        </div>
+    </div>
     <!-- Popup Container -->
     <div id="popup-container" class="popup-container">
         <span class="close-btn" onclick="closePopupLink()">&times;</span>
