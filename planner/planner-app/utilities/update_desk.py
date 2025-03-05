@@ -84,6 +84,7 @@ def book_seat(available_seat_code, date):
                     app_name="Data Alert",
                     timeout=60  # Duration of the notification in seconds
                 )
+                print(f"Error: {put_response['status_code']} - {put_response['text']} ")
                 return False
                 # raise Exception(f"PUT request failed with status code {put_response.status_code}")
             else:
@@ -94,6 +95,7 @@ def book_seat(available_seat_code, date):
                     app_name="Data Alert",
                     timeout=60  # Duration of the notification in seconds
                 )
+                print(f"Success: {put_response['status_code']} - {put_response['text']}")
                 return True
         else:
             print(f"No booking_id Found for {date}")

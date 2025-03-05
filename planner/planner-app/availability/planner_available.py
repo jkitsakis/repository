@@ -93,7 +93,7 @@ def main_avalilability():
                     if available_desk not in my_booked_desks :
                         message_title = Parameters.message_title_template.substitute(date=date, floor=available_future_desk['floor'])
                         message_txt = Parameters.message_txt_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
-                        print(message_txt)
+                        print(f"{message_txt}\n")
 
                         # webbrowser.open_new(referer_url)
                         # referer_url = Parameters.referer_url.substitute(

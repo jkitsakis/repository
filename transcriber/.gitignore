@@ -3,6 +3,7 @@ output/
 source/
 .idea/
 .venv/
+app/.venv/
 .vs/
 *.wav
 audio_chunks/
