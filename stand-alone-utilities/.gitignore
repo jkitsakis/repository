@@ -3,12 +3,6 @@ output/
 source/
 .idea/
 .venv/
-app/input/
-app/output/
-app/OSS1/
-app/OSS2/
-app/OSS3/
-app/OSS4/
 app/.venv/
 .vs/
 *.wav

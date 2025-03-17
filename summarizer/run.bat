@@ -1,10 +1,10 @@
 @echo off
 
-SET DEMO_NAME=Transcriber
+SET DEMO_NAME=Summarizer
 SET APP_HOME=%cd%\app
 SET PYTHON_ENV=%APP_HOME%\.venv
 SET PYTHON_SCRIPTS_PATH=%PYTHON_ENV%\Scripts
-SET PATH=%programfiles%\RedHat\Podman\;%PYTHON_SCRIPTS_PATH%;%programfiles%\Python311\Scripts\;%programfiles%\Python311\
+SET PATH=%programfiles%\RedHat\Podman\;%PYTHON_SCRIPTS_PATH%;
 
 :start
 cls
@@ -57,26 +57,17 @@ call pip install --upgrade --no-cache-dir -r requirements.txt
 pause
 goto start
 
-:build
-call %PYTHON_SCRIPTS_PATH%\activate
-cd %APP_HOME%
-rmdir /s /q output
-call pelican content --delete-output
-call pelican content -D
-pause
-goto start
-
 
 :run
 cls
 cd %APP_HOME%
-python main.py
-echo Planner script finished.
+python summarize.py
+echo  script finished.
 pause
 goto start
 
 :run-docker
-start cmd /k "echo Starting... & podman exec -it transcriber_whisper-transcriber_1 python /app/transcriber.py --model_size large --hftoken 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 --language en"
+start cmd /k "echo Starting... & podman exec -it summarizer_app_container python /app/summarize.py"
 pause
 goto start
 

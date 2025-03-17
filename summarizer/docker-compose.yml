@@ -1,0 +1,10 @@
+services:
+  summarize-app:
+    build: .
+    volumes:
+      - ./app:/app  # Mount export folder to save export on the host
+#    environment:
+#      - PYTHONUNBUFFERED=1
+    container_name: summarizer_app_container
+    # restart: on-failure
+    command: ["tail", "-f", "/dev/null"] #the container stay idle and execute commands manually

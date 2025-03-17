@@ -1,27 +1,29 @@
 @echo off
 
-SET DEMO_NAME=Transcriber
-SET APP_HOME=%cd%\app
+SET PORT=5151
+SET DEMO_NAME=DAMA51
+SET APP_HOME=%cd%
 SET PYTHON_ENV=%APP_HOME%\.venv
 SET PYTHON_SCRIPTS_PATH=%PYTHON_ENV%\Scripts
-SET PATH=%programfiles%\RedHat\Podman\;%PYTHON_SCRIPTS_PATH%;%programfiles%\Python311\Scripts\;%programfiles%\Python311\
+SET PYTHONPATH=%APP_HOME%
+SET PATH=%PYTHON_SCRIPTS_PATH%;%PATH%
 
 :start
-cls
-title %DEMO_NAME% CONSOLE - Local run
-echo
-echo        ---------------------------
-echo              Main Menu
-echo        ---------------------------
-echo   1. Run Docker %DEMO_NAME%
-echo   2. Run localy %DEMO_NAME%
+cls   
+title %DEMO_NAME% CONSOLE
+echo    
+echo        ---------------------------      
+echo              Main Menu 
+echo        ---------------------------   
+echo   1. Build %DEMO_NAME%
+echo   2. Run %DEMO_NAME%
 echo   3. Export requirements.txt %DEMO_NAME%
-echo   4. Install packages from requirements.txt %DEMO_NAME%
-echo   5. Uninstall All packages %DEMO_NAME%
+echo   4. Upgrade packages %DEMO_NAME%
+
 
 set /p opt=Type option:
 if "%opt%"=="0" goto exit
-if "%opt%"=="1" goto run-docker
+if "%opt%"=="1" goto build
 if "%opt%"=="2" goto run
 if "%opt%"=="3" goto req
 if "%opt%"=="4" goto update-packages
@@ -35,6 +37,7 @@ cd %APP_HOME%
 for /F "delims=" %%i in ('pip freeze') do pip uninstall -y %%i
 pause
 goto start
+
 :cmd
 call %PYTHON_SCRIPTS_PATH%\activate
 start cmd /k "echo Command prompt started with the environment & cd /d %PYTHON_SCRIPTS_PATH%"
@@ -66,17 +69,19 @@ call pelican content -D
 pause
 goto start
 
-
 :run
-cls
+call %PYTHON_SCRIPTS_PATH%\activate
 cd %APP_HOME%
-python main.py
-echo Planner script finished.
+start cmd /k call pelican -lr -p %PORT%
+pause
+start chrome --new-window http://localhost:%PORT%
 pause
 goto start
 
-:run-docker
-start cmd /k "echo Starting... & podman exec -it transcriber_whisper-transcriber_1 python /app/transcriber.py --model_size large --hftoken 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 --language en"
+:debug
+call %PYTHON_SCRIPTS_PATH%\activate
+cd %APP_HOME%
+call pelican content --debug
 pause
 goto start
 

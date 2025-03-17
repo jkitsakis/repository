@@ -1,0 +1,7 @@
+__pycache__/*
+output/
+source/
+.idea/
+.venv/
+.vs/
+
