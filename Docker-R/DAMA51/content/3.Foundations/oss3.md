@@ -1,11 +1,9 @@
 Title: OSS3 - Predictive Modeling, Clustering Techniques, Similarity Measures, and Association Rule Mining
 Slug: oss3
 Category_Order: 3
+Order: 2
 Summary:  **Machine Learning Foundations: Regression, Classification, Clustering, Distance Metrics, and Data Mining Techniques**
 
-
-
-Here’s an even more detailed guide, breaking down each concept with more explanations, examples, and use cases.
 
 ---
 

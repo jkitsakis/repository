@@ -1,6 +1,7 @@
-Title: OSS4 - Classification algorithms
+Title: OSS4 - Machine Learning Algorithms.
 Slug: oss4
 Category_Order: 4
+Order: 2
 Summary:  **Decision Trees, Random Forest, Naive Bayes, Logistic Regression, Linear Regression, and k-Nearest Neighbors**
 
 

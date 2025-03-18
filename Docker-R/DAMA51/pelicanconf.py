@@ -25,6 +25,8 @@ AUTHORS_SAVE_AS = ''
 CATEGORIES_URL = ''
 CATEGORIES_SAVE_AS = ''
 
+INDEX_SAVE_AS = 'index.html'  # Ensure the homepage is saved as index.md
+
 ARTICLE_ORDER_BY = 'order'
 PAGE_ORDER_BY = 'order'
 CATEGORY__ORDER_BY = 'category_order'

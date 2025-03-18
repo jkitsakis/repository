@@ -13,9 +13,9 @@
                            title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
                 </header>
 
-                <div class="entry-content">                
+                <div class="entry-content">
                 {{ article.summary }}
-                <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>                
+                <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             {% if loop.last %}

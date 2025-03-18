@@ -1,7 +1,8 @@
-Title: OSS1 - Data Science Techniques Overview
-Slug: OSS1
+Title: OSS1 Transcript
+Slug: oss1
 Category_Order: 1
-Summary: **Data science concepts, machine learning techniques, and statistical methodologies**
+Order: 2
+Summary: **Transcript drom OSS1**
 
 
 ### Summary of Discussed Aspects
@@ -269,13 +270,6 @@ Here’s a **detailed breakdown** of each data analysis topic covered in your do
 ### **Real-World Example:**  
 - R is widely used in bioinformatics and finance for data analysis.  
 
----
-
-Let me know if you need further details on any topic! 🚀
-
----
-
-This covers the major concepts from your document. Let me know if you need further breakdowns! 🚀
 ---
 
 **Interplay Between Machine Learning and Statistics**:

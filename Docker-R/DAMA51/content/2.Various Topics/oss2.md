@@ -1,7 +1,8 @@
 Title: OSS2 - Advanced Data Analysis
 Slug: oss2
-Category_Order: 2
-Summary: **Dimensionality reduction (PCA), Classification Evaluation (confusion matrix, ROC curve), Optimization (gradient descent), and Regression  (linear models)**
+Category_Order: 2 
+Order: 2 
+Summary: **Transcript drom OSS2**
 
 The document discusses several key topics in data analysis. Here’s a structured list with simple explanations:
 
