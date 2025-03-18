@@ -2,12 +2,13 @@ from jinja2 import Environment
 
 AUTHOR = 'IK'
 SITENAME = 'DAMA51'
-SITEURL = ""
+LOCAL_BUILD= True
+SITEURL = '' if LOCAL_BUILD else '/dama51'
 DEFAULT_DATE = 'fs' #Pelican will use the file system's last modified date
 PATH = "content"
 TIMEZONE = 'Europe/Athens'
 DEFAULT_LANG = 'en'
-THEME= 'theme/notmyidea'
+THEME= './theme/notmyidea'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
