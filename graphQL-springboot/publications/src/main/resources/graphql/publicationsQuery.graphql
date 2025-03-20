@@ -1,0 +1,23 @@
+#query GetPublications($namespaceId: Int, $first: Int, $after: String)
+#{
+#    publications(namespaceId: $namespaceId, first: $first, after: $after) {
+#        edges {
+#            node {
+#                id
+#                title
+#            }
+#        }
+#    }
+#}
+
+{
+    publications(namespaceId: $namespaceId, first: $first) {
+        edges {
+            node {
+                id
+                title
+            }
+        }
+    }
+}
+

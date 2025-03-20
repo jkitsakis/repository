@@ -1,0 +1,12 @@
+query GetNavigationTree {
+    navigationTree {
+        id
+        title
+        url
+        children {
+            id
+            title
+            url
+        }
+    }
+}

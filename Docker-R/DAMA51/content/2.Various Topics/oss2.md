@@ -25,11 +25,11 @@ Here’s an organized breakdown of the data analysis topics covered in your docu
      - **False Negatives (FN):** Incorrectly predicted negative cases (Type II error).
      - **True Negatives (TN):** Correctly predicted negative cases.
      - Metrics:
-       - **Sensitivity (Recall):** TP / (TP + FN) – ability to identify positive cases.
-       - **Specificity:** TN / (TN + FP) – ability to identify negative cases.
-       - **Precision:** TP / (TP + FP) – reliability of positive predictions.
-       - **Accuracy:** (TP + TN) / Total – overall model performance.
-       - **F1-score:** Balance between precision and recall.
+         - **Sensitivity (Recall):** TP / (TP + FN) – ability to identify positive cases.
+         - **Specificity:** TN / (TN + FP) – ability to identify negative cases.
+         - **Precision:** TP / (TP + FP) – reliability of positive predictions.
+         - **Accuracy:** (TP + TN) / Total – overall model performance.
+         - **F1-score:** Balance between precision and recall.
      - **Example:** Used in COVID-19 classification problems.
 
 ### **3. ROC Curve & AUC (Receiver Operating Characteristic Curve)**
@@ -119,10 +119,10 @@ screeplot(pca_result, type = "lines", main = "Scree Plot")
 # Biplot of PCA
 biplot(pca_result, scale = 0)
 ```
-**Key Insights:**
-- The **scree plot** shows how much variance each component captures.
-- The **biplot** visualizes the principal components with the original feature directions.
-- PCA is useful in reducing the number of dimensions while retaining important information.
+**Key Insights:**  
+- The **scree plot** shows how much variance each component captures.  
+- The **biplot** visualizes the principal components with the original feature directions.  
+- PCA is useful in reducing the number of dimensions while retaining important information.  
 
 ---
 
@@ -159,10 +159,10 @@ This demonstrates how PCA helps in compressing data while retaining most of the 
 ---
 
 ## **3. Data Visualization and Eigenvectors**  
-### **Further Analysis**
-- Eigenvectors **represent directions** of maximum variance.
-- Eigenvalues **indicate how important** each eigenvector is.
-- In PCA, eigenvectors help in transforming data into a new coordinate system.
+### **Further Analysis**  
+- Eigenvectors **represent directions** of maximum variance.  
+- Eigenvalues **indicate how important** each eigenvector is.  
+- In PCA, eigenvectors help in transforming data into a new coordinate system.  
 
 ### **Example in R**
 ```r
