@@ -1,4 +1,6 @@
 import os
+
+import chardet
 import requests
 import tkinter as tk
 from tkinter import filedialog, messagebox
@@ -49,17 +51,35 @@ def download_with_subliminal(video_path):
             print("❌ Could not determine if the video is a movie or episode.")
             return
 
-        subtitles = download_best_subtitles([video], {Language('el')})
+        subtitles = download_best_subtitles(
+            [video],
+            {Language('ell')},
+            providers=['opensubtitles', 'addic7ed', 'podnapisi', 'tvsubtitles']
+        )
 
         if subtitles.get(video):
-            save_subtitles(video, subtitles[video])
-            # Force UTF-8 conversion
-            subtitle_path = video_path.with_suffix('.srt')
-            convert_subtitle_to_utf8(subtitle_path)
+            subtitle_list = subtitles[video]
+            save_subtitles(video, subtitle_list)
 
-            print("Greek subtitle downloaded using Subliminal (.org).")
+            # Log which provider was used
+            for subtitle in subtitle_list:
+                provider = getattr(subtitle, 'provider_name', 'unknown')
+                print(f"✅ Subtitle provided by: {provider}  | Language: {subtitle.language}")
+
+            # Force UTF-8 conversion
+            # Find .el.srt and rename it to match the video filename
+            original_sub_path = video_path.with_name(video_path.stem + '.el.srt')
+            final_sub_path = video_path.with_suffix('.srt')
+
+            if original_sub_path.exists():
+                os.rename(original_sub_path, final_sub_path)
+                print(f"📝 Renamed subtitle to match video: {final_sub_path.name}")
+                convert_subtitle_to_utf8(final_sub_path)
+            else:
+                print("⚠️ Expected .el.srt file not found. Subtitle may not have been saved.")
+
         else:
-            print("No Greek subtitle found via Subliminal.")
+            print("No Greek subtitle found via any provider.")
 
     except ValueError as ve:
         print(f"❌ Subliminal error: {ve}")
@@ -104,8 +124,12 @@ def download_opensubtitles(token, file_id, output_path):
     subtitle_response = requests.get(download_url)
     subtitle_response.raise_for_status()
 
-    with open(output_path, 'wb') as f:
-        f.write(subtitle_response.content.decode('utf-8'))
+    # Detect encoding
+    detected = chardet.detect(subtitle_response.content)
+    text = subtitle_response.content.decode(detected['encoding'], errors='replace')
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(text)
 
     print(f"✅ Greek subtitle saved to {output_path.name} using OpenSubtitles.com API.")
 
