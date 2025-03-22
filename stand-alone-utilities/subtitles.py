@@ -4,12 +4,13 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 from pathlib import Path
 from subliminal import download_best_subtitles, save_subtitles, region
-from subliminal.video import Video
 from babelfish import Language
+from guessit import guessit
+from subliminal.video import Episode, Movie
 
 # ====== OpenSubtitles.com API CONFIG ======
 OPENSUBTITLES_API_KEY = 'Yf9MrNUAFePUaDBYribuyN08ZmI3dayp'
-OPENSUBTITLES_USERNAME = 'jokit73@yahoo.com'
+OPENSUBTITLES_USERNAME = 'jokit'
 OPENSUBTITLES_PASSWORD = 'opensubtitlesJokit73'
 
 # ====== GUI: Select Video File ======
@@ -33,20 +34,37 @@ def download_with_subliminal(video_path):
     print(f"[Subliminal / OpenSubtitles.org] Downloading Greek subtitles for {video_path.name}...")
     region.configure('dogpile.cache.memory')
 
-    video = Video.fromname(video_path.name)
-    video.name = video_path.name  # Match actual filename for better results
+    guess = guessit(video_path.name)
+    print("🔍 Parsed metadata:", guess)
 
-    subtitles = download_best_subtitles([video], {Language('el')})
+    try:
+        if guess.get("type") == "episode":
+            if 'episode' not in guess:
+                print("⚠️ Cannot fetch subtitles: no episode number in filename.")
+                return
+            video = Episode.fromguess(video_path.name, guess)
+        elif guess.get("type") == "movie":
+            video = Movie.fromguess(video_path.name, guess)
+        else:
+            print("❌ Could not determine if the video is a movie or episode.")
+            return
 
-    if subtitles.get(video):
-        save_subtitles(video, subtitles[video])
-        # Force UTF-8 conversion
-        subtitle_path = video_path.with_suffix('.srt')
-        convert_subtitle_to_utf8(subtitle_path)
+        subtitles = download_best_subtitles([video], {Language('el')})
 
-        print("✅ Greek subtitle downloaded using Subliminal (.org).")
-    else:
-        print("❌ No Greek subtitle found via Subliminal.")
+        if subtitles.get(video):
+            save_subtitles(video, subtitles[video])
+            # Force UTF-8 conversion
+            subtitle_path = video_path.with_suffix('.srt')
+            convert_subtitle_to_utf8(subtitle_path)
+
+            print("Greek subtitle downloaded using Subliminal (.org).")
+        else:
+            print("No Greek subtitle found via Subliminal.")
+
+    except ValueError as ve:
+        print(f"❌ Subliminal error: {ve}")
+
+
 
 # ====== Method 2: OpenSubtitles.com REST API v1 ======
 def get_opensubtitles_token():
@@ -97,7 +115,7 @@ def download_with_opensubtitles_api(video_path):
         token = get_opensubtitles_token()
         results = search_opensubtitles(token, video_path.stem)
         if not results:
-            print("❌ No Greek subtitles found on OpenSubtitles.com.")
+            print("No Greek subtitles found on OpenSubtitles.com.")
             return
 
         best_file = results[0]['attributes']['files'][0]
@@ -106,7 +124,8 @@ def download_with_opensubtitles_api(video_path):
         return True
 
     except requests.HTTPError as e:
-        print(f"❌ OpenSubtitles.com API error: {e}")
+        print(f"OpenSubtitles.com API error: {e}")
+
 
 def convert_subtitle_to_utf8(subtitle_path):
     try:
@@ -135,8 +154,10 @@ def main():
         print("❌ No file selected.")
         return
 
+    print(f"Video Path: {video_path}")
     # Set working directory to video location
     os.chdir(video_path.parent)
+
 
     if not download_with_opensubtitles_api(video_path):
         download_with_subliminal(video_path)
