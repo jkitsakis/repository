@@ -36,10 +36,14 @@ def download_with_subliminal(video_path):
     video = Video.fromname(video_path.name)
     video.name = video_path.name  # Match actual filename for better results
 
-    subtitles = download_best_subtitles([video], {Language('ell')})
+    subtitles = download_best_subtitles([video], {Language('el')})
 
     if subtitles.get(video):
         save_subtitles(video, subtitles[video])
+        # Force UTF-8 conversion
+        subtitle_path = video_path.with_suffix('.srt')
+        convert_subtitle_to_utf8(subtitle_path)
+
         print("✅ Greek subtitle downloaded using Subliminal (.org).")
     else:
         print("❌ No Greek subtitle found via Subliminal.")
@@ -60,7 +64,7 @@ def search_opensubtitles(token, query):
         "Api-Key": OPENSUBTITLES_API_KEY
     }
     params = {
-        "languages": "ell",
+        "languages": "el",
         "query": query,
         "order_by": "download_count",
         "order_direction": "desc"
@@ -83,7 +87,7 @@ def download_opensubtitles(token, file_id, output_path):
     subtitle_response.raise_for_status()
 
     with open(output_path, 'wb') as f:
-        f.write(subtitle_response.content)
+        f.write(subtitle_response.content.decode('utf-8'))
 
     print(f"✅ Greek subtitle saved to {output_path.name} using OpenSubtitles.com API.")
 
@@ -99,9 +103,30 @@ def download_with_opensubtitles_api(video_path):
         best_file = results[0]['attributes']['files'][0]
         output_path = video_path.with_suffix('.srt')
         download_opensubtitles(token, best_file['file_id'], output_path)
+        return True
 
     except requests.HTTPError as e:
         print(f"❌ OpenSubtitles.com API error: {e}")
+
+def convert_subtitle_to_utf8(subtitle_path):
+    try:
+        with open(subtitle_path, 'rb') as f:
+            raw_data = f.read()
+
+        # Try to decode as best as possible
+        try:
+            text = raw_data.decode('utf-8')
+        except UnicodeDecodeError:
+            text = raw_data.decode('iso-8859-7')  # Greek fallback
+
+        with open(subtitle_path, 'w', encoding='utf-8') as f:
+            f.write(text)
+
+        print(f"📝 Converted subtitle to UTF-8: {subtitle_path.name}")
+
+    except Exception as e:
+        print(f"⚠️ Could not convert {subtitle_path.name} to UTF-8: {e}")
+
 
 # ====== Main Application Entry ======
 def main():
@@ -113,11 +138,14 @@ def main():
     # Set working directory to video location
     os.chdir(video_path.parent)
 
-    # Ask user which backend to use
-    if choose_method():
+    if not download_with_opensubtitles_api(video_path):
         download_with_subliminal(video_path)
-    else:
-        download_with_opensubtitles_api(video_path)
+
+    # Ask user which backend to use
+    # if choose_method():
+    #     download_with_subliminal(video_path)
+    # else:
+    #     download_with_opensubtitles_api(video_path)
 
 if __name__ == "__main__":
     main()

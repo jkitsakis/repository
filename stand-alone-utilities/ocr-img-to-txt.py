@@ -1,4 +1,3 @@
-import pytesseract
 from PIL import ImageGrab
 import pyperclip
 import easyocr
