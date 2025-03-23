@@ -2,7 +2,8 @@ from PIL import ImageGrab
 import pyperclip
 import easyocr
 import numpy as np
-
+import importlib.resources as resources
+import os
 
 # Ensure pytesseract points to the tesseract executable if not in PATH
 # Example for Windows: pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -10,6 +11,12 @@ import numpy as np
 def extract_text_from_clipboard_image():
     # Load image from clipboard
     try:
+        lang_dir = resources.files('easyocr.character')
+        langs = [f.name.replace('_char.txt', '') for f in lang_dir.iterdir() if f.name.endswith('_char.txt')]
+
+        print('gre' in langs)  # Should be True if Greek is supported
+        print(langs)
+
         # Capture the image from clipboard
         image = ImageGrab.grabclipboard()
 
@@ -18,7 +25,7 @@ def extract_text_from_clipboard_image():
             image_np = np.array(image)
 
             # Extract text using easyocr
-            reader = easyocr.Reader(['en'])  # 'en' for English language
+            reader = easyocr.Reader(['gre', 'en'])   # 'en' for English language
 
             # Read text from the image
             result = reader.readtext(image_np)
