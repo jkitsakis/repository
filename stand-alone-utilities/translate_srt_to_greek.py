@@ -14,7 +14,7 @@ def select_subtitle_file():
     tk.Tk().withdraw()
     file_path = filedialog.askopenfilename(
         title="Select a subtitle file",
-        filetypes=[("Video Files", "*.mp4 *.mkv *.avi *.mov *.flv *.wmv")]
+        filetypes=[("Subtitles Files", "*.srt")]
     )
     return Path(file_path) if file_path else None
 
@@ -23,11 +23,12 @@ def translate_subtitle(subtitle_path):
     # === STEP 1: Load the SRT file ===
     with open(subtitle_path, "r", encoding="utf-8") as f:
         srt_content = f.read()
-
+    print(f"STEP 1: Subtitles loaded!")
     # === STEP 2: Parse SRT Blocks ===
     blocks = re.findall(r"(\d+)\n([\d:,]+ --> [\d:,]+)\n(.+?)(?=\n\n|\Z)", srt_content, re.DOTALL)
-
+    print(f"STEP 2: Subtitles parsed!")
     # === STEP 3: Translate each block's text ===
+    print(f"STEP 3: Calling Translator ...")
     translator = GoogleTranslator(source='auto', target='el')
     translated_blocks = []
 
@@ -43,10 +44,11 @@ def translate_subtitle(subtitle_path):
         translated_text = '\n'.join(translated_lines)
         block = f"{index}\n{timecode}\n{translated_text}\n"
         translated_blocks.append(block)
-
+    print(f"Translator Ended!!!")
     # === STEP 4: Write new SRT file ===
+    print(f"STEP 4: Exporting Subtitles ...")
     output_path = subtitle_path.with_suffix('.el.srt')
-    with open(subtitle_path, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write('\n'.join(translated_blocks))
 
     print(f"✅ Translation complete! File saved as: {subtitle_path}")
