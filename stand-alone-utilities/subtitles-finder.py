@@ -80,6 +80,7 @@ def download_with_subliminal(video_path):
 
         else:
             print("No Greek subtitle found via any provider.")
+            return
 
     except ValueError as ve:
         print(f"❌ Subliminal error: {ve}")
@@ -95,14 +96,14 @@ def get_opensubtitles_token():
     response.raise_for_status()
     return response.json()['token']
 
-def search_opensubtitles(token, query):
+def search_opensubtitles(token, query, language):
     url = "https://api.opensubtitles.com/api/v1/subtitles"
     headers = {
         "Authorization": f"Bearer {token}",
         "Api-Key": OPENSUBTITLES_API_KEY
     }
     params = {
-        "languages": "el",
+        "languages": language,
         "query": query,
         "order_by": "download_count",
         "order_direction": "desc"
@@ -133,17 +134,19 @@ def download_opensubtitles(token, file_id, output_path):
 
     print(f"✅ Greek subtitle saved to {output_path.name} using OpenSubtitles.com API.")
 
-def download_with_opensubtitles_api(video_path):
+def download_with_opensubtitles_api(video_path, language):
     print(f"[OpenSubtitles.com API v1] Downloading Greek subtitles for {video_path.name}...")
     try:
         token = get_opensubtitles_token()
-        results = search_opensubtitles(token, video_path.stem)
+        results = search_opensubtitles(token, video_path.stem, language)
+
         if not results:
-            print("No Greek subtitles found on OpenSubtitles.com.")
+            print(f"No subtitles found on OpenSubtitles.com for {language}")
             return
 
         best_file = results[0]['attributes']['files'][0]
-        output_path = video_path.with_suffix('.srt')
+        suffix = '.srt' if language=='el' else f'{language}.srt'
+        output_path = video_path.with_suffix(suffix)
         download_opensubtitles(token, best_file['file_id'], output_path)
         return True
 
@@ -182,15 +185,10 @@ def main():
     # Set working directory to video location
     os.chdir(video_path.parent)
 
+    if not download_with_opensubtitles_api(video_path, 'el'):
+        if not download_with_subliminal(video_path):
+           download_with_opensubtitles_api(video_path, 'en')
 
-    if not download_with_opensubtitles_api(video_path):
-        download_with_subliminal(video_path)
-
-    # Ask user which backend to use
-    # if choose_method():
-    #     download_with_subliminal(video_path)
-    # else:
-    #     download_with_opensubtitles_api(video_path)
 
 if __name__ == "__main__":
     main()
