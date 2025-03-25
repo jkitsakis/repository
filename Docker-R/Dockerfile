@@ -1,6 +1,8 @@
 # Dockerfile
 FROM rocker/rstudio:latest
 
+# Set working directory
+WORKDIR /home/rstudio
 
 # Install system dependencies (if required)
 RUN apt-get update && \
@@ -14,6 +16,7 @@ RUN apt-get update && \
 # Install any necessary R libraries here
 RUN R -e "install.packages(c('dplyr', 'caret', 'e1071', 'ggplot2', 'tidyverse'), repos='https://cloud.r-project.org')" && rm -rf /var/lib/apt/lists/*
 
+	
 # Expose port for RStudio
 EXPOSE 8787
 

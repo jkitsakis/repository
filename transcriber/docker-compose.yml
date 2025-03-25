@@ -1,8 +1,8 @@
 services:
-  whisper-transcriber:
-    build:
-      context: .
-      container_name: whisper_transcriber_container
+  transcriber:
+    build: .
+    image: transcriber-img
+    container_name: transcriber-container
     environment:
       - MODEL_SIZE=medium
       - LANGUAGE=el

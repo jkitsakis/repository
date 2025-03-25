@@ -1,13 +1,14 @@
 services:
   rstudio:
     build: .
-    image: rstudio-server:latest
-    container_name: rstudio
+    image: rstudio-img
+    container_name: rstudio-container
     ports:
       - "8787:8787"
     environment:
       PASSWORD: rstudio # Set your password
       USER: rstudio     # Username for RStudio
+      RUNROOTLESS: false
     volumes:
       - ./data:/home/rstudio # Bind a volume for persistent data
     restart: unless-stopped

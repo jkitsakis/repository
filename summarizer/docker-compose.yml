@@ -1,6 +1,8 @@
 services:
   summarize-app:
     build: .
+    image: summarizer-img
+    container_name: summarizer-container
     volumes:
       - ./app:/app  # Mount export folder to save export on the host
 #    environment:
