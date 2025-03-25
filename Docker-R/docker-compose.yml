@@ -8,7 +8,6 @@ services:
     environment:
       PASSWORD: rstudio # Set your password
       USER: rstudio     # Username for RStudio
-      RUNROOTLESS: false
     volumes:
       - ./data:/home/rstudio # Bind a volume for persistent data
     restart: unless-stopped
