@@ -13,7 +13,7 @@ echo
 echo        ---------------------------
 echo              Main Menu
 echo        ---------------------------
-echo   1. Run Docker %DEMO_NAME%
+echo   1. Run on Docker %DEMO_NAME%
 echo   2. Run localy %DEMO_NAME%
 echo   3. Export requirements.txt %DEMO_NAME%
 echo   4. Install packages from requirements.txt %DEMO_NAME%
