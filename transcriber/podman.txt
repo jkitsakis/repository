@@ -17,23 +17,24 @@ winget install --id RedHat.Podman -e
 winget install --id RedHat.Podman-Desktop -e
 
 Initialize the VM (This sets up a virtualized Linux environment for Podman): 
+Foor inital run, start it from podman desktop
+-------------------------------
 podman machine init
 podman machine init --disk-size 10 
+podman machine start
+
+Verify it's running:
+podman machine list
 
 Stop and remove the VM (machine)
+----------------------------
 podman machine stop podman-machine-default
 podman machine rm -f  podman-machine-default
 podman system connection rm -f podman-machine-default
 podman system connection rm -f  podman-machine-default-root
 
 
-Start the Podman machine:
-podman machine start
 pip install podman-compose
-
-
-Verify it's running:
-podman machine list
 
 
 Enter a Running Container (Interactive Shell)

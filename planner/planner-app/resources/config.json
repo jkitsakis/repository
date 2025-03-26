@@ -1,9 +1,9 @@
 {
-  "dates": ["2025-03-24","2025-03-26","2025-03-27","2025-03-28"],
+  "dates": ["2025-03-31","2025-04-01","2025-04-02","2025-04-03","2025-04-04"],
   "start_time": "12:00:03.5000",
   "sleep_in_availability": 10,
   "sleep_in_book": 0.100,
-  "cookie": "Path=/; Path=/; Path=/; Path=/; JSESSIONID=A5161189DAE0051BA7EC90DA31C964A6; TS010ee64b=01eb1053a0cc9261613460f0d9c86b7c9290c906fae6eac1c3a1519463ba4f083d191d82aa7f847271274f7ccaccfc2986e7a2b8252c7aa11114209bc4297e158cc004ced3b3177cc422b59fb015c02ac11e9dea53; TSf455e12a027=0804a8c53bab20009b68b1d06ed1a29cf64648f8517d24a26130af84906f04edc2c4552e464320f508ff589a2a113000ab73eeb43fb0165cf4761ccde43e237f412473e1b3a7b39981dcc5a2d3ce753e886840c20cf1e2351df5ca1e548d392f",
+  "cookie": "Path=/; Path=/; Path=/; Path=/; JSESSIONID=37779E686C4D81BEB9D5D90C1DE10608; TS010ee64b=01eb1053a0814d59a1dcfa8f19f9415c79ecf0aae90ae4de00b1e0eddd76c973a0c094c3f00d69c721fddb04cb57b37b94edb8c13d48ee3b9a0a8e5fb63428a52f4bcce85ae75fd6c47286b26f78bd35ea1a397d94; TSf455e12a027=0804a8c53bab2000fff6c3973fa971f6a819b909d1bfa30b5865fe129b35135e1193bf8a7e23970b081d90a529113000c66c07becb79b0e73b2070346338ba55862d33ba8d7854b23cc9e43d2b679bb8bbc5f2797d64539ca58c21a758c248ff",
   "planner_url": "https://myplanner.netcompany-intrasoft.com",
   "available_seats_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/facility/facilities/available/map",
   "my_booked_desks_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/future?page=0&size=15",
