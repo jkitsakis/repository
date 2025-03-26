@@ -15,6 +15,7 @@ OPENSUBTITLES_API_KEY = 'Yf9MrNUAFePUaDBYribuyN08ZmI3dayp'
 OPENSUBTITLES_USERNAME = 'jokit'
 OPENSUBTITLES_PASSWORD = 'opensubtitlesJokit73'
 
+region.configure('dogpile.cache.memory')
 # ====== GUI: Select Video File ======
 def select_video_file():
     tk.Tk().withdraw()
@@ -23,6 +24,11 @@ def select_video_file():
         filetypes=[("Video Files", "*.mp4 *.mkv *.avi *.mov *.flv *.wmv")]
     )
     return Path(file_path) if file_path else None
+
+def select_video_folder():
+    tk.Tk().withdraw()
+    folder_path = filedialog.askdirectory(title="Select a folder with video files")
+    return Path(folder_path) if folder_path else None
 
 # ====== Ask User: Which Method to Use ======
 def choose_method():
@@ -34,7 +40,7 @@ def choose_method():
 # ====== Method 1: Subliminal (.org XML-RPC) ======
 def download_with_subliminal(video_path):
     print(f"[Subliminal / OpenSubtitles.org] Downloading Greek subtitles for {video_path.name}...")
-    region.configure('dogpile.cache.memory')
+
 
     guess = guessit(video_path.name)
     print("🔍 Parsed metadata:", guess)
@@ -75,12 +81,14 @@ def download_with_subliminal(video_path):
                 os.rename(original_sub_path, final_sub_path)
                 print(f"📝 Renamed subtitle to match video: {final_sub_path.name}")
                 convert_subtitle_to_utf8(final_sub_path)
+                return True
             else:
                 print("⚠️ Expected .el.srt file not found. Subtitle may not have been saved.")
+                return False
 
         else:
             print("No Greek subtitle found via any provider.")
-            return
+            return False
 
     except ValueError as ve:
         print(f"❌ Subliminal error: {ve}")
@@ -145,8 +153,11 @@ def download_with_opensubtitles_api(video_path, language):
             return
 
         best_file = results[0]['attributes']['files'][0]
-        suffix = '.srt' if language=='el' else f'{language}.srt'
-        output_path = video_path.with_suffix(suffix)
+        if language == 'el':
+            output_path = video_path.with_suffix('.srt')
+        else:
+            output_path = video_path.with_name(f"{video_path.stem}.{language}.srt")
+
         download_opensubtitles(token, best_file['file_id'], output_path)
         return True
 
@@ -176,19 +187,27 @@ def convert_subtitle_to_utf8(subtitle_path):
 
 # ====== Main Application Entry ======
 def main():
-    video_path = select_video_file()
-    if not video_path:
-        print("❌ No file selected.")
+    folder_path = select_video_folder()
+    if not folder_path:
+        print("❌ No folder selected.")
         return
 
-    print(f"Video Path: {video_path}")
-    # Set working directory to video location
-    os.chdir(video_path.parent)
+    print(f"📂 Selected Folder: {folder_path}")
 
-    if not download_with_opensubtitles_api(video_path, 'el'):
-        if not download_with_subliminal(video_path):
-           download_with_opensubtitles_api(video_path, 'en')
+    video_extensions = ('.mp4', '.mkv', '.avi', '.mov', '.flv', '.wmv')
+    video_files = list(folder_path.glob("*"))
+    video_files = [f for f in video_files if f.suffix.lower() in video_extensions]
 
+    if not video_files:
+        print("❌ No video files found in the selected folder.")
+        return
+
+    for video_path in video_files:
+        print(f"\n🎬 Processing: {video_path.name}")
+        os.chdir(video_path.parent)
+        if not download_with_opensubtitles_api(video_path, 'el'):
+            if not download_with_subliminal(video_path):
+                download_with_opensubtitles_api(video_path, 'en')
 
 if __name__ == "__main__":
     main()
