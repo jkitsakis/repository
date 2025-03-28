@@ -35,7 +35,7 @@ Before diving into the algorithms, it's essential to understand the difference:
   - Example: Classifying animals based on attributes like the number of legs or wings.
   - The **Gini index** is an alternative impurity measure used in decision trees.
   - Decision trees form the basis of **Random Forests**, which use multiple trees to improve accuracy.  
-    - **Analysis**: Decision trees are powerful and interpretable but can overfit data. The transition to **random forests** addresses overfitting by aggregating multiple trees.
+  >  - **Analysis**: Decision trees are powerful and interpretable but can overfit data. The transition to **random forests** addresses overfitting by aggregating multiple trees.
 
 A **Decision Tree** is a **hierarchical model** that classifies data by splitting it based on feature values.  
 
@@ -101,15 +101,15 @@ A **Random Forest** is an **ensemble method** that builds multiple decision tree
 
 ## **3. Naive Bayes Classifier**
 - **Key Discussion Points**:  
-    - Based on **Bayes' Theorem**.
-    - Assumes **independence** between features.
-    - Example: Spam classification using words like "offer" and "discount".
-    - Calculation of **prior probabilities**, **likelihoods**, and **evidence**.
-    - Example exercise on classifying individuals based on income and work status.
+  >  - Based on **Bayes' Theorem**.
+  >  - Assumes **independence** between features.
+  >  - Example: Spam classification using words like "offer" and "discount".
+  >  - Calculation of **prior probabilities**, **likelihoods**, and **evidence**.
+  >  - Example exercise on classifying individuals based on income and work status.
 
   - **Analysis**:  
-    - Naive Bayes is simple and efficient but relies on **strong independence assumptions**, which may not always hold in real-world data.
-    - While not always accurate, it serves as a **baseline model**.
+  >  - Naive Bayes is simple and efficient but relies on **strong independence assumptions**, which may not always hold in real-world data.
+  >  - While not always accurate, it serves as a **baseline model**.
 
 A **Naive Bayes classifier** is a **probabilistic model** based on **Bayes' Theorem**.
 
@@ -150,15 +150,15 @@ P(A|B) = \frac{P(B|A) P(A)}{P(B)}
 
 ## **4. Logistic Regression**
 - **Concepts Discussed**:
-    - Used for **binary classification** (e.g., pass/fail, spam/not spam).
-    - Uses the **sigmoid (logistic) function** to convert predictions into probabilities.
-    - Discussion of **odds ratio** and **log-odds transformation**.
-    - Example: Predicting student exam success based on study hours.
-    - **Threshold-based classification** (above/below 0.5).
+  >  - Used for **binary classification** (e.g., pass/fail, spam/not spam).
+  >  - Uses the **sigmoid (logistic) function** to convert predictions into probabilities.
+  >  - Discussion of **odds ratio** and **log-odds transformation**.
+  >  - Example: Predicting student exam success based on study hours.
+  >  - **Threshold-based classification** (above/below 0.5).
 
 - **Analysis**:
-    - Logistic regression is **interpretable** and effective for simple problems.
-    - However, it **struggles with complex relationships**, requiring feature engineering or nonlinear models.
+  >  - Logistic regression is **interpretable** and effective for simple problems.
+  >  - However, it **struggles with complex relationships**, requiring feature engineering or nonlinear models.
 
 
 Logistic Regression is used for **binary classification** problems.
@@ -192,15 +192,15 @@ Logistic Regression is used for **binary classification** problems.
 
 ## **5. Linear Regression & Gradient Descent**
 - **Key Takeaways**:
-    - **Linear regression** models the relationship between dependent & independent variables.
-    - Uses **sum of squared errors (SSE)** to find the best-fitting line.
-    - **Gradient Descent** minimizes the cost function iteratively.
-    - **Convex functions** ensure a global minimum.
-    - Example: Predicting housing prices based on square footage.
+  >  - **Linear regression** models the relationship between dependent & independent variables.
+  >  - Uses **sum of squared errors (SSE)** to find the best-fitting line.
+  >  - **Gradient Descent** minimizes the cost function iteratively.
+  >  - **Convex functions** ensure a global minimum.
+  >  - Example: Predicting housing prices based on square footage.
 
 - **Analysis**:
-    - Linear regression is useful for **continuous predictions** but assumes a **linear relationship**.
-    - Gradient descent is necessary for **large datasets** where direct calculations are expensive.
+  >  - Linear regression is useful for **continuous predictions** but assumes a **linear relationship**.
+  >  - Gradient descent is necessary for **large datasets** where direct calculations are expensive.
 
 Linear regression models the relationship between **independent variables (X)** and **dependent variables (Y)**.
 
@@ -237,14 +237,14 @@ Linear regression models the relationship between **independent variables (X)** 
 
 ## **6. k-Nearest Neighbors (KNN)**
 - **Discussion Highlights**:
-    - KNN stores all training examples and predicts based on similarity (distance-based).
-    - Often referred to as a **"lazy learner"** since it does not generalize beyond training data.
-    - Sensitive to **outliers** and requires **choosing k wisely**.
-    - Computational cost grows with **dataset size**.
+  >  - KNN stores all training examples and predicts based on similarity (distance-based).
+  >  - Often referred to as a **"lazy learner"** since it does not generalize beyond training data.
+  >  - Sensitive to **outliers** and requires **choosing k wisely**.
+  >  - Computational cost grows with **dataset size**.
 
 - **Analysis**:
-    - KNN is **simple but computationally expensive** for large datasets.
-    - Works well in low-dimensional problems but suffers from the **curse of dimensionality**.
+  >  - KNN is **simple but computationally expensive** for large datasets.
+  >  - Works well in low-dimensional problems but suffers from the **curse of dimensionality**.
 
 
 KNN is a **lazy learning algorithm** that **stores** the dataset and makes predictions based on similarity.

@@ -9,78 +9,78 @@ The topics of **machine learning and data analysis** covered seem to focus on th
 The TM4 tutorial meeting document from the Hellenic Open University covers several fundamental machine learning algorithms. Here's a breakdown of the key algorithms mentioned:
 
 ### **1. Decision Trees**
-- Used for both classification and regression tasks.
+- Used for both classification and regression tasks.  
 - Structure:
-  - Nodes: Decision points based on attribute values.
-  - Leaves: Final classification or decision.
-  - Branches: Different outcomes of a decision.
-- **Popular Decision Tree Algorithms:**
-  - **ID3 (Iterative Dichotomiser 3)** – Uses entropy and information gain for attribute selection.
-  - **C4.5 & C5.0** – Improvements over ID3, handling continuous values and pruning.
-  - **CART (Classification and Regression Trees)** – Uses the Gini index for splitting.
+  > - Nodes: Decision points based on attribute values.  
+  > - Leaves: Final classification or decision.  
+  > - Branches: Different outcomes of a decision.  
+- **Popular Decision Tree Algorithms:**  
+  > - **ID3 (Iterative Dichotomiser 3)** – Uses entropy and information gain for attribute selection.  
+  > - **C4.5 & C5.0** – Improvements over ID3, handling continuous values and pruning.  
+  > - **CART (Classification and Regression Trees)** – Uses the Gini index for splitting.  
 
 ---
 
 ### **2. Bayes Classifiers**
 - Based on **Bayes' Theorem**, which calculates the probability of a class given a set of features.
 - **Naïve Bayes**:
-  - Assumes independence between features.
-  - Works well for text classification (e.g., spam detection).
-- **Limitation**: Assumption of independence rarely holds in real-world data.
+  > - Assumes independence between features.  
+  > - Works well for text classification (e.g., spam detection).  
+- **Limitation**: Assumption of independence rarely holds in real-world data.  
 
 ---
 
 ### **3. Regression**
-- Used for predicting continuous values.
-- **Linear Regression**:
-  - Finds the best fit line by minimizing the sum of squared errors.
-  - Can be solved using **closed-form solutions (Normal Equation)** or **Gradient Descent**.
-- **Logistic Regression**:
-  - Used for classification (binary/multiclass).
-  - Uses the **sigmoid function** to model probabilities.
+- Used for predicting continuous values.  
+- **Linear Regression**:  
+  > - Finds the best fit line by minimizing the sum of squared errors.
+  > - Can be solved using **closed-form solutions (Normal Equation)** or **Gradient Descent**.
+- **Logistic Regression**:  
+  > - Used for classification (binary/multiclass).
+  > - Uses the **sigmoid function** to model probabilities.
 
 ---
 
-### **4. Nearest-Neighbor Predictors (k-NN)**
-- A **lazy learning algorithm** (stores all training data).
-- **Classification**: Assigns the majority class among k nearest neighbors.
-- **Regression**: Averages the values of k nearest neighbors.
-- **Challenges**:
-  - Sensitive to noisy data.
-  - High computational cost with large datasets.
+### **4. Nearest-Neighbor Predictors (k-NN)**  
+- A **lazy learning algorithm** (stores all training data).  
+- **Classification**: Assigns the majority class among k nearest neighbors.  
+- **Regression**: Averages the values of k nearest neighbors.  
+- **Challenges**:  
+  > - Sensitive to noisy data.
+  > - High computational cost with large datasets.
 
 
 ---
 
 #### **5. Entropy & Information Gain (Feature Selection)**
-- Used in decision tree algorithms like **ID3, C4.5, and C5.0**.
-- **Shannon Entropy**:
-  - Measures impurity in a dataset.
-  - Lower entropy means purer nodes.
-- **Information Gain**:
-  - Measures reduction in entropy after a split.
-  - Used to select the best attribute for decision tree splitting.
+- Used in decision tree algorithms like **ID3, C4.5, and C5.0**.  
+- **Shannon Entropy**:  
+  > - Measures impurity in a dataset.
+  > - Lower entropy means purer nodes.
+- **Information Gain**:  
+  > - Measures reduction in entropy after a split.  
+  > - Used to select the best attribute for decision tree splitting.  
 
 ---
 
 #### **6. Gini Index (Used in Decision Trees)**
-- Used by **CART (Classification and Regression Trees)** instead of entropy.
-- Measures impurity:
-  - Lower values indicate purer nodes.
-  - Common in classification problems.
+- Used by **CART (Classification and Regression Trees)** instead of entropy.  
+- Measures impurity:  
+  > - Lower values indicate purer nodes.
+  > - Common in classification problems.
 
 ---
 
 #### **7. Gain Ratio (Quinlan 1986/1993)**
-- Improvement over information gain.
-- Adjusts for attributes with many values.
-- Used in **C4.5 Decision Trees**.
+- Improvement over information gain.  
+- Adjusts for attributes with many values.  
+- Used in **C4.5 Decision Trees**.  
 
 ---
 
-#### **8. Minimum Description Length (MDL) Principle**
-- Based on **Occam’s Razor**: Prefer the simplest hypothesis.
-- Used in **Decision Tree Pruning** to avoid overfitting.
+#### **8. Minimum Description Length (MDL) Principle**  
+- Based on **Occam’s Razor**: Prefer the simplest hypothesis.  
+- Used in **Decision Tree Pruning** to avoid overfitting.  
 
 ---
 
@@ -106,20 +106,20 @@ The TM4 tutorial meeting document from the Hellenic Open University covers sever
 
 #### **12. Missing Value Handling**
 - Replace missing values with:
-  - The **most frequent** value in a class.
-  - **Mean/Median** for numerical values.
-  - A **placeholder category** if missing values are frequent.
+  > - The **most frequent** value in a class.
+  > - **Mean/Median** for numerical values.
+  > - A **placeholder category** if missing values are frequent.
 
 ---
 
 #### **13. k-Nearest Neighbors (k-NN) Enhancements**
 - **Distance Metrics**:
-  - **Euclidean Distance** (default)
-  - **Manhattan Distance** (for grid-based data)
-  - **Minkowski Distance** (generalized form)
+  > - **Euclidean Distance** (default)
+  > - **Manhattan Distance** (for grid-based data)
+  > - **Minkowski Distance** (generalized form)
 - **Weighted k-NN**: Assigns more influence to closer neighbors.
 - **Choosing Optimal k**:
-  - Cross-validation to avoid overfitting (low k) and underfitting (high k).
+  > - Cross-validation to avoid overfitting (low k) and underfitting (high k).
 
 ---
 
@@ -140,9 +140,9 @@ To effectively use the algorithms covered in TM4, you should understand their **
 **🔹 Key Concepts:**
 - **Tree Structure**: Nodes (decisions), branches (outcomes), leaves (final classification).
 - **Splitting Criteria**:  
-  - **Entropy & Information Gain (ID3, C4.5)** → Choose attributes that reduce entropy the most.  
-  - **Gini Index (CART)** → Measures impurity of a node; lower is better.  
-  - **Gain Ratio (C4.5 improvement)** → Adjusts for biased splits with many categories.  
+  > - **Entropy & Information Gain (ID3, C4.5)** → Choose attributes that reduce entropy the most.  
+  > - **Gini Index (CART)** → Measures impurity of a node; lower is better.  
+  > - **Gain Ratio (C4.5 improvement)** → Adjusts for biased splits with many categories.  
 
 **🔹 Handling Issues:**  
 - **Overfitting?** Use **pruning techniques** (pre-pruning stops early, post-pruning trims after full growth).  
@@ -198,8 +198,8 @@ To effectively use the algorithms covered in TM4, you should understand their **
 **🔹 Key Concepts:**  
 - **Lazy learner** → No training phase; stores data and classifies based on closest points.  
 - Uses **distance metrics**:  
-  - **Euclidean Distance** (default) → Best for continuous features.  
-  - **Manhattan Distance** → Better for grid-based data.  
+  > - **Euclidean Distance** (default) → Best for continuous features.  
+  > - **Manhattan Distance** → Better for grid-based data.  
 
 **🔹 Tuning k (number of neighbors)**:  
 - **Small k?** Leads to overfitting (high variance).  
@@ -254,19 +254,19 @@ To effectively use the algorithms covered in TM4, you should understand their **
 
 ### **🚀 Practical Summary: What to Focus On**  
 1. **Understand the types of problems these models solve**:  
-     - **Regression** → Predicts continuous values.  
-     - **Classification** → Predicts discrete labels.  
+  >  - **Regression** → Predicts continuous values.  
+  >  - **Classification** → Predicts discrete labels.  
 2. **Know when to use pruning & regularization** to avoid overfitting.  
 3. **Choose the right metric for feature selection** (Entropy, Gini, Gain Ratio).  
 4. **For large datasets**, prefer eager learners (decision trees, regression) over k-NN.  
 5. **Optimize hyperparameters** like:  
-     - **k** in k-NN.  
-     - **Depth & pruning strategy** in decision trees.  
-     - **Regularization strength** in regression.  
+  >  - **k** in k-NN.  
+  >  - **Depth & pruning strategy** in decision trees.  
+  >  - **Regularization strength** in regression.  
 
 ---
 
 ### **Would You Like...**  
-✅ **Code examples for each algorithm?**    
-✅ **A comparison with deep learning models?**    
+✅ **Code examples for each algorithm?**  > 
+✅ **A comparison with deep learning models?**  > 
 ✅ **How to implement them in Python (Scikit-learn, TensorFlow, etc.)?**  

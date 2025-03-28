@@ -32,6 +32,8 @@
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
     {% block extra_head %}{% endblock extra_head %}
     {% endblock head %}
@@ -78,5 +80,12 @@
 
 {% include 'analytics.html' %}
 {% include 'disqus_script.html' %}
+<span class="fixed bottom-4 right-4 z-50">
+  <button id="goToTop" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</span>
+
+  <script type="text/javascript" src="{{ SITEURL }}/theme/js/go-to-top.js"></script>
 </body>
 </html>

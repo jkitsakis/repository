@@ -2,7 +2,7 @@ Title: OSS1 Transcript
 Slug: oss1
 Category_Order: 1
 Order: 2
-Summary: **Transcript drom OSS1**
+Summary: **Transcript from OSS1**
 
 
 ### Summary of Discussed Aspects

@@ -2,7 +2,7 @@ Title: OSS2 - Advanced Data Analysis
 Slug: oss2
 Category_Order: 2 
 Order: 2 
-Summary: **Transcript drom OSS2**
+Summary: **Transcript from OSS2**
 
 The document discusses several key topics in data analysis. Here’s a structured list with simple explanations:
 

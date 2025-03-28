@@ -21,7 +21,9 @@ COPY app/requirements.txt .
 COPY app/transcriber.py .
 
 RUN pip install --upgrade pip setuptools wheel
-RUN pip install git+https://github.com/openai/whisper.git@517a43ecd132a2089d85f4ebc044728a71d49f6e
+
+# Install Kent Slaney's Whisper fork
+RUN pip install git+https://github.com/openai/whisper.git
 
 RUN pip install --no-cache-dir -r requirements.txt
 

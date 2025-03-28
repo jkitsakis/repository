@@ -13,7 +13,7 @@ echo
 echo        ---------------------------
 echo              Main Menu
 echo        ---------------------------
-echo   1. Run Docker %DEMO_NAME%
+echo   1. Run in Docker Container %DEMO_NAME%
 echo   2. Run localy %DEMO_NAME%
 echo   3. Export requirements.txt %DEMO_NAME%
 echo   4. Install packages from requirements.txt %DEMO_NAME%
@@ -76,7 +76,7 @@ pause
 goto start
 
 :run-docker
-start cmd /k "echo Starting... & podman exec -it transcriber_whisper-transcriber_1 python /app/transcriber.py --model_size large --hftoken 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 --language en"
+start cmd /k "echo Starting... & podman exec -it transcriber-container python /app/transcriber.py --model_size large --hftoken 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 --language en"
 pause
 goto start
 

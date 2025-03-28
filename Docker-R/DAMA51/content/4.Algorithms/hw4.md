@@ -7,25 +7,25 @@ Summary: HW4
 The HW4 assignment covers the following topics in **Machine Learning (ML)** and **Data Analysis (DA)**:
 
 1. **Decision Trees (ML)**
-     - Entropy and Information Gain calculations.
-     - Implementation of the ID3 algorithm in R.
-     - Building and visualizing a decision tree from a dataset.
+  > - Entropy and Information Gain calculations.
+  > - Implementation of the ID3 algorithm in R.
+  > - Building and visualizing a decision tree from a dataset.
 
 2. **Bayes Classifier (ML)**
-     - Probabilistic calculations for Naïve Bayes classification.
-     - Implementation of a Naïve Bayes classifier in R.
-     - Making predictions for new instances.
+  > - Probabilistic calculations for Naïve Bayes classification.
+  > - Implementation of a Naïve Bayes classifier in R.
+  > - Making predictions for new instances.
 
 3. **Itemset Mining & Association Rules (DA/ML)**
-     - Frequent itemset analysis using the Apriori algorithm.
-     - Generating and analyzing association rules.
-     - Visualizing the rules using lift and network graphs.
+  > - Frequent itemset analysis using the Apriori algorithm.
+  > - Generating and analyzing association rules.
+  > - Visualizing the rules using lift and network graphs.
 
 4. **Online Quiz**
-     - Likely covering general ML and DA concepts.
+  > - Likely covering general ML and DA concepts.
 
 5. **Project (Open-ended)**
-     - This could involve applying ML and DA techniques in a practical scenario.
+  > - This could involve applying ML and DA techniques in a practical scenario.
 
 The assignment involves both **theoretical and practical implementation** in **R**, requiring entropy calculations, probability derivations, and coding solutions for decision trees, Naïve Bayes classifiers, and association rule mining. Let me know if you need help with any specific topic!
 
@@ -40,7 +40,7 @@ To systematically approach the HW4 tasks in **R**, we should break them down int
 
 ### **Steps to Follow:**
 - **Load Dataset**
-     - Read `Tennis_final.csv` interactively.  
+  > - Read `Tennis_final.csv` interactively.  
 ```r
    file_path <- file.choose() 
    data <- read.csv(file_path, header=TRUE, sep=",")
@@ -48,47 +48,47 @@ To systematically approach the HW4 tasks in **R**, we should break them down int
 ```
 
 - **Compute Entropy**
-     - Define an entropy function using Shannon’s formula.
+  > - Define an entropy function using Shannon’s formula.
 ```r
    Entropy <- function(vls) {
-     res <- vls / sum(vls) * log2(vls / sum(vls))
-     res[vls == 0] <- 0
-     -sum(res)
+  > res <- vls / sum(vls) * log2(vls / sum(vls))
+  > res[vls == 0] <- 0
+  > -sum(res)
    }
 ```
 
 - **Compute Information Gain for Each Attribute**
-     - Define a function to calculate **Information Gain (IG)**.
+  > - Define a function to calculate **Information Gain (IG)**.
 ```r
    InformationGain <- function(table) {
-     table <- as.data.frame.matrix(table)
-     entropyBefore <- Entropy(colSums(table))
-     s <- rowSums(table)
-     entropyAfter <- sum(s / sum(s) * apply(table, 1, Entropy))
-     entropyBefore - entropyAfter
+  > table <- as.data.frame.matrix(table)
+  > entropyBefore <- Entropy(colSums(table))
+  > s <- rowSums(table)
+  > entropyAfter <- sum(s / sum(s) * apply(table, 1, Entropy))
+  > entropyBefore - entropyAfter
    }
 ```
    - Compute IG for `Outlook`, `Temperature`, and `Humidity`.
 
 4. **Implement the ID3 Algorithm**
-     - Create recursive decision tree construction.
+  > - Create recursive decision tree construction.
 ```r
    TrID3 <- function(node, data) {
-     node$obsCount <- nrow(data)
-     if (IsPure(data)) {
-       child <- node$AddChild(unique(data[, ncol(data)]))
-       child$obsCount <- nrow(data)
-     } else {
-       ig <- sapply(names(data)[-ncol(data)], function(x) 
-         InformationGain(table(data[, x], data[, ncol(data)])))
-       feature <- names(ig)[which.max(ig)]
-       node$feature <- feature
-       childObs <- split(data[, !(names(data) %in% feature)], data[, feature])
-       for (i in seq_along(childObs)) {
-         child <- node$AddChild(names(childObs)[i])
-         TrID3(child, childObs[[i]])
-       }
-     }
+  > node$obsCount <- nrow(data)
+  > if (IsPure(data)) {
+  >   child <- node$AddChild(unique(data[, ncol(data)]))
+  >   child$obsCount <- nrow(data)
+  > } else {
+  >   ig <- sapply(names(data)[-ncol(data)], function(x) 
+  >     InformationGain(table(data[, x], data[, ncol(data)])))
+  >   feature <- names(ig)[which.max(ig)]
+  >   node$feature <- feature
+  >   childObs <- split(data[, !(names(data) %in% feature)], data[, feature])
+  >   for (i in seq_along(childObs)) {
+  >     child <- node$AddChild(names(childObs)[i])
+  >     TrID3(child, childObs[[i]])
+  >   }
+  > }
    }
 ```
 
@@ -167,7 +167,7 @@ To systematically approach the HW4 tasks in **R**, we should break them down int
 
 ```r
    rules <- apriori(dataset, 
-                    parameter=list(supp=0.01, conf=0.4, minlen=3))
+  >   >   >   > parameter=list(supp=0.01, conf=0.4, minlen=3))
 ```
 
 - **Extract Model Parameters**  
