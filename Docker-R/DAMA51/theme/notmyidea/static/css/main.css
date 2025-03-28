@@ -362,7 +362,20 @@ mjx-container[jax="CHTML"][display="true"] {
 *****************/
 #contentinfo {padding-bottom: 2em; text-align: right;}
 
-
+/* go to top button */
+.go-to-top {
+	position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
 
 /***** Sections *****/
 /* Blog */
