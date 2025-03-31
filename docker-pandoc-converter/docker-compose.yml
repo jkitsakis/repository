@@ -1,0 +1,10 @@
+services:
+  pandoc-api:
+    build: .
+    image: pandoc-img
+    conatiner_name: pandoc-container
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./pandoc:/app
+      - ./docs:/docs

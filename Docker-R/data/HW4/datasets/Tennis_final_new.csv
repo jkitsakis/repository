@@ -1,0 +1,13 @@
+Outlook,Temperature,Humidity,Play
+sunny,cool,normal,yes
+rainy,cool,normal,no
+rainy,cool,high,no
+sunny,hot,high,no
+rainy,mild,high,no
+sunny,mild,high,no
+sunny,hot,normal,yes
+rainy,mild,normal,no
+rainy,hot,high,no
+rainy,hot,normal,yes
+sunny,mild,normal,yes
+sunny,cool,high,no

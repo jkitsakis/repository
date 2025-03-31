@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Interview Assistant</title>
+  <script>
+    async function askVoiceQuestion() {
+      const micBtn = document.getElementById("ask-voice");
+      micBtn.disabled = true;
+      micBtn.innerText = "Processing...";
+      const res = await fetch("/record_question", { method: "POST" });
+      const data = await res.json();
+      displayQA(data);
+      micBtn.disabled = false;
+      micBtn.innerText = "Next Question (Mic)";
+    }
+
+    async function askTextQuestion() {
+      const textBtn = document.getElementById("ask-text");
+      const questionText = document.getElementById("text-question").value;
+      if (!questionText.trim()) return alert("Please enter a question.");
+      textBtn.disabled = true;
+      textBtn.innerText = "Processing...";
+      const res = await fetch("/text_question", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: questionText })
+      });
+      const data = await res.json();
+      displayQA(data);
+      textBtn.disabled = false;
+      textBtn.innerText = "Submit Text Question";
+    }
+
+    function displayQA(data) {
+      document.getElementById("question").innerText = "Q: " + data.question;
+      document.getElementById("answer").innerText = "A: " + data.answer;
+    }
+  </script>
+</head>
+<body style="font-family:sans-serif;padding:2em">
+  <h1>🎙️ Live Interview Assistant</h1>
+
+  <button id="ask-voice" onclick="askVoiceQuestion()">Next Question (Mic)</button>
+
+  <div style="margin-top:2em;">
+    <textarea id="text-question" rows="4" cols="60" placeholder="Paste or type your question here..."></textarea><br>
+    <button id="ask-text" onclick="askTextQuestion()">Submit Text Question</button>
+  </div>
+
+  <p id="question" style="margin-top:2em;font-weight:bold;"></p>
+  <p id="answer" style="white-space:pre-wrap;"></p>
+</body>
+</html>

@@ -25,7 +25,7 @@ def extract_text_from_clipboard_image():
             image_np = np.array(image)
 
             # Extract text using easyocr
-            reader = easyocr.Reader(['gre', 'en'])   # 'en' for English language
+            reader = easyocr.Reader(['en'])   # 'en' for English language
 
             # Read text from the image
             result = reader.readtext(image_np)
