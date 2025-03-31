@@ -1,0 +1,10 @@
+services:
+  live-assistant:
+    build: .
+    image: live-assistant-img
+    container_name: live-assistant-container
+    ports:
+      - "5000:5000"
+    environment:
+      - OPENAI_API_KEY=
+
