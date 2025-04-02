@@ -42,19 +42,9 @@ class Parameters:
         Parameters.post_url = config.get("post_url", "")
         Parameters.referer_url = Template(config.get("referer_url", ""))
         Parameters.get_my_booking_details_url = Template(config.get("get_my_booking_details_url", ""))
-
-        # Replace cookie placeholder
-        cookie_value = Parameters.cookie
-        Parameters.get_headers = {
-            key: value.replace("cookie_placeholder", cookie_value) if isinstance(value, str) else value for key, value
-            in config.get("get_headers", {}).items()}
-        Parameters.put_headers = {
-            key: value.replace("cookie_placeholder", cookie_value) if isinstance(value, str) else value for key, value
-            in config.get("put_headers", {}).items()}
-        Parameters.post_headers = {
-            key: value.replace("cookie_placeholder", cookie_value) if isinstance(value, str) else value for key, value
-            in config.get("post_headers", {}).items()}
-
+        Parameters.get_headers =config.get("get_headers", "")
+        Parameters.put_headers = config.get("put_headers", "")
+        Parameters.post_headers = config.get("post_headers", "")
         Parameters.post_template = Template(config.get("post_template", ""))
         Parameters.put_template = Template(config.get("put_template", ""))
         Parameters.message_title_template = Template(config.get("message_title_template", ""))

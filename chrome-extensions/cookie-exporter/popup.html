@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Exporter</title>
+  <style>
+    body { font-family: sans-serif; margin: 10px; width: 320px; }
+    textarea { width: 100%; height: 70px; font-family: monospace; }
+    button { margin-top: 10px; width: 100%; }
+    #status { margin-top: 10px; color: green; font-weight: bold; }
+    h4 { margin-top: 20px; margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+  <h3>Latest Cookie Exported</h3>
+  <textarea id="sentCookieOutput" readonly></textarea>
+  <button id="refreshButton">🔄 Refresh & Capture</button>
+  <button id="copyButton">Copy to Clipboard</button>
+  <button id="downloadButton">Download as .txt</button>
+
+  <div id="status">Auto-copied ✅</div>
+  <script src="popup.js"></script>
+</body>
+</html>

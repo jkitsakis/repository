@@ -1,9 +1,9 @@
 {
-  "dates": ["2025-03-31","2025-04-01","2025-04-02","2025-04-03","2025-04-04"],
+  "dates": ["2025-04-07","2025-04-08","2025-04-09","2025-04-10","2025-04-11"],
   "start_time": "12:00:03.5000",
   "sleep_in_availability": 10,
   "sleep_in_book": 0.100,
-  "cookie": "Path=/; Path=/; Path=/; Path=/; JSESSIONID=37779E686C4D81BEB9D5D90C1DE10608; TS010ee64b=01eb1053a0814d59a1dcfa8f19f9415c79ecf0aae90ae4de00b1e0eddd76c973a0c094c3f00d69c721fddb04cb57b37b94edb8c13d48ee3b9a0a8e5fb63428a52f4bcce85ae75fd6c47286b26f78bd35ea1a397d94; TSf455e12a027=0804a8c53bab2000fff6c3973fa971f6a819b909d1bfa30b5865fe129b35135e1193bf8a7e23970b081d90a529113000c66c07becb79b0e73b2070346338ba55862d33ba8d7854b23cc9e43d2b679bb8bbc5f2797d64539ca58c21a758c248ff",
+  "cookie": "",
   "planner_url": "https://myplanner.netcompany-intrasoft.com",
   "available_seats_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/facility/facilities/available/map",
   "my_booked_desks_url": "https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/future?page=0&size=15",

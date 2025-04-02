@@ -1,0 +1,30 @@
+{
+  "name": "Universal Cookie Exporter",
+  "version": "3.0",
+  "manifest_version": 3,
+  "description": "Capture and export the real cookie sent in requests",
+  "permissions": [
+    "cookies",
+    "tabs",
+    "scripting",
+    "webRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["inject.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cookie Exporter"
+  }
+}
