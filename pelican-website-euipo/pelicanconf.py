@@ -45,7 +45,7 @@ ARTICLE_SAVE_AS = '{category}/{slug}.html'
 
 STATIC_PATHS = ['images', 'favicon.ico']
 
-PLUGIN_PATHS = ['plugins']
+PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['inject_constants', 'minify']
 
 #values like SITEURL will be globally accessible in all Jinja templates.
