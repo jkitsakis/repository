@@ -4,4 +4,7 @@ source/
 .idea/
 .venv/
 .vs/
+.python-version
+pelican.log
+python-commands.txt
 
