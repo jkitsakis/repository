@@ -148,7 +148,26 @@ header, section, footer,
 aside, nav, article, figure {
 	display: block;
 }
-
+.scroll-wrapper {
+	overflow-x: auto;
+	max-width: 100%;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+.scroll-table {
+	border-collapse: collapse;
+	width: 100%;
+	min-width: 1200px;
+}
+.scroll-table th, .scroll-table td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	vertical-align: top;
+}
+.scroll-table th {
+	background-color: #f2f2f2;
+}
 /***** Layout *****/
 .body {clear: both; margin: 0 auto; max-width: 75%;}
 img { max-width: 100%; }
