@@ -16,7 +16,7 @@ function menu() {
     echo " 1. Build $DEMO_NAME"
     echo " 2. Run $DEMO_NAME"
     echo " 3. Export requirements.txt"
-    echo " 4. Upgrade packages"
+    echo " 4. Update/install packages"
     echo " 5. Uninstall all packages"
     echo " 6. Open shell with virtualenv"
     echo " 0. Exit"
@@ -57,7 +57,7 @@ function open_shell() {
 function export_reqs() {
     activate_venv
     echo "Exporting requirements.txt..."
-    pip freeze > "$APP_HOME/requirements.txt"
+    pip list --not-required --format=freeze | sed 's/==.*//' > requirements.txt
     echo "Saved to: $APP_HOME/requirements.txt"
     read -p "Press enter to return to menu..."
     menu
