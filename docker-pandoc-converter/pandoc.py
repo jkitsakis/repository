@@ -13,7 +13,8 @@ OPERATIONS = {
     "DOCX → PDF": ("docx", "pdf"),
     "LaTeX → PDF": ("latex", "pdf"),
     "HTML → Word (.docx)": ("html", "docx"),
-    "EPUB → PDF": ("epub", "pdf")
+    "EPUB → PDF": ("epub", "pdf"),
+    "CSV → Markdown": ("csv", "markdown")
 }
 
 def convert_file():

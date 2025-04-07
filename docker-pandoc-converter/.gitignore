@@ -1,5 +1,7 @@
 __pycache__/*
+pandoc/__pycache__/*
 docs/
 .idea/
 .venv/
+.filters/
 

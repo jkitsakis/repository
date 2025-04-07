@@ -6,5 +6,4 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./pandoc:/app
-      - ./docs:/docs
+      - ./pandoc:/pandoc

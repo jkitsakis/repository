@@ -20,8 +20,8 @@ RUN pip3 install --upgrade pip && pip3 install \
     panflute \
     markdown2
 
-COPY /pandoc /app
-WORKDIR /app
+COPY /pandoc /pandoc
+WORKDIR /pandoc
 
 ENV FLASK_APP=main.py
 CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]

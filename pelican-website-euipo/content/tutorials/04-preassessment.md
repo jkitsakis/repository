@@ -148,7 +148,7 @@ Supports frontend configuration and tool setup.
     </tr>
     <tr>
       <td>CheckCpvo.java</td>
-      <td>eu.europa.euipo.preassessment.backend.preassessmentform.application.port.in.CheckCpvoPort</td>
+      <td>CheckCpvoPort</td>
       <td>agSupportService</td>
       <td>AgSupportServiceImpl: 1 WebClient file(s)</td>
       <td>AgSupportServiceImpl</td>

@@ -18,8 +18,8 @@ echo        ---------------------------
 echo   1. Build %DEMO_NAME%
 echo   2. Run %DEMO_NAME%
 echo   3. Export requirements.txt %DEMO_NAME%
-echo   4. Upgrade packages %DEMO_NAME%
-
+echo   4. Upgrade/Install packages %DEMO_NAME%
+echo   5. Uninstall all packages %DEMO_NAME%
 
 set /p opt=Type option:
 if "%opt%"=="0" goto exit

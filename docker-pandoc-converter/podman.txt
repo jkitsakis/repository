@@ -1,0 +1,91 @@
+unintall podman and podman desktop 
+
+Power shell admin
+-----------------
+delete 
+Remove-Item -Recurse -Force $env:USERPROFILE\.config\containers
+Remove-Item -Recurse -Force $env:USERPROFILE\.local\share\containers
+Remove-Item -Recurse -Force $env:USERPROFILE\.cache\containers
+Remove C:\Users\ikitsakis\AppData\Roaming\Podman Desktop
+wsl --unregister podman-machine-default
+
+winget uninstall --id RedHat.Podman -e
+winget uninstall --id RedHat.Podman-Desktop -e
+
+
+winget install --id RedHat.Podman -e 
+winget install --id RedHat.Podman-Desktop -e
+
+Initialize the VM (This sets up a virtualized Linux environment for Podman): 
+podman machine init
+podman machine init --disk-size 10 
+
+Stop and remove the VM (machine)
+podman machine stop podman-machine-default
+podman machine rm -f  podman-machine-default
+podman system connection rm -f podman-machine-default
+podman system connection rm -f  podman-machine-default-root
+
+
+Start the Podman machine:
+podman machine start
+pip install podman-compose
+
+
+Verify it's running:
+podman machine list
+
+
+Enter a Running Container (Interactive Shell)
+podman ps -a
+podman exec -it <container_id> /bin/sh
+
+Build the Dockerfile (or Container Image)
+podman build -t <container_name> .
+podman run --rm <container_name>
+
+Run the script without rebuilding the container
+podman exec -it transcriber_whisper-transcriber_1 python /app/transcriber.py --model_size medium --hftoken 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 --language el
+
+
+Check Podman + Podman Compose Status
+--------------------------------------
+podman info                          # Show system-wide info
+podman version                        # Show Podman version
+podman system df                      # Show disk usage
+podman ps -a                          # List all containers (including stopped)
+podman images                          # List all images
+podman volume ls                      # List all volumes
+
+ Managing Containers with Podman Compose
+ ----------------------------------------------
+podman-compose up -d                  # Start services in detached mode
+podman-compose down                    # Stop and remove all containers
+podman-compose stop                    # Stop running services
+podman-compose restart                 # Restart all services
+podman-compose ps                      # Show running services
+podman-compose logs                     # Show logs for all services
+podman-compose logs -f                  # Follow logs in real-time
+
+Cleaning Up Containers, Images, and Volumes
+--------------------------------------------------
+podman-compose down --volumes          # Stop and remove all containers + volumes
+podman stop -a                          # Stop all running containers
+podman rm -a                            # Remove all stopped containers
+podman rmi -a                           # Remove all images
+podman volume prune                     # Remove all unused volumes
+podman system prune -a                  # Remove all unused containers, images, and volumes
+
+Fully Purge Podman (Including VM)
+------------------------------------------
+podman machine stop                     # Stop the Podman virtual machine
+podman machine rm -f                     # Remove the Podman VM (force)
+podman system reset                      # Reset Podman system (like a factory reset)
+
+Restart Everything
+-------------------------------------
+podman machine start                     # Start the Podman VM
+podman system service -t 0                # Restart Podman service (if needed)
+podman-compose up -d                      # Restart all services
+
+

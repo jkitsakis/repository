@@ -6,3 +6,4 @@ tinycss2
 Jinja2
 rcssmin
 rjsmin
+beautifulsoup4
