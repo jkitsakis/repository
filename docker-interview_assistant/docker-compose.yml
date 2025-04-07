@@ -1,0 +1,26 @@
+
+version: '3.8'
+
+services:
+  interview-assistant:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - whisper_models:/app/whisper_models
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - ollama
+
+  ollama:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  ollama_data:
+  whisper_models:

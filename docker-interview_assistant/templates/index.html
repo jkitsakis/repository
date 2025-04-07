@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Interview Assistant</title>
+</head>
+<body>
+  <h1>Live Interview Assistant</h1>
+  <input type="text" id="typedInput" placeholder="Type your question here">
+  <button onclick="submitTyped()">Ask</button>
+  <button onclick="startRecording()">🎙️ Record</button>
+  <p><strong>Response:</strong></p>
+  <pre id="response"></pre>
+
+<script>
+let mediaRecorder;
+let audioChunks = [];
+
+function submitTyped() {
+  const input = document.getElementById('typedInput').value;
+  fetch('/ask', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question: input })
+  })
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('response').innerText = data.response || JSON.stringify(data);
+  });
+}
+
+function startRecording() {
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(stream => {
+      mediaRecorder = new MediaRecorder(stream);
+      audioChunks = [];
+      mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+        const formData = new FormData();
+        formData.append('audio', audioBlob, 'recording.wav');
+
+        fetch('/transcribe', { method: 'POST', body: formData })
+          .then(res => res.json())
+          .then(data => {
+            if (data.transcript) {
+              document.getElementById('typedInput').value = data.transcript;
+              submitTyped();
+            } else {
+              document.getElementById('response').innerText = 'Transcription failed.';
+            }
+          });
+      };
+      mediaRecorder.start();
+      setTimeout(() => mediaRecorder.stop(), 5000); // Record 5 seconds
+    });
+}
+</script>
+</body>
+</html>
