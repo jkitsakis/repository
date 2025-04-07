@@ -1,0 +1,4 @@
+.idea/
+data/.config
+data/.local
+**/*/.vs/

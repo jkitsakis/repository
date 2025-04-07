@@ -1,5 +1,5 @@
 __pycache__/*
-pandoc/__pycache__/*
+plugins/__pycache__/*
 output/
 source/
 .idea/
@@ -8,4 +8,5 @@ source/
 .python-version
 pelican.log
 python-commands.txt
+
 
