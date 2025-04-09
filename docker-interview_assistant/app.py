@@ -2,11 +2,26 @@
 from flask import Flask, request, jsonify, render_template
 import subprocess
 import requests
+import time
 
 app = Flask(__name__)
 
 OLLAMA_ENDPOINT = "http://ollama:11434/api/generate"
 OLLAMA_MODEL = "llama3"
+
+def wait_for_ollama(timeout=30):
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        try:
+            res = requests.get(OLLAMA_ENDPOINT.replace("/api/generate", "/"))
+            if res.status_code == 200:
+                print("✅ Ollama is up!")
+                return True
+        except requests.exceptions.RequestException:
+            pass
+        print("⏳ Waiting for Ollama to be available...")
+        time.sleep(1)
+    return False
 
 @app.route('/')
 def index():
@@ -19,13 +34,19 @@ def ask():
     if not question:
         return jsonify({"error": "No question provided"}), 400
 
+    if not wait_for_ollama():
+        return jsonify({"error": "Ollama service not available"}), 503
+
     payload = {
         "model": OLLAMA_MODEL,
         "prompt": question,
         "stream": False
     }
-    response = requests.post(OLLAMA_ENDPOINT, json=payload)
-    return jsonify(response.json())
+    try:
+        response = requests.post(OLLAMA_ENDPOINT, json=payload)
+        return jsonify(response.json())
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": "Failed to communicate with Ollama", "details": str(e)}), 500
 
 @app.route('/transcribe', methods=['POST'])
 def transcribe():

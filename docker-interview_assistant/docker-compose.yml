@@ -3,7 +3,10 @@ version: '3.8'
 
 services:
   interview-assistant:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: interview-assistant-whisper-container
     ports:
       - "5000:5000"
     volumes:
@@ -15,7 +18,10 @@ services:
       - ollama
 
   ollama:
-    image: ollama/ollama
+    build:
+      context: .
+      dockerfile: Dockerfile.ollama
+    container_name: interview-assistant-ollama-container
     ports:
       - "11434:11434"
     volumes:
