@@ -14,3 +14,4 @@ app/.venv/
 *.wav
 audio_chunks/
 ffmpeg-2025-02-20-full-build/
+.python-version
