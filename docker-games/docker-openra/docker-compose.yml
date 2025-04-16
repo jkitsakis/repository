@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  openra:
+    build: .
+    image: openra-arch:latest
+    container_name: redalert
+    environment:
+      - DISPLAY=$DISPLAY
+      - PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native
+      - LIBGL_ALWAYS_INDIRECT=0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native
+      - ~/.config/pulse/cookie:/root/.config/pulse/cookie:ro
+      - /usr/lib/x86_64-linux-gnu/dri:/usr/lib/x86_64-linux-gnu/dri:ro
+      - /usr/share/glvnd:/usr/share/glvnd:ro
+      - /usr/lib/x86_64-linux-gnu/libGL.so.1:/usr/lib/x86_64-linux-gnu/libGL.so.1:ro
+      - /usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0:/usr/lib/x86_64-linux-gnu/libGLX_mesa.so.0:ro
+    devices:
+      - /dev/snd
+      - /dev/dri
+    network_mode: host
+    stdin_open: true
+    tty: true

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  warcraft3:
+    build: .
+    container_name: warcraft3
+    environment:
+      - DISPLAY=$DISPLAY
+      - PULSE_SERVER=unix:/tmp/pulseaudio.socket
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $XAUTHORITY:/root/.Xauthority
+      - /tmp/pulseaudio.socket:/tmp/pulseaudio.socket
+      - ./Warcraft3.rar:/home/gamer/game/Warcraft3.rar:rw
+      - /dev/snd:/dev/snd
+      - /dev/input:/dev/input
+    devices:
+      - /dev/snd
+      - /dev/input
+    privileged: true
+    network_mode: "host"
