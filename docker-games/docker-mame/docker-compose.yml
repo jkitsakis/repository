@@ -1,18 +1,11 @@
+version: "3.9"
+
 services:
-  mame:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      - DISPLAY=${DISPLAY}
+  emulatorjs:
+    image: docker.io/linuxserver/emulatorjs
+    container_name: emulatorjs
+    ports:
+      - "8080:80"  # Access EmulatorJS in browser at http://localhost:8080
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:ro
-      - ./roms:/roms
-      - ./config:/config
-      - ./shaders:/usr/share/mame/shaders
-    devices:
-      - /dev/snd
-      - /dev/input
-    stdin_open: true
-    tty: true
-    command: ["mame", "-rompath", "/roms", "-cfg_directory", "/config"]
+      - ./roms:/config/roms:Z   # ":Z" for SELinux compatibility
+    restart: unless-stopped
