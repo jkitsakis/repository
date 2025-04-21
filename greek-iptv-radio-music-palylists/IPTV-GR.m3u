@@ -10,8 +10,8 @@ https://ertflix.akamaized.net/ertlive/ert2/clrdef24828z/index.mpd
 https://ertflix.akamaized.net/ertlive/ert3/clrdef24828n/index.mpd
 
 #EXTINF:-1 group-title="TV" TVG-ID="MEGA" tvg-name="MEGA" tvg-logo="https://iconape.com/wp-content/png_logo_vector/mega-tv-logo.png",MEGA
-#KODIPROP:inputstream.adaptive.manifest_type=hls
-wss://ume3-edge-02.cdn.vindral.com/live/alteregomedia_megatv1_ci_6cc490c7-e5c6-486b-acf0-9bb9c20fa670/index.m3u8
+# https://embed.vindral.com/?core.channelId=alteregomedia_megatv1_ci_6cc490c7-e5c6-486b-acf0-9bb9c20fa670
+udp://@:1234
 
 #EXTINF:-1 group-title="TV" TVG-ID="ANT1" tvg-name="ANT1" tvg-logo="https://upload.wikimedia.org/wikipedia/el/a/ac/Ant1.png",ANT1
 #KODIPROP:inputstream=inputstream.adaptive
@@ -19,7 +19,7 @@ wss://ume3-edge-02.cdn.vindral.com/live/alteregomedia_megatv1_ci_6cc490c7-e5c6-4
 https://mcdn.antennaplus.gr/live/media0/Ant1/HLS/Ant1.m3u8
 
 #EXTINF:-1 group-title="TV" TVG-ID="ALPHA" tvg-name="ALPHA" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Alpha-TV-Logo.png/250px-Alpha-TV-Logo.png",ALPHA
-https://alphatvlive.siliconweb.com/1/Y2Rsd1lUcUVoajcv/UVdCN25h/hls/live/playlist.m3u8
+https://alphatvlive2.siliconweb.com/alphatvlive/live_abr/playlist.m3u8
 
 #EXTINF:-1 group-title="TV" TVG-ID="STAR" tvg-name="STAR" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/STAR_Channel.png/250px-STAR_Channel.png",STAR
 https://livestar.siliconweb.com/media/star4/star4newhd.m3u8
@@ -44,17 +44,8 @@ https://streamer-cache.grnet.gr/parliament/hls/webtv_640_640x360/index.m3u8
 #KODIPROP:inputstream.adaptive.manifest_type=hls
 https://mcdn.antennaplus.gr/live/media0/MAK/HLS/MAK.m3u8
 
-#EXTINF:-1 group-title="TV" tvg-name="ERT World"  tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/bc/ChannelLogo-ERTWORLD1.png",ERT World
-https://ertflix.akamaized.net/ertlive/ertworld/default/index.mpd
-
-#EXTINF:-1 group-title="TV" tvg-name="ERT Music"  tvg-logo="https://files2.app.ertflix.gr/files/channels/ert-music-800x300.png?m=resize&w=200&h=80",ERT Music
-https://ertflix.akamaized.net/ertlive/music/default/index.mpd
-
-#EXTINF:-1 group-title="TV" TVG-ID="Dtv6" tvg-name="Dtv6" tvg-logo="",Dtv6
-https://channel.streams.ovh:8081/dipolotv/index.m3u8
-
-#EXTINF:-1 group-title="TV" TVG-ID="CinemaTime" tvg-name="CinemaTime" tvg-logo="",Cinema Time
-https://ssh101.bozztv.com/ssh101/cinematimetv/chunks.m3u8
+#EXTINF:-1 group-title="TV" TVG-ID="Netmax" tvg-name="Netmax" tvg-logo="",Netmax
+https://live.netmaxtv.com:1936/live/live/chunklist_w556311684.m3u8
 
 #EXTINF:-1 group-title="TV" TVG-ID="NetvEurope" tvg-name="NetvEurope" tvg-logo="https://goo.gl/ofVjvQ",Netv Europe
 https://eu1.vectromdigital.com:1936/netveurope/netveurope/playlist.m3u8
