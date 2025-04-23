@@ -13,7 +13,7 @@
         "positionId": "6448cee7bf530c0226ea4d54",
         "x": 1146,
         "y": 1452,
-        "weight": 15
+        "weight": 10
     },
     {
         "code": "008",
@@ -29,7 +29,7 @@
         "positionId": "6448cee7bf530c0226ea4d56",
         "x": 1268,
         "y": 1175,
-        "weight": 15
+        "weight": 10
     },
     {
         "code": "010",
@@ -45,7 +45,7 @@
         "positionId": "6448cee7bf530c0226ea4d58",
         "x": 1304,
         "y": 1104,
-        "weight": 15
+        "weight": 10
     },
     {
         "code": "012",
@@ -61,7 +61,7 @@
         "positionId": "6448cee7bf530c0226ea4d5a",
         "x": 1361,
         "y": 954,
-        "weight": 15
+        "weight": 10
     },
     {
         "code": "014",
@@ -117,7 +117,7 @@
         "x": 1020,
         "y": 1773,
         "code": "026",
-        "weight": 5
+        "weight": 3
     },
     {
         "facilityId": "6448d14dbf530c0226ea4d6a",
@@ -125,7 +125,7 @@
         "x": 1091,
         "y": 1812,
         "code": "027",
-        "weight": 5
+        "weight": 3
     },
     {
         "facilityId": "6448d14dbf530c0226ea4d6a",
@@ -149,7 +149,7 @@
         "x": 1038,
         "y": 1386,
         "code": "035",
-        "weight": 5
+        "weight": 3
     },
     {
         "facilityId": "6448d14dbf530c0226ea4d6a",
@@ -157,7 +157,7 @@
         "x": 1102,
         "y": 1426,
         "code": "034",
-        "weight": 5
+        "weight": 3
     },
     {
         "facilityId": "6448d14dbf530c0226ea4d6a",

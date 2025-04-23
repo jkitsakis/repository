@@ -100,7 +100,7 @@ def main_avalilability():
                         # deskbookingid=UpdateDesk.get_my_booking_id(date))
                         # email_txt = message_txt + f"\n \n {referer_url}"
                         # EmailSender.send_email(message_title, email_txt)
-                        show_notification_windows(message_title, message_txt)
+                        # show_notification_windows(message_title, message_txt)
 
                         if UpdateDesk.book_seat(available_future_desk['code'], date):
                             message_success = Parameters.mail_success_template.substitute(date=date, floor=available_future_desk['floor'], code=available_future_desk['code'])
