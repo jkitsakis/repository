@@ -13,15 +13,26 @@ def load_models(model_size="medium", hf_token=None):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     # Load Whisper
-    print("Loading Whisper model...")
-    whisper_model = whisper.load_model(model_size)
+    try:
+        print(f"Loading Whisper model '{model_size}' on device '{device}'...")
+        whisper_model = whisper.load_model(model_size).to(device)
+        print("Whisper model loaded successfully.")
+    except Exception as e:
+        print(f"Error loading Whisper model: {e}")
+        raise
 
     # Load Pyannote (Speaker Diarization)
-    print("Loading Pyannote model...")
-    diarization_model = SpeakerDiarization.from_pretrained(
-        "pyannote/speaker-diarization-3.1",
-        use_auth_token=hf_token
-    ).to(torch.device(device))
+    try:
+        print("Loading Pyannote model...")
+        diarization_model = SpeakerDiarization.from_pretrained(
+            "pyannote/speaker-diarization-3.1",
+            use_auth_token=hf_token
+        ).to(torch.device(device))
+        print("Pyannote model loaded successfully.")
+    except Exception as e:
+        print(f"Error loading Pyannote model: {e}")
+        raise
+
 
     return whisper_model, diarization_model
 

@@ -70,13 +70,13 @@ goto start
 :run
 cls
 cd %APP_HOME%
-python main.py
-echo Planner script finished.
+python %cd%\transcriber.py --model_size medium --hftoken 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 --language en --input_folder %cd%\input --output_folder %cd%\output
+echo %DEMO_NAME% script finished.
 pause
 goto start
 
 :run-docker
-start cmd /k "echo Starting... & podman exec -it transcriber-container python /app/transcriber.py --model_size large --hftoken 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 --language en"
+start cmd /k "echo Starting... & podman exec -it transcriber-container python /app/transcriber.py --model_size small --hftoken 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 --language en"
 pause
 goto start
 

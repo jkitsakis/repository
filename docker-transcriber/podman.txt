@@ -21,6 +21,7 @@ Foor inital run, start it from podman desktop
 -------------------------------
 podman machine init
 podman machine init --disk-size 10 
+podman machine init --memory 8192 --cpus 4  #default is 2GB. Needs more
 podman machine start
 
 Verify it's running:
@@ -82,6 +83,7 @@ Fully Purge Podman (Including VM)
 podman machine stop                     # Stop the Podman virtual machine
 podman machine rm -f                     # Remove the Podman VM (force)
 podman system reset                      # Reset Podman system (like a factory reset)
+podman machine inspect
 
 Restart Everything
 -------------------------------------
