@@ -1,11 +1,13 @@
 version: "3.9"
 
 services:
-  emulatorjs:
-    image: docker.io/linuxserver/emulatorjs
-    container_name: emulatorjs
-    ports:
-      - "8080:80"  # Access EmulatorJS in browser at http://localhost:8080
+  retroarch:
+    build: .
+    container_name: retroarch
     volumes:
-      - ./roms:/config/roms:Z   # ":Z" for SELinux compatibility
-    restart: unless-stopped
+      - ./roms/arcade:/roms
+    ports:
+      - "8080:8080"
+    # devices:
+    #   - /dev/input/js0:/dev/input/js0
+    # restart: unless-stopped
