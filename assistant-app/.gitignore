@@ -4,3 +4,4 @@ __pycache__/*
 old-impl/
 app/model/
 app/__pycache__/
+secrets.txt
