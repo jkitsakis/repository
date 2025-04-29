@@ -76,7 +76,7 @@ pause
 goto start
 
 :run-docker
-start cmd /k "echo Starting... & podman exec -it transcriber-container python /app/transcriber.py --model_size small --hftoken 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 --language en"
+start cmd /k "echo Starting... & podman exec -it transcriber-container python /app/transcriber.py --model_size medium --hftoken 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 --language en"
 pause
 goto start
 

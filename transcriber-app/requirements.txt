@@ -1,0 +1,4 @@
+pydub
+resemblyzer
+scikit-learn
+numpy

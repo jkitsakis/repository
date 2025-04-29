@@ -21,7 +21,7 @@ Foor inital run, start it from podman desktop
 -------------------------------
 podman machine init
 podman machine init --disk-size 10 
-podman machine init --memory 8192 --cpus 4  #default is 2GB. Needs more
+podman machine init --memory 16384 --cpus 4  #default is 2GB. Needs more
 podman machine start
 
 Verify it's running:

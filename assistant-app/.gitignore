@@ -1,0 +1,6 @@
+__pycache__/*
+.idea/
+.venv/
+old-impl/
+app/model/
+app/__pycache__/
