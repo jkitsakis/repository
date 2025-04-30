@@ -1,13 +1,22 @@
 #!/bin/bash
 
-WSL_HOME_DIR=~/workspace
-WINDOWS_APP_FOLDER=/mnt/c/Workspace/My-Applications/GitHub/repository
-WINDOWS_VIDEO_FOLDER=/mnt/c/Users/ikitsakis/Videos/Captures
+#WINDOWS
+# WSL_HOME_DIR=~/workspace
+# WINDOWS_APP_FOLDER=/mnt/c/Workspace/My-Applications/GitHub/repository
+# WINDOWS_VIDEO_FOLDER=/mnt/c/Users/ikitsakis/Videos/Captures
+# WHISPER_DIR=$WSL_HOME_DIR/transcriber-app/whisper.cpp
+# BUILD_DIR=$WHISPER_DIR/build/bin
+
+
+#UBUNTU
+WSL_HOME_DIR=~/Workspace/repository
+WINDOWS_VIDEO_FOLDER=~/Videos/ToTranscribe
 WHISPER_DIR=$WSL_HOME_DIR/transcriber-app/whisper.cpp
 BUILD_DIR=$WHISPER_DIR/build/bin
 
+
 # cp -r $WINDOWS_APP_FOLDER/transcriber-app $WSL_HOME_DIR/
-cp $WINDOWS_VIDEO_FOLDER/evgenia-1.mp4 $WSL_HOME_DIR/transcriber-app/input/
+cp $WINDOWS_VIDEO_FOLDER/*.mp4 $WSL_HOME_DIR/transcriber-app/input/
 
 cd $WSL_HOME_DIR/transcriber-app
 git clone https://github.com/ggerganov/whisper.cpp
@@ -17,7 +26,7 @@ cd ..
 
 
 echo "🎯 Select Whisper model to download:"
-echo "1 → small.en (Multilingual, English+Greek)"
+echo "1 → small (Multilingual, English+Greek)"
 echo "2 → medium (Multilingual, English+Greek)"
 echo "3 → large-v2 (Best multilingual, biggest size)"
 read -p "Select [1-3]: " model_choice

@@ -2,41 +2,22 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update and install all needed packages
+# Install Flatpak + runtime deps
 RUN apt update && apt install -y \
-    retroarch \
-    supervisor \
-    xfce4 \
-    x11vnc \
-    xvfb \
-    websockify \
-    wget \
-    net-tools \
+    flatpak \
     xterm \
-    dbus-x11 \
+    wget \
     pulseaudio \
-    python3 \
-    python3-websockify \
-    git \
+    dbus-x11 \
+    libgl1-mesa-glx \
     && apt clean
 
-# Install noVNC manually
-RUN git clone https://github.com/novnc/noVNC.git /opt/novnc && \
-    ln -s /opt/novnc/utils/novnc_proxy /usr/bin/novnc_proxy
+# Setup dbus
+RUN mkdir -p /run/dbus
 
-# Set up x11vnc password
-RUN mkdir -p /root/.vnc && x11vnc -storepasswd 1234 /root/.vnc/passwd
+# Add Flathub + install RetroArch
+RUN flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && \
+    flatpak install -y flathub org.libretro.RetroArch
 
-# Copy supervisor configuration
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-# Make a folder for ROMs
+# Create roms mount point
 RUN mkdir -p /roms
-
-# Set working directory
-WORKDIR /root
-
-EXPOSE 8080
-
-# Run everything via supervisord
-CMD ["/usr/bin/supervisord"]

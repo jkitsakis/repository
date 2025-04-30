@@ -4,10 +4,17 @@ services:
   retroarch:
     build: .
     container_name: retroarch
+    environment:
+      - DISPLAY=${DISPLAY}
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Athens
     volumes:
-      - ./roms/arcade:/roms
-    ports:
-      - "8080:8080"
-    # devices:
-    #   - /dev/input/js0:/dev/input/js0
-    # restart: unless-stopped
+      - /tmp/.X11-unix:/tmp/.X11-unix   # Real X11 socket
+      - ./roms/arcade:/roms                   # Your games
+    devices:
+      - /dev/dri:/dev/dri              # GPU
+      - /dev/input                     # Gamepad
+    network_mode: host
+    command: flatpak run --filesystem=/roms:ro org.libretro.RetroArch
+    restart: unless-stopped

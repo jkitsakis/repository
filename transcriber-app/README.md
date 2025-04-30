@@ -20,6 +20,7 @@ transcriber-app/
 ├── audio/
 ├── output/
 ├── models/
+├── input/
 ├── whisper.cpp/ (clone and build separately)
 ```
 
@@ -30,7 +31,7 @@ transcriber-app/
 ## 1. Install System Dependencies
 ```bash
 sudo apt update
-sudo apt install python3 python3-pip ffmpeg build-essential git
+sudo apt install python3 python3-pip ffmpeg build-essential git cmake
 ```
 
 ## 2. Clone and Build whisper.cpp
@@ -80,7 +81,7 @@ cd workspace/transcriber-app/whisper.cpp
 ## 1.1 install python env
 ```
 sudo apt update
-sudo apt install python3-venv build-essential python3-dev python3-tk ffmpeg
+sudo apt install python3-venv build-essential python3-dev python3-tk ffmpeg cmake
 ```
 
 ## 2. Make Scripts Executable
