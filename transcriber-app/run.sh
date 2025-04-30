@@ -42,7 +42,7 @@ function reset_venv() {
 }
 
 function copy_to_windows_folder(){
-	rsync -av --exclude='.venv' --exclude='whisper.cpp' --exclude='input' --exclude='audio' ./ /mnt/c/Workspace/My-Applications/GitHub/repository/transcriber-app/
+	rsync -av --exclude='.venv' --exclude='whisper.cpp' --exclude='input' --exclude='audio' --exclude='output' --exclude='models' ./ /mnt/c/Workspace/My-Applications/GitHub/repository/transcriber-app/
 }
 
 

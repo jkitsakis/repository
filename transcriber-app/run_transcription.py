@@ -5,7 +5,6 @@ from resemblyzer import VoiceEncoder, preprocess_wav
 import numpy as np
 import datetime
 
-# CONFIG
 WHISPER_CPP_PATH = "./whisper.cpp/build/bin/whisper-cli"
 AUDIO_DIR = "./audio"
 OUTPUT_DIR = "./output"
@@ -16,11 +15,12 @@ def find_mp4():
     if not files:
         print("❗ No MP4 file found in input/ folder!")
         exit(1)
-    return os.path.join(INPUT_DIR, files[0])
+    return [os.path.join(INPUT_DIR, f) for f in files]
 
 def convert_mp4_to_wav(mp4_path):
     os.makedirs(AUDIO_DIR, exist_ok=True)
-    wav_path = os.path.join(AUDIO_DIR, "audio.wav")
+    basename = os.path.splitext(os.path.basename(mp4_path))[0]
+    wav_path = os.path.join(AUDIO_DIR, f"{basename}.wav")
     audio = AudioSegment.from_file(mp4_path)
     audio = audio.set_channels(1).set_frame_rate(16000)
     audio.export(wav_path, format="wav")
@@ -48,7 +48,8 @@ def choose_language():
 
 def transcribe_with_whisper(wav_path, model_path, language_code):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    output_prefix = os.path.join(OUTPUT_DIR, "raw_transcript")
+    basename = os.path.splitext(os.path.basename(wav_path))[0]
+    output_prefix = os.path.join(OUTPUT_DIR, f"raw_{basename}")
     command = [
         WHISPER_CPP_PATH,
         "-m", model_path,
@@ -67,7 +68,6 @@ def diarize(wav_path):
     encoder = VoiceEncoder()
     raw_embeddings = encoder.embed_utterance(wav, return_partials=True, rate=16)
 
-    # Filter valid embeddings
     ref_shape = raw_embeddings[0].shape
     valid_embeddings = [e for e in raw_embeddings if isinstance(e, np.ndarray) and e.shape == ref_shape]
 
@@ -101,21 +101,28 @@ def merge_transcript_with_speakers(transcript_txt, diarization):
         timestamp = str(datetime.timedelta(seconds=int(segment_time)))
         output_lines.append(f"[{timestamp}] Speaker {speaker_label}: {line}")
 
-    with open(os.path.join(OUTPUT_DIR, "transcript.txt"), "w", encoding="utf-8") as f:
+    base = os.path.splitext(os.path.basename(transcript_txt))[0]
+    output_path = os.path.join(OUTPUT_DIR, f"{base}_diarized.txt")
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(output_lines))
+    return output_path
 
 def main():
     if not os.path.exists(INPUT_DIR):
         os.makedirs(INPUT_DIR)
-    mp4 = find_mp4()
-    print(f"🎬 Found MP4 file: {mp4}")
-    wav = convert_mp4_to_wav(mp4)
+    mp4_files  = find_mp4()
     model_path = choose_model()
     language_code = choose_language()
-    transcript_txt = transcribe_with_whisper(wav, model_path, language_code)
-    diarization = diarize(wav)
-    merge_transcript_with_speakers(transcript_txt, diarization)
-    print(f"\n✅ Done! See output in: {OUTPUT_DIR}/transcript.txt")
+
+    for mp4 in mp4_files:
+        print(f"\n🎬 Processing: {mp4}")
+        wav = convert_mp4_to_wav(mp4)
+        raw_transcript_txt = transcribe_with_whisper(wav, model_path, language_code)
+        diarization = diarize(wav)
+        merge_transcript_with_speakers(raw_transcript_txt, diarization)
+        output_name = os.path.splitext(os.path.basename(mp4))[0] + ".txt"
+        print(f"✅ Done: {OUTPUT_DIR}/{output_name}")
+
 
 if __name__ == "__main__":
     main()
