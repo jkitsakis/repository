@@ -4,6 +4,7 @@ from pydub import AudioSegment
 from resemblyzer import VoiceEncoder, preprocess_wav
 import numpy as np
 import datetime
+import psutil
 
 WHISPER_CPP_PATH = "./whisper.cpp/build/bin/whisper-cli"
 AUDIO_DIR = "./audio"
@@ -66,23 +67,43 @@ def transcribe_with_whisper(wav_path, model_path, language_code):
 def diarize(wav_path):
     wav = preprocess_wav(wav_path)
     encoder = VoiceEncoder()
-    raw_embeddings = encoder.embed_utterance(wav, return_partials=True, rate=16)
 
-    ref_shape = raw_embeddings[0].shape
-    valid_embeddings = [e for e in raw_embeddings if isinstance(e, np.ndarray) and e.shape == ref_shape]
+    # Split into 30-second chunks to reduce RAM load
+    window_duration = 30  # seconds
+    sample_rate = 16000
+    chunk_samples = window_duration * sample_rate
 
-    if len(valid_embeddings) < 2:
+    total_samples = len(wav)
+    embeddings = []
+
+    print(f"🔁 Diarizing in {total_samples // chunk_samples + 1} chunks...")
+
+    for start in range(0, total_samples, chunk_samples):
+        chunk = wav[start:start + chunk_samples]
+        if len(chunk) == 0:
+            continue
+        try:
+            chunk_embeds = encoder.embed_utterance(chunk, return_partials=True, rate=8)
+            if isinstance(chunk_embeds, list):
+                embeddings.extend(chunk_embeds)
+            # ✅ Print RAM after every chunk
+            print(f"🧠 RAM used: {psutil.virtual_memory().percent}%")
+        except Exception as e:
+            print(f"⚠️ Skipping chunk due to error: {e}")
+
+    if len(embeddings) < 2:
         print("⚠️ Not enough valid embeddings for clustering. Assigning Speaker 0 to all.")
-        labels = [0] * len(valid_embeddings)
+        labels = [0] * len(embeddings)
     else:
-        embeddings = np.stack(valid_embeddings)
-        from sklearn.cluster import AgglomerativeClustering
-        clustering = AgglomerativeClustering(n_clusters=2)
+        from sklearn.cluster import MiniBatchKMeans
+        clustering = MiniBatchKMeans(n_clusters=2, batch_size=256, random_state=42)
+        embeddings = np.stack([e for e in embeddings if isinstance(e, np.ndarray)])
         labels = clustering.fit_predict(embeddings)
 
     segment_duration = 0.5
     times = [i * segment_duration for i in range(len(labels))]
     return list(zip(labels, times))
+
 
 def merge_transcript_with_speakers(transcript_txt, diarization):
     with open(transcript_txt, "r", encoding="utf-8") as f:

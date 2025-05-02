@@ -32,6 +32,7 @@ function run_transcriber() {
     fi
     echo "🎬 Running Transcriber App..."
     activate_venv
+    . .venv/bin/activate
     python run_transcription.py
 }
 

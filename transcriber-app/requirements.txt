@@ -2,3 +2,4 @@ pydub
 resemblyzer
 scikit-learn
 numpy
+psutils
