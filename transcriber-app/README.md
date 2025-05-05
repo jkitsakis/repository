@@ -64,7 +64,7 @@ You can:
 
 Copy folder WSL->Winodws : 
 cd ~/workspace/transcriber-app
-rsync -av --exclude='.venv' --exclude='whisper.cpp' --exclude='input' --exclude='audio' ./ /mnt/c/Workspace/My-Applications/GitHub/repository/transcriber-app/
+rsync -av --exclude='.venv' --exclude='whisper.cpp' --exclude='input' --exclude='audio' --exclude='models' ./ /mnt/c/Workspace/My-Applications/GitHub/repository/transcriber-app/
 
 
 ## 1. Avoid /mnt/c/ folders

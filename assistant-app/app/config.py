@@ -1,5 +1,9 @@
+from protected_terms import PROTECTED_TERMS
+
 
 # config.py
+ROLE = "Data analyst Junior"
+OPENAI_MODEL = "gpt-3.5-turbo"
 OPENAI_API_KEY = None
 DEFAULT_LANGUAGE = None
 MODEL_FOLDER = None
@@ -15,3 +19,5 @@ LANGUAGE_MODEL_MAP = {
 START_SOUND_FILE = "start.wav"
 STOP_SOUND_FILE = "stop.wav"
 SESSION_LOG_FILE = "session_log.txt"
+
+PROTECTED_TERM_SET = set(PROTECTED_TERMS) 

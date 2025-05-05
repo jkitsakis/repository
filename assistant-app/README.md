@@ -43,6 +43,18 @@ pip install vosk openai sounddevice pygame
   - Install **VB-Cable** and set it as the default Input/Output.
 - In **VoiceMeeter** (if installed): Route microphone and app audio properly to VB-Cable Input.
 
+##2.6 Configure audio routing
+- System sound -> Select Output = Cable in 16 Check
+- System sound -> Select Input = Cable Output
+
+In app -> Select Input = System Audio (VB-Cable) [1]
+In app -> Select Output = Headset [14]
+
+In voice Meeter -> Stereo input 1 -> Cable Output
+In voice Meeter -> Stereo input 2 -> Headest Microphone
+In voice Meeter -> Hardware Output -> Headset Earphone
+
+
 ---
 
 ## 3. Ubuntu Setup (Native Linux)

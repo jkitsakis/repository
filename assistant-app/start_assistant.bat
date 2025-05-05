@@ -7,10 +7,6 @@ SET PYTHON_ENV=%cd%\.venv
 SET PYTHON_SCRIPTS_PATH=%PYTHON_ENV%\Scripts
 SET PATH=%PYTHON_SCRIPTS_PATH%;%PATH%
 
-
-
-
-
 :start
 cls
 title %DEMO_NAME% CONSOLE
@@ -65,7 +61,7 @@ goto start
 cls
 cd %APP_HOME%
 python %APP_HOME%\start_assistant.py --apikey="" --defaultlang="Greek" --modelfolder="%APP_HOME%\model" --soundsfolder="%APP_HOME%\sounds"
-echo %%DEMO_NAME%% script finished.
+echo %DEMO_NAME% script finished.
 pause
 goto start
 
