@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VENV_PATH="$HOME/workspace/transcriber-app/.venv"
+VENV_PATH="$PWD/.venv"
 
 function create_venv() {
     echo "📦 Creating Python virtual environment at $VENV_PATH ..."
