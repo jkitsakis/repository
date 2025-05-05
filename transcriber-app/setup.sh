@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #WINDOWS
-WSL_HOME_DIR=~/workspace
-WINDOWS_APP_FOLDER=/mnt/c/Workspace/My-Applications/GitHub/repository
-WINDOWS_VIDEO_FOLDER=/mnt/c/Users/ikitsakis/Videos/ToTranscribe
+# WSL_HOME_DIR=~/workspace
+# WINDOWS_APP_FOLDER=/mnt/c/Workspace/My-Applications/GitHub/repository
+# WINDOWS_VIDEO_FOLDER=/mnt/c/Users/ikitsakis/Videos/ToTranscribe
 
 #UBUNTU
-# WSL_HOME_DIR=~/Workspace/repository
-# WINDOWS_VIDEO_FOLDER=~/Videos/ToTranscribe
+WSL_HOME_DIR=~/Workspace/repository
+WINDOWS_VIDEO_FOLDER=~/Videos/ToTranscribe
 
 WHISPER_DIR=$WSL_HOME_DIR/transcriber-app/whisper.cpp
 BUILD_DIR=$WHISPER_DIR/build/bin
@@ -62,6 +62,6 @@ fi
 # Step 4: Quantize model
 $BUILD_DIR/quantize \
     $WHISPER_DIR/models/ggml-$MODEL_NAME.bin \
-    models/ggml-$MODEL_NAME-q5_0.bin q5_0
+    $WHISPER_DIR/models/ggml-$MODEL_NAME-q5_0.bin q5_0
 
 echo "✅ Done downloading and quantizing $MODEL_NAME model!"
