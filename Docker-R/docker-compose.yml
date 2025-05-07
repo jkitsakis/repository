@@ -6,8 +6,13 @@ services:
     ports:
       - "8787:8787"
     environment:
-      PASSWORD: rstudio # Set your password
-      USER: rstudio     # Username for RStudio
+      PASSWORD: rstudio
+      ROOT: "TRUE"
+      RUNROOTLESS: "FALSE"
     volumes:
-      - ./data:/home/rstudio # Bind a volume for persistent data
+      - ./data:/home/rstudio:rw
+    tmpfs:
+      - /var/run
+      - /run
+    privileged: true
     restart: unless-stopped
