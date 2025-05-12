@@ -1,18 +1,12 @@
 services:
   rstudio:
     build: .
-    image: rstudio-img
-    container_name: rstudio-container
+    container_name: rstudio_server
     ports:
       - "8787:8787"
     environment:
-      PASSWORD: rstudio
-      ROOT: "TRUE"
-      RUNROOTLESS: "FALSE"
+      PASSWORD: rstudio # Set your password
+      USER: rstudio     # Username for RStudio
     volumes:
-      - ./data:/home/rstudio:rw
-    tmpfs:
-      - /var/run
-      - /run
-    privileged: true
-    restart: unless-stopped
+      - ./data:/home/rstudio:rw  # Mount data directory for persistence
+    privileged: true 
