@@ -11,7 +11,7 @@ from guessit import guessit
 from subliminal.video import Episode, Movie
 
 # ====== OpenSubtitles.com API CONFIG ======
-OPENSUBTITLES_API_KEY = 'Yf9MrNUAFePUaDBYribuyN08ZmI3dayp'
+OPENSUBTITLES_API_KEY = 'GrYUKj75bQ3m13hnrGUK3CTvhsiaRsxu'
 OPENSUBTITLES_USERNAME = 'jokit'
 OPENSUBTITLES_PASSWORD = 'opensubtitlesJokit73'
 

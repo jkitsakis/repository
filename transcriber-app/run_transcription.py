@@ -65,29 +65,31 @@ def transcribe_with_whisper(wav_path, model_path, language_code):
     return output_prefix + ".txt"
 
 def diarize(wav_path):
+    from sklearn.cluster import MiniBatchKMeans
+    from sklearn.metrics import silhouette_score
+
     wav = preprocess_wav(wav_path)
     encoder = VoiceEncoder()
 
-    # Split into 30-second chunks to reduce RAM load
-    window_duration = 30  # seconds
+    # Use 5-second windows for finer diarization
+    window_duration = 5  # seconds
     sample_rate = 16000
     chunk_samples = window_duration * sample_rate
 
     total_samples = len(wav)
     embeddings = []
 
-    print(f"🔁 Diarizing in {total_samples // chunk_samples + 1} chunks...")
+    print(f"🔁 Diarizing in {total_samples // chunk_samples + 1} chunks of {window_duration}s...")
 
     for start in range(0, total_samples, chunk_samples):
         chunk = wav[start:start + chunk_samples]
         if len(chunk) == 0:
             continue
         try:
-            chunk_embeds = encoder.embed_utterance(chunk, return_partials=True, rate=8)
-            if isinstance(chunk_embeds, list):
-                embeddings.extend(chunk_embeds)
-            # ✅ Print RAM after every chunk
-            print(f"🧠 RAM used: {psutil.virtual_memory().percent}%")
+            embed = encoder.embed_utterance(chunk, return_partials=False)
+            if isinstance(embed, np.ndarray) and embed.shape == (256,):
+                embeddings.append(embed)
+            print(f"🧠 RAM used: {psutil.virtual_memory().percent}% - Collected embedding")
         except Exception as e:
             print(f"⚠️ Skipping chunk due to error: {e}")
 
@@ -95,12 +97,29 @@ def diarize(wav_path):
         print("⚠️ Not enough valid embeddings for clustering. Assigning Speaker 0 to all.")
         labels = [0] * len(embeddings)
     else:
-        from sklearn.cluster import MiniBatchKMeans
-        clustering = MiniBatchKMeans(n_clusters=2, batch_size=256, random_state=42)
-        embeddings = np.stack([e for e in embeddings if isinstance(e, np.ndarray)])
-        labels = clustering.fit_predict(embeddings)
+        embeddings_np = np.stack(embeddings)
+        best_score = -1
+        best_labels = None
+        best_k = 2
 
-    segment_duration = 0.5
+        print("🔍 Evaluating optimal speaker count (2 to 4)...")
+        for n_clusters in range(2, 5):
+            try:
+                kmeans = MiniBatchKMeans(n_clusters=n_clusters, batch_size=64, random_state=42)
+                labels_candidate = kmeans.fit_predict(embeddings_np)
+                score = silhouette_score(embeddings_np, labels_candidate)
+                print(f"  - Clusters: {n_clusters}, Silhouette score: {score:.3f}")
+                if score > best_score:
+                    best_score = score
+                    best_labels = labels_candidate
+                    best_k = n_clusters
+            except Exception as e:
+                print(f"⚠️ Failed clustering with {n_clusters} clusters: {e}")
+
+        print(f"✅ Best cluster count: {best_k} (Silhouette: {best_score:.3f})")
+        labels = best_labels if best_labels is not None else [0] * len(embeddings)
+
+    segment_duration = window_duration
     times = [i * segment_duration for i in range(len(labels))]
     return list(zip(labels, times))
 

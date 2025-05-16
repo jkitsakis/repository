@@ -1,6 +1,3 @@
-# Aggelou-Topic4.R
-# Topic 4: Multiple Regression and Neural Networks
-
 library(ggplot2)
 library(dplyr)
 
@@ -10,49 +7,105 @@ car_data <- data.frame(
   ltper100km = c(8.5, 7.9, 11, 13, 9, 9.8, 12),
   Price = c(20000, 23000, 27000, 30000, 19000, 21000, 26000)
 )
+# Print the dataset
+print(car_data)
+
 model <- lm(Price ~ Horsepower + Weight + ltper100km, data = car_data)
 summary(model)
 residuals <- resid(model); round(residuals, 2)
-predict(model, data.frame(Horsepower=170, Weight=3150, ltper100km=12))
+
+# Predict car price for a new car with specific features
+predicted_price <- predict(model, data.frame(Horsepower=170, Weight=3150, ltper100km=12))
+predicted_price
+
 
 ggplot(car_data, aes(x = Horsepower, y = Weight, color = Price)) +
   geom_point(size = 4) +
   scale_color_gradient(low = "blue", high = "red") +
   theme_minimal()
 
-relu <- function(x) pmax(0, x)
-neuron_calc <- function(x, w, b) { relu(sum(x * w) + b) }
+# ----------------- #
+  
+# Dataset with 2 features (x1, x2) and binary labels (y)
+X <- cbind(c(0, 1, 0, 1, 1, 2), c(0, 0, 1, 1, 2, 1))
+y <- c(0, 0, 0, 1, 1, 1)
+
+
+# Update weights and bias function
 update_w <- function(X, delta, w, b, learning_rate) {
-  dw <- rep(0, ncol(X)); db <- 0
+  # Gradient for weights (one per feature)
+  dw <- rep(0, ncol(X))  # Gradient for each feature's weight
+  db <- 0  # Gradient for bias
+  
+  # Calculate the gradients
   for (i in 1:nrow(X)) {
-    dw <- dw + delta[i] * X[i, ]
+    dw <- dw + delta[i] * X[i, ]  
     db <- db + delta[i]
   }
+  
+  # Update weights and bias
   w <- w + learning_rate * dw
-  b <- b + learning_rate * db
+  b <- b + learning_rate * db 
+  
   return(list(w = w, b = b))
 }
 
-X <- cbind(c(0,1,0,1,1,2), c(0,0,1,1,2,1))
-y <- c(0, 0, 0, 1, 1, 1)
+
+# Define the ReLU activation function
+relu <- function(x) {
+  return(pmax(0, x))
+}
+
+# Function to compute the predicted output using ReLU activation
+neuron_calc <- function(x, w, b) {
+  return(relu(x %*% w + b))  # safer and faster
+}
+
+
+# Update weights and bias function
+update_w <- function(X, delta, w, b, learning_rate) {
+  dw <- rep(0, ncol(X))  # Gradient for each feature
+  db <- 0  # Gradient for bias
+  
+  for (i in 1:nrow(X)) {
+    dw <- dw + delta[i] * X[i, ]         
+    db <- db + delta[i]                  
+  }
+  
+  w <- w + learning_rate * dw            
+  b <- b + learning_rate * db            
+  
+  return(list(w = w, b = b))
+}
+
+
+# Initialize weights and bias
 set.seed(42)
-w <- runif(2, -0.1, 0.1)
-b <- runif(1, -0.1, 0.1)
+w <- matrix(runif(2, -0.1, 0.1), ncol = 1)  # Random weights for two features 
+b <- runif(1, -0.1, 0.1)  # Random bias 
 learning_rate <- 0.01
 epochs <- 100
 
+# Training loop
 for (epoch in 1:epochs) {
   predictions <- apply(X, 1, function(row) neuron_calc(row, w, b))
-  delta <- y - predictions
-  result <- update_w(X, delta, w, b, learning_rate)
+  delta <- y - predictions                          
+  result <- update_w(X, delta, w, b, learning_rate)  
   w <- result$w
   b <- result$b
+  
+  # Print values for key epochs
   if (epoch %in% c(10, 30, 90)) {
-    cat("Epoch", epoch, "Weights:", round(w,3), "Bias:", round(b,3), "\n")
+    cat("Epoch", epoch, "-> w1:", round(w[1], 3),
+        "w2:", round(w[2], 3), "b:", round(b, 3), "\n")
   }
 }
 
-test_X <- c(1, 2)
+
+test_X <- cbind(1,2)  # Test point (1, 2)
 prediction <- neuron_calc(test_X, w, b)
-step_function <- function(x) ifelse(x > 0.5, 1, 0)
-cat("Prediction for test point (1, 2):", step_function(prediction), "\n")
+step_function(prediction)
+cat("Prediction for test point (1, 2):", round(prediction,1), "\n")
+
+
+
