@@ -1,51 +1,52 @@
+import time
 from PIL import ImageGrab
 import pyperclip
 import easyocr
 import numpy as np
 import importlib.resources as resources
 import os
+from hashlib import md5
 
-# Ensure pytesseract points to the tesseract executable if not in PATH
-# Example for Windows: pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+def image_to_hash(image):
+    return md5(np.array(image).tobytes()).hexdigest()
 
-def extract_text_from_clipboard_image():
-    # Load image from clipboard
+def extract_text_from_clipboard_image(previous_hash=None):
     try:
+        image = ImageGrab.grabclipboard()
+        if image is None:
+            return None, previous_hash
+
+        image_hash = image_to_hash(image)
+        if image_hash == previous_hash:
+            return None, previous_hash
+
+        image_np = np.array(image)
+
+        # Check supported languages
         lang_dir = resources.files('easyocr.character')
         langs = [f.name.replace('_char.txt', '') for f in lang_dir.iterdir() if f.name.endswith('_char.txt')]
+        supported_langs = ['en']
+        # if 'gre' in langs or 'el' in langs:
+        #     supported_langs.append('el')
 
-        print('gre' in langs)  # Should be True if Greek is supported
-        print(langs)
+        reader = easyocr.Reader(supported_langs)
+        result = reader.readtext(image_np)
+        extracted_text = " ".join([text[1] for text in result])
 
-        # Capture the image from clipboard
-        image = ImageGrab.grabclipboard()
+        print("📝 Extracted text:", extracted_text)
+        pyperclip.copy(extracted_text)
+        print("✅ Text copied to clipboard.")
+        return extracted_text, image_hash
 
-        if image is not None:
-            # Convert PIL image to numpy array
-            image_np = np.array(image)
-
-            # Extract text using easyocr
-            reader = easyocr.Reader(['en'])   # 'en' for English language
-
-            # Read text from the image
-            result = reader.readtext(image_np)
-
-            # Extract and print text
-            extracted_text = " ".join([text[1] for text in result])
-            print("Extracted text:", extracted_text)
-
-            # Copy text to clipboard
-            pyperclip.copy(extracted_text)
-            print("Extracted text is copied to clipboard.")
-            return extracted_text
-        else:
-            print("No image found in clipboard.")
-            return None
     except Exception as e:
-        print(f"An error occurred: {e}")
-        return None
+        print(f"❌ An error occurred: {e}")
+        return None, previous_hash
 
-
-# Example usage
 if __name__ == "__main__":
-    extracted_text = extract_text_from_clipboard_image()
+    print("📋 Waiting for new clipboard images... (Press Ctrl+C to stop)\n")
+    last_hash = None
+    while True:
+        text, last_hash = extract_text_from_clipboard_image(previous_hash=last_hash)
+        if text:
+            print("🔁 Waiting for the next new image...\n")
+        time.sleep(1)  # Check every 1 second

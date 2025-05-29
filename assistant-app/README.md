@@ -47,7 +47,7 @@ pip install vosk openai sounddevice pygame
 - System sound -> Select Output = Cable in 16 Check
 - System sound -> Select Input = Cable Output
 
-In app -> Select Input = System Audio (VB-Cable) [1]
+In app -> Select Input = System Audio (VB-Cable) [1] i 🎧 Headset  [14]
 In app -> Select Output = Headset [14]
 
 In voice Meeter -> Stereo input 1 -> Cable Output

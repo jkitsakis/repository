@@ -60,7 +60,7 @@ goto start
 :run
 cls
 cd %APP_HOME%
-python %APP_HOME%\start_assistant.py --apikey="" --defaultlang="Greek" --modelfolder="%APP_HOME%\model" --soundsfolder="%APP_HOME%\sounds"
+python %APP_HOME%\start_assistant.py --apikey="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" --defaultlang="Greek" --modelfolder="%APP_HOME%\model" --soundsfolder="%APP_HOME%\sounds"
 echo %DEMO_NAME% script finished.
 pause
 goto start
