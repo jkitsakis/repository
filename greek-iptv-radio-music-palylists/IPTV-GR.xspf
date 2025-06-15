@@ -83,7 +83,7 @@
 		</track>
 		<track>
 			<title>OPEN</title>
-			<location>https://liveopencloud.siliconweb.com/1/ZlRza2R6L2tFRnFJ/eWVLSlQx/hls/live/playlist.m3u8</location>
+			<location>https://liveopen.siliconweb.com/openTvLive/liveopen/playlist.m3u8</location>
 			 <extension application="http://www.videolan.org/vlc/playlist/0">
 				<vlc:id>9</vlc:id>
 				<vlc:option>file-caching=300</vlc:option>

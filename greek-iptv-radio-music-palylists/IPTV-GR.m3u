@@ -28,7 +28,7 @@ https://livestar.siliconweb.com/media/star4/star4newhd.m3u8
 https://skai-live-gr.siliconweb.com/media/cambria4/index_media_bitrate2000K_avc1_mp4a.m3u8
 
 #EXTINF:-1 group-title="TV" TVG-ID="OPEN" tvg-name="OPEN" tvg-logo="https://s.tvopen.gr/images/OPEN_BEYOND_Avra.png",OPEN
-https://liveopencloud.siliconweb.com/1/ZlRza2R6L2tFRnFJ/eWVLSlQx/hls/live/playlist.m3u8
+https://liveopen.siliconweb.com/openTvLive/liveopen/playlist.m3u8
 
 #EXTINF:-1 group-title="TV" TVG-ID="ACTION24" tvg-name="ACTION24" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Action24-logo-small.png/250px-Action24-logo-small.png",ACTION24
 https://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8
