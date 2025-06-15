@@ -60,7 +60,7 @@ goto start
 :run
 cls
 cd %APP_HOME%
-python %APP_HOME%\start_assistant.py --apikey="" --defaultlang="Greek" --modelfolder="%APP_HOME%\model" --soundsfolder="%APP_HOME%\sounds"
+python %APP_HOME%\start_assistant.py --apikey="your-openai-key-here" --defaultlang="Greek" --modelfolder="%APP_HOME%\model" --soundsfolder="%APP_HOME%\sounds"
 echo %DEMO_NAME% script finished.
 pause
 goto start

@@ -11,7 +11,7 @@ from guessit import guessit
 from subliminal.video import Episode, Movie
 
 # ====== OpenSubtitles.com API CONFIG ======
-OPENSUBTITLES_API_KEY = 'Yf9MrNUAFePUaDBYribuyN08ZmI3dayp'
+OPENSUBTITLES_API_KEY = 'GrYUKj75bQ3m13hnrGUK3CTvhsiaRsxu'
 OPENSUBTITLES_USERNAME = 'jokit'
 OPENSUBTITLES_PASSWORD = 'opensubtitlesJokit73'
 
@@ -98,7 +98,11 @@ def download_with_subliminal(video_path):
 # ====== Method 2: OpenSubtitles.com REST API v1 ======
 def get_opensubtitles_token():
     url = "https://api.opensubtitles.com/api/v1/login"
-    headers = {"Api-Key": OPENSUBTITLES_API_KEY}
+    headers = {
+        "Api-Key": OPENSUBTITLES_API_KEY,
+        "Content-Type": "application/json",
+        "User-Agent": "SubtitlesFinderApp v1.0.0"
+    }
     data = {"username": OPENSUBTITLES_USERNAME, "password": OPENSUBTITLES_PASSWORD}
     response = requests.post(url, json=data, headers=headers)
     response.raise_for_status()
@@ -108,7 +112,9 @@ def search_opensubtitles(token, query, language):
     url = "https://api.opensubtitles.com/api/v1/subtitles"
     headers = {
         "Authorization": f"Bearer {token}",
-        "Api-Key": OPENSUBTITLES_API_KEY
+        "Api-Key": OPENSUBTITLES_API_KEY,
+        "Content-Type": "application/json",
+        "User-Agent": "SubtitlesFinderApp v1.0.0"
     }
     params = {
         "languages": language,
@@ -117,7 +123,10 @@ def search_opensubtitles(token, query, language):
         "order_direction": "desc"
     }
     response = requests.get(url, headers=headers, params=params)
-    response.raise_for_status()
+    if not response.ok:
+        print("🔍 Status:", response.status_code)
+        print("🔍 Response:", response.text)
+        response.raise_for_status()
     return response.json()['data']
 
 def download_opensubtitles(token, file_id, output_path):
@@ -127,11 +136,17 @@ def download_opensubtitles(token, file_id, output_path):
         "Api-Key": OPENSUBTITLES_API_KEY
     }
     response = requests.post(url, headers=headers, json={"file_id": file_id})
-    response.raise_for_status()
+    if not response.ok:
+        print("🔍 Status:", response.status_code)
+        print("🔍 Response:", response.text)
+        response.raise_for_status()
     download_url = response.json()['link']
 
     subtitle_response = requests.get(download_url)
-    subtitle_response.raise_for_status()
+    if not subtitle_response.ok:
+        print("🔍 Status:", subtitle_response.status_code)
+        print("🔍 Response:", subtitle_response.text)
+        response.raise_for_status()
 
     # Detect encoding
     detected = chardet.detect(subtitle_response.content)

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #WINDOWS
-# WSL_HOME_DIR=~/workspace
-# WINDOWS_APP_FOLDER=/mnt/c/Workspace/My-Applications/GitHub/repository
-# WINDOWS_VIDEO_FOLDER=/mnt/c/Users/ikitsakis/Videos/ToTranscribe
+WSL_HOME_DIR=~/workspace
+WINDOWS_APP_FOLDER=/mnt/c/Workspace/My-Applications/GitHub/repository
+WINDOWS_VIDEO_FOLDER=/mnt/c/Users/ikitsakis/Videos/ToTranscribe
 
 #UBUNTU
-WSL_HOME_DIR=~/Workspace/repository
-WINDOWS_VIDEO_FOLDER=~/Videos/ToTranscribe
+# WSL_HOME_DIR=~/Workspace/repository
+# WINDOWS_VIDEO_FOLDER=~/Videos/ToTranscribe
 
 WHISPER_DIR=$WSL_HOME_DIR/transcriber-app/whisper.cpp
 BUILD_DIR=$WHISPER_DIR/build/bin

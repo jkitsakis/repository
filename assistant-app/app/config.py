@@ -2,7 +2,7 @@ from protected_terms import PROTECTED_TERMS
 
 
 # config.py
-ROLE = "Data analyst Junior"
+ROLE = "Student taking exams in Data Science topics"
 OPENAI_MODEL = "gpt-3.5-turbo"
 OPENAI_API_KEY = None
 DEFAULT_LANGUAGE = None
