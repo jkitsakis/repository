@@ -3,7 +3,7 @@
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$BASEDIR" || exit 1
 
-PYTHON_BIN="python3.12"
+PYTHON_BIN="python3.13"
 APP_FILE="main.py"
 VENV_DIR=".venv"
 REQ_FILE="requirements.txt"

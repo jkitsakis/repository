@@ -133,7 +133,8 @@ def download_opensubtitles(token, file_id, output_path):
     url = "https://api.opensubtitles.com/api/v1/download"
     headers = {
         "Authorization": f"Bearer {token}",
-        "Api-Key": OPENSUBTITLES_API_KEY
+        "Api-Key": OPENSUBTITLES_API_KEY,
+        "User-Agent": "SubtitlesFinderApp v1.0.0"
     }
     response = requests.post(url, headers=headers, json={"file_id": file_id})
     if not response.ok:
