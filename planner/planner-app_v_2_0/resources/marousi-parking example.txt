@@ -1,0 +1,30 @@
+request:
+
+{
+    "dates": [
+        "2025-07-18"
+    ],
+    "facilityId": "64a41c5241d4b80382ab638b",
+    "positionId": "64a41cb441d4b80382ab63b9",
+    "x": 401.22369263607243,
+    "y": 1784.0007380981669,
+    "code": "085",
+    "parking": [
+        {
+            "parkingRequested": true,
+            "plateNumber": "ZNK3510",
+            "type": "All"
+        }
+    ],
+    "datesAndType": [
+        {
+            "date": "2025-07-18",
+            "type": "0036",
+            "clientName": "",
+            "clientAddress": ""
+        }
+    ]
+}
+
+parking availability
+https://myplanner.netcompany-intrasoft.com/deskbooking/api/v1/deskbooking/parking/availability?dates=2025-07-10&facilityId=64a41c5241d4b80382ab638b&facilitySectorName=MAROUSSI

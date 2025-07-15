@@ -1,0 +1,10 @@
+__pycache__/
+__init__.py
+**/*/__init__.py
+**/*/__pycache__/
+output/
+source/
+.idea/
+.venv/
+.vs/
+
