@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/yannis/Documents/scripts/check_networkmanager.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Check Network Manager
+

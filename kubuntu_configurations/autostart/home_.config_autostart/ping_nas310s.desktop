@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/yannis/Documents/scripts/ping_nas310s.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Ping NAS310S to auto-mount
+
