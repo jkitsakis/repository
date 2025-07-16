@@ -68,9 +68,9 @@
     "Sec-Fetch-Site": "none"
   },
   "post_template": "{\"dates\":[\"$date\"],\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"code\":\"$code\",\"parking\":[{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"}],\"datesAndType\":[{\"date\":\"$date\",\"type\":\"0036\",\"clientName\":\"\",\"clientAddress\":\"\"}]}",
-  "post_template_parking": "{\"dates\":[\"$date\"],\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"code\":\"$code\",\"parking\":[{\"parkingRequested\":$parkingRequested,\"plateNumber\":$plateNumber,\"type\":$type}],\"datesAndType\":[{\"date\":\"$date\",\"type\":\"0036\",\"clientName\":\"\",\"clientAddress\":\"\"}]}",
+  "post_template_parking": "{\"dates\":[\"$date\"],\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"code\":\"$code\",\"parking\":[{\"parkingRequested\":$parkingRequested,\"plateNumber\":\"$plateNumber\",\"type\":\"$type\"}],\"datesAndType\":[{\"date\":\"$date\",\"type\":\"0036\",\"clientName\":\"\",\"clientAddress\":\"\"}]}",
   "put_template": "{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":{\"parkingRequested\":false,\"plateNumber\":\"\",\"type\":\"All\"},\"datesAndType\":{\"type\":\"0036\",\"extraDay\": false,\"date\":\"$date\"}}",
-  "put_template_parking": "{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":{\"parkingRequested\":$parkingRequested,\"plateNumber\":$plateNumber,\"type\":$type},\"datesAndType\":{\"type\":\"0036\",\"extraDay\": false,\"date\":\"$date\"}}",
+  "put_template_parking": "{\"date\":\"$date\",\"facilityId\":\"$facilityId\",\"positionId\":\"$positionId\",\"x\":$x,\"y\":$y,\"parking\":{\"parkingRequested\":$parkingRequested,\"plateNumber\":\"$plateNumber\",\"type\":\"$type\"},\"datesAndType\":{\"type\":\"0036\",\"extraDay\": false,\"date\":\"$date\"}}",
   "message_title_template": "Desk available $date, on $floor ...",
   "message_txt_template": "Date $date, Floor $floor, Desk $code",
   "mail_success_template": "Desk $code booked for Date $date."
