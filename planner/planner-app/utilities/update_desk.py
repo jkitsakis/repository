@@ -6,7 +6,7 @@ from plyer import notification
 from configuration.configuration_params import Parameters
 
 def read_json_and_create_dict():
-    json_file_path = "resources/seats.json"
+    json_file_path = "resources/seats-maroussi.json"
     try:
         with open(json_file_path, 'r') as file:
             data = json.load(file)

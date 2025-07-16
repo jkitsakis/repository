@@ -57,7 +57,7 @@ def post_json_in_parallel(json_list, max_workers):
 def prepare_json_list(days):
     json_list=[]
     for day in days:
-        random_seat = pick_random_seat("resources/seats.json")
+        random_seat = pick_random_seat("resources/seats-maroussi.json")
         json= Parameters.post_template.substitute(date=day,
                                                   code=random_seat['code'],
                                                   positionId=random_seat['positionId'],
